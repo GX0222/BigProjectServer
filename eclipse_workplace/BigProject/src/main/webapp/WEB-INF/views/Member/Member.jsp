@@ -7,7 +7,7 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Member Info</title>
+<title>會員中心</title>
 <link
 	href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css"
 	rel="stylesheet"
@@ -40,27 +40,16 @@
 </head>
 
 <body>
+	<!-- NavBar -->
 	<%@ include file="../NavBar/PageNavBar.jsp" %>
 	<div class="bgCon">
-		<div class="homeLeft">
-			<h5>會員專區</h5>
-			<ul>
-				<li><a class="aa" href="/Member">基本資料</a></li>
-				<li><a class="aa" href="/Love">我的收藏</a></li>
-				<li><a class="aa" href="/Mimi">隱私設定</a></li>
-			</ul>
-			<hr>
-			<h5>活動專區</h5>
-			<ul>
-				<li><a class="aa" href="/Activity_list">我的活動</a></li>
-				<li>上架活動</li>
-			</ul>
-		</div>
+		<!-- HomeLeft -->
+        <%@ include file="HomeLeft.jsp" %>
 		<div class="homeRight">
 			<div class="m-0 p-0 infoCon">
 				<div class="memberInfo">
 					<div class="memberImg">
-						<img class="rounded-circle img-fluid" src="./image/IMG_0987.JPG"
+						<img class="rounded-circle img-fluid" src="<c:url value='/image/IMG_0987.JPG' />"
 							alt="">
 					</div>
 					<div class="memberLV"></div>

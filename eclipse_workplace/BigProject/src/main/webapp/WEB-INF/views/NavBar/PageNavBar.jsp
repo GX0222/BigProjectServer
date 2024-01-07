@@ -6,16 +6,17 @@
 		class="navbar navbar-expand-md bg-none w-100 fixed-top m-0 p-0"
 		style="top: 0px;">
 		<div class="container-fluid m-0 p-0 h-100">
-			<a href="/" class="navbar-brand m-0 p-0"
-				style="font-size: x-large;"> <img src="./image/logo1228.png"
+			<a href="<c:url value='/' />" class="navbar-brand m-0 p-0"
+				style="font-size: x-large;"> <img src="<c:url value='/image/logo1228.png' />"
 				class=" m-0 p-0" alt="logo" width="65" height="50">
 			</a>
 			<div class="memberConMd d-flex d-md-none">
 				<div class="nameCon">
-					<a href="/Member"> <img class="rounded-circle img-fluid"
-						src="./image/IMG_0987.JPG" alt="">
+					<a href="<c:url value='/Member' />"> <img class="rounded-circle img-fluid"
+						src="<c:url value='/image/IMG_0987.JPG' />" alt="">
 					</a>
 				</div>
+				
 				<button class="navbar-toggler" type="button"
 					data-bs-toggle="collapse" data-bs-target="#mynavbar"
 					aria-controls="navbarSupportedContent" aria-expanded="false"
@@ -37,8 +38,8 @@
 				</ul>
 				<div class="memberCon d-none d-md-flex">
 					<div class="nameCon">
-						<a href="/Member"> <img class="rounded-circle img-fluid"
-							src="./image/IMG_0987.JPG" alt="">
+						<a href="<c:url value='/Member' />"> <img class="rounded-circle img-fluid"
+							src="<c:url value='/image/IMG_0987.JPG' />" alt="">
 						</a>
 					</div>
 				</div>

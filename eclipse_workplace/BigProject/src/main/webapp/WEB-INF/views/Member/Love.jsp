@@ -7,7 +7,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Member Info</title>
+    <title>我的收藏</title>
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet"
         integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN" crossorigin="anonymous">
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"
@@ -40,25 +40,12 @@
 </head>
 
 <body>
+    <!-- NavBar -->
     <%@ include file="../NavBar/PageNavBar.jsp" %>
     <div class="bgCon">
-        <div class="homeLeft">
-            <h5>會員專區</h5>
-            <ul>
-                <li><a class="aa" href="./Member.html">基本資料</a></li>
-                <li><a class="aa" href="./Love.html">我的收藏</a></li>
-                <li><a class="aa" href="./Mimi.html">隱私設定</a></li>
-            </ul>
-            <hr>
-            <h5>活動專區</h5>
-            <ul>
-                <li><a class="aa" href="./List.html">我的活動</a></li>
-                <li>上架活動</li>
-            </ul>
-        </div>
-        <!-- <div class="homeLeft2">
+        <!-- HomeLeft -->
+        <%@ include file="HomeLeft.jsp" %>
 
-        </div> -->
         <div class="homeRight">
             <div class="infoCon">
                 <div class="dataRow m-0 p-0">
@@ -68,7 +55,7 @@
                             favorite
                         </div>
                         <div class="imgCon">
-                            <img src="./image/2023聖誕節.jpg">
+                            <img src="<c:url value='/image/2023聖誕節.jpg' />">
                         </div>
                         <div class="dataTitle">
                             2023聖誕節
@@ -85,7 +72,7 @@
                             favorite
                         </div>
                         <div class="imgCon">
-                            <img src="./image/2023聖誕節.jpg">
+                            <img src="<c:url value='/image/2023聖誕節.jpg' />">
                         </div>
                         <div class="dataTitle BGC_Gray">
                             2023聖誕節
@@ -102,7 +89,7 @@
                             favorite
                         </span>
                         <div class="imgCon">
-                            <img src="./image/2023聖誕節.jpg">
+                            <img src="<c:url value='/image/2023聖誕節.jpg' />">
                         </div>
                         <div class="dataTitle BGC_Gray">
                             2023聖誕節
@@ -119,7 +106,7 @@
                             favorite
                         </span>
                         <div class="imgCon">
-                            <img src="./image/2023聖誕節.jpg">
+                            <img src="<c:url value='/image/2023聖誕節.jpg' />">
                         </div>
                         <div class="dataTitle BGC_Gray">
                             2023聖誕節
@@ -136,7 +123,7 @@
                             favorite
                         </span>
                         <div class="imgCon">
-                            <img src="./image/2023聖誕節.jpg">
+                            <img src="<c:url value='/image/2023聖誕節.jpg' />">
                         </div>
                         <div class="dataTitle BGC_Gray">
                             2023聖誕節
@@ -153,7 +140,7 @@
                             favorite
                         </span>
                         <div class="imgCon">
-                            <img src="./image/2023聖誕節.jpg">
+                            <img src="<c:url value='/image/2023聖誕節.jpg' />">
                         </div>
                         <div class="dataTitle BGC_Gray">
                             2023聖誕節
@@ -170,7 +157,7 @@
                             favorite
                         </span>
                         <div class="imgCon">
-                            <img src="./image/2023聖誕節.jpg">
+                            <img src="<c:url value='/image/2023聖誕節.jpg' />">
                         </div>
                         <div class="dataTitle BGC_Gray">
                             2023聖誕節
@@ -187,7 +174,7 @@
                             favorite
                         </span>
                         <div class="imgCon">
-                            <img src="./image/2023聖誕節.jpg">
+                            <img src="<c:url value='/image/2023聖誕節.jpg' />">
                         </div>
                         <div class="dataTitle BGC_Gray">
                             2023聖誕節
