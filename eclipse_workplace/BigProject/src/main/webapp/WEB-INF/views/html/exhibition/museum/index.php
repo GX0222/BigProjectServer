@@ -604,6 +604,46 @@
             }
         }
 
+        function TNPM() {
+            $("#TNPM").removeClass("disnone");
+            $("#SNPM").addClass("disnone");
+            $("#TFAM").addClass("disnone");
+            $("#TMFA").addClass("disnone");
+            $("#TAM").addClass("disnone");
+        }
+
+        function SNPM() {
+            $("#TNPM").addClass("disnone");
+            $("#SNPM").removeClass("disnone");
+            $("#TFAM").addClass("disnone");
+            $("#TMFA").addClass("disnone");
+            $("#TAM").addClass("disnone");
+        }
+
+        function TFAM() {
+            $("#TNPM").addClass("disnone");
+            $("#SNPM").addClass("disnone");
+            $("#TFAM").removeClass("disnone");
+            $("#TMFA").addClass("disnone");
+            $("#TAM").addClass("disnone");
+        }
+
+        function TMFA() {
+            $("#TNPM").addClass("disnone");
+            $("#SNPM").addClass("disnone");
+            $("#TFAM").addClass("disnone");
+            $("#TMFA").removeClass("disnone");
+            $("#TAM").addClass("disnone");
+        }
+
+        function TAM() {
+            $("#TNPM").addClass("disnone");
+            $("#SNPM").addClass("disnone");
+            $("#TFAM").addClass("disnone");
+            $("#TMFA").addClass("disnone");
+            $("#TAM").removeClass("disnone");
+        }
+
     </script>
 </body>
 
