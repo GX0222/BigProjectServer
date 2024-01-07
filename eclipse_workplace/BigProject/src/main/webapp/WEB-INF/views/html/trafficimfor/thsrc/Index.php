@@ -486,16 +486,16 @@ $conn->close();
                             </tr>
                             <tr class="row" style="margin-top: 0vw;">
                                 <td class="col-2 flip_31 down_31" id="flip_31">
-                                    <span class="digital_31 front_31 number_31_45"></span>
-                                    <span class="digital_31 back_31 number_31_46"></span>
+                                    <span class="digital_31 front_31 number_31_23"></span>
+                                    <span class="digital_31 back_31 number_31_24"></span>
                                 </td>
                                 <td class="col-3 flip_32 down_32" id="flip_32">
                                     <span class="digital_32 front_32 number_32_1"></span>
                                     <span class="digital_32 back_32 number_32_2"></span>
                                 </td>
                                 <td class="col-4 flip_33 down_33" id="flip_33">
-                                    <span class="digital_33 front_33 number_33_1"></span>
-                                    <span class="digital_33 back_33 number_33_2"></span>
+                                    <span class="digital_33 front_33 number_33_3"></span>
+                                    <span class="digital_33 back_33 number_33_4"></span>
                                 </td>
                                 <td class="col-3 flip_34 down_34" id="flip_34">
                                     <span class="digital_34 front_34 number_34_1"></span>
@@ -504,16 +504,16 @@ $conn->close();
                             </tr>
                             <tr class="row" style="margin-top: 0vw;">
                                 <td class="col-2 flip_41 down_41" id="flip_41">
-                                    <span class="digital_41 front_41 number_41_15"></span>
-                                    <span class="digital_41 back_41 number_41_16"></span>
+                                    <span class="digital_41 front_41 number_41_46"></span>
+                                    <span class="digital_41 back_41 number_41_47"></span>
                                 </td>
                                 <td class="col-3 flip_42 down_42" id="flip_42">
                                     <span class="digital_42 front_42 number_42_1"></span>
                                     <span class="digital_42 back_42 number_42_2"></span>
                                 </td>
                                 <td class="col-4 flip_43 down_43" id="flip_43">
-                                    <span class="digital_43 front_43 number_43_2"></span>
-                                    <span class="digital_43 back_43 number_43_3"></span>
+                                    <span class="digital_43 front_43 number_43_4"></span>
+                                    <span class="digital_43 back_43 number_43_5"></span>
                                 </td>
                                 <td class="col-3 flip_44 down_44" id="flip_44">
                                     <span class="digital_44 front_44 number_44_1"></span>
@@ -522,16 +522,16 @@ $conn->close();
                             </tr>
                             <tr class="row" style="margin-top: 0vw;">
                                 <td class="col-2 flip_51 down_51" id="flip_51">
-                                    <span class="digital_51 front_51 number_51_45"></span>
-                                    <span class="digital_51 back_51 number_51_46"></span>
+                                    <span class="digital_51 front_51 number_51_95"></span>
+                                    <span class="digital_51 back_51 number_51_96"></span>
                                 </td>
                                 <td class="col-3 flip_52 down_52" id="flip_52">
                                     <span class="digital_52 front_52 number_52_1"></span>
                                     <span class="digital_52 back_52 number_52_2"></span>
                                 </td>
                                 <td class="col-4 flip_53 down_53" id="flip_53">
-                                    <span class="digital_53 front_53 number_53_1"></span>
-                                    <span class="digital_53 back_53 number_53_2"></span>
+                                    <span class="digital_53 front_53 number_53_5"></span>
+                                    <span class="digital_53 back_53 number_53_6"></span>
                                 </td>
                                 <td class="col-3 flip_54 down_54" id="flip_54">
                                     <span class="digital_54 front_54 number_54_1"></span>
@@ -540,16 +540,16 @@ $conn->close();
                             </tr>
                             <tr class="row" style="margin-top: 0vw;">
                                 <td class="col-2 flip_61 down_61" id="flip_61">
-                                    <span class="digital_61 front_61 number_61_15"></span>
-                                    <span class="digital_61 back_61 number_61_16"></span>
+                                    <span class="digital_61 front_61 number_61_75"></span>
+                                    <span class="digital_61 back_61 number_61_76"></span>
                                 </td>
                                 <td class="col-3 flip_62 down_62" id="flip_62">
                                     <span class="digital_62 front_62 number_62_1"></span>
                                     <span class="digital_62 back_62 number_62_2"></span>
                                 </td>
                                 <td class="col-4 flip_63 down_63" id="flip_63">
-                                    <span class="digital_63 front_63 number_63_2"></span>
-                                    <span class="digital_63 back_63 number_63_3"></span>
+                                    <span class="digital_63 front_63 number_63_6"></span>
+                                    <span class="digital_63 back_63 number_63_7"></span>
                                 </td>
                                 <td class="col-3 flip_64 down_64" id="flip_64">
                                     <span class="digital_64 front_64 number_64_1"></span>
@@ -617,16 +617,16 @@ $conn->close();
                             </tr>
                             <tr class="row" style="margin-top: 0vw;">
                                 <td class="col-2 flip_91 down_91" id="flip_91">
-                                    <span class="digital_91 front_91 number_91_60"></span>
-                                    <span class="digital_91 back_91 number_91_61"></span>
+                                    <span class="digital_91 front_91 number_91_59"></span>
+                                    <span class="digital_91 back_91 number_91_60"></span>
                                 </td>
                                 <td class="col-3 flip_92 down_92" id="flip_92">
                                     <span class="digital_92 front_92 number_92_1"></span>
                                     <span class="digital_92 back_92 number_92_2"></span>
                                 </td>
                                 <td class="col-4 flip_93 down_93" id="flip_93">
-                                    <span class="digital_93 front_93 number_93_1"></span>
-                                    <span class="digital_93 back_93 number_93_2"></span>
+                                    <span class="digital_93 front_93 number_93_3"></span>
+                                    <span class="digital_93 back_93 number_93_4"></span>
                                 </td>
                                 <td class="col-3 flip_94 down_94" id="flip_94">
                                     <span class="digital_94 front_94 number_94_1"></span>
@@ -635,16 +635,16 @@ $conn->close();
                             </tr>
                             <tr class="row" style="margin-top: 0vw;">
                                 <td class="col-2 flip_101 down_101" id="flip_101">
-                                    <span class="digital_101 front_101 number_101_32"></span>
-                                    <span class="digital_101 back_101 number_101_33"></span>
+                                    <span class="digital_101 front_101 number_101_61"></span>
+                                    <span class="digital_101 back_101 number_101_62"></span>
                                 </td>
                                 <td class="col-3 flip_102 down_102" id="flip_102">
                                     <span class="digital_102 front_102 number_102_2"></span>
                                     <span class="digital_102 back_102 number_102_3"></span>
                                 </td>
                                 <td class="col-4 flip_103 down_103" id="flip_103">
-                                    <span class="digital_103 front_103 number_103_2"></span>
-                                    <span class="digital_103 back_103 number_103_3"></span>
+                                    <span class="digital_103 front_103 number_103_4"></span>
+                                    <span class="digital_103 back_103 number_103_5"></span>
                                 </td>
                                 <td class="col-3 flip_104 down_104" id="flip_104">
                                     <span class="digital_104 front_104 number_104_1"></span>
@@ -653,16 +653,16 @@ $conn->close();
                             </tr>
                             <tr class="row" style="margin-top: 0vw;">
                                 <td class="col-2 flip_111 down_111" id="flip_111">
-                                    <span class="digital_111 front_111 number_111_60"></span>
-                                    <span class="digital_111 back_111 number_111_61"></span>
+                                    <span class="digital_111 front_111 number_111_5"></span>
+                                    <span class="digital_111 back_111 number_111_6"></span>
                                 </td>
                                 <td class="col-3 flip_112 down_112" id="flip_112">
                                     <span class="digital_112 front_112 number_112_1"></span>
                                     <span class="digital_112 back_112 number_112_2"></span>
                                 </td>
                                 <td class="col-4 flip_113 down_113" id="flip_113">
-                                    <span class="digital_113 front_113 number_113_1"></span>
-                                    <span class="digital_113 back_113 number_113_2"></span>
+                                    <span class="digital_113 front_113 number_113_5"></span>
+                                    <span class="digital_113 back_113 number_113_6"></span>
                                 </td>
                                 <td class="col-3 flip_114 down_114" id="flip_114">
                                     <span class="digital_114 front_114 number_114_1"></span>
@@ -671,16 +671,16 @@ $conn->close();
                             </tr>
                             <tr class="row" style="margin-top: 0vw;">
                                 <td class="col-2 flip_121 down_121" id="flip_121">
-                                    <span class="digital_121 front_121 number_121_32"></span>
-                                    <span class="digital_121 back_121 number_121_33"></span>
+                                    <span class="digital_121 front_121 number_121_33"></span>
+                                    <span class="digital_121 back_121 number_121_34"></span>
                                 </td>
                                 <td class="col-3 flip_122 down_122" id="flip_122">
                                     <span class="digital_122 front_122 number_122_2"></span>
                                     <span class="digital_122 back_122 number_122_3"></span>
                                 </td>
                                 <td class="col-4 flip_123 down_123" id="flip_123">
-                                    <span class="digital_123 front_123 number_123_2"></span>
-                                    <span class="digital_123 back_123 number_123_3"></span>
+                                    <span class="digital_123 front_123 number_123_6"></span>
+                                    <span class="digital_123 back_123 number_123_7"></span>
                                 </td>
                                 <td class="col-3 flip_124 down_124" id="flip_124">
                                     <span class="digital_124 front_124 number_124_1"></span>
