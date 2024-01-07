@@ -577,6 +577,15 @@ $conn->close();
                                 href="#">關於我們</a>
                         </li>
                     </ul>
+                    <form class="d-flex" role="search">
+                        <input id="search_input" class="form-control me-2" type="search" placeholder="搜尋"
+                            aria-label="Search">
+                        <button id="search_btn" class="btn btn-outline-success" type="submit">
+                            <span class="material-icons" style="vertical-align: middle;">
+                                search
+                            </span>
+                        </button>
+                    </form>
                     <div class="memberCon d-none d-md-flex">
                         <div class="nameCon">
                             <a href="../../Member.html">
