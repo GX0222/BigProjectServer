@@ -1,0 +1,1307 @@
+.button {
+    background-color: rgb(23, 23, 23);
+    color: rgb(176, 118, 78);
+    font-size: 45px;
+    font-family: Palatrino Lintype;
+    font-weight: bold;
+    padding: 10px;
+    text-align: center;
+}
+
+.button:hover {
+    background-color: rgb(66, 66, 66);
+    color: rgb(198, 169, 129);
+}
+
+.bordd {
+    border: 1px solid black;
+}
+
+.color_HNY {
+    display: inline-block;
+    animation-name: color_change_HNY;
+    animation-duration: 4s;
+    animation-iteration-count: infinite;
+}
+
+@keyframes color_change_HNY {
+    0% {
+        color: red;
+    }
+
+    25% {
+        color: yellow;
+    }
+
+    50% {
+        color: green;
+    }
+
+    75% {
+        color: blue;
+    }
+
+    100% {
+        color: red;
+    }
+}
+
+.button_CLOSE {
+    display: none;
+    z-index: -1;
+}
+
+.button_OPEN {
+    display: block;
+    z-index: 250;
+}
+
+.HNY_CLOSE {
+    display: none;
+}
+
+.HNY_OPEN {
+    display: block;
+}
+
+.HNY_Z {
+    z-index: 250;
+}
+
+.F9_HNY {
+    display: inline;
+}
+
+.pinkon {
+    background: -webkit-linear-gradient(45deg, rgb(224, 130, 243) 20%, rgb(232, 193, 240) 50%, rgb(224, 130, 243) 80%);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+}
+
+.FL_pink {
+    background-color: rgb(224, 130, 243);
+}
+
+.redon {
+    background: -webkit-linear-gradient(45deg, rgb(255, 0, 0) 20%, rgb(252, 75, 75), rgb(255, 0, 0) 80%);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+}
+
+.gold {
+    background: -webkit-linear-gradient(45deg, rgb(132, 98, 15) 30%, rgb(205, 198, 123), rgb(132, 98, 15) 70%);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    font-weight: bold;
+}
+
+.prepare {
+    animation-name: prepare;
+    animation-duration: 25s;
+    animation-iteration-count: infinite;
+}
+
+@keyframes prepare {
+    0% {
+        background-color: red;
+    }
+
+    13% {
+        background-color: red;
+    }
+
+    15% {
+        background-color: orange;
+    }
+
+    27% {
+        background-color: orange;
+    }
+
+    29% {
+        background-color: rgb(185, 185, 46);
+    }
+
+    41% {
+        background-color: rgb(185, 185, 46);
+    }
+
+    43% {
+        background-color: rgb(85, 232, 85);
+    }
+
+    55% {
+        background-color: rgb(85, 232, 85);
+    }
+
+    57% {
+        background-color: rgb(83, 199, 238);
+    }
+
+    69% {
+        background-color: rgb(83, 199, 238);
+    }
+
+    71% {
+        background-color: blue;
+    }
+
+    83% {
+        background-color: blue;
+    }
+
+    85% {
+        background-color: rgb(177, 54, 177);
+    }
+
+    98% {
+        background-color: rgb(177, 54, 177);
+    }
+
+    100% {
+        background-color: red;
+    }
+}
+
+.Warning {
+    animation-name: Warning;
+    animation-duration: 1.8s;
+    animation-iteration-count: infinite;
+}
+
+@keyframes Warning {
+    0% {
+        background-color: rgb(253, 253, 224);
+    }
+
+    3% {
+        background-color: rgb(253, 253, 224);
+    }
+
+    12% {
+        background-color: black;
+    }
+
+    100% {
+        background-color: black;
+    }
+}
+
+.Danger {
+    animation-name: Danger;
+    animation-duration: 2s;
+    animation-iteration-count: infinite;
+}
+
+@keyframes Danger {
+    0% {
+        background-color: black;
+    }
+
+    44% {
+        background-color: black;
+    }
+
+    45% {
+        background-color: red;
+    }
+
+    48% {
+        background-color: red;
+    }
+
+    57% {
+        background-color: black;
+    }
+
+    100% {
+        background-color: black;
+    }
+}
+
+.FW_0_1 {
+    animation-name: color_change_0_1;
+    animation-duration: 1.2s;
+    animation-iteration-count: infinite;
+}
+
+@keyframes color_change_0_1 {
+    0% {
+        background-color: rgb(40, 0, 0);
+    }
+
+    25% {
+        background-color: red;
+    }
+
+    95% {
+        background-color: red;
+    }
+}
+
+.FW_1,
+.FL_E1 {
+    background-color: red;
+}
+
+.FW_1_4 {
+    animation-name: color_change_1_4;
+    animation-duration: 1.9s;
+    animation-iteration-count: infinite;
+}
+
+@keyframes color_change_1_4 {
+    0% {
+        background-color: red;
+    }
+
+    70% {
+        background-color: red;
+    }
+
+    100% {
+        background-color: rgb(85, 232, 85);
+    }
+}
+
+.FW_1_6_1 {
+    animation-name: color_change_1_4;
+    animation-duration: 1.6s;
+    animation-iteration-count: infinite;
+}
+
+@keyframes color_change_1_4 {
+    0% {
+        background-color: red;
+    }
+
+    40% {
+        background-color: red;
+    }
+
+    60% {
+        background-color: blue;
+    }
+
+    80% {
+        background-color: red;
+    }
+}
+
+.FW_0_2 {
+    animation-name: color_change_0_2;
+    animation-duration: 1.2s;
+    animation-iteration-count: infinite;
+}
+
+@keyframes color_change_0_2 {
+    0% {
+        background-color: rgb(30, 30, 15);
+    }
+
+    25% {
+        background-color: rgb(227, 227, 140);
+    }
+
+    95% {
+        background-color: rgb(227, 227, 140);
+    }
+}
+
+.FW_0_2_0 {
+    animation-name: color_change_0_2;
+    animation-duration: 1.5s;
+    animation-iteration-count: infinite;
+}
+
+@keyframes color_change_0_2 {
+    0% {
+        background-color: rgb(30, 30, 15);
+    }
+
+    20% {
+        background-color: rgb(227, 227, 140);
+    }
+
+    80% {
+        background-color: rgb(227, 227, 140);
+    }
+
+    100% {
+        background-color: rgb(30, 30, 15);
+    }
+}
+
+.FW_02,
+.FL_E3 {
+    background-color: rgb(245, 245, 202);
+}
+
+.FW_02_1 {
+    animation-name: color_change_02_1;
+    animation-duration: 2.4s;
+    animation-iteration-count: infinite;
+}
+
+@keyframes color_change_02_1 {
+    0% {
+        background-color: rgb(245, 245, 202);
+    }
+
+    4% {
+        background-color: black;
+    }
+
+    8% {
+        background-color: rgb(245, 245, 202);
+    }
+
+    12% {
+        background-color: black;
+    }
+
+    16% {
+        background-color: rgb(245, 245, 202);
+    }
+
+    20% {
+        background-color: black;
+    }
+
+    24% {
+        background-color: rgb(245, 245, 202);
+    }
+
+    28% {
+        background-color: black;
+    }
+
+    32% {
+        background-color: rgb(245, 245, 202);
+    }
+
+    36% {
+        background-color: black;
+    }
+
+    40% {
+        background-color: rgb(245, 245, 202);
+    }
+
+    44% {
+        background-color: black;
+    }
+
+    48% {
+        background-color: rgb(245, 245, 202);
+    }
+
+    52% {
+        background-color: black;
+    }
+
+    56% {
+        background-color: rgb(245, 245, 202);
+    }
+
+    60% {
+        background-color: black;
+    }
+
+    64% {
+        background-color: rgb(245, 245, 202);
+    }
+
+    68% {
+        background-color: black;
+    }
+
+    72% {
+        background-color: rgb(245, 245, 202);
+    }
+
+    76% {
+        background-color: black;
+    }
+
+    80% {
+        background-color: rgb(245, 245, 202);
+    }
+
+    84% {
+        background-color: black;
+    }
+
+    88% {
+        background-color: rgb(245, 245, 202);
+    }
+
+    92% {
+        background-color: black;
+    }
+
+    96% {
+        background-color: rgb(245, 245, 202);
+    }
+
+    100% {
+        background-color: black;
+    }
+}
+
+.FW_02 {
+    background-color: rgb(245, 245, 202);
+}
+
+.FW_2 {
+    background-color: rgb(227, 227, 140);
+}
+
+.FW_2_3_0 {
+    animation-name: color_change_2_3_0;
+    animation-duration: 3.6s;
+    animation-iteration-count: infinite;
+}
+
+@keyframes color_change_2_3_0 {
+    0% {
+        background-color: rgb(227, 227, 140);
+    }
+
+    40% {
+        background-color: orange;
+    }
+
+    64% {
+        background-color: orange;
+    }
+
+    68% {
+        background-color: black;
+    }
+
+    72% {
+        background-color: orange;
+    }
+
+    76% {
+        background-color: black;
+    }
+
+    80% {
+        background-color: orange;
+    }
+
+    84% {
+        background-color: black;
+    }
+
+    88% {
+        background-color: orange;
+    }
+
+    92% {
+        background-color: black;
+    }
+
+    96% {
+        background-color: orange;
+    }
+
+    100% {
+        background-color: black;
+    }
+}
+
+.FW_3,
+.FL_E2 {
+    background-color: orange;
+}
+
+.FW_04 {
+    background-color: rgb(153, 236, 153);
+}
+
+.FW_4,
+.FL_E4 {
+    background-color: rgb(85, 232, 85);
+}
+
+.FW_42 {
+    animation-name: color_change_42;
+    animation-duration: 0.5s;
+    animation-iteration-count: infinite;
+}
+
+@keyframes color_change_42 {
+    0% {
+        background-color: rgb(85, 232, 85);
+    }
+
+    25% {
+        background-color: rgb(180, 241, 180);
+    }
+
+    75% {
+        background-color: rgb(85, 232, 85);
+    }
+}
+
+.FW_5,
+.FL_E7 {
+    background-color: rgb(177, 54, 177)
+}
+
+.FW_0_5_6 {
+    animation-name: color_change_0_5_6;
+    animation-duration: 1.6s;
+    animation-iteration-count: infinite;
+}
+
+@keyframes color_change_0_5_6 {
+    0% {
+        background-color: rgb(245, 245, 202);
+    }
+
+    25% {
+        background-color: rgb(177, 54, 177);
+    }
+
+    50% {
+        background-color: blue;
+    }
+}
+
+.FW_0_56 {
+    animation-name: color_change_56;
+    animation-duration: 1.6s;
+    animation-iteration-count: infinite;
+}
+
+@keyframes color_change_56 {
+    0% {
+        background-color: rgb(245, 245, 202);
+    }
+
+    25% {
+        background-color: rgb(177, 54, 177);
+    }
+
+    50% {
+        background-color: blue;
+    }
+}
+
+.FW_6,
+.FL_E6 {
+    background-color: blue
+}
+
+.FW_1_6 {
+    animation-name: color_change_1_6;
+    animation-duration: 1.9s;
+    animation-iteration-count: infinite;
+}
+
+@keyframes color_change_1_6 {
+    0% {
+        background-color: red;
+    }
+
+    80% {
+        background-color: blue;
+    }
+}
+
+.FL_E5 {
+    background-color: rgb(83, 199, 238)
+}
+
+.FL_1 {
+    background-color: rgb(58, 144, 172)
+}
+
+.FL_1_B {
+    background-color: rgb(0, 0, 0)
+}
+
+.FL_1_91 {
+    animation-name: color_change_1_91;
+    animation-duration: 3s;
+    animation-iteration-count: infinite;
+}
+
+@keyframes color_change_1_91 {
+    0% {
+        background-color: rgb(58, 144, 172)
+    }
+
+    40% {
+        background-color: rgb(58, 144, 172)
+    }
+
+    56% {
+        background-color: rgb(0, 0, 0)
+    }
+
+    62% {
+        background-color: rgb(0, 0, 0)
+    }
+
+    78% {
+        background-color: rgb(58, 144, 172)
+    }
+
+    100% {
+        background-color: rgb(58, 144, 172)
+    }
+}
+
+.FL_1_92 {
+    animation-name: color_change_1_92;
+    animation-duration: 3s;
+    animation-iteration-count: infinite;
+}
+
+@keyframes color_change_1_92 {
+    0% {
+        background-color: rgb(58, 144, 172)
+    }
+
+    20% {
+        background-color: rgb(58, 144, 172)
+    }
+
+    36% {
+        background-color: rgb(0, 0, 0)
+    }
+
+    42% {
+        background-color: rgb(0, 0, 0)
+    }
+
+    58% {
+        background-color: rgb(58, 144, 172)
+    }
+
+    100% {
+        background-color: rgba(58, 144, 172)
+    }
+}
+
+.FL_1_93 {
+    animation-name: color_change_1_93;
+    animation-duration: 3s;
+    animation-iteration-count: infinite;
+}
+
+@keyframes color_change_1_93 {
+    0% {
+        background-color: rgb(58, 144, 172)
+    }
+
+    16% {
+        background-color: rgb(0, 0, 0)
+    }
+
+    22% {
+        background-color: rgb(0, 0, 0)
+    }
+
+    38% {
+        background-color: rgb(58, 144, 172)
+    }
+
+    100% {
+        background-color: rgba(58, 144, 172)
+    }
+}
+
+.FL_1_T {
+    animation-name: color_change_1_T;
+    animation-duration: 0.2s;
+    animation-iteration-count: infinite;
+}
+
+@keyframes color_change_1_T {
+    0% {
+        background-color: rgb(58, 144, 172)
+    }
+
+    50% {
+        background-color: rgb(11, 23, 27)
+    }
+
+    100% {
+        background-color: rgba(58, 144, 172)
+    }
+}
+
+.FL_D_1 {
+    background-color: rgb(114, 215, 130);
+}
+
+.FL_D_2 {
+    background-color: red;
+}
+
+.FL_D_3 {
+    background-color: orange;
+}
+
+.FL_D_4 {
+    background-color: rgb(58, 144, 172)
+}
+
+.FL_T {
+    background-color: rgb(210, 189, 30);
+}
+
+.FL_E {
+    background-color: rgb(114, 215, 130);
+}
+
+.HNY_0 {
+    color: rgb(85, 232, 85);
+}
+
+.HNY_1 {
+    color: rgb(83, 199, 238);
+}
+
+.HNY_2 {
+    animation-name: HNY_2;
+    animation-duration: 30s;
+    animation-iteration-count: infinite;
+}
+
+@keyframes HNY_2 {
+    0% {
+        color: rgb(83, 199, 238)
+    }
+
+    20% {
+        color: rgb(83, 199, 238)
+    }
+
+    22.67% {
+        color: red
+    }
+
+    25% {
+        color: red
+    }
+
+    30% {
+        color: orange
+    }
+
+    31.67% {
+        color: rgb(114, 215, 130)
+    }
+
+    42% {
+        color: rgb(83, 199, 238)
+    }
+
+    45.83% {
+        color: rgb(54, 104, 230)
+    }
+
+    49.33% {
+        color: red
+    }
+
+    50.83% {
+        color: red
+    }
+
+    55.83% {
+        color: orange
+    }
+
+    57.5% {
+        color: rgb(114, 215, 130)
+    }
+
+    67.83% {
+        color: rgb(83, 199, 238)
+    }
+
+    71.67% {
+        color: rgb(54, 104, 230)
+    }
+
+    75.16% {
+        color: red
+    }
+
+    76.67% {
+        color: red
+    }
+
+    81.67% {
+        color: orange
+    }
+
+    83.33% {
+        color: rgb(114, 215, 130)
+    }
+
+    93.67% {
+        color: rgb(83, 199, 238)
+    }
+
+    99.5% {
+        color: rgb(54, 104, 230)
+    }
+
+    100% {
+        color: red
+    }
+}
+
+.Start11 {
+    display: inline-block;
+    width: 560px;
+    height: 80px;
+    background-color: rgb(23, 23, 23);
+    color: rgb(176, 118, 78);
+    font-size: 50px;
+    font-weight: bold;
+    font-family: 'Times New Roman'
+}
+
+#homepage {
+    position: absolute;
+    left: 1919px;
+    top: 1223px;
+    background-color: rgb(23, 23, 23);
+    color: rgb(176, 118, 78);
+    font-size: 45px;
+    font-family: Palatrino Lintype;
+    font-weight: bold;
+    padding: 10px;
+    text-align: center;
+    width: 500px;
+    height: 80px;
+}
+
+#homepage:hover {
+    background-color: rgb(66, 66, 66);
+    color: rgba(198, 169, 129);
+}
+
+#Start11:hover {
+    background-color: rgb(66, 66, 66);
+    color: rgba(198, 169, 129);
+}
+
+#F9_HNY {
+    width: 50px;
+    height: 11px;
+    text-align: center;
+    font-size: 40px;
+    font-weight: bolder;
+    position: absolute;
+}
+
+#F9_T {
+    width: 32px;
+    height: 12px;
+    border: 1px solid rgb(56, 56, 56);
+    border-radius: 5px;
+    position: absolute;
+}
+
+#F9_S,
+#F9_E,
+#F9_N,
+#F9_W {
+    width: 66px;
+    height: 18px;
+    border: 1px solid rgb(56, 56, 56);
+    border-radius: 5px;
+    position: absolute;
+}
+
+#F9_D_1,
+#F9_D_2,
+#F9_D_3,
+#F9_D_4,
+#F9_D_5 {
+    width: 50px;
+    height: 11px;
+    border: 1px solid rgb(56, 56, 56);
+    border-radius: 5px;
+    position: absolute;
+    z-index: 0;
+}
+
+#F8_S_8,
+#F8_E_8,
+#F8_N_8,
+#F8_W_8,
+#F7_S_8,
+#F7_E_8,
+#F7_N_8,
+#F7_W_8,
+#F6_S_8,
+#F6_E_8,
+#F6_N_8,
+#F6_W_8,
+#F5_S_8,
+#F5_E_8,
+#F5_N_8,
+#F5_W_8,
+#F4_S_8,
+#F4_E_8,
+#F4_N_8,
+#F4_W_8,
+#F3_S_8,
+#F3_E_8,
+#F3_N_8,
+#F3_W_8,
+#F2_S_8,
+#F2_E_8,
+#F2_N_8,
+#F2_W_8,
+#F1_S_8,
+#F1_E_8,
+#F1_N_8,
+#F1_W_8 {
+    width: 40px;
+    height: 18px;
+    border: 1px solid rgb(56, 56, 56);
+    border-radius: 5px;
+    position: absolute;
+}
+
+#F8_S_4,
+#F8_E_4,
+#F8_N_4,
+#F8_W_4,
+#F7_S_4,
+#F7_E_4,
+#F7_N_4,
+#F7_W_4,
+#F6_S_4,
+#F6_E_4,
+#F6_N_4,
+#F6_W_4,
+#F5_S_4,
+#F5_E_4,
+#F5_N_4,
+#F5_W_4,
+#F4_S_4,
+#F4_E_4,
+#F4_N_4,
+#F4_W_4,
+#F3_S_4,
+#F3_E_4,
+#F3_N_4,
+#F3_W_4,
+#F2_S_4,
+#F2_E_4,
+#F2_N_4,
+#F2_W_4,
+#F1_S_4,
+#F1_E_4,
+#F1_N_4,
+#F1_W_4 {
+    width: 36px;
+    height: 17px;
+    border: 1px solid rgb(56, 56, 56);
+    border-radius: 5px;
+    position: absolute;
+}
+
+#F71_S_1,
+#F71_S_2,
+#F71_S_3,
+#F71_E_1,
+#F71_E_2,
+#F71_E_3,
+#F71_N_1,
+#F71_N_2,
+#F71_N_3,
+#F71_W_1,
+#F71_W_2,
+#F71_W_3,
+#F61_S_1,
+#F61_S_2,
+#F61_S_3,
+#F61_E_1,
+#F61_E_2,
+#F61_E_3,
+#F61_N_1,
+#F61_N_2,
+#F61_N_3,
+#F61_W_1,
+#F61_W_2,
+#F61_W_3,
+#F51_S_1,
+#F51_S_2,
+#F51_S_3,
+#F51_E_1,
+#F51_E_2,
+#F51_E_3,
+#F51_N_1,
+#F51_N_2,
+#F51_N_3,
+#F51_W_1,
+#F51_W_2,
+#F51_W_3,
+#F41_S_1,
+#F41_S_2,
+#F41_S_3,
+#F41_E_1,
+#F41_E_2,
+#F41_E_3,
+#F41_N_1,
+#F41_N_2,
+#F41_N_3,
+#F41_W_1,
+#F41_W_2,
+#F41_W_3,
+#F31_S_1,
+#F31_S_2,
+#F31_S_3,
+#F31_E_1,
+#F31_E_2,
+#F31_E_3,
+#F31_N_1,
+#F31_N_2,
+#F31_N_3,
+#F31_W_1,
+#F31_W_2,
+#F31_W_3,
+#F21_S_1,
+#F21_S_2,
+#F21_S_3,
+#F21_E_1,
+#F21_E_2,
+#F21_E_3,
+#F21_N_1,
+#F21_N_2,
+#F21_N_3,
+#F21_W_1,
+#F21_W_2,
+#F21_W_3,
+#F11_S_1,
+#F11_S_2,
+#F11_S_3,
+#F11_E_1,
+#F11_E_2,
+#F11_E_3,
+#F11_N_1,
+#F11_N_2,
+#F11_N_3,
+#F11_W_1,
+#F11_W_2,
+#F11_W_3 {
+    width: 22px;
+    height: 14px;
+    border: 1px solid rgb(56, 56, 56);
+    border-radius: 5px;
+    position: absolute;
+}
+
+#F8_S_1,
+#F8_S_2,
+#F8_S_3,
+#F8_S_5,
+#F8_S_6,
+#F8_S_7,
+#F8_E_1,
+#F8_E_2,
+#F8_E_3,
+#F8_E_5,
+#F8_E_6,
+#F8_E_7,
+#F8_N_1,
+#F8_N_2,
+#F8_N_3,
+#F8_N_5,
+#F8_N_6,
+#F8_N_7,
+#F8_W_1,
+#F8_W_2,
+#F8_W_3,
+#F8_W_5,
+#F8_W_6,
+#F8_W_7,
+#F7_S_1,
+#F7_S_2,
+#F7_S_3,
+#F7_S_5,
+#F7_S_6,
+#F7_S_7,
+#F7_E_1,
+#F7_E_2,
+#F7_E_3,
+#F7_E_5,
+#F7_E_6,
+#F7_E_7,
+#F7_N_1,
+#F7_N_2,
+#F7_N_3,
+#F7_N_5,
+#F7_N_6,
+#F7_N_7,
+#F7_W_1,
+#F7_W_2,
+#F7_W_3,
+#F7_W_5,
+#F7_W_6,
+#F7_W_7,
+#F6_S_1,
+#F6_S_2,
+#F6_S_3,
+#F6_S_5,
+#F6_S_6,
+#F6_S_7,
+#F6_E_1,
+#F6_E_2,
+#F6_E_3,
+#F6_E_5,
+#F6_E_6,
+#F6_E_7,
+#F6_N_1,
+#F6_N_2,
+#F6_N_3,
+#F6_N_5,
+#F6_N_6,
+#F6_N_7,
+#F6_W_1,
+#F6_W_2,
+#F6_W_3,
+#F6_W_5,
+#F6_W_6,
+#F6_W_7,
+#F5_S_1,
+#F5_S_2,
+#F5_S_3,
+#F5_S_5,
+#F5_S_6,
+#F5_S_7,
+#F5_E_1,
+#F5_E_2,
+#F5_E_3,
+#F5_E_5,
+#F5_E_6,
+#F5_E_7,
+#F5_N_1,
+#F5_N_2,
+#F5_N_3,
+#F5_N_5,
+#F5_N_6,
+#F5_N_7,
+#F5_W_1,
+#F5_W_2,
+#F5_W_3,
+#F5_W_5,
+#F5_W_6,
+#F5_W_7,
+#F4_S_1,
+#F4_S_2,
+#F4_S_3,
+#F4_S_5,
+#F4_S_6,
+#F4_S_7,
+#F4_E_1,
+#F4_E_2,
+#F4_E_3,
+#F4_E_5,
+#F4_E_6,
+#F4_E_7,
+#F4_N_1,
+#F4_N_2,
+#F4_N_3,
+#F4_N_5,
+#F4_N_6,
+#F4_N_7,
+#F4_W_1,
+#F4_W_2,
+#F4_W_3,
+#F4_W_5,
+#F4_W_6,
+#F4_W_7,
+#F3_S_1,
+#F3_S_2,
+#F3_S_3,
+#F3_S_5,
+#F3_S_6,
+#F3_S_7,
+#F3_E_1,
+#F3_E_2,
+#F3_E_3,
+#F3_E_5,
+#F3_E_6,
+#F3_E_7,
+#F3_N_1,
+#F3_N_2,
+#F3_N_3,
+#F3_N_5,
+#F3_N_6,
+#F3_N_7,
+#F3_W_1,
+#F3_W_2,
+#F3_W_3,
+#F3_W_5,
+#F3_W_6,
+#F3_W_7,
+#F2_S_1,
+#F2_S_2,
+#F2_S_3,
+#F2_S_5,
+#F2_S_6,
+#F2_S_7,
+#F2_E_1,
+#F2_E_2,
+#F2_E_3,
+#F2_E_5,
+#F2_E_6,
+#F2_E_7,
+#F2_N_1,
+#F2_N_2,
+#F2_N_3,
+#F2_N_5,
+#F2_N_6,
+#F2_N_7,
+#F2_W_1,
+#F2_W_2,
+#F2_W_3,
+#F2_W_5,
+#F2_W_6,
+#F2_W_7,
+#F1_S_1,
+#F1_S_2,
+#F1_S_3,
+#F1_S_5,
+#F1_S_6,
+#F1_S_7,
+#F1_E_1,
+#F1_E_2,
+#F1_E_3,
+#F1_E_5,
+#F1_E_6,
+#F1_E_7,
+#F1_N_1,
+#F1_N_2,
+#F1_N_3,
+#F1_N_5,
+#F1_N_6,
+#F1_N_7,
+#F1_W_1,
+#F1_W_2,
+#F1_W_3,
+#F1_W_5,
+#F1_W_6,
+#F1_W_7 {
+    width: 28px;
+    height: 14px;
+    border: 1px solid rgb(56, 56, 56);
+    border-radius: 5px;
+    position: absolute;
+}
