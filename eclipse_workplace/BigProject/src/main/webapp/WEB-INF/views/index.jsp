@@ -214,7 +214,7 @@
                 <div class="groupTitle">
                     <h3>最新消息</h3>
                 </div>
-                <a href="./Event.html" class="newsA">
+                <a href="<c:url value='/Event.html' />" class="newsA">
                     <div id="news1" class="newsCon">
                         <div class="newsImgCon">
                             <img class="newsImg" src="./image/2023聖誕節.jpg" alt="">
@@ -293,7 +293,7 @@
                     <div class="cityColV2 col-4">
                         <a href="<c:url value='/Favor' />" class="newsA">
                             <div class="cityDiv card">
-                                <img class="cityImg rounded card-img-top" src="./image/台中市.png">
+                                <img class="cityImg rounded card-img-top" src="<c:url value='/image/台中市.png' />">
                                 <div class="card-img-overlay">
                                     <h3 class="card-title">台中市</h3>
                                 </div>
@@ -303,7 +303,7 @@
                     <div class="cityColV2 col-4">
                         <a href="<c:url value='/Favor' />" class="newsA">
                             <div class="cityDiv card">
-                                <img class="cityImg rounded card-img-top" src="./image/台南市.png">
+                                <img class="cityImg rounded card-img-top" src="<c:url value='/image/台南市.png' />">
                                 <div class="card-img-overlay">
                                     <h3 class="card-title">台南市</h3>
                                 </div>
@@ -313,7 +313,7 @@
                     <div class="cityColV2 col-4">
                         <a href="<c:url value='/Favor' />" class="newsA">
                             <div class="cityDiv card">
-                                <img class="cityImg rounded card-img-top" src="./image/高雄市.png">
+                                <img class="cityImg rounded card-img-top" src="<c:url value='/image/高雄市.png' />">
                                 <div class="card-img-overlay">
                                     <h3 class="card-title">高雄市</h3>
                                 </div>
