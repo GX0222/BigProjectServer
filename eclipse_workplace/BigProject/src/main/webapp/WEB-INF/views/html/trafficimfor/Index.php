@@ -34,7 +34,7 @@
     <link rel="stylesheet" href="../Tools/Color.css">
     <!-- Footer.css -->
     <link rel="stylesheet" href="../Tools/footer.css">
-    <link rel="stylesheet" href="../css/thsrc.css">
+    <link rel="stylesheet" href="../css/train.css">
 
     <style>
         body {
@@ -392,6 +392,8 @@ $conn->close();
             border: 0.2vw solid rgb(88, 34, 8);
             background-color: rgb(37, 111, 160);
             color: rgb(20, 21, 111);
+            box-shadow: 0 0 6px rgba(0, 0, 0, .8);
+        
         }
 
     </style>
@@ -474,135 +476,139 @@ $conn->close();
                                 <div class="cityCol_h col-12 col-md-5">
                                     <a target="_blank" href="https://www.thsrc.com.tw/">
                                         <div class="cityDiv card">
-                                            <img class="cityImgV3 rounded card-img-top" src="../image/高鐵.jpg">
+                                            <img class="cityImgV3 rounded card-img-top" src="../image/高鐵-1.jpg">
                                             <div class="card-img-overlay">
                                                 <h3 class="card-title">高鐵</h3>
                                             </div>
                                         </div>
                                     </a>
                                 </div>
-                                <div class="cityCol col-12 col-md-7" style="text-align: center; font-size: 2vw;">
-                                    <div>
-                                        台北車站 高鐵列車即時動態
+                                <div class="row col-12 col-md-7 justify-content-center">
+                                    <div class="cityCol col-8 col-md-12" style="text-align: center; font-size: 2vw;">
+                                        <a href="./thsrc/" style="text-decoration:none; color:black;">
+                                            <div>
+                                                台北車站 高鐵列車即時動態
+                                            </div>
+                                            <div style="margin-top: 2vw; font-size: 1.8vw;">
+                                                南下列車
+                                            </div>
+                                            <table style="width: 100%; font-size: 1.7vw;">
+                                                <thead>
+                                                    <tr class="row">
+                                                        <th class="col-2 thsrc_h">
+                                                            車次
+                                                        </th>
+                                                        <th class="col-3 thsrc_h">
+                                                            開往
+                                                        </th>
+                                                        <th class="col-4 thsrc_h">
+                                                            開車時間
+                                                        </th>
+                                                        <th class="col-3 thsrc_h">
+                                                            列車狀態
+                                                        </th>
+                                                    </tr>
+                                                </thead>
+                                                <tbody>
+                                                    <tr class="row" style="margin-top: 0vw;">
+                                                        <td class="col-2 flip_11 down_11" id="flip_11">
+                                                            <span class="digital_11 front_11 number_11_45"></span>
+                                                            <span class="digital_11 back_11 number_11_46"></span>
+                                                        </td>
+                                                        <td class="col-3 flip_12 down_12" id="flip_12">
+                                                            <span class="digital_12 front_12 number_12_1"></span>
+                                                            <span class="digital_12 back_12 number_12_2"></span>
+                                                        </td>
+                                                        <td class="col-4 flip_13 down_13" id="flip_13">
+                                                            <span class="digital_13 front_13 number_13_1"></span>
+                                                            <span class="digital_13 back_13 number_13_2"></span>
+                                                        </td>
+                                                        <td class="col-3 flip_14 down_14" id="flip_14">
+                                                            <span class="digital_14 front_14 number_14_1"></span>
+                                                            <span class="digital_14 back_14 number_14_2"></span>
+                                                        </td>
+                                                    </tr>
+                                                    <tr class="row" style="margin-top: 0vw;">
+                                                        <td class="col-2 flip_21 down_21" id="flip_21">
+                                                            <span class="digital_21 front_21 number_21_15"></span>
+                                                            <span class="digital_21 back_21 number_21_16"></span>
+                                                        </td>
+                                                        <td class="col-3 flip_22 down_22" id="flip_22">
+                                                            <span class="digital_22 front_22 number_22_1"></span>
+                                                            <span class="digital_22 back_22 number_22_2"></span>
+                                                        </td>
+                                                        <td class="col-4 flip_23 down_23" id="flip_23">
+                                                            <span class="digital_23 front_23 number_23_2"></span>
+                                                            <span class="digital_23 back_23 number_23_3"></span>
+                                                        </td>
+                                                        <td class="col-3 flip_24 down_24" id="flip_24">
+                                                            <span class="digital_24 front_24 number_24_1"></span>
+                                                            <span class="digital_24 back_24 number_24_2"></span>
+                                                        </td>
+                                                    </tr>
+                                                </tbody>
+                                            </table>
+                                            <div style="margin-top: 2vw;">
+                                                北上列車
+                                            </div>
+                                            <table style="width: 100%; font-size: 1.5vw;">
+                                                <thead>
+                                                    <tr class="row">
+                                                        <th class="col-2 thsrc_h">
+                                                            車次
+                                                        </th>
+                                                        <th class="col-3 thsrc_h">
+                                                            開往
+                                                        </th>
+                                                        <th class="col-4 thsrc_h">
+                                                            開車時間
+                                                        </th>
+                                                        <th class="col-3 thsrc_h">
+                                                            列車狀態
+                                                        </th>
+                                                    </tr>
+                                                </thead>
+                                                <tbody>
+                                                    <tr class="row" style="margin-top: 0vw;">
+                                                        <td class="col-2 flip_31 down_31" id="flip_31">
+                                                            <span class="digital_31 front_31 number_31_60"></span>
+                                                            <span class="digital_31 back_31 number_31_61"></span>
+                                                        </td>
+                                                        <td class="col-3 flip_32 down_32" id="flip_32">
+                                                            <span class="digital_32 front_32 number_32_1"></span>
+                                                            <span class="digital_32 back_32 number_32_2"></span>
+                                                        </td>
+                                                        <td class="col-4 flip_33 down_33" id="flip_33">
+                                                            <span class="digital_33 front_33 number_33_1"></span>
+                                                            <span class="digital_33 back_33 number_33_2"></span>
+                                                        </td>
+                                                        <td class="col-3 flip_34 down_34" id="flip_34">
+                                                            <span class="digital_34 front_34 number_34_1"></span>
+                                                            <span class="digital_34 back_34 number_34_2"></span>
+                                                        </td>
+                                                    </tr>
+                                                    <tr class="row" style="margin-top: 0vw;">
+                                                        <td class="col-2 flip_41 down_41" id="flip_41">
+                                                            <span class="digital_41 front_41 number_41_32"></span>
+                                                            <span class="digital_41 back_41 number_41_33"></span>
+                                                        </td>
+                                                        <td class="col-3 flip_42 down_42" id="flip_42">
+                                                            <span class="digital_42 front_42 number_42_2"></span>
+                                                            <span class="digital_42 back_42 number_42_3"></span>
+                                                        </td>
+                                                        <td class="col-4 flip_43 down_43" id="flip_43">
+                                                            <span class="digital_43 front_43 number_43_2"></span>
+                                                            <span class="digital_43 back_43 number_43_3"></span>
+                                                        </td>
+                                                        <td class="col-3 flip_44 down_44" id="flip_44">
+                                                            <span class="digital_44 front_44 number_44_1"></span>
+                                                            <span class="digital_44 back_44 number_44_2"></span>
+                                                        </td>
+                                                    </tr>
+                                                </tbody>
+                                            </table>
+                                        </a>
                                     </div>
-                                    <div style="margin-top: 2vw; font-size: 1.8vw;">
-                                        南下列車
-                                    </div>
-                                    <table style="width: 100%; font-size: 1.7vw;">
-                                        <thead>
-                                            <tr class="row">
-                                                <th class="col-2 thsrc_h">
-                                                    車次
-                                                </th>
-                                                <th class="col-3 thsrc_h">
-                                                    開往
-                                                </th>
-                                                <th class="col-4 thsrc_h">
-                                                    開車時間
-                                                </th>
-                                                <th class="col-3 thsrc_h">
-                                                    列車狀態
-                                                </th>
-                                            </tr>
-                                        </thead>
-                                        <tbody>
-                                            <tr class="row" style="margin-top: 0vw;">
-                                                <td class="col-2 flip_11 down_11" id="flip_11">
-                                                    <span class="digital_11 front_11 number_11_45"></span>
-                                                    <span class="digital_11 back_11 number_11_46"></span>
-                                                </td>
-                                                <td class="col-3 flip_12 down_12" id="flip_12">
-                                                    <span class="digital_12 front_12 number_12_1"></span>
-                                                    <span class="digital_12 back_12 number_12_2"></span>
-                                                </td>
-                                                <td class="col-4 flip_13 down_13" id="flip_13">
-                                                    <span class="digital_13 front_13 number_13_1"></span>
-                                                    <span class="digital_13 back_13 number_13_2"></span>
-                                                </td>
-                                                <td class="col-3 flip_14 down_14" id="flip_14">
-                                                    <span class="digital_14 front_14 number_14_1"></span>
-                                                    <span class="digital_14 back_14 number_14_2"></span>
-                                                </td>
-                                            </tr>
-                                            <tr class="row" style="margin-top: 0vw;">
-                                                <td class="col-2 flip_21 down_21" id="flip_21">
-                                                    <span class="digital_21 front_21 number_21_15"></span>
-                                                    <span class="digital_21 back_21 number_21_16"></span>
-                                                </td>
-                                                <td class="col-3 flip_22 down_22" id="flip_22">
-                                                    <span class="digital_22 front_22 number_22_1"></span>
-                                                    <span class="digital_22 back_22 number_22_2"></span>
-                                                </td>
-                                                <td class="col-4 flip_23 down_23" id="flip_23">
-                                                    <span class="digital_23 front_23 number_23_2"></span>
-                                                    <span class="digital_23 back_23 number_23_3"></span>
-                                                </td>
-                                                <td class="col-3 flip_24 down_24" id="flip_24">
-                                                    <span class="digital_24 front_24 number_24_1"></span>
-                                                    <span class="digital_24 back_24 number_24_2"></span>
-                                                </td>
-                                            </tr>
-                                        </tbody>
-                                    </table>
-                                    <div style="margin-top: 2vw;">
-                                        北上列車
-                                    </div>
-                                    <table style="width: 100%; font-size: 1.5vw;">
-                                        <thead>
-                                            <tr class="row">
-                                                <th class="col-2 thsrc_h">
-                                                    車次
-                                                </th>
-                                                <th class="col-3 thsrc_h">
-                                                    開往
-                                                </th>
-                                                <th class="col-4 thsrc_h">
-                                                    開車時間
-                                                </th>
-                                                <th class="col-3 thsrc_h">
-                                                    列車狀態
-                                                </th>
-                                            </tr>
-                                        </thead>
-                                        <tbody>
-                                            <tr class="row" style="margin-top: 0vw;">
-                                                <td class="col-2 flip_31 down_31" id="flip_31">
-                                                    <span class="digital_31 front_31 number_31_60"></span>
-                                                    <span class="digital_31 back_31 number_31_61"></span>
-                                                </td>
-                                                <td class="col-3 flip_32 down_32" id="flip_32">
-                                                    <span class="digital_32 front_32 number_32_1"></span>
-                                                    <span class="digital_32 back_32 number_32_2"></span>
-                                                </td>
-                                                <td class="col-4 flip_33 down_33" id="flip_33">
-                                                    <span class="digital_33 front_33 number_33_1"></span>
-                                                    <span class="digital_33 back_33 number_33_2"></span>
-                                                </td>
-                                                <td class="col-3 flip_34 down_34" id="flip_34">
-                                                    <span class="digital_34 front_34 number_34_1"></span>
-                                                    <span class="digital_34 back_34 number_34_2"></span>
-                                                </td>
-                                            </tr>
-                                            <tr class="row" style="margin-top: 0vw;">
-                                                <td class="col-2 flip_41 down_41" id="flip_41">
-                                                    <span class="digital_41 front_41 number_41_32"></span>
-                                                    <span class="digital_41 back_41 number_41_33"></span>
-                                                </td>
-                                                <td class="col-3 flip_42 down_42" id="flip_42">
-                                                    <span class="digital_42 front_42 number_42_2"></span>
-                                                    <span class="digital_42 back_42 number_42_3"></span>
-                                                </td>
-                                                <td class="col-4 flip_43 down_43" id="flip_43">
-                                                    <span class="digital_43 front_43 number_43_2"></span>
-                                                    <span class="digital_43 back_43 number_43_3"></span>
-                                                </td>
-                                                <td class="col-3 flip_44 down_44" id="flip_44">
-                                                    <span class="digital_44 front_44 number_44_1"></span>
-                                                    <span class="digital_44 back_44 number_44_2"></span>
-                                                </td>
-                                            </tr>
-                                        </tbody>
-                                    </table>
                                 </div>
                             </div>
                             <hr>
@@ -610,149 +616,164 @@ $conn->close();
                                 <div class="cityCol_h col-12 col-md-5">
                                     <a target="_blank" href="https://www.railway.gov.tw/tra-tip-web/tip">
                                         <div class="cityDiv card">
-                                            <img class="cityImgV3 rounded card-img-top" src="../image/台鐵-1.jpg">
+                                            <img class="cityImgV3 rounded card-img-top" src="../image/台鐵-4.jpg">
                                             <div class="card-img-overlay">
                                                 <h3 class="card-title">台鐵</h3>
                                             </div>
                                         </div>
                                     </a>
                                 </div>
-                                <div class="cityCol col-12 col-md-7" style="text-align: center; font-size: 2vw;">
-                                    <div>
-                                        台北車站 台鐵列車即時動態
+                                <div class="row col-12 col-md-7 justify-content-center">
+                                    <div class="cityCol col-8 col-md-12" style="text-align: center; font-size: 2vw;">
+                                        <a href="./trc/" style="text-decoration:none; color:black;">
+                                            <div>
+                                                台北車站 台鐵列車即時動態
+                                            </div>
+                                            <div style="margin-top: 2vw; font-size: 1.8vw;">
+                                                南下列車
+                                            </div>
+                                            <table style="width: 100%; font-size: 1.7vw;">
+                                                <thead>
+                                                    <tr class="row">
+                                                        <th class="col-2 trc_h">
+                                                            車次
+                                                        </th>
+                                                        <th class="col-2 trc_h">
+                                                            車種
+                                                        </th>
+                                                        <th class="col-2 trc_h">
+                                                            開往
+                                                        </th>
+                                                        <th class="col-3 trc_h">
+                                                            開車時間
+                                                        </th>
+                                                        <th class="col-3 trc_h">
+                                                            列車狀態
+                                                        </th>
+                                                    </tr>
+                                                </thead>
+                                                <tbody>
+                                                    <tr class="row" style="margin-top: 0vw;">
+                                                        <td class="col-2 flip_51 down_51" id="flip_51">
+                                                            <span class="digital_51 front_51 number_51_1"></span>
+                                                            <span class="digital_51 back_51 number_51_2"></span>
+                                                        </td>
+                                                        <td class="col-2 flip_52 down_52" id="flip_52">
+                                                            <span class="digital_52 front_52 number_52_1"></span>
+                                                            <span class="digital_52 back_52 number_52_2"></span>
+                                                        </td>
+                                                        <td class="col-2 flip_53 down_53" id="flip_53">
+                                                            <span class="digital_53 front_53 number_53_1"></span>
+                                                            <span class="digital_53 back_53 number_53_2"></span>
+                                                        </td>
+                                                        <td class="col-3 flip_54 down_54" id="flip_54">
+                                                            <span class="digital_54 front_54 number_54_1"></span>
+                                                            <span class="digital_54 back_54 number_54_2"></span>
+                                                        </td>
+                                                        <td class="col-3 flip_55 down_55" id="flip_55">
+                                                            <span class="digital_55 front_55 number_55_1"></span>
+                                                            <span class="digital_55 back_55 number_55_2"></span>
+                                                        </td>
+                                                    </tr>
+                                                    <tr class="row" style="margin-top: 0vw;">
+                                                        <td class="col-2 flip_61 down_61" id="flip_61">
+                                                            <span class="digital_61 front_61 number_61_1"></span>
+                                                            <span class="digital_61 back_61 number_61_2"></span>
+                                                        </td>
+                                                        <td class="col-2 flip_62 down_62" id="flip_62">
+                                                            <span class="digital_62 front_62 number_62_1"></span>
+                                                            <span class="digital_62 back_62 number_62_2"></span>
+                                                        </td>
+                                                        <td class="col-2 flip_63 down_63" id="flip_63">
+                                                            <span class="digital_63 front_63 number_63_1"></span>
+                                                            <span class="digital_63 back_63 number_63_2"></span>
+                                                        </td>
+                                                        <td class="col-3 flip_64 down_64" id="flip_64">
+                                                            <span class="digital_64 front_64 number_64_1"></span>
+                                                            <span class="digital_64 back_64 number_64_2"></span>
+                                                        </td>
+                                                        <td class="col-3 flip_65 down_65" id="flip_65">
+                                                            <span class="digital_65 front_65 number_65_1"></span>
+                                                            <span class="digital_65 back_65 number_65_2"></span>
+                                                        </td>
+                                                    </tr>
+                                                </tbody>
+                                            </table>
+                                            <div style="margin-top: 2vw;">
+                                                北上列車
+                                            </div>
+                                            <table style="width: 100%; font-size: 1.5vw;">
+                                                <thead>
+                                                    <tr class="row">
+                                                        <th class="col-2 trc_h">
+                                                            車次
+                                                        </th>
+                                                        <th class="col-2 trc_h">
+                                                            車種
+                                                        </th>
+                                                        <th class="col-2 trc_h">
+                                                            開往
+                                                        </th>
+                                                        <th class="col-3 trc_h">
+                                                            開車時間
+                                                        </th>
+                                                        <th class="col-3 trc_h">
+                                                            列車狀態
+                                                        </th>
+                                                    </tr>
+                                                </thead>
+                                                <tbody>
+                                                    <tr class="row" style="margin-top: 0vw;">
+                                                        <td class="col-2 flip_71 down_71" id="flip_71">
+                                                            <span class="digital_71 front_71 number_71_1"></span>
+                                                            <span class="digital_71 back_71 number_71_2"></span>
+                                                        </td>
+                                                        <td class="col-2 flip_72 down_72" id="flip_72">
+                                                            <span class="digital_72 front_72 number_72_1"></span>
+                                                            <span class="digital_72 back_72 number_72_2"></span>
+                                                        </td>
+                                                        <td class="col-2 flip_73 down_73" id="flip_73">
+                                                            <span class="digital_73 front_73 number_73_1"></span>
+                                                            <span class="digital_73 back_73 number_73_2"></span>
+                                                        </td>
+                                                        <td class="col-3 flip_74 down_74" id="flip_74">
+                                                            <span class="digital_74 front_74 number_74_1"></span>
+                                                            <span class="digital_74 back_74 number_74_2"></span>
+                                                        </td>
+                                                        <td class="col-3 flip_75 down_75" id="flip_75">
+                                                            <span class="digital_75 front_75 number_75_1"></span>
+                                                            <span class="digital_75 back_75 number_75_2"></span>
+                                                        </td>
+                                                    </tr>
+                                                    <tr class="row" style="margin-top: 0vw;">
+                                                        <td class="col-2 flip_81 down_81" id="flip_81">
+                                                            <span class="digital_81 front_81 number_81_1"></span>
+                                                            <span class="digital_81 back_81 number_81_2"></span>
+                                                        </td>
+                                                        <td class="col-2 flip_82 down_82" id="flip_82">
+                                                            <span class="digital_82 front_82 number_82_1"></span>
+                                                            <span class="digital_82 back_82 number_82_2"></span>
+                                                        </td>
+                                                        <td class="col-2 flip_83 down_83" id="flip_83">
+                                                            <span class="digital_83 front_83 number_83_1"></span>
+                                                            <span class="digital_83 back_83 number_83_2"></span>
+                                                        </td>
+                                                        <td class="col-3 flip_84 down_84" id="flip_84">
+                                                            <span class="digital_84 front_84 number_84_1"></span>
+                                                            <span class="digital_84 back_84 number_84_2"></span>
+                                                        </td>
+                                                        <td class="col-3 flip_85 down_85" id="flip_85">
+                                                            <span class="digital_85 front_85 number_85_1"></span>
+                                                            <span class="digital_85 back_85 number_85_2"></span>
+                                                        </td>
+                                                    </tr>
+                                                </tbody>
+                                            </table>
+                                        </a>
                                     </div>
-                                    <div style="margin-top: 2vw; font-size: 1.8vw;">
-                                        南下列車
-                                    </div>
-                                    <table style="width: 100%; font-size: 1.7vw;">
-                                        <thead>
-                                            <tr class="row">
-                                                <th class="col-2 trc_h">
-                                                    車次
-                                                </th>
-                                                <th class="col-2 trc_h">
-                                                    車種
-                                                </th>
-                                                <th class="col-2 trc_h">
-                                                    開往
-                                                </th>
-                                                <th class="col-3 trc_h">
-                                                    開車時間
-                                                </th>
-                                                <th class="col-3 trc_h">
-                                                    列車狀態
-                                                </th>
-                                            </tr>
-                                        </thead>
-                                        <tbody>
-                                            <tr class="row" style="margin-top: 0vw;">
-                                                <td class="col-2 flip_51 down_51" id="flip_51">
-                                                    <span class="digital_51 front_51 number_51_1"></span>
-                                                    <span class="digital_51 back_51 number_51_2"></span>
-                                                </td>
-                                                <td class="col-3 flip_52 down_52" id="flip_52">
-                                                    <span class="digital_52 front_52 number_52_1"></span>
-                                                    <span class="digital_52 back_52 number_52_2"></span>
-                                                </td>
-                                                <td class="col-4 flip_53 down_53" id="flip_53">
-                                                    <span class="digital_53 front_53 number_53_1"></span>
-                                                    <span class="digital_53 back_53 number_53_2"></span>
-                                                </td>
-                                                <td class="col-3 flip_54 down_54" id="flip_54">
-                                                    <span class="digital_54 front_54 number_54_1"></span>
-                                                    <span class="digital_54 back_54 number_54_2"></span>
-                                                </td>
-                                            </tr>
-                                            <tr class="row" style="margin-top: 0vw;">
-                                                <td class="col-2 flip_61 down_61" id="flip_61">
-                                                    <span class="digital_61 front_61 number_61_1"></span>
-                                                    <span class="digital_61 back_61 number_61_2"></span>
-                                                </td>
-                                                <td class="col-3 flip_62 down_62" id="flip_62">
-                                                    <span class="digital_62 front_62 number_62_1"></span>
-                                                    <span class="digital_62 back_62 number_62_2"></span>
-                                                </td>
-                                                <td class="col-4 flip_63 down_63" id="flip_63">
-                                                    <span class="digital_63 front_63 number_63_1"></span>
-                                                    <span class="digital_63 back_63 number_63_2"></span>
-                                                </td>
-                                                <td class="col-3 flip_64 down_64" id="flip_64">
-                                                    <span class="digital_64 front_64 number_64_1"></span>
-                                                    <span class="digital_64 back_64 number_64_2"></span>
-                                                </td>
-                                            </tr>
-                                        </tbody>
-                                    </table>
-                                    <div style="margin-top: 2vw;">
-                                        北上列車
-                                    </div>
-                                    <table style="width: 100%; font-size: 1.5vw;">
-                                        <thead>
-                                            <tr class="row">
-                                                <th class="col-2 trc_h">
-                                                    車次
-                                                </th>
-                                                <th class="col-2 trc_h">
-                                                    車種
-                                                </th>
-                                                <th class="col-2 trc_h">
-                                                    開往
-                                                </th>
-                                                <th class="col-3 trc_h">
-                                                    開車時間
-                                                </th>
-                                                <th class="col-3 trc_h">
-                                                    列車狀態
-                                                </th>
-                                            </tr>
-                                        </thead>
-                                        <tbody>
-                                            <tr class="row" style="margin-top: 0vw;">
-                                                <td class="col-2 flip_71 down_71" id="flip_71">
-                                                    <span class="digital_71 front_71 number_71_1"></span>
-                                                    <span class="digital_71 back_71 number_71_2"></span>
-                                                </td>
-                                                <td class="col-3 flip1_72 down_72" id="flip_72">
-                                                    <span class="digital_72 front_72 number_72_1"></span>
-                                                    <span class="digital_72 back_72 number_72_2"></span>
-                                                </td>
-                                                <td class="col-4 flip1_73 down_73" id="flip_73">
-                                                    <span class="digital_73 front_73 number_73_1"></span>
-                                                    <span class="digital_73 back_73 number_73_2"></span>
-                                                </td>
-                                                <td class="col-3 flip1_74 down_74" id="flip_74">
-                                                    <span class="digital_74 front_74 number_74_1"></span>
-                                                    <span class="digital_74 back_74 number_74_2"></span>
-                                                </td>
-                                            </tr>
-                                            <tr class="row" style="margin-top: 0vw;">
-                                                <td class="col-2 flip_81 down_81" id="flip_81">
-                                                    <span class="digital_81 front_81 number_81_1"></span>
-                                                    <span class="digital_81 back_81 number_81_2"></span>
-                                                </td>
-                                                <td class="col-3 flip1_82 down_82" id="flip_82">
-                                                    <span class="digital_82 front_82 number_82_1"></span>
-                                                    <span class="digital_82 back_82 number_82_2"></span>
-                                                </td>
-                                                <td class="col-4 flip1_83 down_83" id="flip_83">
-                                                    <span class="digital_83 front_83 number_83_1"></span>
-                                                    <span class="digital_83 back_83 number_83_2"></span>
-                                                </td>
-                                                <td class="col-3 flip1_84 down_84" id="flip_84">
-                                                    <span class="digital_84 front_84 number_84_1"></span>
-                                                    <span class="digital_84 back_84 number_84_2"></span>
-                                                </td>
-                                            </tr>
-                                        </tbody>
-                                    </table>
                                 </div>
-                                <hr>
                             </div>
                         </div>
-
-
-
-
                         <!-- <div class="cityCol col-0 col-lg-4">
                         <a href="https://www.mvdis.gov.tw/" class="newsA">
                             <div class="cityDiv card">
@@ -764,13 +785,13 @@ $conn->close();
                         </a>
                     </div> -->
                     </div>
-
                 </div>
-                <div class="btn-con">
+                <div class="btn-con" style="display:none">
                     <button id="btn0">向下翻+1</button>
                     <button id="btn1">測試</button>
                 </div>
             </div>
+            <hr>
 
             <!-- ---------- -->
 
