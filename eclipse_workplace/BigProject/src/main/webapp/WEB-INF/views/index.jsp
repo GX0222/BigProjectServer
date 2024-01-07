@@ -1,5 +1,10 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
     pageEncoding="UTF-8"%>
+<%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c"%>
+
+
+
+
 <!DOCTYPE html>
 <html lang="en">
 
@@ -66,7 +71,7 @@
                 <div class="row m-0 p-0 h-100">
                     <div id="mynavbarCon" class="col-12 d-flex justify-content-between align-items-center">
                         <a href="<c:url value='/' />" class="navbar-brand" style="font-size:x-large;">
-                            <img src="./image/logo1228.png" alt="logo" width="65" height="50">
+                            <img src="<c:url value='/image/logo1228.png' />" alt="logo" width="65" height="50">
                         </a>
                         <div class="memberConMd d-flex">
                             <div class="nameCon">
@@ -123,7 +128,7 @@
         <div id="myOffcanvas" class="fixedDiv">
             <a class="btn btn-primary OffcanBtn" data-bs-toggle="offcanvas" href="#offcanvasExample" role="button"
                 aria-controls="offcanvasExample">
-                <img src="image/OffcanvasIcon.png" class="img-fluid">
+                <img src="<c:url value='/image/OffcanvasIcon.png"' /> class="img-fluid">
             </a>
         </div>
         <div class="offcanvas offcanvas-end" tabindex="-1" id="offcanvasExample"
@@ -176,35 +181,35 @@
                 <div class="col m-0 p-0">
                     <a href="<c:url value='/Favor' />" class="aa">
                         <div class="classIcon">
-                            <img src="./image/a011.png">
+                            <img src="<c:url value='/image/a011.png' />">
                         </div>
                     </a>
                 </div>
                 <div class="col m-0 p-0">
                     <a href="<c:url value='/Favor' />" class="aa">
                         <div class="classIcon">
-                            <img src="./image/a012.png">
+                            <img src="<c:url value='/image/a012.png' />">
                         </div>
                     </a>
                 </div>
                 <div class="col m-0 p-0">
                     <a href="<c:url value='/Favor' />" class="aa">
                         <div class="classIcon">
-                            <img src="./image/a013.png">
+                            <img src="<c:url value='/image/a013.png' />">
                         </div>
                     </a>
                 </div>
                 <div class="col m-0 p-0">
                     <a href="<c:url value='/Favor' />" class="aa">
                         <div class="classIcon">
-                            <img src="./image/a014.png">
+                            <img src="<c:url value='/image/a014.png' />">
                         </div>
                     </a>
                 </div>
                 <div class="col m-0 p-0">
                     <a href="../Ian/index.html" class="aa">
                         <div class="classIcon">
-                            <img src="./image/a015.png">
+                            <img src="<c:url value='/image/a015.png' />">
                         </div>
                     </a>
                 </div>
@@ -217,7 +222,7 @@
                 <a href="<c:url value='/Event.html' />" class="newsA">
                     <div id="news1" class="newsCon">
                         <div class="newsImgCon">
-                            <img class="newsImg" src="./image/2023聖誕節.jpg" alt="">
+                            <img class="newsImg" src="<c:url value='/image/2023聖誕節.jpg' />" alt="">
                         </div>
                         <div class="newsTextCon">
                             <div class="newsTextBgR">
@@ -238,7 +243,7 @@
                             </div>
                         </div>
                         <div class="newsImgCon">
-                            <img class="newsImg" src="./image/2023聖誕節.jpg" alt="">
+                            <img class="newsImg" src="<c:url value='/image/2023聖誕節.jpg' />" alt="">
                         </div>
                     </div>
                 </a>
