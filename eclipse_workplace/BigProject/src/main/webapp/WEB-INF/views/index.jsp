@@ -256,7 +256,7 @@
                             <div class="cityCol col-6">
                                 <a href="<c:url value='/Favor' />" class="newsA">
                                     <div class="cityDiv card">
-                                        <img class="cityImg rounded card-img-top" src="./image/台北市.png">
+                                        <img class="cityImg rounded card-img-top" src="<c:url value='/image/台北市.png' />">
                                         <div class="card-img-overlay">
                                             <h3 class="card-title">台北市</h3>
                                         </div>
@@ -265,9 +265,9 @@
                             </div>
 
                             <div class="cityCol col-6">
-                                <a href="/Favor" class="newsA">
+                                <a href="<c:url value='/Favor' />" class="newsA">
                                     <div class="cityDiv card">
-                                        <img class="cityImg rounded card-img-top" src="./image/新北市.png">
+                                        <img class="cityImg rounded card-img-top" src="<c:url value='/image/新北市.png' />">
                                         <div class="card-img-overlay">
                                             <h3 class="card-title">新北市</h3>
                                         </div>
@@ -277,9 +277,9 @@
                         </div>
                     </div>
                     <div class="cityCol col-0 col-lg-4">
-                        <a href="/Favor" class="newsA">
+                        <a href="<c:url value='/Favor' />" class="newsA">
                             <div class="cityDiv card">
-                                <img class="cityImgV2 rounded card-img-top" src="./image/桃園市.png">
+                                <img class="cityImgV2 rounded card-img-top" src="<c:url value='/image/桃園市.png' />">
                                 <div class="card-img-overlay">
                                     <h3 class="card-title">桃園市</h3>
                                 </div>
@@ -291,7 +291,7 @@
 
                 <div class="row justify-content-center m-0 p-0">
                     <div class="cityColV2 col-4">
-                        <a href="/Favor" class="newsA">
+                        <a href="<c:url value='/Favor' />" class="newsA">
                             <div class="cityDiv card">
                                 <img class="cityImg rounded card-img-top" src="./image/台中市.png">
                                 <div class="card-img-overlay">
@@ -301,7 +301,7 @@
                         </a>
                     </div>
                     <div class="cityColV2 col-4">
-                        <a href="/Favor" class="newsA">
+                        <a href="<c:url value='/Favor' />" class="newsA">
                             <div class="cityDiv card">
                                 <img class="cityImg rounded card-img-top" src="./image/台南市.png">
                                 <div class="card-img-overlay">
@@ -311,7 +311,7 @@
                         </a>
                     </div>
                     <div class="cityColV2 col-4">
-                        <a href="/Favor" class="newsA">
+                        <a href="<c:url value='/Favor' />" class="newsA">
                             <div class="cityDiv card">
                                 <img class="cityImg rounded card-img-top" src="./image/高雄市.png">
                                 <div class="card-img-overlay">

@@ -10,13 +10,13 @@ public class HomeController {
 
 	@GetMapping("/")
 	public String index(Model model) {
+		return "index";
+	}
 //		System.out.println("in indwx(), MHW = " + model.getAttribute("string"));
 //		System.out.println("in indwx(), MHWI = " + model.getAttribute("MHWI"));
 //		System.out.println("in indwx(), MHW2 = " + model.getAttribute("MHW2"));
 //		System.out.println("in indwx(), MHWI2 = " + model.getAttribute("MHWI2"));
 //		System.out.println("in indwx(), MHW23 = " + model.getAttribute("MHW23"));
-		return "index";
-	}
 
 //	@ModelAttribute("MHW")
 //	@ModelAttribute
