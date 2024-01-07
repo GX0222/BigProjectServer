@@ -34,13 +34,12 @@
     <link rel="stylesheet" href="../Tools/Color.css">
     <!-- Footer.css -->
     <link rel="stylesheet" href="../Tools/footer.css">
-    <link rel="stylesheet" href="../css/train.css">
+    <link rel="stylesheet" href="../Tools/train.css">
 
     <style>
         body {
             margin: 0px;
         }
-
         #newBG {
             width: calc(100% - 10px);
             margin: 5px auto;
@@ -48,21 +47,11 @@
             padding: 0px;
             /* border: solid 2px; */
         }
-
-        /* ============================================= */
-        .scrolled {
-            background-color: white;
-            /* box-shadow: 0 0 10px rgba(0, 0, 0, 0.1); */
-            border: 1px solid rgba(0, 0, 0, 0.1) !important;
-            /* 滾動高度超過 35vw 時的背景顏色 */
-        }
-
         .collapseCon {
             margin-left: auto;
             margin-right: 0px;
             /* background-color: aqua; */
         }
-
         .nameCon {
             margin: 0px;
             /* margin-right: 3px; */
@@ -73,7 +62,6 @@
             align-items: center;
             justify-content: center;
         }
-
         .memberConMd {
             margin: 0px;
             padding: 0px;
@@ -84,7 +72,6 @@
             justify-content: center;
             align-items: center;
         }
-
         .nameCon>a {
             height: 100%;
             aspect-ratio: 1/1;
@@ -93,7 +80,6 @@
             margin-right: 5px;
             padding: 0px;
         }
-
         .nameCon>a>img {
             height: 100%;
             aspect-ratio: 1/1;
@@ -103,7 +89,6 @@
         }
 
         /* ============================================= */
-
         div.groupTitle {
             width: 100%;
             margin: 0px;
@@ -114,82 +99,15 @@
             align-items: center;
             border-bottom: solid 0.5px rgba(0, 0, 0, 0.3);
         }
-
         div.groupTitle>h3 {
             margin: 0px;
             padding: 0px;
         }
 
-        div.homeCenter {
-            margin: 0px;
-            padding: 0px;
-            max-width: 1000px;
-            min-width: 500px;
-        }
-
-        div.classIcon {
-            margin: 5px;
-            padding: 0px;
-            /* height: 90px; */
-            min-width: calc(20% - 10px);
-            aspect-ratio: 1/1;
-            border-radius: 5px;
-            align-items: center;
-            text-align: center;
-            justify-content: center;
-            display: flex;
-            overflow: hidden;
-        }
-
-        div.classIcon:hover {
-            background-color: rgba(50, 150, 50, 0.5);
-        }
-
-        .classIcon img {
-            max-width: 110%;
-        }
-
-        /* =================================================== */
-
-        div.homeRight {
-            margin: 0px;
-            padding: 0px;
-            max-width: 400px;
-        }
-
-        div.wheatherDiv {
-            width: 100%;
-            height: 230px;
-            margin: 0px;
-            padding: 5px;
-            border: solid 2px rgba(0, 0, 0, 0.3);
-            border-radius: 5px;
-        }
-
-        div.wheatherCol {
-            padding: 0px;
-            margin: 0px;
-        }
-
-        div.wheatherBlock {
-            height: 100px;
-            margin: 5px;
-            border: solid 2px rgba(0, 0, 0, 0.3);
-            border-radius: 5px;
-            text-align: center;
-            justify-content: center;
-            align-items: center;
-            display: flex;
-        }
-
-
-        /* ==================================================== */
         /* offcanvas */
-
         .offcanvas {
             background-color: #ccc;
         }
-
         .fixedDiv {
             position: fixed;
             top: 50%;
@@ -207,64 +125,21 @@
             display: none;
         }
 
-        .OffcanBtn {
-            width: 100%;
-            height: 100%;
-            margin: 0px;
-            padding: 0px;
-            background: none;
-            border: none;
-            border-radius: 0px;
-            border-bottom-left-radius: 10px;
-            border-top-left-radius: 10px;
-            display: flex;
-            text-align: center;
-            justify-content: center;
-            align-items: center;
-        }
-
-        .OffcanBtn:hover {
-            background-color: plum !important;
-        }
-
-        div.weatherDivOff {
-            width: 100%;
-            height: 110px;
-            margin: 0px;
-            padding: 0px;
-            border: solid 2px rgba(0, 0, 0, 0.1);
-            /* box-shadow: 0 0 5px rgba(0, 0, 0, 0.2); */
-            border-radius: 5px;
-        }
-
-        div.weatherColOff {
-            margin: 0px;
-            padding: 0px;
-
-        }
-
         /* ==================================================== */
-
         footer {
             height: 200px;
         }
 
-        /* ==================================================== */
-
         /* ============ 高鐵時刻表 ============ */
-
         img.cityImgV3 {
             width: auto;
             height: 160%;
         }
-
-
         .thsrc_h {
             border: 0.2vw solid rgb(88, 34, 8);
             background-color: rgb(217, 108, 39);
             box-shadow: 0 0 6px rgba(0, 0, 0, .8);
         }
-
         div.cityCol_h {
             max-width: 100%;
             min-width: 230px;
@@ -273,8 +148,7 @@
             padding: 15px;
         }
 
-
-        <?php
+<?php
 include("db.php");
 $sql="SELECT * FROM trainno_s";
 $sql_1="SELECT * FROM station";
@@ -283,7 +157,6 @@ $result = $conn->query($sql);
 $result_1 = $conn->query($sql_1);
 $result_2 = $conn->query($sql_2);
 if ($result->num_rows > 0) {
-	// output data of each row
 	while($row = $result->fetch_assoc()) {	  
 		echo ".flip_11 .number_11_".$row["ID"].":before,";
 		echo ".flip_11 .number_11_".$row["ID"].":after{";
@@ -298,7 +171,6 @@ if ($result->num_rows > 0) {
     	echo "0 results";
 }
 if ($result_1->num_rows > 0) {
-	// output data of each row
 	while($row = $result_1->fetch_assoc()) {	  
 		echo ".flip_12 .number_12_".$row["ID"].":before,";
 		echo ".flip_12 .number_12_".$row["ID"].":after{";
@@ -313,7 +185,6 @@ if ($result_1->num_rows > 0) {
     	echo "0 results";
 }
 if ($result_2->num_rows > 0) {
-	// output data of each row
 	while($row = $result_2->fetch_assoc()) {	  
 		echo ".flip_13 .number_13_".$row["ID"].":before,";
 		echo ".flip_13 .number_13_".$row["ID"].":after{";
@@ -340,7 +211,6 @@ $result = $conn->query($sql);
 $result_1 = $conn->query($sql_1);
 $result_2 = $conn->query($sql_2);
 if ($result->num_rows > 0) {
-	// output data of each row
 	while($row = $result->fetch_assoc()) {	  
 		echo ".flip_31 .number_31_".$row["ID"].":before,";
 		echo ".flip_31 .number_31_".$row["ID"].":after{";
@@ -355,7 +225,6 @@ if ($result->num_rows > 0) {
     	echo "0 results";
 }
 if ($result_1->num_rows > 0) {
-	// output data of each row
 	while($row = $result_1->fetch_assoc()) {	  
 		echo ".flip_32 .number_32_".$row["ID"].":before,";
 		echo ".flip_32 .number_32_".$row["ID"].":after{";
@@ -370,7 +239,6 @@ if ($result_1->num_rows > 0) {
     	echo "0 results";
 }
 if ($result_2->num_rows > 0) {
-	// output data of each row
 	while($row = $result_2->fetch_assoc()) {	  
 		echo ".flip_33 .number_33_".$row["ID"].":before,";
 		echo ".flip_33 .number_33_".$row["ID"].":after{";
@@ -386,7 +254,6 @@ if ($result_2->num_rows > 0) {
 }
 $conn->close();
 ?>
-
         /* ============ 台鐵時刻表 ============ */
         .trc_h {
             border: 0.2vw solid rgb(88, 34, 8);
@@ -395,7 +262,6 @@ $conn->close();
             box-shadow: 0 0 6px rgba(0, 0, 0, .8);
         
         }
-
     </style>
 </head>
 <div id="tfIframeContainer" style="margin-top: 4rem;">
@@ -444,6 +310,15 @@ $conn->close();
                                 href="#">關於我們</a>
                         </li>
                     </ul>
+                    <form class="d-flex" role="search">
+                        <input id="search_input" class="form-control me-2" type="search" placeholder="搜尋"
+                            aria-label="Search">
+                        <button id="search_btn" class="btn btn-outline-success" type="submit">
+                            <span class="material-icons" style="vertical-align: middle;">
+                                search
+                            </span>
+                        </button>
+                    </form>
                     <div class="memberCon d-none d-md-flex">
                         <div class="nameCon">
                             <a href="../Member.html">
@@ -458,9 +333,6 @@ $conn->close();
     </div>
     <!-- ========== -->
     <div id="newBG" class="row justify-content-center">
-
-        <!-- <div class="homeCenter col-12 col-md-9 order-2 order-md-1"> -->
-        <!-- <div class="homeCenter col-12 col-md-9 order-2 order-md-1"> -->
         <div>
             <!-- ---------- -->
             <div id="groupNews" class="">
@@ -774,16 +646,6 @@ $conn->close();
                                 </div>
                             </div>
                         </div>
-                        <!-- <div class="cityCol col-0 col-lg-4">
-                        <a href="https://www.mvdis.gov.tw/" class="newsA">
-                            <div class="cityDiv card">
-                                <img class="cityImgV2 rounded card-img-top" src="../image/監理站服務.png">
-                                <div class="card-img-overlay">
-                                    <h3 class="card-title"></h3>
-                                </div>
-                            </div>
-                        </a>
-                    </div> -->
                     </div>
                 </div>
                 <div class="btn-con" style="display:none">
@@ -792,9 +654,7 @@ $conn->close();
                 </div>
             </div>
             <hr>
-
             <!-- ---------- -->
-
             <div class="newsCon">
                 <div class="newsImgCon">
                     <img class="newsImg" src="../image/捷運.png" alt="">
@@ -859,28 +719,6 @@ $conn->close();
             </div>
 
         </div>
-
-        <!-- <div class="homeRight col-0 col-md-3 order-1 order-md-2">
-            <br><br><br>
-            <div class="wheatherDiv">
-                <div class="row p-0 m-0">
-                    <div class="wheatherCol col-6 col-xl-4">
-                        <div class="wheatherBlock">台中市</div>
-                    </div>
-                    <div class="wheatherCol col-6 col-xl-4">
-                        <div class="wheatherBlock">24C</div>
-                    </div>
-                    <div class="wheatherCol col col-xl-4">
-                        <div class="wheatherBlock">
-                            <div class="row">
-                                <div class="col-12">降雨機率:</div>
-                                <div class="col">20%</div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div> -->
     </div>
     <!--footer-->
     <div class="row footer" style="margin-top: 3%;">
@@ -931,10 +769,6 @@ $conn->close();
                 }
             });
         });
-
-
-
-
         var flip_11 = document.getElementById('flip_11')
         var flip_12 = document.getElementById('flip_12')
         var flip_13 = document.getElementById('flip_13')
@@ -1021,12 +855,6 @@ if ($timenow_h < 12) {
     echo  "var count_43 = 61;";
 }
 ?>
-        // var count_13 = 1
-        // var count_23 = 2
-        // var count_33 = 1
-        // var count_43 = 2
-
-
         var count_11 = 1
         var count_12 = 1
         var count_21 = 2
@@ -1035,16 +863,11 @@ if ($timenow_h < 12) {
         var count_32 = 1
         var count_41 = 2
         var count_42 = 2
-        // var isFlipping = false
         function flipDown_11() {
-            // if (isFlipping) {
-            //     return false
-            // }
             frontNode_11.setAttribute('class', 'digital_11 front_11 number_11_' + count_11)
             var nextCount_11 = count_11 >= 94 ? 1 : (count_11 + 1)
             backNode_11.setAttribute('class', 'digital_11 back_11 number_11_' + nextCount_11)
             flip_11.setAttribute('class', 'col-2 flip_11 down_11 go_11')
-            // isFlipping = true
             setTimeout(function () {
                 flip_11.setAttribute('class', 'col-2 flip_11 down_11')
                 isFlipping = false
@@ -1053,184 +876,128 @@ if ($timenow_h < 12) {
             }, 210)
         }
         function flipDown_12() {
-            // if (isFlipping) {
-            //     return false
-            // }
             frontNode_12.setAttribute('class', 'digital_12 front_12 number_12_' + count_12)
             var nextCount_12 = count_12 >= 12 ? 1 : (count_12 + 1)
             backNode_12.setAttribute('class', 'digital_12 back_12 number_12_' + nextCount_12)
             flip_12.setAttribute('class', 'col-3 flip_12 down_12 go_12')
-            // isFlipping = true
             setTimeout(function () {
                 flip_12.setAttribute('class', 'col-3 flip_12 down_12')
-                isFlipping = false
                 frontNode_12.setAttribute('class', 'digital_12 front_12 number_12_' + nextCount_12)
                 count_12 = nextCount_12
             }, 210)
         }
         function flipDown_13() {
-            // if (isFlipping) {
-            //     return false
-            // }
             frontNode_13.setAttribute('class', 'digital_13 front_13 number_13_' + count_13)
             var nextCount_13 = count_13 >= 94 ? 1 : (count_13 + 1)
             backNode_13.setAttribute('class', 'digital_13 back_13 number_13_' + nextCount_13)
             flip_13.setAttribute('class', 'col-4 flip_13 down_13 go_13')
-            // isFlipping = true
             setTimeout(function () {
                 flip_13.setAttribute('class', 'col-4 flip_13 down_13')
-                isFlipping = false
                 frontNode_13.setAttribute('class', 'digital_13 front_13 number_13_' + nextCount_13)
                 count_13 = nextCount_13
             }, 210)
         }
 
         function flipDown_21() {
-            // if (isFlipping) {
-            //     return false
-            // }
             frontNode_21.setAttribute('class', 'digital_21 front_21 number_21_' + count_21)
             var nextCount_21 = count_21 >= 94 ? 1 : (count_21 + 1)
             backNode_21.setAttribute('class', 'digital_21 back_21 number_21_' + nextCount_21)
             flip_21.setAttribute('class', 'col-2 flip_21 down_21 go_21')
-            // isFlipping = true
             setTimeout(function () {
                 flip_21.setAttribute('class', 'col-2 flip_21 down_21')
-                isFlipping = false
                 frontNode_21.setAttribute('class', 'digital_21 front_21 number_21_' + nextCount_21)
                 count_21 = nextCount_21
             }, 210)
         }
         function flipDown_22() {
-            // if (isFlipping) {
-            //     return false
-            // }
             frontNode_22.setAttribute('class', 'digital_22 front_22 number_22_' + count_22)
             var nextCount_22 = count_22 >= 12 ? 1 : (count_22 + 1)
             backNode_22.setAttribute('class', 'digital_22 back_22 number_22_' + nextCount_22)
             flip_22.setAttribute('class', 'col-3 flip_22 down_22 go_22')
-            // isFlipping = true
             setTimeout(function () {
                 flip_22.setAttribute('class', 'col-3 flip_22 down_22')
-                isFlipping = false
                 frontNode_22.setAttribute('class', 'digital_22 front_22 number_22_' + nextCount_22)
                 count_22 = nextCount_22
             }, 210)
         }
         function flipDown_23() {
-            // if (isFlipping) {
-            //     return false
-            // }
             frontNode_23.setAttribute('class', 'digital_23 front_23 number_23_' + count_23)
             var nextCount_23 = count_23 >= 94 ? 1 : (count_23 + 1)
             backNode_23.setAttribute('class', 'digital_23 back_23 number_23_' + nextCount_23)
             flip_23.setAttribute('class', 'col-4 flip_23 down_23 go_23')
-            // isFlipping = true
             setTimeout(function () {
                 flip_23.setAttribute('class', 'col-4 flip_23 down_23')
-                isFlipping = false
                 frontNode_23.setAttribute('class', 'digital_23 front_23 number_23_' + nextCount_23)
                 count_23 = nextCount_23
             }, 210)
         }
         function flipDown_31() {
-            // if (isFlipping) {
-            //     return false
-            // }
             frontNode_31.setAttribute('class', 'digital_31 front_31 number_31_' + count_31)
             var nextCount_31 = count_31 >= 101 ? 1 : (count_31 + 1)
             backNode_31.setAttribute('class', 'digital_31 back_31 number_31_' + nextCount_31)
             flip_31.setAttribute('class', 'col-2 flip_31 down_31 go_31')
-            // isFlipping = true
             setTimeout(function () {
                 flip_31.setAttribute('class', 'col-2 flip_31 down_31')
-                isFlipping = false
                 frontNode_31.setAttribute('class', 'digital_31 front_31 number_31_' + nextCount_31)
                 count_31 = nextCount_31
             }, 210)
         }
         function flipDown_32() {
-            // if (isFlipping) {
-            //     return false
-            // }
             frontNode_32.setAttribute('class', 'digital_32 front_32 number_32_' + count_32)
             var nextCount_32 = count_32 >= 12 ? 1 : (count_32 + 1)
             backNode_32.setAttribute('class', 'digital_32 back_32 number_32_' + nextCount_32)
             flip_32.setAttribute('class', 'col-3 flip_32 down_32 go_32')
-            // isFlipping = true
             setTimeout(function () {
                 flip_32.setAttribute('class', 'col-3 flip_32 down_32')
-                isFlipping = false
                 frontNode_32.setAttribute('class', 'digital_32 front_32 number_32_' + nextCount_32)
                 count_32 = nextCount_32
             }, 210)
         }
         function flipDown_33() {
-            // if (isFlipping) {
-            //     return false
-            // }
             frontNode_33.setAttribute('class', 'digital_33 front_33 number_33_' + count_33)
             var nextCount_33 = count_33 >= 101 ? 1 : (count_33 + 1)
             backNode_33.setAttribute('class', 'digital_33 back_33 number_33_' + nextCount_33)
             flip_33.setAttribute('class', 'col-4 flip_33 down_33 go_33')
-            // isFlipping = true
             setTimeout(function () {
                 flip_33.setAttribute('class', 'col-4 flip_33 down_33')
-                isFlipping = false
                 frontNode_33.setAttribute('class', 'digital_33 front_33 number_33_' + nextCount_33)
                 count_33 = nextCount_33
             }, 210)
         }
 
         function flipDown_41() {
-            // if (isFlipping) {
-            //     return false
-            // }
             frontNode_41.setAttribute('class', 'digital_41 front_41 number_41_' + count_41)
             var nextCount_41 = count_41 >= 101 ? 1 : (count_41 + 1)
             backNode_41.setAttribute('class', 'digital_41 back_41 number_41_' + nextCount_41)
             flip_41.setAttribute('class', 'col-2 flip_41 down_41 go_41')
-            // isFlipping = true
             setTimeout(function () {
                 flip_41.setAttribute('class', 'col-2 flip_41 down_41')
-                isFlipping = false
                 frontNode_41.setAttribute('class', 'digital_41 front_41 number_41_' + nextCount_41)
                 count_41 = nextCount_41
             }, 210)
         }
         function flipDown_42() {
-            // if (isFlipping) {
-            //     return false
-            // }
             frontNode_42.setAttribute('class', 'digital_42 front_42 number_42_' + count_42)
             var nextCount_42 = count_42 >= 12 ? 1 : (count_42 + 1)
             backNode_42.setAttribute('class', 'digital_42 back_42 number_42_' + nextCount_42)
             flip_42.setAttribute('class', 'col-3 flip_42 down_42 go_42')
-            // isFlipping = true
             setTimeout(function () {
                 flip_42.setAttribute('class', 'col-3 flip_42 down_42')
-                isFlipping = false
                 frontNode_42.setAttribute('class', 'digital_42 front_42 number_42_' + nextCount_42)
                 count_42 = nextCount_42
             }, 210)
         }
         function flipDown_43() {
-            // if (isFlipping) {
-            //     return false
-            // }
             frontNode_43.setAttribute('class', 'digital_43 front_43 number_43_' + count_43)
             var nextCount_43 = count_43 >= 101 ? 1 : (count_43 + 1)
             backNode_43.setAttribute('class', 'digital_43 back_43 number_43_' + nextCount_43)
             flip_43.setAttribute('class', 'col-4 flip_43 down_43 go_43')
-            // isFlipping = true
             setTimeout(function () {
                 flip_43.setAttribute('class', 'col-4 flip_43 down_43')
-                isFlipping = false
                 frontNode_43.setAttribute('class', 'digital_43 front_43 number_43_' + nextCount_43)
                 count_43 = nextCount_43
             }, 210)
         }
-
         function BusState_11(e) {
             if (e == null) {
                 $.ajax({
@@ -1250,8 +1017,6 @@ if ($timenow_h < 12) {
                 }
             }
         }
-
-
         function BusState_12(e) {
             if (e == null) {
                 $.ajax({
@@ -1271,8 +1036,6 @@ if ($timenow_h < 12) {
                 }
             }
         }
-
-
         function BusState_13(e) {
             if (e == null) {
                 $.ajax({
@@ -1292,7 +1055,6 @@ if ($timenow_h < 12) {
                 }
             }
         }
-
         function BusState_21(e) {
             if (e == null) {
                 $.ajax({
@@ -1312,7 +1074,6 @@ if ($timenow_h < 12) {
                 }
             }
         }
-
         function BusState_22(e) {
             if (e == null) {
                 $.ajax({
@@ -1332,7 +1093,6 @@ if ($timenow_h < 12) {
                 }
             }
         }
-
         function BusState_23(e) {
             if (e == null) {
                 $.ajax({
@@ -1352,8 +1112,6 @@ if ($timenow_h < 12) {
                 }
             }
         }
-
-
         function BusState_31(e) {
             if (e == null) {
                 $.ajax({
@@ -1373,7 +1131,6 @@ if ($timenow_h < 12) {
                 }
             }
         }
-
         function BusState_32(e) {
             if (e == null) {
                 $.ajax({
@@ -1393,7 +1150,6 @@ if ($timenow_h < 12) {
                 }
             }
         }
-
         function BusState_33(e) {
             if (e == null) {
                 $.ajax({
@@ -1413,7 +1169,6 @@ if ($timenow_h < 12) {
                 }
             }
         }
-
         function BusState_41(e) {
             if (e == null) {
                 $.ajax({
@@ -1433,7 +1188,6 @@ if ($timenow_h < 12) {
                 }
             }
         }
-
         function BusState_42(e) {
             if (e == null) {
                 $.ajax({
@@ -1453,7 +1207,6 @@ if ($timenow_h < 12) {
                 }
             }
         }
-
         function BusState_43(e) {
             if (e == null) {
                 $.ajax({
@@ -1473,29 +1226,6 @@ if ($timenow_h < 12) {
                 }
             }
         }
-
-
-        // function BusState_31() {
-        //     if (count_31 != 9) {
-        //         flipDown_31();
-        //         setTimeout("BusState_31()", 450);
-        //     }
-        // }
-        // function BusState_32() {
-
-        //     if (count_32 != 1) {
-        //         flipDown_32();
-        //         setTimeout("BusState_32()", 450);
-        //     }
-        // }
-        // function BusState_33() {
-        //     if (count_33 != 1) {
-        //         flipDown_33();
-        //         setTimeout("BusState_33()", 450);
-        //     }
-        // }
-
-
         function Start() {
             setTimeout("BusState_11()", 100);
             setTimeout("BusState_12()", 100);
@@ -1511,64 +1241,6 @@ if ($timenow_h < 12) {
             setTimeout("BusState_43()", 100);
             setTimeout("Start()", 60000);
         }
-        // function retime(){
-<?php
-include("db.php");
-$sql="TRUNCATE TABLE thr_n_imm";
-$result = $conn->query($sql);
-$sql_1="SELECT * FROM thr_n ORDER BY ReTime";
-$result_1 = $conn->query($sql_1);
-$timenow_h = date("H");
-$timenow_m = date("i");
-$re_time_1 = $timenow_h * 60 + $timenow_m;
-$day_1 = date("w");
-if ($result_1->num_rows > 0) {
-	while($row = $result_1->fetch_assoc()) {
-        if ($row["Week_$day_1"] == 1) {
-            if ($row["ReTime"] - $re_time_1 > 0) {
-                $trainno=$row['TrainNo'];
-                $thr_time_n=$row['thr_time_n'];
-                $Destination=$row['Destination'];
-                $sql_2="INSERT INTO thr_n_imm (TrainNo,thr_time_n,Destination) VALUES ('$trainno','$thr_time_n','$Destination')";
-                $result_2 = $conn->query($sql_2);
-            }
-        }	 
-    }
-} else {
-	echo "0 results";
-}
-?>
-
-<?php
-include("db.php");
-$sql="TRUNCATE TABLE thr_s_imm";
-$result = $conn->query($sql);
-$sql_1="SELECT * FROM thr_s ORDER BY ReTime";
-$result_1 = $conn->query($sql_1);
-$timenow_h = date("H");
-$timenow_m = date("i");
-$re_time_1 = $timenow_h * 60 + $timenow_m;
-$day_1 = date("w");
-if ($result_1->num_rows > 0) {
-	while($row = $result_1->fetch_assoc()) {
-        if ($row["Week_$day_1"] == 1) {
-            if ($row["ReTime"] - $re_time_1 > 0) {
-                $trainno=$row['TrainNo'];
-                $thr_time_s=$row['thr_time_s'];
-                $Destination=$row['Destination'];
-                $sql_2="INSERT INTO thr_s_imm (TrainNo,thr_time_s,Destination) VALUES ('$trainno','$thr_time_s','$Destination')";
-                $result_2 = $conn->query($sql_2);
-            }
-        }	 
-    }
-} else {
-	echo "0 results";
-}
-?>
-
-
-        // }
-
     </script>
 </body>
 
