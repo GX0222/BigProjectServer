@@ -6,7 +6,7 @@ import org.springframework.web.bind.annotation.GetMapping;
 
 @Controller
 public class MemberController {
-	
+
 	@GetMapping("/Member")
 	public String member(Model model) {
 		return "Member/Member";
@@ -16,7 +16,7 @@ public class MemberController {
 	public String love(Model model) {
 		return "Member/Love";
 	}
-	
+
 	@GetMapping("/Activity_list")
 	public String activity_list(Model model) {
 		return "Member/Activity_list";
