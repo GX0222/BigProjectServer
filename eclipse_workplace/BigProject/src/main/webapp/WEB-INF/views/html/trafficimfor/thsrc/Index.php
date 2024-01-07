@@ -20,21 +20,13 @@
     <!-- SimpleBar-->
     <link rel="stylesheet" href="https://unpkg.com/simplebar@latest/dist/simplebar.css" />
     <script src="https://unpkg.com/simplebar@latest/dist/simplebar.min.js"></script>
-    <!-- 背景影片css -->
-    <link rel="stylesheet" href="./Tools/Tf_iframe.css">
     <!-- NavBar -->
-    <link rel="stylesheet" href="./Tools/NavBar_2.css">
-    <!-- Gruop_City.css -->
-    <link rel="stylesheet" href="./Tools/Gruop_City.css">
-    <!-- Group_News.css -->
-    <link rel="stylesheet" href="./Tools/Group_News.css">
-    <!-- Traffic_Infos.css -->
-    <link rel="stylesheet" href="./Tools/Traffic_Info.css">
+    <link rel="stylesheet" href="../../Tools/NavBar_2.css">
     <!-- Color -->
-    <link rel="stylesheet" href="./Tools/Color.css">
+    <!-- <link rel="stylesheet" href="../../Tools/Color.css"> -->
     <!-- Footer.css -->
-    <link rel="stylesheet" href="./Tools/footer.css">
-    <link rel="stylesheet" href="./css/thsrc.css">
+    <link rel="stylesheet" href="../../Tools/footer.css">
+    <link rel="stylesheet" href="../../Tools/thsrc.css">
 
     <style>
         body {
@@ -47,20 +39,6 @@
             margin-top: 10px;
             padding: 0px;
             /* border: solid 2px; */
-        }
-
-        /* ============================================= */
-        .scrolled {
-            background-color: white;
-            /* box-shadow: 0 0 10px rgba(0, 0, 0, 0.1); */
-            border: 1px solid rgba(0, 0, 0, 0.1) !important;
-            /* 滾動高度超過 35vw 時的背景顏色 */
-        }
-
-        .collapseCon {
-            margin-left: auto;
-            margin-right: 0px;
-            /* background-color: aqua; */
         }
 
         .nameCon {
@@ -102,88 +80,6 @@
             outline: 1px solid rgba(0, 0, 0, 0.2);
         }
 
-        /* ============================================= */
-
-        div.groupTitle {
-            width: 100%;
-            margin: 0px;
-            margin-bottom: 5px;
-            padding: 5px;
-            text-align: left;
-            justify-content: center;
-            align-items: center;
-            border-bottom: solid 0.5px rgba(0, 0, 0, 0.3);
-        }
-
-        div.groupTitle>h3 {
-            margin: 0px;
-            padding: 0px;
-        }
-
-        div.homeCenter {
-            margin: 0px;
-            padding: 0px;
-            max-width: 1000px;
-            min-width: 500px;
-        }
-
-        div.classIcon {
-            margin: 5px;
-            padding: 0px;
-            /* height: 90px; */
-            min-width: calc(20% - 10px);
-            aspect-ratio: 1/1;
-            border-radius: 5px;
-            align-items: center;
-            text-align: center;
-            justify-content: center;
-            display: flex;
-            overflow: hidden;
-        }
-
-        div.classIcon:hover {
-            background-color: rgba(50, 150, 50, 0.5);
-        }
-
-        .classIcon img {
-            max-width: 110%;
-        }
-
-        /* =================================================== */
-
-        div.homeRight {
-            margin: 0px;
-            padding: 0px;
-            max-width: 400px;
-        }
-
-        div.wheatherDiv {
-            width: 100%;
-            height: 230px;
-            margin: 0px;
-            padding: 5px;
-            border: solid 2px rgba(0, 0, 0, 0.3);
-            border-radius: 5px;
-        }
-
-        div.wheatherCol {
-            padding: 0px;
-            margin: 0px;
-        }
-
-        div.wheatherBlock {
-            height: 100px;
-            margin: 5px;
-            border: solid 2px rgba(0, 0, 0, 0.3);
-            border-radius: 5px;
-            text-align: center;
-            justify-content: center;
-            align-items: center;
-            display: flex;
-        }
-
-
-        /* ==================================================== */
         /* offcanvas */
 
         .offcanvas {
@@ -207,72 +103,20 @@
             display: none;
         }
 
-        .OffcanBtn {
-            width: 100%;
-            height: 100%;
-            margin: 0px;
-            padding: 0px;
-            background: none;
-            border: none;
-            border-radius: 0px;
-            border-bottom-left-radius: 10px;
-            border-top-left-radius: 10px;
-            display: flex;
-            text-align: center;
-            justify-content: center;
-            align-items: center;
-        }
-
-        .OffcanBtn:hover {
-            background-color: plum !important;
-        }
-
-        div.weatherDivOff {
-            width: 100%;
-            height: 110px;
-            margin: 0px;
-            padding: 0px;
-            border: solid 2px rgba(0, 0, 0, 0.1);
-            /* box-shadow: 0 0 5px rgba(0, 0, 0, 0.2); */
-            border-radius: 5px;
-        }
-
-        div.weatherColOff {
-            margin: 0px;
-            padding: 0px;
-
-        }
-
         /* ==================================================== */
 
         footer {
             height: 200px;
         }
 
-        /* ==================================================== */
-
-        /* ============ 高鐵時刻表 ============ */
-
         img.cityImgV3 {
             width: 100%;
-            /* height: 160%; */
         }
-
-
         .thsrc_h {
             border: 0.4vw solid rgb(88, 34, 8);
             background-color: rgb(217, 108, 39);
             box-shadow: 0 0 6px rgba(0, 0, 0, .8);
         }
-
-        div.cityCol_h {
-            max-width: 100%;
-            min-width: 230px;
-            height: 30vw;
-            margin: 0px;
-            padding: 15px;
-        }
-
 
         <?php
 include("db.php");
@@ -283,7 +127,6 @@ $result = $conn->query($sql);
 $result_1 = $conn->query($sql_1);
 $result_2 = $conn->query($sql_2);
 if ($result->num_rows > 0) {
-	// output data of each row
 	while($row = $result->fetch_assoc()) {	  
 		echo ".flip_11 .number_11_".$row["ID"].":before,";
 		echo ".flip_11 .number_11_".$row["ID"].":after{";
@@ -314,7 +157,6 @@ if ($result->num_rows > 0) {
     	echo "0 results";
 }
 if ($result_1->num_rows > 0) {
-	// output data of each row
 	while($row = $result_1->fetch_assoc()) {	  
 		echo ".flip_12 .number_12_".$row["ID"].":before,";
 		echo ".flip_12 .number_12_".$row["ID"].":after{";
@@ -345,7 +187,6 @@ if ($result_1->num_rows > 0) {
     	echo "0 results";
 }
 if ($result_2->num_rows > 0) {
-	// output data of each row
 	while($row = $result_2->fetch_assoc()) {	  
 		echo ".flip_13 .number_13_".$row["ID"].":before,";
 		echo ".flip_13 .number_13_".$row["ID"].":after{";
@@ -378,7 +219,6 @@ if ($result_2->num_rows > 0) {
 $conn->close();
 ?>
 
-
 <?php
 include("db.php");
 $sql="SELECT * FROM trainno_n";
@@ -388,7 +228,6 @@ $result = $conn->query($sql);
 $result_1 = $conn->query($sql_1);
 $result_2 = $conn->query($sql_2);
 if ($result->num_rows > 0) {
-	// output data of each row
 	while($row = $result->fetch_assoc()) {	  
 		echo ".flip_71 .number_71_".$row["ID"].":before,";
 		echo ".flip_71 .number_71_".$row["ID"].":after{";
@@ -419,7 +258,6 @@ if ($result->num_rows > 0) {
     	echo "0 results";
 }
 if ($result_1->num_rows > 0) {
-	// output data of each row
 	while($row = $result_1->fetch_assoc()) {	  
 		echo ".flip_72 .number_72_".$row["ID"].":before,";
 		echo ".flip_72 .number_72_".$row["ID"].":after{";
@@ -450,7 +288,6 @@ if ($result_1->num_rows > 0) {
     	echo "0 results";
 }
 if ($result_2->num_rows > 0) {
-	// output data of each row
 	while($row = $result_2->fetch_assoc()) {	  
 		echo ".flip_73 .number_73_".$row["ID"].":before,";
 		echo ".flip_73 .number_73_".$row["ID"].":after{";
@@ -492,9 +329,6 @@ $conn->close();
         }
 
         /* == navBar == */
-        
-
-        
         #mynavbar {
             width: 200px;
             /* height: 100%; */
@@ -506,34 +340,15 @@ $conn->close();
             box-shadow: 0 0 10px rgba(0, 0, 0, 0.5);
             border-radius: 5px;
         }
-        
-        #mynavbarCon {
-            width: 100vw;
-            height: 100%;
-            margin: 0px;
-            padding: 5px;
-            padding-right: 10px;
-            border: 1px solid rgba(0, 0, 0, 0);
-        }
-        
         .navbar-toggler {
             background-color: white;
             margin-right: 10px;
         }
-
-        /* .navbar-toggler:focus {
-            outline: none;
-            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
-            border-width: 1px;
-            border-style: solid;
-        } */
-
     </style>
 </head>
 
 <body onload="Start()"  style="background-color: rgba(242,226,168,0.6)">
 <div class="container">
-    <!-- ========== -->
     <div id="newBG" class="justify-content-center">
         <div id="overlayDiv">
         <!-- navBar -->
@@ -572,6 +387,15 @@ $conn->close();
                                 href="#">關於我們</a>
                         </li>
                     </ul>
+                    <form class="d-flex" role="search">
+                        <input id="search_input" class="form-control me-2" type="search" placeholder="搜尋"
+                            aria-label="Search">
+                        <button id="search_btn" class="btn btn-outline-success" type="submit">
+                            <span class="material-icons" style="vertical-align: middle;">
+                                search
+                            </span>
+                        </button>
+                    </form>
                     <div class="memberCon d-none d-md-flex">
                         <div class="nameCon">
                             <a href="../../Member.html">
@@ -583,32 +407,21 @@ $conn->close();
             </div>
         </nav>
         </div>
-
-        <!-- <div class="homeCenter col-12 col-md-9 order-2 order-md-1"> -->
-        <!-- <div class="homeCenter col-12 col-md-9 order-2 order-md-1"> -->
         <div style="height:136vw;margin-top:10vw">
             <!-- ---------- -->
             <div id="groupNews">
-                <!-- <div style="display:flex">
-                    <a target="_blank" href="https://www.thsrc.com.tw" style="text-decoration:none">
-                        <img src="./image/高鐵_logo.jpg" style="width:20vw;">
-                    </a>
-                </div> -->
                 <div style="height:4vw">
-                    <img src="./image/高鐵_logo.jpg" style="width:16vw;">
+                    <img src="../../image/高鐵_logo.jpg" style="width:16vw;">
                 </div>
                 <div style="text-align: center; font-size: 3.2vw;">
                     
                         台北車站 高鐵列車即時動態
                 </div>
-                <!-- 高鐵 台鐵 -->
-                <!-- <div id="groupCity" class=""> -->
-                    <!-- <div class="row justify-content-left m-0 p-0"> -->
                 <div class="col-12 m-0 p-0">
                     <div class="row p-0" style="margin-top: 2vw">
                         <a target="_blank" href="https://www.thsrc.com.tw/">
                             <div class="cityDiv card">
-                                <img class="cityImgV3" src="./image/高鐵-2.jpg">
+                                <img class="cityImgV3" src="../../image/高鐵-2.jpg">
                             </div>
                         </a>
                     </div>
@@ -886,28 +699,6 @@ $conn->close();
                 <button id="btn1" style="background-color:rgb(217, 108, 39);border:0.4vw solid rgb(88, 34, 8);">一起翻</button>
             </div>
         </div>
-
-        <!-- <div class="homeRight col-0 col-md-3 order-1 order-md-2">
-            <br><br><br>
-            <div class="wheatherDiv">
-                <div class="row p-0 m-0">
-                    <div class="wheatherCol col-6 col-xl-4">
-                        <div class="wheatherBlock">台中市</div>
-                    </div>
-                    <div class="wheatherCol col-6 col-xl-4">
-                        <div class="wheatherBlock">24C</div>
-                    </div>
-                    <div class="wheatherCol col col-xl-4">
-                        <div class="wheatherBlock">
-                            <div class="row">
-                                <div class="col-12">降雨機率:</div>
-                                <div class="col">20%</div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div> -->
     </div>
 </div>
     <!--footer-->
@@ -926,7 +717,6 @@ $conn->close();
     </div>
     <!--footer end-->
 
-
     <script>
         $(document).ready(function () {
             $('#myOffcanvas').on('click', function () {
@@ -936,9 +726,6 @@ $conn->close();
                 }
             });
         });
-
-
-
 
         var flip_11 = document.getElementById('flip_11')
         var flip_12 = document.getElementById('flip_12')
@@ -1170,12 +957,6 @@ if ($timenow_h < 12) {
     echo "var count_123 = 65;";
 }
 ?>
-        // var count_13 = 1
-        // var count_23 = 2
-        // var count_33 = 1
-        // var count_43 = 2
-
-
         var count_11 = 1
         var count_12 = 1
         var count_21 = 2
@@ -1598,8 +1379,6 @@ if ($timenow_h < 12) {
                 count_123 = nextCount_123
             }, 210)
         }
-
-
 
         function BusState_11(e) {
             if (e == null) {
@@ -2300,27 +2079,6 @@ if ($timenow_h < 12) {
                 }
             }
         }
-        // function BusState_31() {
-        //     if (count_31 != 9) {
-        //         flipDown_31();
-        //         setTimeout("BusState_31()", 450);
-        //     }
-        // }
-        // function BusState_32() {
-
-        //     if (count_32 != 1) {
-        //         flipDown_32();
-        //         setTimeout("BusState_32()", 450);
-        //     }
-        // }
-        // function BusState_33() {
-        //     if (count_33 != 1) {
-        //         flipDown_33();
-        //         setTimeout("BusState_33()", 450);
-        //     }
-        // }
-
-
         function Start() {
             setTimeout("BusState_11()", 100);
             setTimeout("BusState_12()", 100);
@@ -2360,64 +2118,6 @@ if ($timenow_h < 12) {
             setTimeout("BusState_123()", 100);
             setTimeout("Start()", 60000);
         }
-        // function retime(){
-<?php
-include("db.php");
-$sql="TRUNCATE TABLE thr_n_imm";
-$result = $conn->query($sql);
-$sql_1="SELECT * FROM thr_n ORDER BY ReTime";
-$result_1 = $conn->query($sql_1);
-$timenow_h = date("H");
-$timenow_m = date("i");
-$re_time_1 = $timenow_h * 60 + $timenow_m;
-$day_1 = date("w");
-if ($result_1->num_rows > 0) {
-	while($row = $result_1->fetch_assoc()) {
-        if ($row["Week_$day_1"] == 1) {
-            if ($row["ReTime"] - $re_time_1 > 0) {
-                $trainno=$row['TrainNo'];
-                $thr_time_n=$row['thr_time_n'];
-                $Destination=$row['Destination'];
-                $sql_2="INSERT INTO thr_n_imm (TrainNo,thr_time_n,Destination) VALUES ('$trainno','$thr_time_n','$Destination')";
-                $result_2 = $conn->query($sql_2);
-            }
-        }	 
-    }
-} else {
-	echo "0 results";
-}
-?>
-
-<?php
-include("db.php");
-$sql="TRUNCATE TABLE thr_s_imm";
-$result = $conn->query($sql);
-$sql_1="SELECT * FROM thr_s ORDER BY ReTime";
-$result_1 = $conn->query($sql_1);
-$timenow_h = date("H");
-$timenow_m = date("i");
-$re_time_1 = $timenow_h * 60 + $timenow_m;
-$day_1 = date("w");
-if ($result_1->num_rows > 0) {
-	while($row = $result_1->fetch_assoc()) {
-        if ($row["Week_$day_1"] == 1) {
-            if ($row["ReTime"] - $re_time_1 > 0) {
-                $trainno=$row['TrainNo'];
-                $thr_time_s=$row['thr_time_s'];
-                $Destination=$row['Destination'];
-                $sql_2="INSERT INTO thr_s_imm (TrainNo,thr_time_s,Destination) VALUES ('$trainno','$thr_time_s','$Destination')";
-                $result_2 = $conn->query($sql_2);
-            }
-        }	 
-    }
-} else {
-	echo "0 results";
-}
-?>
-
-
-        // }
-
     </script>
 </body>
 

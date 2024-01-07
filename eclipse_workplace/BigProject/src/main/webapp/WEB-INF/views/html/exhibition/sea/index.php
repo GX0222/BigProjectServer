@@ -5,50 +5,21 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>水族館．海生館</title>
-    <link rel="stylesheet" href="./_css/bootstrap.css">
-    <link rel="stylesheet" href="./_css/loading.css">
-    <link rel="stylesheet" href="./_css/jquery.toast.css">
-    <link rel="stylesheet" href="./_css/bus.css">
-    <script src="./_js/bootstrap.bundle.js"></script>
-    <script type="text/javascript" src="./_jquery/jquery.js"></script>
-    <script type="text/javascript" src="./_jquery/jquery.zoomooz.min.js"></script>
-    <script src="./_jquery/Chart.min.js"></script>
-
-
-    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet"
-        integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN" crossorigin="anonymous">
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"
-        integrity="sha384-C6RzsynM9kWDrMNeT87bh95OGNyZPhcTNXj1NW7RuBCsyN/o0jlpcV8Qyq46cDfL"
-        crossorigin="anonymous"></script>
-
-    <!-- Google Icon -->
-    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
-    <!-- SimpleBar-->
-    <link rel="stylesheet" href="https://unpkg.com/simplebar@latest/dist/simplebar.css" />
-    <script src="https://unpkg.com/simplebar@latest/dist/simplebar.min.js"></script>
-    <!-- 背景影片css -->
-    <link rel="stylesheet" href="./Tools/Bg_YTiframe.css">
-    <!-- 背景影片js -->
-    <script src="./Tools/Bg_YTiframe.js"></script>
-    <script src="https://www.youtube.com/iframe_api"></script>
-    <!-- Gruop_City.css -->
-    <link rel="stylesheet" href="./Tools/Gruop_City.css">
-    <!-- Group_News.css -->
-    <link rel="stylesheet" href="./Tools/Group_News.css">
+    <link rel="stylesheet" href="../../Tools/bootstrap.css">
+    <script type="text/javascript" src="../../Tools/jquery.js"></script>
+    <link rel="stylesheet" href="../../Tools/Bg_YTiframe.css">
+    <link rel="stylesheet" href="../../Tools/Group_News.css">
 
     <style>
         body {
             font-family: Arial, sans-serif;
             text-align: center;
-            /* margin-left: 16.5%; */
         }
-
         div.homeRight {
             margin: 0px;
             padding: 0px;
             max-width: 400px;
         }
-
         div.wheatherDiv {
             width: 100%;
             height: 17vw;
@@ -57,13 +28,11 @@
             border: solid 2px rgba(0, 0, 0, 0.3);
             border-radius: 5px;
         }
-
         div.wheatherCol {
             padding: 0px;
             margin: 0px;
 
         }
-
         div.wheatherBlock {
             height: 7vw;
             margin: 0.45vw;
@@ -75,15 +44,6 @@
             align-items: center;
             display: flex;
         }
-
-        /* #lyrics-container {
-            height: 600px;
-            width: 60%;
-            overflow: hidden;
-            position: relative;
-            margin-left: 20%;
-         }  */
-
         #lyrics-container_0 {
             height: 28vw;
             width: 100%;
@@ -94,91 +54,17 @@
 
         #lyrics {
             position: absolute;
-            /* top: 10%; */
             transform: translateX(15%);
             transition: transform 0s ease-in-out;
         }
 
         #lyrics_0 {
             position: absolute;
-            /* top: 10%; */
             transform: translateX(0%);
             transition: transform 0s ease-in-out;
         }
-
-        .title {
-            /* width: 50%; */
-            width: 1000px;
-            font-size: 2.6vw;
-            color: white;
-            font-family: 微軟正黑體;
-            font-style: italic;
-            margin-top: 8vw;
-        }
-
-        .title_2 {
-            width: 1000px;
-            font-size: 2.5vw;
-            color: white;
-            font-family: 微軟正黑體;
-            font-style: italic;
-            margin-top: 7vw;
-        }
-
-        .title_3 {
-            width: 1000px;
-            font-size: 1.6vw;
-            color: white;
-            font-family: 微軟正黑體;
-            font-style: italic;
-            margin-top: 4vw;
-        }
-
-        .contant {
-            width: 1000px;
-            font-size: 1.5vw;
-            color: white;
-            font-family: Times New Roman;
-            font-style: italic;
-            margin-top: 0.2vw;
-        }
-
-        .contant_2 {
-            width: 1000px;
-            font-size: 1.5vw;
-            color: white;
-            font-family: Times New Roman;
-            font-style: italic;
-            margin-top: 0.2vw;
-        }
-
-        .contant_3 {
-            width: 1000px;
-            font-size: 1.3vw;
-            color: white;
-            font-family: Times New Roman;
-            font-style: italic;
-            margin-top: 0.2vw;
-        }
-
-        .img {
-            width: 1000px;
-            height: 100px;
-            margin-top: 6vw;
-            /* margin-left: 43.5%; */
-            display: flex
-        }
-
-        .Myname {
-            width: 1000px;
-            font-size: 2vw;
-            margin-top: 3vw;
-            font-style: italic;
-        }
-
         .menu_left {
             background-color: rgba(20, 112, 165, 0.85);
-            /* color: rgb(241, 245, 145); */
             color: white;
             z-index: 100;
             width: 8vw;
@@ -188,10 +74,8 @@
             padding-top: 1.2vw;
             border-radius: 0vw 0vw 0vw 0.6vw;
         }
-
         .menu {
             background-color: rgba(20, 112, 165, 0.85);
-            /* color: rgb(241, 245, 145); */
             color: white;
             z-index: 100;
             width: 8vw;
@@ -200,10 +84,8 @@
             font-size: 1.2vw;
             padding-top: 1.2vw;
         }
-
         .menu_right {
             background-color: rgba(20, 112, 165, 0.85);
-            /* color: rgb(241, 245, 145); */
             color: white;
             z-index: 100;
             width: 8vw;
@@ -213,19 +95,16 @@
             padding-top: 1.2vw;
             border-radius: 0vw 0vw 0.6vw 0vw;
         }
-
         .menu:hover,
         .menu_left:hover,
         .menu_right:hover {
             background-color: rgba(60, 162, 221, 0.85);
             color: rgb(235, 236, 182);
         }
-
         .drop-shadow {
             -webkit-filter: drop-shadow(12px 12px 7px rgba(0, 0, 0, 0.7));
             filter: drop-shadow(12px 12px 7px rgba(0, 0, 0, 0.7))
         }
-
         .disnone {
             display: none;
         }
@@ -233,7 +112,7 @@
 </head>
 
 <body onload="abc()"
-    style="background-image: url(./img/background.png); background-size: 100%; background-attachment: fixed;">
+    style="background-image: url(../../image/background_sea.png); background-size: 100%; background-attachment: fixed;">
     <div style="width: 100%; height: 0vw; z-index: 500;" class="row">
         <div class="col-lg-2 col-md-0 align-self-start"></div>
         <div class="col-lg-8 col-md-12">
@@ -244,7 +123,6 @@
                 style="width: 6vw; height: 2vw; font-size: 1vw; margin-top: 0.5vw; float: right; color: white; display: inline-block;">
                 <button onclick=""
                     style="width: 5vw; background-color: rgba(75, 174, 240, 0.85); color: white; font-size: 0.8vw; margin-top: 0.2vw; border-radius: 0.5vw; display: inline-block;">登出</button>
-                <!-- <button onclick="" class="drop-shadow" style="background-color: white; font-size: 0.8vw; margin-top: 0.2vw; border-radius: 0.5vw;">登出</button> -->
             </div>
             <div class="align-self-end"
                 style="width: 6vw; height: 2vw; font-size: 1.2vw; margin-top: 0.7vw; float: right; color: white;">
@@ -308,7 +186,6 @@
         </div>
         <div class="row" style="margin-top: 3vw;">
             <div class="col-4">
-                <!-- <div class="col-12" style="width: 50vw; float: left; font-size: 1.8vw;"> -->
                 <div>
                 </div>
             </div>
@@ -338,7 +215,6 @@
 
         <div id="newBG" class="row justify-content-center">
             <div class="homeCenter col-12 col-md-9 order-2 order-md-1">
-                <!-- ---------- -->
                 <div id="groupNews_1" class="">
                     <div class="groupTitle">
                         <h3 style="color: white;">最新消息</h3>
@@ -346,7 +222,7 @@
 
                     <div class="newsCon">
                         <div class="newsImgCon">
-                            <img class="newsImg" src="./img/最新活動-屏東海生館-1.jpg" alt="">
+                            <img class="newsImg" src="../../image/最新活動-屏東海生館-1.jpg" alt="">
                         </div>
                         <div class="newsTextCon">
                             <div class="newsTextBgR">
@@ -370,20 +246,13 @@
                             </div>
                         </div>
                         <div class="newsImgCon">
-                            <img class="newsImg" src="./img/最新活動-屏東海生館-2.jpg" alt="">
+                            <img class="newsImg" src="../../image/最新活動-屏東海生館-2.jpg" alt="">
                         </div>
                     </div>
                 </div>
             </div>
         </div>
     </div>
-
-
-
-
-
-
-
     <div id="SNPM" class="disnone">
         <div style="width: 100%; height: 0.4vw; background-color: rgb(11, 81, 138);"></div>
         <div class="row" style="background-color: rgb(14, 11, 51); height: 4.5vw; color: white; font-size: 1.5vw;">
@@ -416,7 +285,6 @@
         </div>
         <div id="newBG" class="row justify-content-center">
             <div class="homeCenter col-12 col-md-9 order-2 order-md-1">
-                <!-- ---------- -->
                 <div id="groupNews_1" class="">
                     <div class="groupTitle">
                         <h3>最新消息</h3>
@@ -424,7 +292,7 @@
 
                     <div class="newsCon">
                         <div class="newsImgCon">
-                            <img class="newsImg" src="./img/最新活動-故宮南院-1.jpg" alt="">
+                            <img class="newsImg" src="../../image/最新活動-故宮南院-1.jpg" alt="">
                         </div>
                         <div class="newsTextCon">
                             <div class="newsTextBgR">
@@ -444,18 +312,13 @@
                             </div>
                         </div>
                         <div class="newsImgCon">
-                            <img class="newsImg" src="./img/故宮南院-1-1.jpg" alt="">
+                            <img class="newsImg" src="../../image/故宮南院-1-1.jpg" alt="">
                         </div>
                     </div>
                 </div>
             </div>
         </div>
     </div>
-
-
-
-
-
 
     <div id="TFAM" class="disnone">
         <div style="width: 100%; height: 0.4vw; background-color: rgb(11, 81, 138);"></div>
@@ -489,7 +352,6 @@
         </div>
         <div id="newBG" class="row justify-content-center">
             <div class="homeCenter col-12 col-md-9 order-2 order-md-1">
-                <!-- ---------- -->
                 <div id="groupNews_1" class="">
                     <div class="groupTitle">
                         <h3>最新消息</h3>
@@ -497,7 +359,7 @@
 
                     <div class="newsCon">
                         <div class="newsImgCon">
-                            <img class="newsImg" src="./img/最新活動-台北美術館-1.jpg" alt="">
+                            <img class="newsImg" src="../../image/最新活動-台北美術館-1.jpg" alt="">
                         </div>
                         <div class="newsTextCon">
                             <div class="newsTextBgR">
@@ -519,7 +381,7 @@
                             </div>
                         </div>
                         <div class="newsImgCon">
-                            <img class="newsImg" src="./img/故宮南院-1-1.jpg" alt="">
+                            <img class="newsImg" src="../../image/故宮南院-1-1.jpg" alt="">
                         </div>
                     </div>
                 </div>
@@ -559,7 +421,6 @@
         </div>
         <div id="newBG" class="row justify-content-center">
             <div class="homeCenter col-12 col-md-9 order-2 order-md-1">
-                <!-- ---------- -->
                 <div id="groupNews_1" class="">
                     <div class="groupTitle">
                         <h3>最新消息</h3>
@@ -567,7 +428,7 @@
 
                     <div class="newsCon">
                         <div class="newsImgCon">
-                            <img class="newsImg" src="./img/台北故宮.jpg" alt="">
+                            <img class="newsImg" src="../../image/台北故宮.jpg" alt="">
                         </div>
                         <div class="newsTextCon">
                             <div class="newsTextBgR">
@@ -586,7 +447,7 @@
                             </div>
                         </div>
                         <div class="newsImgCon">
-                            <img class="newsImg" src="./img/故宮南院-1-1.jpg" alt="">
+                            <img class="newsImg" src="../../image/故宮南院-1-1.jpg" alt="">
                         </div>
                     </div>
                 </div>
@@ -620,292 +481,6 @@
         </div>
     </div>
     <script>
-        const lyricsContainer = document.getElementById('lyrics');
-        let currentPosition = 0;
-
-        function abc() {
-            scrollLyrics();
-            const time = new Date();
-            if (time.getHours() >= 6 && time.getHours() <= 17) {
-                html = `<img src="./img/白天-1.gif" alt="" style="width: 100%;">`;
-            }
-            else {
-                html = `<img src="./img/夜晚-2.gif" alt="" style="width: 100%;">`;
-            }
-            $("#TNAR").append(html);
-            $("#SNAR").append(html);
-            console.log(time);
-        }
-
-
-        function scrollLyrics() {
-            if (currentPosition <= -362) {
-                scrollLyrics_1(currentPosition);
-            }
-            else {
-                currentPosition -= 0.05;
-                lyricsContainer.style.transform = `translateX(${currentPosition}vw)`;
-                requestAnimationFrame(scrollLyrics);
-            }
-        }
-
-        function scrollLyrics_1() {
-            if (currentPosition >= 0) {
-                scrollLyrics(currentPosition);
-            }
-            else {
-                currentPosition += 0.05;
-                lyricsContainer.style.transform = `translateX(${currentPosition}vw)`;
-                requestAnimationFrame(scrollLyrics_1);
-            }
-        }
-
-
-        var flip = document.getElementById('flip')
-        var flip_1 = document.getElementById('flip_1')
-        var flip_2 = document.getElementById('flip_2')
-        var flip_3 = document.getElementById('flip_3')
-        var flip_4 = document.getElementById('flip_4')
-        var flip_5 = document.getElementById('flip_5')
-        var flip_6 = document.getElementById('flip_6')
-        var flip_7 = document.getElementById('flip_7')
-        var flip_8 = document.getElementById('flip_8')
-        var backNode = document.querySelector('.back')
-        var backNode_1 = document.querySelector('.back_1')
-        var backNode_2 = document.querySelector('.back_2')
-        var backNode_3 = document.querySelector('.back_3')
-        var backNode_4 = document.querySelector('.back_4')
-        var backNode_5 = document.querySelector('.back_5')
-        var backNode_6 = document.querySelector('.back_6')
-        var backNode_7 = document.querySelector('.back_7')
-        var backNode_8 = document.querySelector('.back_8')
-        var frontNode = document.querySelector('.front')
-        var frontNode_1 = document.querySelector('.front_1')
-        var frontNode_2 = document.querySelector('.front_2')
-        var frontNode_3 = document.querySelector('.front_3')
-        var frontNode_4 = document.querySelector('.front_4')
-        var frontNode_5 = document.querySelector('.front_5')
-        var frontNode_6 = document.querySelector('.front_6')
-        var frontNode_7 = document.querySelector('.front_7')
-        var frontNode_8 = document.querySelector('.front_8')
-        var btn0 = document.getElementById('btn0')
-        var btn1 = document.getElementById('btn1')
-        btn0.addEventListener('click', function () {
-            flipDown();
-            flipDown_1();
-            flipDown_2();
-            flipDown_3();
-            flipDown_4();
-            flipDown_5();
-            flipDown_6();
-            flipDown_7();
-            flipDown_8();
-        })
-
-        btn1.addEventListener('click', function () {
-            setTimeout("BusState()", 590);
-            setTimeout("BusState_1()", 1020);
-            setTimeout("BusState_2()", 630);
-            setTimeout("BusState_3()", 715);
-            setTimeout("BusState_4()", 890);
-            setTimeout("BusState_5()", 1055);
-            setTimeout("BusState_6()", 1180);
-            setTimeout("BusState_7()", 760);
-            setTimeout("BusState_8()", 470);
-        })
-
-
-        var count = 0
-        var count_1 = 0
-        var count_2 = 0
-        var count_3 = 2
-        var count_4 = 2
-        var count_5 = 2
-        var count_6 = 4
-        var count_7 = 4
-        var count_8 = 4
-        // var isFlipping = false
-        function flipDown() {
-            // if (isFlipping) {
-            //     return false
-            // }
-            frontNode.setAttribute('class', 'digital front number' + count)
-            var nextCount = count >= 10 ? 0 : (count + 1)
-            backNode.setAttribute('class', 'digital back number' + nextCount)
-            flip.setAttribute('class', 'flip down go')
-            // isFlipping = true
-            setTimeout(function () {
-                flip.setAttribute('class', 'flip down')
-                isFlipping = false
-                frontNode.setAttribute('class', 'digital front number' + nextCount)
-                count = nextCount
-            }, 400)
-        }
-
-        function flipDown_1() {
-            frontNode_1.setAttribute('class', 'digital_1 front_1 number_1_' + count_1)
-            var nextCount_1 = count_1 >= 6 ? 0 : (count_1 + 1)
-            backNode_1.setAttribute('class', 'digital_1 back_1 number_1_' + nextCount_1)
-            flip_1.setAttribute('class', 'flip_1 down_1 go_1')
-            // isFlipping = true
-            setTimeout(function () {
-                flip_1.setAttribute('class', 'flip_1 down_1')
-                frontNode_1.setAttribute('class', 'digital_1 front_1 number_1_' + nextCount_1)
-                count_1 = nextCount_1
-            }, 400)
-        }
-
-        function flipDown_2() {
-            frontNode_2.setAttribute('class', 'digital_2 front_2 number_2_' + count_2)
-            var nextCount_2 = count_2 >= 9 ? 0 : (count_2 + 1)
-            backNode_2.setAttribute('class', 'digital_2 back_2 number_2_' + nextCount_2)
-            flip_2.setAttribute('class', 'flip_2 down_2 go_2')
-            // isFlipping = true
-            setTimeout(function () {
-                flip_2.setAttribute('class', 'flip_2 down_2')
-                frontNode_2.setAttribute('class', 'digital_2 front_2 number_2_' + nextCount_2)
-                count_2 = nextCount_2
-            }, 400)
-        }
-
-        function flipDown_3() {
-            frontNode_3.setAttribute('class', 'digital_3 front_3 number_3_' + count_3)
-            var nextCount_3 = count_3 >= 10 ? 0 : (count_3 + 1)
-            backNode_3.setAttribute('class', 'digital_3 back_3 number_3_' + nextCount_3)
-            flip_3.setAttribute('class', 'flip_3 down_3 go_3')
-            // isFlipping = true
-            setTimeout(function () {
-                flip_3.setAttribute('class', 'flip_3 down_3')
-                frontNode_3.setAttribute('class', 'digital_3 front_3 number_3_' + nextCount_3)
-                count_3 = nextCount_3
-            }, 400)
-        }
-
-        function flipDown_4() {
-            frontNode_4.setAttribute('class', 'digital_4 front_4 number_4_' + count_4)
-            var nextCount_4 = count_4 >= 6 ? 0 : (count_4 + 1)
-            backNode_4.setAttribute('class', 'digital_4 back_4 number_4_' + nextCount_4)
-            flip_4.setAttribute('class', 'flip_4 down_4 go_4')
-            // isFlipping = true
-            setTimeout(function () {
-                flip_4.setAttribute('class', 'flip_4 down_4')
-                frontNode_4.setAttribute('class', 'digital_4 front_4 number_4_' + nextCount_4)
-                count_4 = nextCount_4
-            }, 400)
-        }
-
-        function flipDown_5() {
-            frontNode_5.setAttribute('class', 'digital_5 front_5 number_5_' + count_5)
-            var nextCount_5 = count_5 >= 9 ? 0 : (count_5 + 1)
-            backNode_5.setAttribute('class', 'digital_5 back_5 number_5_' + nextCount_5)
-            flip_5.setAttribute('class', 'flip_5 down_5 go_5')
-            // isFlipping = true
-            setTimeout(function () {
-                flip_5.setAttribute('class', 'flip_5 down_5')
-                frontNode_5.setAttribute('class', 'digital_5 front_5 number_5_' + nextCount_5)
-                count_5 = nextCount_5
-            }, 400)
-        }
-
-        function flipDown_6() {
-            frontNode_6.setAttribute('class', 'digital_6 front_6 number_6_' + count_6)
-            var nextCount_6 = count_6 >= 10 ? 0 : (count_6 + 1)
-            backNode_6.setAttribute('class', 'digital_6 back_6 number_6_' + nextCount_6)
-            flip_6.setAttribute('class', 'flip_6 down_6 go_6')
-            // isFlipping = true
-            setTimeout(function () {
-                flip_6.setAttribute('class', 'flip_6 down_6')
-                frontNode_6.setAttribute('class', 'digital_6 front_6 number_6_' + nextCount_6)
-                count_6 = nextCount_6
-            }, 400)
-        }
-
-        function flipDown_7() {
-            frontNode_7.setAttribute('class', 'digital_7 front_7 number_7_' + count_7)
-            var nextCount_7 = count_7 >= 6 ? 0 : (count_7 + 1)
-            backNode_7.setAttribute('class', 'digital_7 back_7 number_7_' + nextCount_7)
-            flip_7.setAttribute('class', 'flip_7 down_7 go_7')
-            // isFlipping = true
-            setTimeout(function () {
-                flip_7.setAttribute('class', 'flip_7 down_7')
-                frontNode_7.setAttribute('class', 'digital_7 front_7 number_7_' + nextCount_7)
-                count_7 = nextCount_7
-            }, 400)
-        }
-
-        function flipDown_8() {
-            frontNode_8.setAttribute('class', 'digital_8 front_8 number_8_' + count_8)
-            var nextCount_8 = count_8 >= 9 ? 0 : (count_8 + 1)
-            backNode_8.setAttribute('class', 'digital_8 back_8 number_8_' + nextCount_8)
-            flip_8.setAttribute('class', 'flip_8 down_8 go_8')
-            // isFlipping = true
-            setTimeout(function () {
-                flip_8.setAttribute('class', 'flip_8 down_8')
-                frontNode_8.setAttribute('class', 'digital_8 front_8 number_8_' + nextCount_8)
-                count_8 = nextCount_8
-            }, 400)
-        }
-
-        function BusState() {
-            if (count != 9) {
-                flipDown();
-                setTimeout("BusState()", 450);
-            }
-        }
-        function BusState_1() {
-            if (count_1 != 6) {
-                flipDown_1();
-                setTimeout("BusState_1()", 520);
-            }
-        }
-        function BusState_2() {
-            if (count_2 != 1) {
-                flipDown_2();
-                setTimeout("BusState_2()", 630);
-            }
-        }
-        function BusState_3() {
-            if (count_3 != 1) {
-                flipDown_3();
-                setTimeout("BusState_3()", 740);
-            }
-        }
-
-        function BusState_4() {
-            if (count_4 != 1) {
-                flipDown_4();
-                setTimeout("BusState_4()", 670);
-            }
-        }
-
-        function BusState_5() {
-            if (count_5 != 3) {
-                flipDown_5();
-                setTimeout("BusState_5()", 420);
-            }
-        }
-
-        function BusState_6() {
-            if (count_6 != 3) {
-                flipDown_6();
-                setTimeout("BusState_6()", 530);
-            }
-        }
-
-        function BusState_7() {
-            if (count_7 != 3) {
-                flipDown_7();
-                setTimeout("BusState_7()", 640);
-            }
-        }
-
-        function BusState_8() {
-            if (count_8 != 9) {
-                flipDown_8();
-                setTimeout("BusState_8()", 590);
-            }
-        }
-
         function TNPM() {
             $("#TNPM").removeClass("disnone");
             $("#SNPM").addClass("disnone");
@@ -913,7 +488,6 @@
             $("#TMFA").addClass("disnone");
             $("#TAM").addClass("disnone");
         }
-
         function SNPM() {
             $("#TNPM").addClass("disnone");
             $("#SNPM").removeClass("disnone");
@@ -921,7 +495,6 @@
             $("#TMFA").addClass("disnone");
             $("#TAM").addClass("disnone");
         }
-
         function TFAM() {
             $("#TNPM").addClass("disnone");
             $("#SNPM").addClass("disnone");
@@ -929,7 +502,6 @@
             $("#TMFA").addClass("disnone");
             $("#TAM").addClass("disnone");
         }
-
         function TMFA() {
             $("#TNPM").addClass("disnone");
             $("#SNPM").addClass("disnone");
@@ -937,7 +509,6 @@
             $("#TMFA").removeClass("disnone");
             $("#TAM").addClass("disnone");
         }
-
         function TAM() {
             $("#TNPM").addClass("disnone");
             $("#SNPM").addClass("disnone");
@@ -945,7 +516,6 @@
             $("#TMFA").addClass("disnone");
             $("#TAM").removeClass("disnone");
         }
-
     </script>
 </body>
 
