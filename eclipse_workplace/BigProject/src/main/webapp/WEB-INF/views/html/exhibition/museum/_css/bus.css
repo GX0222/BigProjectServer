@@ -1,0 +1,451 @@
+
+.flip,
+.flip_1,
+.flip_3,
+.flip_4,
+.flip_6,
+.flip_7 {
+    display: inline-block;
+    position: relative;
+    width: 9.6vw;
+    height: 3.2vw;
+    line-height: 2.6vw;
+    border: solid 0.3vw rgb(88, 34, 8);
+    background:  rgb(88, 67, 66);
+    font-size: 1.6vw;
+    color: rgb(216, 201, 102);
+    box-shadow: 0 0 6px rgba(0, 0, 0, .8);
+    text-align: center;
+    font-family: "標楷體"
+}
+
+.flip_2,
+.flip_5,
+.flip_8 {
+    display: inline-block;
+    position: relative;
+    width: 7.2vw;
+    height: 3.2vw;
+    line-height: 2.7vw;
+    border: solid 0.3vw rgb(88, 34, 8);
+    background:  rgb(88, 67, 66);
+    font-size: 1.6vw;
+    color: rgb(216, 201, 102);
+    box-shadow: 0 0 6px rgba(0, 0, 0, .8);
+    text-align: center;
+    font-family: "標楷體"
+}
+
+
+.flip .digital:before,
+.flip .digital:after,
+.flip_1 .digital_1:before,
+.flip_1 .digital_1:after,
+.flip_2 .digital_2:before,
+.flip_2 .digital_2:after,
+.flip_3 .digital_3:before,
+.flip_3 .digital_3:after,
+.flip_4 .digital_4:before,
+.flip_4 .digital_4:after,
+.flip_5 .digital_5:before,
+.flip_5 .digital_5:after,
+.flip_6 .digital_6:before,
+.flip_6 .digital_6:after,
+.flip_7 .digital_7:before,
+.flip_7 .digital_7:after,
+.flip_8 .digital_8:before,
+.flip_8 .digital_8:after {
+    content: "";
+    position: absolute;
+    left: 0;
+    right: 0;
+    background: rgb(88, 67, 66);
+    overflow: hidden;
+    box-sizing: border-box;
+}
+
+.flip .digital:before,
+.flip_1 .digital_1:before,
+.flip_2 .digital_2:before,
+.flip_3 .digital_3:before,
+.flip_4 .digital_4:before,
+.flip_5 .digital_5:before,
+.flip_6 .digital_6:before,
+.flip_7 .digital_7:before,
+.flip_8 .digital_8:before {
+    top: 0;
+    bottom: 50%;
+    /* border-radius: 10px 10px 0 0; */
+    border-bottom: solid 0.01vw rgba(88, 34, 8, 0.5);
+}
+
+.flip .digital:after,
+.flip_1 .digital_1:after, 
+.flip_2 .digital_2:after,
+.flip_3 .digital_3:after,
+.flip_4 .digital_4:after,
+.flip_5 .digital_5:after,
+.flip_6 .digital_6:after,
+.flip_7 .digital_7:after,
+.flip_8 .digital_8:after{
+    top: 50%;
+    bottom: 0;
+    /* border-radius: 0 0 10px 10px; */
+    line-height: 0;
+}
+
+.flip .number0:before,
+.flip .number0:after,
+.flip_3 .number_3_0:before,
+.flip_3 .number_3_0:after,
+.flip_6 .number_6_0:before,
+.flip_6 .number_6_0:after {
+    content: "藍7";
+}
+
+.flip .number1:before,
+.flip .number1:after,
+.flip_3 .number_3_1:before,
+.flip_3 .number_3_1:after,
+.flip_6 .number_6_1:before,
+.flip_6 .number_6_1:after {
+    content: "300";
+}
+
+.flip .number2:before,
+.flip .number2:after,
+.flip_3 .number_3_2:before,
+.flip_3 .number_3_2:after,
+.flip_6 .number_6_2:before,
+.flip_6 .number_6_2:after  {
+    content: "815";
+}
+
+.flip .number3:before,
+.flip .number3:after,
+.flip_3 .number_3_3:before,
+.flip_3 .number_3_3:after,
+.flip_6 .number_6_3:before,
+.flip_6 .number_6_3:after  {
+    content: "小18";
+}
+
+.flip .number4:before,
+.flip .number4:after,
+.flip_3 .number_3_4:before,
+.flip_3 .number_3_4:after,
+.flip_6 .number_6_4:before,
+.flip_6 .number_6_4:after  {
+    content: "小19";
+}
+
+.flip .number5:before,
+.flip .number5:after,
+.flip_3 .number_3_5:before,
+.flip_3 .number_3_5:after,
+.flip_6 .number_6_5:before,
+.flip_6 .number_6_5:after  {
+    content: "304重慶線";
+}
+
+.flip .number6:before,
+.flip .number6:after,
+.flip_3 .number_3_6:before,
+.flip_3 .number_3_6:after,
+.flip_6 .number_6_6:before,
+.flip_6 .number_6_6:after  {
+    content: "255區間車";
+}
+
+.flip .number7:before,
+.flip .number7:after,
+.flip_3 .number_3_7:before,
+.flip_3 .number_3_7:after,
+.flip_6 .number_6_7:before,
+.flip_6 .number_6_7:after  {
+    content: "棕13";
+}
+
+.flip .number8:before,
+.flip .number8:after,
+.flip_3 .number_3_8:before,
+.flip_3 .number_3_8:after,
+.flip_6 .number_6_8:before,
+.flip_6 .number_6_8:after  {
+    content: "藍7副線";
+}
+
+.flip .number9:before,
+.flip .number9:after,
+.flip_3 .number_3_9:before,
+.flip_3 .number_3_9:after,
+.flip_6 .number_6_9:before,
+.flip_6 .number_6_9:after  {
+    content: "小19合誠宮";
+}
+
+.flip .number10:before,
+.flip .number10:after,
+.flip_3 .number_3_10:before,
+.flip_3 .number_3_10:after,
+.flip_6 .number_6_10:before,
+.flip_6 .number_6_10:after  {
+    content: "市民小巴1";
+}
+
+
+
+
+
+
+.flip_1 .number_1_0:before,
+.flip_1 .number_1_0:after,
+.flip_4 .number_4_0:before,
+.flip_4 .number_4_0:after,
+.flip_7 .number_7_0:before,
+.flip_7 .number_7_0:after {
+    content: "捷運市政府站";
+    font-size: 1.5vw;
+}
+
+.flip_1 .number_1_1:before,
+.flip_1 .number_1_1:after,
+.flip_4 .number_4_1:before,
+.flip_4 .number_4_1:after,
+.flip_7 .number_7_1:before,
+.flip_7 .number_7_1:after {
+    content: "捷運西門站";
+}
+
+.flip_1 .number_1_2:before,
+.flip_1 .number_1_2:after,
+.flip_4 .number_4_2:before,
+.flip_4 .number_4_2:after,
+.flip_7 .number_7_2:before,
+.flip_7 .number_7_2:after {
+    content: "仙公廟";
+}
+
+.flip_1 .number_1_3:before,
+.flip_1 .number_1_3:after,
+.flip_4 .number_4_3:before,
+.flip_4 .number_4_3:after,
+.flip_7 .number_7_3:before,
+.flip_7 .number_7_3:after {
+    content: "捷運劍潭站";
+}
+
+.flip_1 .number_1_4:before,
+.flip_1 .number_1_4:after,
+.flip_4 .number_4_4:before,
+.flip_4 .number_4_4:after,
+.flip_7 .number_7_4:before,
+.flip_7 .number_7_4:after {
+    content: "潭墘";
+}
+
+.flip_1 .number_1_5:before,
+.flip_1 .number_1_5:after,
+.flip_4 .number_4_5:before,
+.flip_4 .number_4_5:after,
+.flip_7 .number_7_5:before,
+.flip_7 .number_7_5:after {
+    content: "福美站";
+}
+
+.flip_1 .number_1_6:before,
+.flip_1 .number_1_6:after,
+.flip_4 .number_4_6:before,
+.flip_4 .number_4_6:after,
+.flip_7 .number_7_6:before,
+.flip_7 .number_7_6:after {
+    content: "圓山新城二";
+}
+
+.flip_2 .number_2_0:before,
+.flip_2 .number_2_0:after,
+.flip_5 .number_5_0:before,
+.flip_5 .number_5_0:after,
+.flip_8 .number_8_0:before,
+.flip_8 .number_8_0:after {
+    content: "1分鐘";
+}
+
+.flip_2 .number_2_1:before,
+.flip_2 .number_2_1:after,
+.flip_5 .number_5_1:before,
+.flip_5 .number_5_1:after,
+.flip_8 .number_8_1:before,
+.flip_8 .number_8_1:after {
+    content: "2分鐘";
+}
+
+.flip_2 .number_2_2:before,
+.flip_2 .number_2_2:after,
+.flip_5 .number_5_2:before,
+.flip_5 .number_5_2:after,
+.flip_8 .number_8_2:before,
+.flip_8 .number_8_2:after {
+    content: "3分鐘";
+}
+
+.flip_2 .number_2_3:before,
+.flip_2 .number_2_3:after,
+.flip_5 .number_5_3:before,
+.flip_5 .number_5_3:after,
+.flip_8 .number_8_3:before,
+.flip_8 .number_8_3:after {
+    content: "4分鐘";
+}
+
+.flip_2 .number_2_4:before,
+.flip_2 .number_2_4:after,
+.flip_5 .number_5_4:before,
+.flip_5 .number_5_4:after,
+.flip_8 .number_8_4:before,
+.flip_8 .number_8_4:after {
+    content: "5分鐘";
+}
+
+.flip_2 .number_2_5:before,
+.flip_2 .number_2_5:after,
+.flip_5 .number_5_5:before,
+.flip_5 .number_5_5:after,
+.flip_8 .number_8_5:before,
+.flip_8 .number_8_5:after {
+    content: "6分鐘";
+}
+
+.flip_2 .number_2_6:before,
+.flip_2 .number_2_6:after,
+.flip_5 .number_5_6:before,
+.flip_5 .number_5_6:after,
+.flip_8 .number_8_6:before,
+.flip_8 .number_8_6:after {
+    content: "7分鐘";
+}
+
+.flip_2 .number_2_7:before,
+.flip_2 .number_2_7:after,
+.flip_5 .number_5_7:before,
+.flip_5 .number_5_7:after,
+.flip_8 .number_8_7:before,
+.flip_8 .number_8_7:after {
+    content: "8分鐘";
+}
+
+.flip_2 .number_2_8:before,
+.flip_2 .number_2_8:after,
+.flip_5 .number_5_8:before,
+.flip_5 .number_5_8:after,
+.flip_8 .number_8_8:before,
+.flip_8 .number_8_8:after {
+    content: "9分鐘";
+}
+
+.flip_2 .number_2_9:before,
+.flip_2 .number_2_9:after,
+.flip_5 .number_5_9:before,
+.flip_5 .number_5_9:after,
+.flip_8 .number_8_9:before,
+.flip_8 .number_8_9:after {
+    content: "10分鐘以上";
+    font-size: 1.3vw;
+}
+
+
+
+.flip.down .front:before,
+.flip_1.down_1 .front_1:before,
+.flip_2.down_2 .front_2:before,
+.flip_3.down_3 .front_3:before,
+.flip_4.down_4 .front_4:before,
+.flip_5.down_5 .front_5:before,
+.flip_6.down_6 .front_6:before,
+.flip_7.down_7 .front_7:before,
+.flip_8.down_8 .front_8:before {
+    z-index: 3;
+}
+
+.flip.down .back:after,
+.flip_1.down_1 .back_1:after, 
+.flip_2.down_2 .back_2:after,
+.flip_3.down_3 .back_3:after,
+.flip_4.down_4 .back_4:after,
+.flip_5.down_5 .back_5:after,
+.flip_6.down_6 .back_6:after,
+.flip_7.down_7 .back_7:after,
+.flip_8.down_8 .back_8:after{
+    z-index: 2;
+    transform-origin: 50% 0%;
+    transform: perspective(160px) rotateX(180deg);
+}
+
+.flip.down .front:after,
+.flip.down .back:before,
+.flip_1.down_1 .front_1:after,
+.flip_1.down_1 .back_1:before,
+.flip_2.down_2 .front_2:after,
+.flip_2.down_2 .back_2:before,
+.flip_3.down_3 .front_3:after,
+.flip_3.down_3 .back_3:before,
+.flip_4.down_4 .front_4:after,
+.flip_4.down_4 .back_4:before,
+.flip_5.down_5 .front_5:after,
+.flip_5.down_5 .back_5:before,
+.flip_6.down_6 .front_6:after,
+.flip_6.down_6 .back_6:before,
+.flip_7.down_7 .front_7:after,
+.flip_7.down_7 .back_7:before,
+.flip_8.down_8 .front_8:after,
+.flip_8.down_8 .back_8:before {
+    z-index: 1;
+}
+
+
+.flip.down.go .front:before,
+.flip_1.down_1.go_1 .front_1:before, 
+.flip_2.down_2.go_2 .front_2:before,
+.flip_3.down_3.go_3 .front_3:before,
+.flip_4.down_4.go_4 .front_4:before,
+.flip_5.down_5.go_5 .front_5:before,
+.flip_6.down_6.go_6 .front_6:before,
+.flip_7.down_7.go_7 .front_7:before,
+.flip_8.down_8.go_8 .front_8:before {
+    transform-origin: 50% 100%;
+    animation: frontFlipDown 0.4s ease-in-out both;
+    box-shadow: 0 -2px 6px rgba(255, 255, 255, 0.3);
+    backface-visibility: hidden;
+}
+
+.flip.down.go .back:after,
+.flip_1.down_1.go_1 .back_1:after,
+.flip_2.down_2.go_2 .back_2:after,
+.flip_3.down_3.go_3 .back_3:after,
+.flip_4.down_4.go_4 .back_4:after,
+.flip_5.down_5.go_5 .back_5:after,
+.flip_6.down_6.go_6 .back_6:after,
+.flip_7.down_7.go_7 .back_7:after,
+.flip_8.down_8.go_8 .back_8:after {
+    animation: backFlipDown 0.4s ease-in-out both;
+}
+
+@keyframes frontFlipDown {
+    0% {
+        transform: perspective(3vw) rotateX(0deg);
+    }
+
+    100% {
+        transform: perspective(3vw) rotateX(-180deg);
+    }
+}
+
+@keyframes backFlipDown {
+    0% {
+        transform: perspective(3vw) rotateX(180deg);
+    }
+
+    100% {
+        transform: perspective(3vw) rotateX(0deg);
+    }
+}
