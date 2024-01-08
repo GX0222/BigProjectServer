@@ -5,7 +5,7 @@ $result = $conn->query($sql);
 if ($result->num_rows > 0) {
 	while($row = $result->fetch_assoc()) {	
         echo "<div class='col-sm-6 col-md-4 col-lg-3 card'>";
-        echo "<div style='text-align: center; padding:1vw; background-color: blanchedalmond; border-radius: 1vw; box-shadow: 1vw 1vw 1.5vw rgba(0, 0, 0, 0.2);'>";
+        echo "<div style='height:90%; text-align: center; padding:1vw; background-color: blanchedalmond; border-radius: 1vw; box-shadow: 1vw 1vw 1.5vw rgba(0, 0, 0, 0.2);'>";
         echo "<a href='' style='text-decoration:none; color:black'>";
         echo "<img class='item' src='./image/".$row['item_url'].".jpg' alt=''>";
         echo "<p style='font-size:1.6vb;'>".$row['item_name']."</p>";

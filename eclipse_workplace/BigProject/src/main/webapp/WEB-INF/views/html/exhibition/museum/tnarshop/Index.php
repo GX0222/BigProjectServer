@@ -58,7 +58,7 @@
             /* max-width: 100%; */
             /* max-height: 100%; */
             /* height: 350px; */
-            aspect-ratio: 1/1.5;
+            aspect-ratio: 1/1.8;
             background-color: rgba(255, 255, 255, 0);
             border: 3px solid rgba(255, 255, 255, 0);
             margin-buttom: 4vh;
