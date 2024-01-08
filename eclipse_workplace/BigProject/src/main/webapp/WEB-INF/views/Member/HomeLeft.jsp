@@ -13,6 +13,6 @@
     <h5>活動專區</h5>
     <ul>
         <li><a class="aa" href="<c:url value='/List' />">我的活動</a></li>
-        <li>上架活動</li>
+        <li><a class="aa" href="<c:url value='/Update' />">上架活動</a></li>
     </ul>
 </div>

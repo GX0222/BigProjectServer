@@ -95,7 +95,7 @@
                                 </li>
                                 <li class="nav-item">
                                     <a id="trans" onclick="nav_item_active()" class="nav-link" aria-current="page"
-                                        href="<c:url value='/trafficimfor/' />">交通情報</a>
+                                        href="<c:url value='/Trafficimfor' />">交通情報</a>
                                 </li>
                                 <li class="nav-item">
                                     <a id="forum" onclick="nav_item_active()" class="nav-link" aria-current="page"
@@ -219,7 +219,7 @@
                 <div class="groupTitle">
                     <h3>最新消息</h3>
                 </div>
-                <a href="<c:url value='/Event.html' />" class="newsA">
+                <a href="<c:url value='/Event' />" class="newsA">
                     <div id="news1" class="newsCon">
                         <div class="newsImgCon">
                             <img class="newsImg" src="<c:url value='/image/2023聖誕節.jpg' />" alt="">

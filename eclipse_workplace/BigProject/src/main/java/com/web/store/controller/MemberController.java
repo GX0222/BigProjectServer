@@ -16,14 +16,25 @@ public class MemberController {
 	public String love(Model model) {
 		return "Member/Love";
 	}
+	
+	@GetMapping("/Update")
+	public String update(Model model) {
+		return "Member/Update";
+	}
 
 	@GetMapping("/Activity_list")
 	public String activity_list(Model model) {
 		return "Member/Activity_list";
 	}
 
-//	@GetMapping("/trafficimfor/")
-//	public String trafficimfor(Model model) {
-//		return "trafficimfor";
-//	}
+	@GetMapping("/Trafficimfor")
+	public String trafficimfor(Model model) {
+		return "trafficimfor";
+	}
+	
+	@GetMapping("/Ian/index'")
+	public String ianIndex(Model model) {
+		return "index";
+	}
+	
 }
