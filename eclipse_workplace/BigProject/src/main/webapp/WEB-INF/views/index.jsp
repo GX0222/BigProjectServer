@@ -95,15 +95,15 @@
                                 </li>
                                 <li class="nav-item">
                                     <a id="trans" onclick="nav_item_active()" class="nav-link" aria-current="page"
-                                        href="./trafficimfor/">交通情報</a>
+                                        href="<c:url value='/trafficimfor/' />">交通情報</a>
                                 </li>
                                 <li class="nav-item">
                                     <a id="forum" onclick="nav_item_active()" class="nav-link" aria-current="page"
-                                        href="#">旅遊論壇</a>
+                                        href="<c:url value='/' />">旅遊論壇</a>
                                 </li>
                                 <li class="nav-item">
                                     <a id="aboutus" onclick="nav_item_active()" class="nav-link" aria-current="page"
-                                        href="#">關於我們</a>
+                                        href="<c:url value='' />">關於我們</a>
                                 </li>
                             </ul>
                             <form class="d-flex" role="search">
@@ -207,7 +207,7 @@
                     </a>
                 </div>
                 <div class="col m-0 p-0">
-                    <a href="../Ian/index.html" class="aa">
+                    <a href="<c:url value='/Ian/index' />" class="aa">
                         <div class="classIcon">
                             <img src="<c:url value='/image/a015.png' />">
                         </div>

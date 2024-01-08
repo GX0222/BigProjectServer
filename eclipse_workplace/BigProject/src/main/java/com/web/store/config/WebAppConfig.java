@@ -38,6 +38,8 @@ public class WebAppConfig implements WebMvcConfigurer {
 	             .addResourceLocations("/WEB-INF/views/Tools/");
 	     registry.addResourceHandler("/image/**")
 	             .addResourceLocations("/WEB-INF/views/image/");
+	     registry.addResourceHandler("/trafficimfor")
+         .addResourceLocations("/WEB-INF/views/trafficimfor/");
 	}
 
 	@Bean
