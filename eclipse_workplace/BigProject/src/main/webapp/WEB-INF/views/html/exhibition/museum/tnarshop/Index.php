@@ -5,7 +5,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>
-        NavBar
+        精品典藏
     </title>
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet"
         integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN" crossorigin="anonymous">
@@ -14,6 +14,9 @@
         crossorigin="anonymous"></script>
     <script src="https://code.jquery.com/jquery-3.7.1.js"
         integrity="sha256-eKhayi8LEQwp4NKxN+CfCh+3qOVUtJn3QNZ0TciWLP4=" crossorigin="anonymous"></script>
+    <script type="text/javascript" src="./Tools/jquery.js"></script>
+    <script type="text/javascript" src="./Tools/bootstrap.bundle.js"></script>
+    <!-- <script src="./Tools/bootstrap.bundle.js"> -->
     <!-- Google Icon -->
     <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
     <!-- SimpleBar-->
@@ -22,7 +25,7 @@
     <!-- NavBar -->
     <link rel="stylesheet" href="./Tools/NavBar_2.css">
     <link rel="stylesheet" href="./Tools/Membe.css">
-    <!-- <link rel="stylesheet" href="./Tools/bootstrap.css"> -->
+    <link rel="stylesheet" href="./Tools/bootstrap.css">
     <style>
         .homeLeft_1 {
             min-width: 220px;
@@ -44,6 +47,9 @@
 
         .item {
             width: 100%;
+            border-radius: 2vw;
+            padding: 5%;
+
         }
 
         .card {
@@ -53,22 +59,29 @@
             /* max-height: 100%; */
             /* height: 350px; */
             aspect-ratio: 1/1.5;
-            background-color: azure;
+            background-color: rgba(255, 255, 255, 0);
+            border: 3px solid rgba(255, 255, 255, 0);
+            margin-buttom: 4vh;
         }
 
         .bgCon_1 {
             margin: 0px;
-            margin-top: 50px;
+            margin-top: 30px;
             padding: 0px;
             min-width: 500px;
             width: 100%;
             /* border: 1px solid black; */
             display: inline-flex;
         }
+
+        .menu {
+            margin-top:5px
+            /* height:30px; */
+        }
     </style>
 </head>
 
-<body style="background-color: azure;">
+<body style="background-color: azure;" onload="kind_A()">
     <nav id="myNavbar" class="navbar navbar-expand-md bg-none w-100 fixed-top m-0 p-0" style="top: 0px;">
         <div class="container-fluid m-0 p-0 h-100">
             <a href="<c:url value='/' />" class="navbar-brand m-0 p-0" style="font-size: x-large;"> <img
@@ -109,15 +122,15 @@
     </nav>
     <div class="bgCon_1">
         <div class="homeLeft_1 position-fixed">
-            <h5>主題選品</h5>
+            <h5 style="margin-top:25px">主題選品</h5>
             <ul>
-                <li><a class="aa" href="<c:url value='/Member' />">風格單品</a></li>
-                <li><a class="aa" href="<c:url value='/Love' />">餐桌 最美食景</a></li>
-                <li><a class="aa" href="<c:url value='/Mimi' />">清明上河圖 系列</a></li>
-                <li><a class="aa" href="<c:url value='/Member' />">佛經特集</a></li>
-                <li><a class="aa" href="<c:url value='/Love' />">送禮指南</a></li>
-                <li><a class="aa" href="<c:url value='/Mimi' />">長輩祝壽</a></li>
-                <li><a class="aa" href="<c:url value='/Mimi' />">翠玉白菜 系列</a></li>
+                <li class="menu"><a class="aa" href="javascript:kind_A();">風格單品</a></li>
+                <li class="menu"><a class="aa" href="javascript:kind_B();">餐桌 最美食景</a></li>
+                <li class="menu"><a class="aa" href="javascript:kind_C();">清明上河圖 系列</a></li>
+                <li class="menu"><a class="aa" href="javascript:kind_D();">佛經特集</a></li>
+                <li class="menu"><a class="aa" href="javascript:kind_E();">送禮指南</a></li>
+                <li class="menu"><a class="aa" href="javascript:kind_F();">長輩祝壽</a></li>
+                <li class="menu"><a class="aa" href="javascript:kind_G();">翠玉白菜 系列</a></li>
             </ul>
             <hr>
             <h5>活動專區</h5>
@@ -126,41 +139,81 @@
                 <li><a class="aa" href="<c:url value='/Update' />">上架活動</a></li>
             </ul>
         </div>
-        <div class="col-sm-7 col-md-8 col-lg-9 row container" style="border: 1px solid green; margin-left: 250px; margin-top: 50px;">
-            <div class="col-sm-6 col-md-4 col-lg-3 card" style="border: 1px solid red;">
-                <img class="item" src="./image/A01.jpg" alt="">
-            </div>
-            <div class="col-sm-6 col-md-4 col-lg-3 card" style="border: 1px solid red;">
-                <img class="item" src="./image/A01.jpg" alt="">
-            </div>
-            <div class="col-sm-6 col-md-4 col-lg-3 card" style="border: 1px solid red;">
-                <img class="item" src="./image/A01.jpg" alt="">
-            </div>
-            <div class="col-sm-6 col-md-4 col-lg-3 card" style="border: 1px solid red;">
-                <img class="item" src="./image/A01.jpg" alt="">
-            </div>
-            <div class="col-sm-6 col-md-4 col-lg-3 card" style="border: 1px solid red;">
-                <img class="item" src="./image/A01.jpg" alt="">
-            </div>
-            <div class="col-sm-6 col-md-4 col-lg-3 card" style="border: 1px solid red;">
-                <img class="item" src="./image/A01.jpg" alt="">
-            </div>
-            <div class="col-sm-6 col-md-4 col-lg-3 card" style="border: 1px solid red;">
-                <img class="item" src="./image/A01.jpg" alt="">
-            </div>
-            <div class="col-sm-6 col-md-4 col-lg-3 card" style="border: 1px solid red;">
-                <img class="item" src="./image/A01.jpg" alt="">
-            </div>
-            <div class="col-sm-6 col-md-4 col-lg-3 card" style="border: 1px solid red;">
-                <img class="item" src="./image/A01.jpg" alt="">
-            </div>
-            <div class="col-sm-6 col-md-4 col-lg-3 card" style="border: 1px solid red;">
-                <img class="item" src="./image/A01.jpg" alt="">
-            </div>
-        </div>
+        <div id="items" class="col-sm-7 col-md-8 col-lg-9 row container" style="margin-left: 250px; margin-top: 50px;">
 
+
+
+
+        </div>
     </div>
-    </div>
+</div>
+
+
+<script>
+    function kind_A() {
+        $("#items").empty();
+        $.ajax({
+            url:"kindA.php",
+            success: function (response) {
+                $("#items").append(response);
+            }
+        }); 
+    }
+    function kind_B() {
+        $("#items").empty();
+        $.ajax({
+            url:"kindB.php",
+            success: function (response) {
+                $("#items").append(response);
+            }
+        }); 
+    }
+    function kind_C() {
+        $("#items").empty();
+        $.ajax({
+            url:"kindC.php",
+            success: function (response) {
+                $("#items").append(response);
+            }
+        }); 
+    }
+    function kind_D() {
+        $("#items").empty();
+        $.ajax({
+            url:"kindD.php",
+            success: function (response) {
+                $("#items").append(response);
+            }
+        }); 
+    }
+    function kind_E() {
+        $("#items").empty();
+        $.ajax({
+            url:"kindE.php",
+            success: function (response) {
+                $("#items").append(response);
+            }
+        }); 
+    }
+    function kind_F() {
+        $("#items").empty();
+        $.ajax({
+            url:"kindF.php",
+            success: function (response) {
+                $("#items").append(response);
+            }
+        }); 
+    }
+    function kind_G() {
+        $("#items").empty();
+        $.ajax({
+            url:"kindG.php",
+            success: function (response) {
+                $("#items").append(response);
+            }
+        }); 
+    }
+</script>
 
 </body>
 
