@@ -119,8 +119,8 @@ body {
     height: 100vh;
     background-size: cover;
     background-position: center;
-    transition: background 5s ease-in-out;
-    animation: backgroundAnimation 150s infinite alternate;
+    transition: background 0.5s ease-in-out, opacity 0.5s ease-in-out;
+    animation: backgroundAnimation 80s infinite alternate;
     /* 背景動畫 */
     box-sizing: border-box;
     overflow: hidden;
