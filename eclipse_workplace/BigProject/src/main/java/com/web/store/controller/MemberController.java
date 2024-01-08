@@ -21,4 +21,9 @@ public class MemberController {
 	public String activity_list(Model model) {
 		return "Member/Activity_list";
 	}
+
+//	@GetMapping("/trafficimfor/")
+//	public String trafficimfor(Model model) {
+//		return "trafficimfor";
+//	}
 }
