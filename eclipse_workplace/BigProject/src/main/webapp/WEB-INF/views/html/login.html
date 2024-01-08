@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="zh-TW">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>登入</title>
+    <script src="https://code.jquery.com/jquery-3.7.1.js"
+        integrity="sha256-eKhayi8LEQwp4NKxN+CfCh+3qOVUtJn3QNZ0TciWLP4=" crossorigin="anonymous"></script>
+
+    <!-- css -->
+    <link rel="stylesheet" href="./Tools/Login.css">
+</head>
+
+<body>
+
+    <div class="login-container">
+        <h2>登入</h2>
+
+        <form>
+            <label for="username">帳號：</label>
+            <input type="text" id="username" name="username" required>
+
+            <label for="password">密碼：</label>
+            <input type="password" id="password" name="password" required>
+
+            <div class="remember-forgot">
+                <span class="remember-me">
+                    <input type="checkbox" id="remember" style="margin-left: -15px;">
+                    <label for="remember" style="width: 120px; margin-left: -20px;">記住我</label>
+                </span>
+                <span class="forgot-password">
+                    <a href="#">忘記密碼？</a>
+                </span>
+            </div>
+
+            <button type="submit" class="login-btn">登入</button>
+
+            <div class="register-link">
+                <p>還沒有帳號？<a href="#">註冊</a></p>
+            </div>
+        </form>
+
+        <div class="social-login">
+            <p>或使用其他登入：</p>
+            <img id="test" src="./image/icon_google.png" alt="Google">
+            <img id="line" src="./image/icon_line.png" alt="Line">
+            <img id="fb" src="./image/icon_fb.png" alt="FB">
+            <script src="./Tools/login.js" type="module"></script>
+        </div>
+    </div>
+
+</body>
+
+</html>
