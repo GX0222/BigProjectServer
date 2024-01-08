@@ -1,0 +1,350 @@
+@charset "UTF-8";
+
+body {
+	margin: 0px;
+}
+
+#newBG {
+	width: calc(100% - 10px);
+	margin: 5px auto;
+	margin-top: 10px;
+	padding: 0px;
+	/* border: solid 2px; */
+}
+
+/* ============================================= */
+
+.navbar {
+	transition: background-color 0.3s ease-in-out;
+	height: 50px;
+	min-width: 220px;
+}
+
+a.nav-link {
+	color: aliceblue;
+	text-shadow: 0px 0px 5px rgba(0, 0, 0, 1);
+	border-radius: 5px;
+	text-align: center;
+}
+
+a.nav-link:hover {
+	color: white;
+	background-color: rgba(0, 0, 0, 0.4);
+}
+
+#mynavbar {
+	width: 200px;
+	/* height: 100%; */
+	margin-left: auto;
+	margin-right: 20px;
+	margin-top: -1px;
+	background-color: rgba(0, 0, 0, 0.1);
+	border: 1px solid rgba(0, 0, 0, 0);
+	box-shadow: 0 0 10px rgba(0, 0, 0, 0.5);
+	border-radius: 5px;
+}
+
+.scrolledV2 {
+	background-color: white !important;
+	border: 1px solid rgba(0, 0, 0, 0.1) !important;
+	border-top: 0px !important;
+	border-top-left-radius: 0px !important;
+	border-top-right-radius: 0px !important;
+	box-shadow: 0 0 10px rgba(0, 0, 0, 0) !important;
+}
+
+.scrolledV2>ul .nav-item>a {
+	color: rgba(0, 0, 0, 0.7);
+	text-shadow: 0px 0px 5px rgba(0, 0, 0, 0);
+}
+
+.scrolledV2>ul .nav-item>a:hover {
+	color: plum;
+}
+
+.navbar-toggler {
+	background-color: white;
+	margin-right: 10px;
+}
+
+.navbar-toggler:focus {
+	outline: none;
+	box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+	border-width: 1px;
+	border-style: solid;
+}
+
+#mynavbarCon {
+	width: 100vw;
+	height: 100%;
+	margin: 0px;
+	padding: 5px;
+	padding-right: 10px;
+	border: 1px solid rgba(0, 0, 0, 0);
+}
+
+.scrolled {
+	background-color: white;
+	/* box-shadow: 0 0 10px rgba(0, 0, 0, 0.1); */
+	border: 1px solid rgba(0, 0, 0, 0.1) !important;
+	/* 滾動高度超過 35vw 時的背景顏色 */
+}
+
+.collapseCon {
+	margin-left: auto;
+	margin-right: 0px;
+	/* background-color: aqua; */
+}
+
+.nameCon {
+	margin: 0px;
+	/* margin-right: 3px; */
+	padding: 0px;
+	height: 100%;
+	/* background-color: aqua; */
+	display: flex;
+	align-items: center;
+	justify-content: center;
+}
+
+.memberConMd {
+	margin: 0px;
+	padding: 0px;
+	height: 100%;
+	/* background-color: aquamarine; */
+	/* border: 1px solid rgba(0, 0, 0, 1); */
+	display: inline-flex;
+	justify-content: center;
+	align-items: center;
+}
+
+.nameCon>a {
+	height: 100%;
+	aspect-ratio: 1/1;
+	width: auto;
+	margin: 0px;
+	margin-right: 5px;
+	padding: 0px;
+}
+
+.nameCon>a>img {
+	height: 100%;
+	aspect-ratio: 1/1;
+	width: auto;
+	margin: 0px;
+	outline: 1px solid rgba(0, 0, 0, 0.2);
+}
+
+/* ============================================= */
+
+div.groupTitle {
+	width: 100%;
+	margin: 0px;
+	margin-bottom: 5px;
+	padding: 5px;
+	text-align: left;
+	justify-content: center;
+	align-items: center;
+	border-bottom: solid 0.5px rgba(0, 0, 0, 0.3);
+}
+
+div.groupTitle>h3 {
+	margin: 0px;
+	padding: 0px;
+}
+
+div.homeCenter {
+	margin: 0px;
+	padding: 0px;
+	max-width: 1000px;
+	min-width: 500px;
+}
+
+div.classIcon {
+	margin: 5px;
+	padding: 0px;
+	/* height: 90px; */
+	min-width: calc(20% - 10px);
+	aspect-ratio: 1/1;
+	border-radius: 5px;
+	align-items: center;
+	text-align: center;
+	justify-content: center;
+	display: flex;
+	overflow: hidden;
+}
+
+div.classIcon:hover {
+	background-color: rgba(50, 150, 50, 0.5);
+}
+
+.classIcon img {
+	max-width: 110%;
+}
+
+/* =================================================== */
+
+div.homeRight {
+	margin: 0px;
+	padding: 0px;
+	max-width: 400px;
+	/* min-width: 250px; */
+}
+
+@media (max-width: 768px) {
+	.homeRight {
+		display: none;
+	}
+
+	.fixedDiv {
+		display: block !important;
+	}
+}
+
+div.weatherDiv {
+	width: 100%;
+	height: 230px;
+	margin: 0px;
+	padding: 5px;
+	border: solid 2px rgba(0, 0, 0, 0.1);
+	/* box-shadow: 0 0 5px rgba(0, 0, 0, 0.2); */
+	border-radius: 5px;
+}
+
+div.weatherCol,
+div.weatherColTop {
+	padding: 0;
+	margin: 0;
+}
+
+div.weatherColSm {
+	padding: 0;
+	margin: 0;
+	display: none;
+}
+
+@media (max-width: 970px) {
+	.weatherColTop {
+		display: none;
+	}
+
+	.weatherColSm {
+		display: block !important;
+	}
+}
+
+@media (min-width: 1400px) {
+	div.weatherDiv {
+		height: 120px;
+	}
+}
+
+div.weatherBlock {
+	min-width: 100px;
+	height: 100px;
+	margin: 5px;
+	border: solid 2px rgba(0, 0, 0, 0.1);
+	border-radius: 5px;
+	/* box-shadow: inset 0 0 5px rgba(0, 0, 0, 0.2); */
+	text-align: center;
+	justify-content: center;
+	align-items: center;
+	display: flex;
+}
+
+div.couponGroup {
+	width: 100%;
+	height: 1200px;
+	margin: 0px;
+	margin-top: 10px;
+	padding: 5px;
+	border: solid 2px rgba(0, 0, 0, 0.1);
+	/* box-shadow: 0 0 5px rgba(0, 0, 0, 0.2); */
+	border-radius: 5px;
+	/* background-color: rgba(0, 0, 0, 0.1); */
+}
+
+div.couponCon {
+	height: 300px;
+	border: solid 2px rgba(0, 0, 0, 0.3);
+	border-radius: 5px;
+	margin: 5px;
+	padding: 5px;
+	background-color: white;
+	overflow: auto;
+}
+
+/* ==================================================== */
+/* offcanvas */
+
+.offcanvas {
+	background-color: #ccc;
+}
+
+.fixedDiv {
+	position: fixed;
+	top: 50%;
+	right: 0px;
+	transform: translateY(-50%);
+	width: 40px;
+	height: 100px;
+	background-color: #ccc;
+	padding: 0px;
+	/* 目前圖層最高 */
+	z-index: 3;
+	border-bottom-left-radius: 10px;
+	border-top-left-radius: 10px;
+	box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+	display: none;
+}
+
+.OffcanBtn {
+	width: 100%;
+	height: 100%;
+	margin: 0px;
+	padding: 0px;
+	background: none;
+	border: none;
+	border-radius: 0px;
+	border-bottom-left-radius: 10px;
+	border-top-left-radius: 10px;
+	display: flex;
+	text-align: center;
+	justify-content: center;
+	align-items: center;
+}
+
+.OffcanBtn:hover {
+	background-color: plum !important;
+}
+
+div.weatherDivOff {
+	width: 100%;
+	height: 110px;
+	margin: 0px;
+	padding: 0px;
+	border: solid 2px rgba(0, 0, 0, 0.1);
+	/* box-shadow: 0 0 5px rgba(0, 0, 0, 0.2); */
+	border-radius: 5px;
+}
+
+div.weatherColOff {
+	margin: 0px;
+	padding: 0px;
+
+}
+
+/* ==================================================== */
+
+.aa {
+	text-decoration: none;
+	color: black;
+}
+
+.aa:hover {
+	color: violet;
+}
+
+footer {
+	height: 200px;
+}
