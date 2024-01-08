@@ -181,7 +181,7 @@
                 <div class="col-3">
                     <div>
                         <div style="font-size: 1.8vw; font-weight: bolder; text-align: center">
-                            <a href="./tnarshop">
+                            <a style="text-decoration:none; color: black;" href="./tnarshop">
                                 <div>
                                     <img src="../../image/shop.jpg" style="width:80%;">
                                 </div>
