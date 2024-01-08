@@ -12,14 +12,11 @@ public class EventController {
 		return "Event/Event";
 	}
 
-	@GetMapping("/Favor")
+	@GetMapping("/EventList")
 	public String favor(Model model) {
-		return "Event/Favor";
+		return "Event/EventList";
 	}
 
-	@GetMapping("/List")
-	public String list(Model model) {
-		return "Event/List";
-	}
+
 
 }

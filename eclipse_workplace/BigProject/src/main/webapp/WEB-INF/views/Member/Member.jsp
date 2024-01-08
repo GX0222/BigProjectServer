@@ -33,6 +33,7 @@
 <!-- Css -->
 <link rel="stylesheet" href="./Tools/Membe.css">
 <link rel="stylesheet" href="./Tools/Member.css">
+<link rel="stylesheet" href="./Tools/footer.css">
 <!-- Color -->
 <link rel="stylesheet" href="./Tools/Color.css">
 <style>
@@ -41,10 +42,11 @@
 
 <body>
 	<!-- NavBar -->
-	<%@ include file="../NavBar/PageNavBar.jsp" %>
+	<%@ include file="../Shared/PageNavBar.jsp" %>
 	<div class="bgCon">
-		<!-- HomeLeft -->
-        <%@ include file="HomeLeft.jsp" %>
+        <!-- HomeLeft -->
+        <%@ include file="Shared/HomeLeft.jsp" %>
+
 		<div class="homeRight">
 			<div class="m-0 p-0 infoCon">
 				<div class="memberInfo">
@@ -106,6 +108,9 @@
 			</div>
 		</div>
 	</div>
+
+	<!-- Footer -->
+	<%@ include file="../Shared/Footer.jsp" %>
 
 	<script>
 		$(document).ready(function() {

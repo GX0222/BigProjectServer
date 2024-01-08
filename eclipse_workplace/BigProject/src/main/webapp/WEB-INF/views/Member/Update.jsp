@@ -1,5 +1,5 @@
-<%@ page language="java" contentType="text/html; charset=BIG5"
-    pageEncoding="BIG5"%>
+<%@ page language="java" contentType="text/html; charset=UTF-8"
+	pageEncoding="UTF-8"%>
 <%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c"%>
 
 <!DOCTYPE html>
@@ -29,6 +29,7 @@
     <!-- Css -->
     <link rel="stylesheet" href="./Tools/Membe.css">
     <link rel="stylesheet" href="./Tools/Update.css">
+    <link rel="stylesheet" href="./Tools/footer.css">
     <!-- Color -->
     <link rel="stylesheet" href="./Tools/Color.css">
 
@@ -40,10 +41,10 @@
 
 <body>
     <!-- NavBar -->
-	<%@ include file="../NavBar/PageNavBar.jsp" %>
-    <div class="bgCon">
+	<%@ include file="../Shared/PageNavBar.jsp" %>
+	<div class="bgCon">
         <!-- HomeLeft -->
-        <%@ include file="HomeLeft.jsp" %>
+        <%@ include file="Shared/HomeLeft.jsp" %>
 
         <div class="homeRight">
             <div class="infoCon">
@@ -94,6 +95,9 @@
 
         </div>
     </div>
+
+    <!-- Footer -->
+	<%@ include file="../Shared/Footer.jsp" %>
 
     <script>
 
