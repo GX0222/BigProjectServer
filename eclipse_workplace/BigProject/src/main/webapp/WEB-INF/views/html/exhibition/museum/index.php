@@ -181,14 +181,14 @@
                 <div class="col-3">
                     <div>
                         <div style="font-size: 1.8vw; font-weight: bolder; text-align: center">
-                            <div>
-                                <a href="./tnarshop">
+                            <a href="./tnarshop">
+                                <div>
                                     <img src="../../image/shop.jpg" style="width:80%;">
-                                </a>
-                            </div>
-                            <div style="margin-top:1vw">
-                                精品典藏
-                            </div>
+                                </div>
+                                <div style="margin-top:1vw">
+                                    精品典藏
+                                </div>
+                            </a>
                         </div>
                     </div>
                 </div>
