@@ -34,7 +34,7 @@
 					<li class="nav-item"><a id="news" onclick="nav_item_active()"
 						class="nav-link" aria-current="page" href="<c:url value='/Favor' />">活動資訊</a></li>
 					<li class="nav-item"><a id="trans" onclick="nav_item_active()"
-						class="nav-link" aria-current="page" href="<c:url value='/trafficimfor/' />">交通情報</a></li>
+						class="nav-link" aria-current="page" href="<c:url value='/trafficimfor' />">交通情報</a></li>
 					<li class="nav-item"><a id="forum" onclick="nav_item_active()"
 						class="nav-link" aria-current="page" href="<c:url value='' />">旅遊論壇</a></li>
 					<li class="nav-item"><a id="aboutus"
