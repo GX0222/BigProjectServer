@@ -21,10 +21,10 @@ public class MemberController {
 	public String update(Model model) {
 		return "Member/Update";
 	}
-
-	@GetMapping("/Activity_list")
-	public String activity_list(Model model) {
-		return "Member/Activity_list";
+	
+	@GetMapping("/List")
+	public String list(Model model) {
+		return "Member/List";
 	}
 
 	@GetMapping("/Trafficimfor")

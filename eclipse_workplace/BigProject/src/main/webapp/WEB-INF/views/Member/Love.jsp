@@ -28,6 +28,7 @@
     <!-- Css -->
     <link rel="stylesheet" href="./Tools/Membe.css">
     <link rel="stylesheet" href="./Tools/Love.css">
+    <link rel="stylesheet" href="./Tools/footer.css">
     <!-- Color -->
     <link rel="stylesheet" href="./Tools/Color.css">
 
@@ -41,10 +42,10 @@
 
 <body>
     <!-- NavBar -->
-    <%@ include file="../NavBar/PageNavBar.jsp" %>
-    <div class="bgCon">
+	<%@ include file="../Shared/PageNavBar.jsp" %>
+	<div class="bgCon">
         <!-- HomeLeft -->
-        <%@ include file="HomeLeft.jsp" %>
+        <%@ include file="Shared/HomeLeft.jsp" %>
 
         <div class="homeRight">
             <div class="infoCon">
@@ -193,6 +194,9 @@
             </div>
         </div>
     </div>
+
+    <!-- Footer -->
+	<%@ include file="../Shared/Footer.jsp" %>
 
     <script>
         $(document).ready(function () {
