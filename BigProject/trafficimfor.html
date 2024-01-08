@@ -1,0 +1,510 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>交通情報</title>
+
+    <!-- <link rel="stylesheet" href="Tools/info.css"> -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN" crossorigin="anonymous">
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"
+        integrity="sha384-C6RzsynM9kWDrMNeT87bh95OGNyZPhcTNXj1NW7RuBCsyN/o0jlpcV8Qyq46cDfL"
+        crossorigin="anonymous"></script>
+    <script src="https://code.jquery.com/jquery-3.7.1.js"
+        integrity="sha256-eKhayi8LEQwp4NKxN+CfCh+3qOVUtJn3QNZ0TciWLP4=" crossorigin="anonymous"></script>
+
+    <!-- Google Icon -->
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+    <!-- SimpleBar-->
+    <link rel="stylesheet" href="https://unpkg.com/simplebar@latest/dist/simplebar.css" />
+    <script src="https://unpkg.com/simplebar@latest/dist/simplebar.min.js"></script>
+    <!-- 背景影片css -->
+    <link rel="stylesheet" href="./Tools/Tf_iframe.css">
+    <!-- NavBar -->
+    <link rel="stylesheet" href="./Tools/NavBar_2.css">
+    <!-- Gruop_City.css -->
+    <link rel="stylesheet" href="./Tools/Gruop_City.css">
+    <!-- Group_News.css -->
+    <link rel="stylesheet" href="./Tools/Group_News.css">
+    <!-- Traffic_Infos.css -->
+    <link rel="stylesheet" href="./Tools/Traffic_Info.css">
+    <!-- Color -->
+    <link rel="stylesheet" href="./Tools/Color.css">
+    <!-- Footer.css -->
+    <link rel="stylesheet" href="./Tools/footer.css">
+
+    <style>
+        body {
+            margin: 0px;
+        }
+
+        #newBG {
+            width: calc(100% - 10px);
+            margin: 5px auto;
+            margin-top: 10px;
+            padding: 0px;
+            /* border: solid 2px; */
+        }
+
+        /* ============================================= */
+        .scrolled {
+            background-color: white;
+            /* box-shadow: 0 0 10px rgba(0, 0, 0, 0.1); */
+            border: 1px solid rgba(0, 0, 0, 0.1) !important;
+            /* 滾動高度超過 35vw 時的背景顏色 */
+        }
+
+        .collapseCon {
+            margin-left: auto;
+            margin-right: 0px;
+            /* background-color: aqua; */
+        }
+
+        .nameCon {
+            margin: 0px;
+            /* margin-right: 3px; */
+            padding: 0px;
+            height: 100%;
+            /* background-color: aqua; */
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+
+        .memberConMd {
+            margin: 0px;
+            padding: 0px;
+            height: 100%;
+            /* background-color: aquamarine; */
+            /* border: 1px solid rgba(0, 0, 0, 1); */
+            display: inline-flex;
+            justify-content: center;
+            align-items: center;
+        }
+
+        .nameCon>a {
+            height: 100%;
+            aspect-ratio: 1/1;
+            width: auto;
+            margin: 0px;
+            margin-right: 5px;
+            padding: 0px;
+        }
+
+        .nameCon>a>img {
+            height: 100%;
+            aspect-ratio: 1/1;
+            width: auto;
+            margin: 0px;
+            outline: 1px solid rgba(0, 0, 0, 0.2);
+        }
+
+        /* ============================================= */
+
+        div.groupTitle {
+            width: 100%;
+            margin: 0px;
+            margin-bottom: 5px;
+            padding: 5px;
+            text-align: left;
+            justify-content: center;
+            align-items: center;
+            border-bottom: solid 0.5px rgba(0, 0, 0, 0.3);
+        }
+
+        div.groupTitle>h3 {
+            margin: 0px;
+            padding: 0px;
+        }
+
+        div.homeCenter {
+            margin: 0px;
+            padding: 0px;
+            max-width: 1000px;
+            min-width: 500px;
+        }
+
+        div.classIcon {
+            margin: 5px;
+            padding: 0px;
+            /* height: 90px; */
+            min-width: calc(20% - 10px);
+            aspect-ratio: 1/1;
+            border-radius: 5px;
+            align-items: center;
+            text-align: center;
+            justify-content: center;
+            display: flex;
+            overflow: hidden;
+        }
+
+        div.classIcon:hover {
+            background-color: rgba(50, 150, 50, 0.5);
+        }
+
+        .classIcon img {
+            max-width: 110%;
+        }
+
+        /* =================================================== */
+
+        div.homeRight {
+            margin: 0px;
+            padding: 0px;
+            max-width: 400px;
+        }
+
+        div.wheatherDiv {
+            width: 100%;
+            height: 230px;
+            margin: 0px;
+            padding: 5px;
+            border: solid 2px rgba(0, 0, 0, 0.3);
+            border-radius: 5px;
+        }
+
+        div.wheatherCol {
+            padding: 0px;
+            margin: 0px;
+        }
+
+        div.wheatherBlock {
+            height: 100px;
+            margin: 5px;
+            border: solid 2px rgba(0, 0, 0, 0.3);
+            border-radius: 5px;
+            text-align: center;
+            justify-content: center;
+            align-items: center;
+            display: flex;
+        }
+
+
+        /* ==================================================== */
+        /* offcanvas */
+
+        .offcanvas {
+            background-color: #ccc;
+        }
+
+        .fixedDiv {
+            position: fixed;
+            top: 50%;
+            right: 0px;
+            transform: translateY(-50%);
+            width: 40px;
+            height: 100px;
+            background-color: #ccc;
+            padding: 0px;
+            /* 目前圖層最高 */
+            z-index: 3;
+            border-bottom-left-radius: 10px;
+            border-top-left-radius: 10px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+            display: none;
+        }
+
+        .OffcanBtn {
+            width: 100%;
+            height: 100%;
+            margin: 0px;
+            padding: 0px;
+            background: none;
+            border: none;
+            border-radius: 0px;
+            border-bottom-left-radius: 10px;
+            border-top-left-radius: 10px;
+            display: flex;
+            text-align: center;
+            justify-content: center;
+            align-items: center;
+        }
+
+        .OffcanBtn:hover {
+            background-color: plum !important;
+        }
+
+        div.weatherDivOff {
+            width: 100%;
+            height: 110px;
+            margin: 0px;
+            padding: 0px;
+            border: solid 2px rgba(0, 0, 0, 0.1);
+            /* box-shadow: 0 0 5px rgba(0, 0, 0, 0.2); */
+            border-radius: 5px;
+        }
+
+        div.weatherColOff {
+            margin: 0px;
+            padding: 0px;
+
+        }
+
+        /* ==================================================== */
+
+        footer {
+            height: 200px;
+        }
+
+        /* ==================================================== */
+    </style>
+</head>
+<div id="tfIframeContainer" style="margin-top: 4rem;">
+    <iframe id="tfYoutubeIframe" src="https://www.1968services.tw/map" frameborder="0"
+        allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+        allowfullscreen>
+    </iframe>
+</div>
+
+<body>
+
+    <div id="overlayDiv">
+        <!-- navBar -->
+        <nav id="myNavbar" class="navbar navbar-expand-md bg-none w-100 fixed-top m-0 p-0" style=" top: 0px;">
+            <div class="container-fluid m-0 p-0 h-100">
+                <a href="./index.html" class="navbar-brand m-0 p-0" style="font-size:x-large;">
+                    <img src="./image/logo1228.png" class=" m-0 p-0" alt="logo" width="65" height="50">
+                </a>
+                <div class="memberConMd d-flex d-md-none">
+                    <div class="nameCon">
+                        <a href="./Member.html">
+                            <img class="rounded-circle img-fluid" src="./image/IMG_0987.JPG" alt="">
+                        </a>
+                    </div>
+                    <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#mynavbar"
+                        aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+                        <span class="navbar-toggler-icon"></span>
+                    </button>
+                </div>
+                <div class="collapse navbar-collapse" id="mynavbar">
+                    <ul class="navbar-nav me-auto mb-0">
+                        <li class="nav-item">
+                            <a id="news" onclick="nav_item_active()" class="nav-link" aria-current="page"
+                                href="./Favor1.html">活動資訊</a>
+                        </li>
+                        <li class="nav-item">
+                            <a id="trans" onclick="nav_item_active()" class="nav-link" aria-current="page"
+                                href="#">交通情報</a>
+                        </li>
+                        <li class="nav-item">
+                            <a id="forum" onclick="nav_item_active()" class="nav-link" aria-current="page"
+                                href="#">旅遊論壇</a>
+                        </li>
+                        <li class="nav-item">
+                            <a id="aboutus" onclick="nav_item_active()" class="nav-link" aria-current="page"
+                                href="#">關於我們</a>
+                        </li>
+                    </ul>
+                    <div class="memberCon d-none d-md-flex">
+                        <div class="nameCon">
+                            <a href="./Member.html">
+                                <img class="rounded-circle img-fluid" src="./image/IMG_0987.JPG" alt="">
+                            </a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </nav>
+        <!-- navBar End -->
+    </div>
+    <!-- ========== -->
+    <div id="newBG" class="row justify-content-center">
+
+        <div class="homeCenter col-12 col-md-9 order-2 order-md-1">
+            <!-- ---------- -->
+            <div id="groupNews" class="">
+                <div class="groupTitle">
+                    <h2>交通資訊</h2>
+                </div>
+
+                <div class="newsCon">
+                    <div class="newsImgCon">
+                        <img class="newsImg" src="./image/捷運.png" alt="">
+                    </div>
+                    <div class="newsTextCon">
+                        <div class="newsTextBgR">
+                            <div class="">
+                                <br><br>
+                                <a id="TfIinfoText" style="display: block; " href="https://www.metro.taipei/"
+                                    target="_blank">台北捷運</a><br>
+                                <a id="TfIinfoText" style="display: block; " href="https://www.tmrt.com.tw/"
+                                    target="_blank">台中捷運</a><br>
+                                <a id="TfIinfoText" style="display: block; " href="https://www.krtc.com.tw//"
+                                    target="_blank">高雄捷運</a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="newsCon">
+                    <div class="newsTextCon">
+                        <div class="newsTextBgL">
+                            <br>
+                            <div class="newsText">
+                                <a id="TfIinfoText2" href="https://www.kingbus.com.tw/page.html?seq=3"
+                                    target="_blank">國光客運</a>&nbsp;
+                                <a id="TfIinfoText2" href="https://www.ubus.com.tw/" target="_blank">統聯客運</a><br>
+                                <a id="TfIinfoText2" href="https://www.ebus.com.tw/" target="_blank">和欣客運</a>&nbsp;
+                                <a id="TfIinfoText2" href="http://www.howtai.com.tw/" target="_blank">豪泰客運</a><br>
+                                <a id="TfIinfoText2" href="https://www.solarbus.com.tw/" target="_blank">日統客運</a>&nbsp;
+                                <a id="TfIinfoText2" href="http://www.yalanbus.com.tw/" target="_blank">亞聯客運</a><br>
+                                <a id="TfIinfoText2" href="https://www.tcbus.com.tw//" target="_blank">台中客運</a>&nbsp;
+                                <a id="TfIinfoText2" href="http://www.airbus.com.tw/WebMaster/"
+                                    target="_blank">大有巴士</a><br>
+                                <a id="TfIinfoText2" href="https://www.mtcbus.com.tw/" target="_blank">大都會客運</a><br>
+                                <a id="TfIinfoText2" href="https://www.kamalan.com.tw/index"
+                                    target="_blank">葛瑪蘭客運</a><br>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="newsImgCon">
+                        <img class="newsImg" src="./image/客運2.jpg" alt="">
+                    </div>
+                </div>
+                <div class="newsCon">
+                    <div class="newsImgCon">
+                        <img class="newsImg" src="./image/租車2.png" alt="">
+                    </div>
+                    <div class="newsTextCon">
+                        <div class="newsTextBgR">
+                            <div class="newsText">
+                                <br>
+                                <a id="TfIinfoText3" href="https://www.car-plus.com.tw/" target="_blank">格上租車</a><br>
+                                <a id="TfIinfoText3" href="https://www.easyrent.com.tw/index.html"
+                                    target="_blank">和運租車</a><br>
+                                <a id="TfIinfoText3" href="https://www.rentalcar.com.tw/" target="_blank">中租租車</a><br>
+                                <a id="TfIinfoText3" href="https://www.ponyrent.com.tw/index.php"
+                                    target="_blank">小馬租車</a><br>
+                                <a id="TfIinfoText3" href="https://www.avis-taiwan.com/index.php"
+                                    target="_blank">艾維士租車</a><br>
+                                <a id="TfIinfoText3" href="https://www.iws.com.tw/index.html" target="_blank">艾旺租車</a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+            <!-- 高鐵 台鐵 -->
+            <div id="groupCity" class="">
+                <div class="row justify-content-center m-0 p-0">
+                    <div class="col-12 col-lg-8 m-0 p-0">
+                        <div class="row justify-content-center m-0 p-0">
+
+                            <div class="cityCol col-6">
+                                <a href="https://www.railway.gov.tw/tra-tip-web/tip" class="newsA">
+                                    <div class="cityDiv card">
+                                        <img class="cityImg rounded card-img-top" src="./image/台鐵.jpeg">
+                                        <div class="card-img-overlay">
+                                            <h3 class="card-title">台鐵</h3>
+                                        </div>
+                                    </div>
+                                </a>
+                            </div>
+
+                            <div class="cityCol col-6">
+                                <a href="https://www.thsrc.com.tw/" class="newsA">
+                                    <div class="cityDiv card">
+                                        <img class="cityImg rounded card-img-top" src="./image/高鐵.jpg">
+                                        <div class="card-img-overlay">
+                                            <h3 class="card-title">高鐵</h3>
+                                        </div>
+                                    </div>
+                                </a>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="cityCol col-0 col-lg-4">
+                        <a href="https://www.mvdis.gov.tw/" class="newsA">
+                            <div class="cityDiv card">
+                                <img class="cityImgV2 rounded card-img-top" src="./image/監理站服務.png">
+                                <div class="card-img-overlay">
+                                    <h3 class="card-title"></h3>
+                                </div>
+                            </div>
+                        </a>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+
+        <!-- ---------- -->
+
+        <div class="homeRight col-0 col-md-3 order-1 order-md-2">
+            <br><br><br>
+            <div class="wheatherDiv">
+                <div class="row p-0 m-0">
+                    <div class="wheatherCol col-6 col-xl-4">
+                        <div class="wheatherBlock">台中市</div>
+                    </div>
+                    <div class="wheatherCol col-6 col-xl-4">
+                        <div class="wheatherBlock">24C</div>
+                    </div>
+                    <div class="wheatherCol col col-xl-4">
+                        <div class="wheatherBlock">
+                            <div class="row">
+                                <div class="col-12">降雨機率:</div>
+                                <div class="col">20%</div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!--footer-->
+    <div class="row footer" style="margin-top: 3%;">
+        <div style="text-align: center;">
+            <div class="ftinfo">
+                <h3>隱私權政策</h3>
+            </div>
+        </div>
+        <div class="ftinfo">
+            <h4>個人資料蒐集之目的與類別</h4>
+            <p>為了提供電子商務服務、履行法定義務、保護當事人及相關利害關係人之權益、行銷、客戶管理與服務
+                ，依照各服務之性質，有可能會蒐集您的姓名、連絡方式(包括但不限於電話、E-MAIL及地址等)、
+                、IP位址、及其他得以直接或間接識別使用者身分之個人資料。
+                此外，為提升服務品質，周末跟我趣會依照所提供服務之性質，記錄使用者的IP位址、以及在周末跟
+                我趣相關網站的瀏覽活動(如，使用者所使用的軟硬體、所點選的網頁)等資料，但是這些資料僅供作
+                流量分析和網路行為調查，以便於改善周末跟我趣相關網站的服務品質，不會和特定個人相連繫。
+            </p>
+        </div>
+        <div class="ftinfo">
+            <h4>Cookie</h4>
+            <p>為了便利使用者，周末跟我趣網站可能會讀取儲存在使用者電腦中的cookie資料。使用者可以經由
+                瀏覽器的設定，取消或限制此項功能，但可能因此無法使用部份網站功能。
+            </p>
+        </div>
+        <div class="ftinfo">
+            <h4>本隱私權政策修訂權利</h4>
+            <p>周末跟我趣有權隨時修訂本隱私權聲明及相關告知事項，並得於修訂後公佈在周末跟我趣網站，
+                不另行個別通知，您可以隨時在周末跟我趣網站上詳閱修訂後的隱私權聲明及相關告知事項。
+            </p>
+        </div>
+
+    </div>
+
+    <div class="row st">
+        <div>
+            <p><small>&copy; 2023-2024 EEIT73結訓發表成果-周末跟我趣 </small></p>
+        </div>
+    </div>
+    <!--footer end-->
+
+
+    <script>
+        $(document).ready(function () {
+            $('#myOffcanvas').on('click', function () {
+                if (!$('#offcanvasExample').hasClass('show')) {
+                    $('.fixedDiv').animate({ right: '350px' }, 300);
+                    $('.fixedDiv').animate({ right: '0' }, 100);
+                }
+            });
+        });
+
+
+    </script>
+</body>
+
+</html>
