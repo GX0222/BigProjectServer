@@ -1,0 +1,175 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>關於我們</title>
+
+    <!-- <link rel="stylesheet" href="Tools/info.css"> -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN" crossorigin="anonymous">
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"
+        integrity="sha384-C6RzsynM9kWDrMNeT87bh95OGNyZPhcTNXj1NW7RuBCsyN/o0jlpcV8Qyq46cDfL"
+        crossorigin="anonymous"></script>
+    <script src="https://code.jquery.com/jquery-3.7.1.js"
+        integrity="sha256-eKhayi8LEQwp4NKxN+CfCh+3qOVUtJn3QNZ0TciWLP4=" crossorigin="anonymous"></script>
+
+    <!-- Google Icon -->
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+    <!-- SimpleBar-->
+    <link rel="stylesheet" href="https://unpkg.com/simplebar@latest/dist/simplebar.css" />
+    <script src="https://unpkg.com/simplebar@latest/dist/simplebar.min.js"></script>
+    <!-- 背景影片css -->
+    <link rel="stylesheet" href="../Tools/Tf_iframe.css">
+    <!-- NavBar -->
+    <link rel="stylesheet" href="../Tools/NavBar_2.css">
+    <!-- Gruop_City.css -->
+    <link rel="stylesheet" href="../Tools/Gruop_City.css">
+    <!-- Group_News.css -->
+    <link rel="stylesheet" href="../Tools/Group_News.css">
+    <!-- AboutUs.css -->
+    <link rel="stylesheet" href="../Tools/About_Us.css">
+    <!-- Color -->
+    <link rel="stylesheet" href="../Tools/Color.css">
+    <!-- Footer.css -->
+    <link rel="stylesheet" href="../Tools/footer.css">
+
+</head>
+
+<body>
+
+    <div id="overlayDiv">
+        <!-- navBar -->
+        <nav id="myNavbar" class="navbar navbar-expand-md bg-none w-100 fixed-top m-0 p-0" style=" top: 0px;">
+            <div class="container-fluid m-0 p-0 h-100">
+                <a href="../index.html" class="navbar-brand m-0 p-0" style="font-size:x-large;">
+                    <img src="../image/logo1228.png" class=" m-0 p-0" alt="logo" width="65" height="50">
+                </a>
+                <div class="memberConMd d-flex d-md-none">
+                    <div class="nameCon">
+                        <a href="../Member.html">
+                            <img class="rounded-circle img-fluid" src="../image/IMG_0987.JPG" alt="">
+                        </a>
+                    </div>
+                    <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#mynavbar"
+                        aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+                        <span class="navbar-toggler-icon"></span>
+                    </button>
+                </div>
+                <div class="collapse navbar-collapse" id="mynavbar">
+                    <ul class="navbar-nav me-auto mb-0">
+                        <li class="nav-item">
+                            <a id="news" onclick="nav_item_active()" class="nav-link" aria-current="page"
+                                href="../Favor1.html">活動資訊</a>
+                        </li>
+                        <li class="nav-item">
+                            <a id="trans" onclick="nav_item_active()" class="nav-link" aria-current="page"
+                                href="#">交通情報</a>
+                        </li>
+                        <li class="nav-item">
+                            <a id="forum" onclick="nav_item_active()" class="nav-link" aria-current="page"
+                                href="#">旅遊論壇</a>
+                        </li>
+                        <li class="nav-item">
+                            <a id="aboutus" onclick="nav_item_active()" class="nav-link" aria-current="page"
+                                href="#">關於我們</a>
+                        </li>
+                    </ul>
+                    <form class="d-flex" role="search">
+                        <input id="search_input" class="form-control me-2" type="search" placeholder="搜尋"
+                            aria-label="Search">
+                        <button id="search_btn" class="btn btn-outline-success" type="submit">
+                            <span class="material-icons" style="vertical-align: middle;">
+                                search
+                            </span>
+                        </button>
+                    </form>
+                    <div class="memberCon d-none d-md-flex">
+                        <div class="nameCon">
+                            <a href="../Member.html">
+                                <img class="rounded-circle img-fluid" src="../image/IMG_0987.JPG" alt="">
+                            </a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </nav>
+        <!-- navBar End -->
+    </div>
+    <!-- 內容 -->
+    <div class="aboutContent container">
+
+        <div class="image">
+            <img src="../image/aboutUs.jpg" alt="About Us Image">
+        </div>
+        <div class="text">
+            <h2>歡迎來到我們的旅遊資訊網站！</h2>
+            <p>我們是一群充滿熱情、對探險和旅行充滿愛的團隊。透過這個平台，我們致力於提供最全面且豐富的旅遊資訊，讓您的旅程更加難忘和充實。</p>
+
+            <h2>我們的使命</h2>
+            <p>我們的使命是成為您在旅途中的最佳夥伴，我們相信，每次旅行都是一次寶貴的體驗，並希望透過我們的平台，您可以輕鬆計畫、順利出行，體驗不同地方的文化、美食和風景。</p>
+
+            <h2>團隊成員</h2>
+            <p>我們的團隊擁有豐富的旅遊經驗和專業知識，致力於為您提供最新、最準確的旅遊資訊。無論是尋找獨特的景點、品嚐當地美食，還是享受冒險活動，我們的團隊都會竭盡所能，為您提供最佳建議和指引。</p>
+
+            <h2>我們的價值觀</h2>
+            <ol>
+                <li><strong>熱情服務：</strong>我們熱愛旅行，同樣也熱愛為您提供卓越的服務，確保您的每次旅行都是一場愉快的冒險。</li>
+                <li><strong>可靠資訊：</strong>我們提供的資訊都經過精心挑選和驗證，以確保您獲得最可靠、實用的旅遊建議。</li>
+                <li><strong>多元體驗：</strong>我們鼓勵您體驗不同的文化，品味各地美食，參與當地活動，創造獨一無二的回憶。</li>
+            </ol>
+
+            <h2>聯絡我們</h2>
+            <p>如果您有任何問題、建議或合作提案，請隨時聯絡我們。我們的團隊將竭誠為您服務，以確保您擁有一次難忘的旅行體驗。</p>
+            <br>
+            <p style="text-align: center;">感謝您選擇我們，讓我們一同踏上精彩的旅程！</p>
+        </div>
+
+    </div>
+    <!-- 內容 End -->
+
+    <!--footer-->
+    <div class="row footer" style="margin-top: 3%;">
+        <div style="text-align: center;">
+            <div class="ftinfo">
+                <h2>隱私權政策</h2>
+            </div>
+        </div>
+        <div class="ftinfo">
+            <h4>個人資料蒐集之目的與類別</h4>
+            <p>為了提供電子商務服務、履行法定義務、保護當事人及相關利害關係人之權益、行銷、客戶管理與服務
+                ，依照各服務之性質，有可能會蒐集您的姓名、連絡方式(包括但不限於電話、E-MAIL及地址等)、
+                、IP位址、及其他得以直接或間接識別使用者身分之個人資料。
+                此外，為提升服務品質，周末跟我趣會依照所提供服務之性質，記錄使用者的IP位址、以及在周末跟
+                我趣相關網站的瀏覽活動(如，使用者所使用的軟硬體、所點選的網頁)等資料，但是這些資料僅供作
+                流量分析和網路行為調查，以便於改善周末跟我趣相關網站的服務品質，不會和特定個人相連繫。
+            </p>
+        </div>
+        <div class="ftinfo">
+            <h4>Cookie</h4>
+            <p>為了便利使用者，周末跟我趣網站可能會讀取儲存在使用者電腦中的cookie資料。使用者可以經由
+                瀏覽器的設定，取消或限制此項功能，但可能因此無法使用部份網站功能。
+            </p>
+        </div>
+        <div class="ftinfo">
+            <h4>本隱私權政策修訂權利</h4>
+            <p>周末跟我趣有權隨時修訂本隱私權聲明及相關告知事項，並得於修訂後公佈在周末跟我趣網站，
+                不另行個別通知，您可以隨時在周末跟我趣網站上詳閱修訂後的隱私權聲明及相關告知事項。
+            </p>
+        </div>
+
+    </div>
+
+    <div class="row st">
+        <div>
+            <p><small>&copy; 2023-2024 EEIT73結訓發表成果-周末跟我趣 </small></p>
+        </div>
+    </div>
+    <!--footer end-->
+
+
+
+</body>
+
+</html>

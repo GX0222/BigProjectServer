@@ -21,7 +21,7 @@
 		style="height: 1px; border: none; color: #333; background-color: #333;">
 	<section class="container">
 		<div class="row">
-			<c:forEach items="${products}" var="product">
+			<c:forEach items="${products}" var="product">      
 				<div class="col-sm-6 col-md-3" style="width: 360px; height: 360px">
 					<div class="thumbnail" style="width: 320px; height: 340px">
 						<img width='100' height='200'
