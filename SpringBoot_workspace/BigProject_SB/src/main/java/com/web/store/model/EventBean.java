@@ -11,34 +11,39 @@ import jakarta.persistence.Transient;
 
 // 本類別封裝單筆活動資料
 @Entity
-@Table(name = "Event")
+@Table(name = "Events")
 public class EventBean implements Serializable {
 	private static final long serialVersionUID = 1L;
 	@Id
 	@GeneratedValue(strategy = GenerationType.IDENTITY)
 	private Integer id;
 
-	@Transient
+	//@Transient
 	private String startTime;
 	private String eventTitle;
 	private String eventTime;
-	private String Country;
+	private String county;
 	private String location;
 	private String eventIntro;
 	private String eventInfo;
-	private String eventURL;
-//	private Blob coverImage;
-	public EventBean(Integer id, String startTime, String eventTitle, String eventTime, String country, String location,
-			String eventIntro, String eventInfo, String eventURL) {
+	private String eventUrl;
+	
+	public EventBean() {
+        
+    }
+
+	
+	public EventBean(Integer id, String startTime, String eventTitle, String eventTime, String county, String location,
+			String eventIntro, String eventInfo, String eventUrl) {
 		this.id = id;
 		this.startTime = startTime;
 		this.eventTitle = eventTitle;
 		this.eventTime = eventTime;
-		Country = country;
+		this.county = county;
 		this.location = location;
 		this.eventIntro = eventIntro;
 		this.eventInfo = eventInfo;
-		this.eventURL = eventURL;
+		this.eventUrl = eventUrl;
 	}
 	public Integer getId() {
 		return id;
@@ -64,11 +69,11 @@ public class EventBean implements Serializable {
 	public void setEventTime(String eventTime) {
 		this.eventTime = eventTime;
 	}
-	public String getCountry() {
-		return Country;
+	public String getCounty() {
+		return county;
 	}
-	public void setCountry(String country) {
-		Country = country;
+	public void setCounty(String county) {
+		this.county = county;
 	}
 	public String getLocation() {
 		return location;
@@ -88,11 +93,11 @@ public class EventBean implements Serializable {
 	public void setEventInfo(String eventInfo) {
 		this.eventInfo = eventInfo;
 	}
-	public String getEventURL() {
-		return eventURL;
+	public String getEventUrl() {
+		return eventUrl;
 	}
-	public void setEventURL(String eventURL) {
-		this.eventURL = eventURL;
+	public void setEventUrl(String eventUrl) {
+		this.eventUrl = eventUrl;
 	}
 	
 	
