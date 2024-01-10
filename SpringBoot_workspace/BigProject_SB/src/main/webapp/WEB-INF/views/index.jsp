@@ -376,6 +376,13 @@
             </div>
         </div>
     </div>
+    <c:set var="numbers" value="${[1, 2, 3, 4, 5]}" />
+
+    <ul>
+        <c:forEach var="number" items="${numbers}">
+            <li>${number}</li>
+        </c:forEach>
+    </ul>
     <!-- Footer -->
 	<%@ include file="Shared/Footer.jsp" %>
     <!--footer end-->
