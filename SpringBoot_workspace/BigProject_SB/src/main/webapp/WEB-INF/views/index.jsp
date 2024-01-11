@@ -1,8 +1,8 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
     pageEncoding="UTF-8"%>
-<%-- <%@ taglib uri="http://xmlns.jcp.org/jsp/jstl/core" prefix="c"%> --%>
-<%-- <%@ taglib uri="http://jakarta.apache.org/jsp/jstl/core" prefix="c" %> --%>
-<%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
+<%@ taglib prefix="form" uri="http://www.springframework.org/tags/form"%>
+<%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core"%>
+<%@ taglib uri="http://www.springframework.org/tags" prefix="spring" %>
 
 
 
@@ -231,7 +231,7 @@
                         <div class="newsTextCon">
                             <div class="newsTextBgR">
                                 <div class="newsText">
-                                    ${eventList}123
+                                    ${eventList[10].getEventInfo()}
                                 </div>
                             </div>
                         </div>
@@ -378,13 +378,7 @@
             </div>
         </div>
     </div>
-    <c:set var="numbers" value="${[1, 2, 3, 4, 5]}" />
-
-    <ul>
-        <c:forEach var="number" items="${numbers}">
-            <li>${number}</li>
-        </c:forEach>
-    </ul>
+    
     <!-- Footer -->
 	<%@ include file="Shared/Footer.jsp" %>
     <!--footer end-->
