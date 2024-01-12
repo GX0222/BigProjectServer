@@ -1,170 +1,143 @@
 package com.web.store.model;
 
 import java.io.Serializable;
+import java.sql.Date;
 
 import jakarta.persistence.Entity;
 import jakarta.persistence.GeneratedValue;
 import jakarta.persistence.GenerationType;
 import jakarta.persistence.Id;
 import jakarta.persistence.Table;
-import jakarta.persistence.Transient;
 
 // 本類別封裝單筆活動資料
 @Entity
 @Table(name = "Events")
-public class EventBean implements Serializable {
+public class EventsBean implements Serializable {
 	private static final long serialVersionUID = 1L;
 	@Id
 	@GeneratedValue(strategy = GenerationType.IDENTITY)
 	private Integer id;
 
 	//@Transient
-	private String start_time;
-	private String event_title;
+	private Date startTime;
+	private String eventTitle;
 	private String eventTime;
 	private String county;
 	private String location;
 	private String eventIntro;
 	private String eventInfo;
 	private String eventUrl;
+	private Date updateTime;
 	
-	public EventBean() {
+	public EventsBean() {
         
     }
 
-	
-	
-	public EventBean(Integer id, String start_time, String event_title, String eventTime, String county,
-			String location, String eventIntro, String eventInfo, String eventUrl) {
+	public EventsBean(Integer id, Date startTime, String eventTitle, String eventTime, String county, String location,
+			String eventIntro, String eventInfo, String eventUrl, Date updateTime) {
 		super();
 		this.id = id;
-		this.start_time = start_time;
-		this.event_title = event_title;
+		this.startTime = startTime;
+		this.eventTitle = eventTitle;
 		this.eventTime = eventTime;
 		this.county = county;
 		this.location = location;
 		this.eventIntro = eventIntro;
 		this.eventInfo = eventInfo;
 		this.eventUrl = eventUrl;
+		this.updateTime = updateTime;
 	}
-
-
 
 	public Integer getId() {
 		return id;
 	}
 
-
-
 	public void setId(Integer id) {
 		this.id = id;
 	}
 
-
-
-	public String getStart_time() {
-		return start_time;
+	public Date getStartTime() {
+		return startTime;
 	}
 
-
-
-	public void setStart_time(String start_time) {
-		this.start_time = start_time;
+	public void setStartTime(Date startTime) {
+		this.startTime = startTime;
 	}
 
-
-
-	public String getEvent_title() {
-		return event_title;
+	public String getEventTitle() {
+		return eventTitle;
 	}
 
-
-
-	public void setEvent_title(String event_title) {
-		this.event_title = event_title;
+	public void setEventTitle(String eventTitle) {
+		this.eventTitle = eventTitle;
 	}
-
-
 
 	public String getEventTime() {
 		return eventTime;
 	}
 
-
-
 	public void setEventTime(String eventTime) {
 		this.eventTime = eventTime;
 	}
-
-
 
 	public String getCounty() {
 		return county;
 	}
 
-
-
 	public void setCounty(String county) {
 		this.county = county;
 	}
-
-
 
 	public String getLocation() {
 		return location;
 	}
 
-
-
 	public void setLocation(String location) {
 		this.location = location;
 	}
-
-
 
 	public String getEventIntro() {
 		return eventIntro;
 	}
 
-
-
 	public void setEventIntro(String eventIntro) {
 		this.eventIntro = eventIntro;
 	}
-
-
 
 	public String getEventInfo() {
 		return eventInfo;
 	}
 
-
-
 	public void setEventInfo(String eventInfo) {
 		this.eventInfo = eventInfo;
 	}
-
-
 
 	public String getEventUrl() {
 		return eventUrl;
 	}
 
-
-
 	public void setEventUrl(String eventUrl) {
 		this.eventUrl = eventUrl;
 	}
 
+	public Date getUpdateTime() {
+		return updateTime;
+	}
 
+	public void setUpdateTime(Date updateTime) {
+		this.updateTime = updateTime;
+	}
 
 	public static long getSerialversionuid() {
 		return serialVersionUID;
 	}
 
-
+	
 
 	
+
+	
+
 	
 	
 //	@Transient

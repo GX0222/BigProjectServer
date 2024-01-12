@@ -5,13 +5,15 @@ import java.util.List;
 import org.springframework.data.jpa.repository.JpaRepository;
 import org.springframework.stereotype.Repository;
 
-import com.web.store.model.EventBean;
+import com.web.store.model.EventsBean;
 
 @Repository
-public interface EventDao extends JpaRepository<EventBean, Integer> {
-	EventBean findTop1ByOrderByIdDesc();
+public interface EventDao extends JpaRepository<EventsBean, Integer> {
+	EventsBean findTop1ByOrderByIdDesc();
 	
-	List<EventBean> findTop2ByOrderByIdDesc();
+	List<EventsBean> findTop2ByOrderByIdDesc();
 	
-	List<EventBean> findTop2ByCountyOrderByIdDesc(String county);
+	List<EventsBean> findTop2ByCountyOrderByIdDesc(String county);
+	
+	EventsBean findAllById(Integer id);
 }

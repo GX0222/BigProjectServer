@@ -91,86 +91,27 @@
         
             <div class="info">
                 <ul>
+                	<c:forEach items="${events }" var="event">
+                	
                     <li class="dataList">
-                        <div class="dataDay">2023-12-20</div>
+                        <div class="dataDay">${event.getStartTime() }</div>
                         <a href="/Event">
                             <div class="dataImg">
                                 <img src="/static/image/2023聖誕節.jpg">
                             </div>
                             <div class="dataText">
                                 <div class="dataCounty">
-                                    台北市
+                                    ${event.getCounty() }
                                 </div>
                                 <div class="dataInfo">
-                                    卡司制霸全台！台中最強跨年三大亮點 High翻中央公園
+                                    ${event.getEventInfo() }
                                 </div>
                             </div>
                         </a>
                     </li>
-                    <li class="dataList">
-                        <div class="dataDay">2023-12-20</div>
-                        <a href="/Event">
-                            <div class="dataImg">
-                                <img src="/static/image/2023聖誕節.jpg">
-                            </div>
-                            <div class="dataText">
-                                <div class="dataCounty">
-                                    台北市
-                                </div>
-                                <div class="dataInfo">
-                                    卡司制霸全台！台中最強跨年三大亮點 High翻中央公園
-                                </div>
-                            </div>
-                        </a>
-                    </li>
-                    <li class="dataList">
-                        <div class="dataDay">2023-12-20</div>
-                        <a href="/Event">
-                            <div class="dataImg">
-                                <img src="/static/image/2023聖誕節.jpg">
-                            </div>
-                            <div class="dataText">
-                                <div class="dataCounty">
-                                    台北市
-                                </div>
-                                <div class="dataInfo">
-                                    卡司制霸全台！台中最強跨年三大亮點 High翻中央公園
-                                </div>
-                            </div>
-                        </a>
-                    </li>
-                    <li class="dataList">
-                        <div class="dataDay">2023-12-20</div>
-                        <a href="/Event">
-                            <div class="dataImg">
-                                <img src="/static/image/2023聖誕節.jpg">
-                            </div>
-                            <div class="dataText">
-                                <div class="dataCounty">
-                                    台北市
-                                </div>
-                                <div class="dataInfo">
-                                    卡司制霸全台！台中最強跨年三大亮點 High翻中央公園
-                                </div>
-                            </div>
-                        </a>
-                    </li>
-                    <li class="dataList">
-                        <div class="dataDay">2023-12-20</div>
-                        <a href="/Event">
-                            <div class="dataImg">
-                                <img src="/static/image/2023聖誕節.jpg">
-                            </div>
-                            <div class="dataText">
-                                <div class="dataCounty">
-                                    台北市
-                                </div>
-                                <div class="dataInfo">
-                                    卡司制霸全台！台中最強跨年三大亮點 High翻中央公園
-                                </div>
-                            </div>
-                        </a>
-                    </li>
+                    
+                    </c:forEach>
+                    
                 </ul>
             </div>
             <nav aria-label="Page navigation example" style="padding: 0,auto;">

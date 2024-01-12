@@ -1,19 +1,41 @@
 package com.web.store.controller;
 
+import java.util.ArrayList;
+import java.util.List;
+
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.GetMapping;
 
+import com.web.store.model.EventsBean;
+import com.web.store.model.ehBean;
+import com.web.store.service.EventService;
+import com.web.store.service.EhService;
+
 @Controller
 public class EventController {
+	
+	EhService ehservice;
+	EventService eventService;
 
 	@GetMapping("/Event")
 	public String event(Model model) {
 		return "Event/Event";
 	}
 
+	@SuppressWarnings("null")
 	@GetMapping("/EventList")
 	public String favor(Model model) {
+		List<ehBean> eventIds = ehservice.findAllByClassId(1);
+//		List<Integer> ids = new ArrayList<>();
+		List<EventsBean> eventsByHobby = null;
+		
+		for(ehBean eventId : eventIds) {
+			Integer id = eventId.getId();
+			eventsByHobby.add(eventService.findAllById(id)) ;
+		}
+		
+		model.addAttribute("events", eventsByHobby);
 		return "Event/EventList";
 	}
 
