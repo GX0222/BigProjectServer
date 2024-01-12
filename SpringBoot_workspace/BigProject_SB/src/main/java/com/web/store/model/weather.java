@@ -9,8 +9,8 @@ import jakarta.persistence.GenerationType;
 import jakarta.persistence.Id;
 import jakarta.persistence.Table;
 import jakarta.persistence.Transient;
-@Entity
-@Table(name="weather")
+//@Entity
+//@Table(name="weather")
 public class weather implements Serializable {
 	private static final long serialVersionUID = 1L;
 	@Id

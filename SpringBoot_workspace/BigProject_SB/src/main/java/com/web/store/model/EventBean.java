@@ -19,8 +19,8 @@ public class EventBean implements Serializable {
 	private Integer id;
 
 	//@Transient
-	private String startTime;
-	private String eventTitle;
+	private String start_time;
+	private String event_title;
 	private String eventTime;
 	private String county;
 	private String location;
@@ -33,11 +33,13 @@ public class EventBean implements Serializable {
     }
 
 	
-	public EventBean(Integer id, String startTime, String eventTitle, String eventTime, String county, String location,
-			String eventIntro, String eventInfo, String eventUrl) {
+	
+	public EventBean(Integer id, String start_time, String event_title, String eventTime, String county,
+			String location, String eventIntro, String eventInfo, String eventUrl) {
+		super();
 		this.id = id;
-		this.startTime = startTime;
-		this.eventTitle = eventTitle;
+		this.start_time = start_time;
+		this.event_title = event_title;
 		this.eventTime = eventTime;
 		this.county = county;
 		this.location = location;
@@ -45,60 +47,123 @@ public class EventBean implements Serializable {
 		this.eventInfo = eventInfo;
 		this.eventUrl = eventUrl;
 	}
+
+
+
 	public Integer getId() {
 		return id;
 	}
+
+
+
 	public void setId(Integer id) {
 		this.id = id;
 	}
-	public String getStartTime() {
-		return startTime;
+
+
+
+	public String getStart_time() {
+		return start_time;
 	}
-	public void setStartTime(String startTime) {
-		this.startTime = startTime;
+
+
+
+	public void setStart_time(String start_time) {
+		this.start_time = start_time;
 	}
-	public String getEventTitle() {
-		return eventTitle;
+
+
+
+	public String getEvent_title() {
+		return event_title;
 	}
-	public void setEventTitle(String eventTitle) {
-		this.eventTitle = eventTitle;
+
+
+
+	public void setEvent_title(String event_title) {
+		this.event_title = event_title;
 	}
+
+
+
 	public String getEventTime() {
 		return eventTime;
 	}
+
+
+
 	public void setEventTime(String eventTime) {
 		this.eventTime = eventTime;
 	}
+
+
+
 	public String getCounty() {
 		return county;
 	}
+
+
+
 	public void setCounty(String county) {
 		this.county = county;
 	}
+
+
+
 	public String getLocation() {
 		return location;
 	}
+
+
+
 	public void setLocation(String location) {
 		this.location = location;
 	}
+
+
+
 	public String getEventIntro() {
 		return eventIntro;
 	}
+
+
+
 	public void setEventIntro(String eventIntro) {
 		this.eventIntro = eventIntro;
 	}
+
+
+
 	public String getEventInfo() {
 		return eventInfo;
 	}
+
+
+
 	public void setEventInfo(String eventInfo) {
 		this.eventInfo = eventInfo;
 	}
+
+
+
 	public String getEventUrl() {
 		return eventUrl;
 	}
+
+
+
 	public void setEventUrl(String eventUrl) {
 		this.eventUrl = eventUrl;
 	}
+
+
+
+	public static long getSerialversionuid() {
+		return serialVersionUID;
+	}
+
+
+
 	
 	
 	

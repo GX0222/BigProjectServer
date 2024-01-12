@@ -1,0 +1,5299 @@
+{
+    "success": "true",
+    "result": {
+        "resource_id": "O-A0001-001",
+        "fields": [
+            {
+                "id": "StationName",
+                "type": "String"
+            },
+            {
+                "id": "StationId",
+                "type": "String"
+            },
+            {
+                "id": "CoordinateName",
+                "type": "String"
+            },
+            {
+                "id": "CoordinateFormat",
+                "type": "String"
+            },
+            {
+                "id": "IntScaleValue",
+                "type": "Float"
+            },
+            {
+                "id": "IntScaleValue",
+                "type": "Float"
+            },
+            {
+                "id": "StationAltitude",
+                "type": "String"
+            },
+            {
+                "id": "CountyName",
+                "type": "String"
+            },
+            {
+                "id": "TownName",
+                "type": "String"
+            },
+            {
+                "id": "CountyCode",
+                "type": "String"
+            },
+            {
+                "id": "TownCode",
+                "type": "String"
+            },
+            {
+                "id": "Weather",
+                "type": "String"
+            },
+            {
+                "id": "Precipitation",
+                "type": "Float"
+            },
+            {
+                "id": "WindDirection",
+                "type": "Float"
+            },
+            {
+                "id": "WindSpeed",
+                "type": "Float"
+            },
+            {
+                "id": "AirTemperature",
+                "type": "Float"
+            },
+            {
+                "id": "RelativeHumidity",
+                "type": "Integer"
+            },
+            {
+                "id": "AirPressure",
+                "type": "Float"
+            },
+            {
+                "id": "UVIndex",
+                "type": "Float"
+            },
+            {
+                "id": "PeakGustSpeed",
+                "type": "Float"
+            },
+            {
+                "id": "DateTime",
+                "type": "DateTime"
+            }
+        ]
+    },
+    "records": {
+        "Station": [
+            {
+                "StationName": "鼻頭",
+                "StationId": "C0R860",
+                "ObsTime": {
+                    "DateTime": "2024-01-12T14:00:00+08:00"
+                },
+                "GeoInfo": {
+                    "CountyName": "屏東縣"
+                },
+                "WeatherElement": {}
+            },
+            {
+                "StationName": "興海",
+                "StationId": "C0R870",
+                "ObsTime": {
+                    "DateTime": "2024-01-12T14:00:00+08:00"
+                },
+                "GeoInfo": {
+                    "CountyName": "屏東縣"
+                },
+                "WeatherElement": {}
+            },
+            {
+                "StationName": "後壁湖",
+                "StationId": "C0R880",
+                "ObsTime": {
+                    "DateTime": "2024-01-12T14:00:00+08:00"
+                },
+                "GeoInfo": {
+                    "CountyName": "屏東縣"
+                },
+                "WeatherElement": {}
+            },
+            {
+                "StationName": "山海",
+                "StationId": "C0R890",
+                "ObsTime": {
+                    "DateTime": "2024-01-12T14:00:00+08:00"
+                },
+                "GeoInfo": {
+                    "CountyName": "屏東縣"
+                },
+                "WeatherElement": {}
+            },
+            {
+                "StationName": "竹坑",
+                "StationId": "C0R900",
+                "ObsTime": {
+                    "DateTime": "2024-01-12T14:00:00+08:00"
+                },
+                "GeoInfo": {
+                    "CountyName": "屏東縣"
+                },
+                "WeatherElement": {}
+            },
+            {
+                "StationName": "加祿堂",
+                "StationId": "C0R940",
+                "ObsTime": {
+                    "DateTime": "2024-01-12T14:00:00+08:00"
+                },
+                "GeoInfo": {
+                    "CountyName": "屏東縣"
+                },
+                "WeatherElement": {}
+            },
+            {
+                "StationName": "鯤鯓國小",
+                "StationId": "C0N010",
+                "ObsTime": {
+                    "DateTime": "2024-01-12T14:00:00+08:00"
+                },
+                "GeoInfo": {
+                    "CountyName": "臺南市"
+                },
+                "WeatherElement": {}
+            },
+            {
+                "StationName": "下寮",
+                "StationId": "C0R910",
+                "ObsTime": {
+                    "DateTime": "2024-01-12T14:00:00+08:00"
+                },
+                "GeoInfo": {
+                    "CountyName": "屏東縣"
+                },
+                "WeatherElement": {}
+            },
+            {
+                "StationName": "塭仔",
+                "StationId": "C0R920",
+                "ObsTime": {
+                    "DateTime": "2024-01-12T14:00:00+08:00"
+                },
+                "GeoInfo": {
+                    "CountyName": "屏東縣"
+                },
+                "WeatherElement": {}
+            },
+            {
+                "StationName": "汕尾",
+                "StationId": "C0V900",
+                "ObsTime": {
+                    "DateTime": "2024-01-12T14:00:00+08:00"
+                },
+                "GeoInfo": {
+                    "CountyName": "高雄市"
+                },
+                "WeatherElement": {}
+            },
+            {
+                "StationName": "鳳鼻頭",
+                "StationId": "C0V840",
+                "ObsTime": {
+                    "DateTime": "2024-01-12T14:00:00+08:00"
+                },
+                "GeoInfo": {
+                    "CountyName": "高雄市"
+                },
+                "WeatherElement": {}
+            },
+            {
+                "StationName": "蚵仔寮",
+                "StationId": "C0V850",
+                "ObsTime": {
+                    "DateTime": "2024-01-12T14:00:00+08:00"
+                },
+                "GeoInfo": {
+                    "CountyName": "高雄市"
+                },
+                "WeatherElement": {}
+            },
+            {
+                "StationName": "南寮",
+                "StationId": "C0V860",
+                "ObsTime": {
+                    "DateTime": "2024-01-12T14:00:00+08:00"
+                },
+                "GeoInfo": {
+                    "CountyName": "高雄市"
+                },
+                "WeatherElement": {}
+            },
+            {
+                "StationName": "文安",
+                "StationId": "C0V870",
+                "ObsTime": {
+                    "DateTime": "2024-01-12T14:00:00+08:00"
+                },
+                "GeoInfo": {
+                    "CountyName": "高雄市"
+                },
+                "WeatherElement": {}
+            },
+            {
+                "StationName": "興達",
+                "StationId": "C0V880",
+                "ObsTime": {
+                    "DateTime": "2024-01-12T14:00:00+08:00"
+                },
+                "GeoInfo": {
+                    "CountyName": "高雄市"
+                },
+                "WeatherElement": {}
+            },
+            {
+                "StationName": "城西",
+                "StationId": "C0N020",
+                "ObsTime": {
+                    "DateTime": "2024-01-12T14:00:00+08:00"
+                },
+                "GeoInfo": {
+                    "CountyName": "臺南市"
+                },
+                "WeatherElement": {}
+            },
+            {
+                "StationName": "四草",
+                "StationId": "C0N030",
+                "ObsTime": {
+                    "DateTime": "2024-01-12T14:00:00+08:00"
+                },
+                "GeoInfo": {
+                    "CountyName": "臺南市"
+                },
+                "WeatherElement": {}
+            },
+            {
+                "StationName": "蘆竹溝",
+                "StationId": "C0N040",
+                "ObsTime": {
+                    "DateTime": "2024-01-12T14:00:00+08:00"
+                },
+                "GeoInfo": {
+                    "CountyName": "臺南市"
+                },
+                "WeatherElement": {}
+            },
+            {
+                "StationName": "蚵寮",
+                "StationId": "C0N050",
+                "ObsTime": {
+                    "DateTime": "2024-01-12T14:00:00+08:00"
+                },
+                "GeoInfo": {
+                    "CountyName": "臺南市"
+                },
+                "WeatherElement": {}
+            },
+            {
+                "StationName": "前鎮",
+                "StationId": "C0V890",
+                "ObsTime": {
+                    "DateTime": "2024-01-12T14:00:00+08:00"
+                },
+                "GeoInfo": {
+                    "CountyName": "高雄市"
+                },
+                "WeatherElement": {}
+            },
+            {
+                "StationName": "澳底",
+                "StationId": "C0AJ90",
+                "ObsTime": {
+                    "DateTime": "2024-01-12T14:00:00+08:00"
+                },
+                "GeoInfo": {
+                    "CountyName": "新北市"
+                },
+                "WeatherElement": {}
+            },
+            {
+                "StationName": "七美",
+                "StationId": "C0W180",
+                "ObsTime": {
+                    "DateTime": "2024-01-12T14:00:00+08:00"
+                },
+                "GeoInfo": {
+                    "CountyName": "澎湖縣"
+                },
+                "WeatherElement": {}
+            },
+            {
+                "StationName": "望安",
+                "StationId": "C0W190",
+                "ObsTime": {
+                    "DateTime": "2024-01-12T14:00:00+08:00"
+                },
+                "GeoInfo": {
+                    "CountyName": "澎湖縣"
+                },
+                "WeatherElement": {}
+            },
+            {
+                "StationName": "湖西",
+                "StationId": "C0W200",
+                "ObsTime": {
+                    "DateTime": "2024-01-12T14:00:00+08:00"
+                },
+                "GeoInfo": {
+                    "CountyName": "澎湖縣"
+                },
+                "WeatherElement": {}
+            },
+            {
+                "StationName": "北竿",
+                "StationId": "C0W220",
+                "ObsTime": {
+                    "DateTime": "2024-01-12T14:00:00+08:00"
+                },
+                "GeoInfo": {
+                    "CountyName": "連江縣"
+                },
+                "WeatherElement": {}
+            },
+            {
+                "StationName": "科教館",
+                "StationId": "C0A770",
+                "ObsTime": {
+                    "DateTime": "2024-01-12T14:00:00+08:00"
+                },
+                "GeoInfo": {
+                    "CountyName": "臺北市"
+                },
+                "WeatherElement": {}
+            },
+            {
+                "StationName": "大溪漁港",
+                "StationId": "C0UA80",
+                "ObsTime": {
+                    "DateTime": "2024-01-12T14:00:00+08:00"
+                },
+                "GeoInfo": {
+                    "CountyName": "宜蘭縣"
+                },
+                "WeatherElement": {}
+            },
+            {
+                "StationName": "石城",
+                "StationId": "C0UA90",
+                "ObsTime": {
+                    "DateTime": "2024-01-12T14:00:00+08:00"
+                },
+                "GeoInfo": {
+                    "CountyName": "宜蘭縣"
+                },
+                "WeatherElement": {}
+            },
+            {
+                "StationName": "大武崙",
+                "StationId": "C0B040",
+                "ObsTime": {
+                    "DateTime": "2024-01-12T14:00:00+08:00"
+                },
+                "GeoInfo": {
+                    "CountyName": "基隆市"
+                },
+                "WeatherElement": {}
+            },
+            {
+                "StationName": "野柳",
+                "StationId": "C0AJ20",
+                "ObsTime": {
+                    "DateTime": "2024-01-12T14:00:00+08:00"
+                },
+                "GeoInfo": {
+                    "CountyName": "新北市"
+                },
+                "WeatherElement": {}
+            },
+            {
+                "StationName": "淡水觀海",
+                "StationId": "C0AJ30",
+                "ObsTime": {
+                    "DateTime": "2024-01-12T14:00:00+08:00"
+                },
+                "GeoInfo": {
+                    "CountyName": "新北市"
+                },
+                "WeatherElement": {}
+            },
+            {
+                "StationName": "竹圍",
+                "StationId": "C0C720",
+                "ObsTime": {
+                    "DateTime": "2024-01-12T14:00:00+08:00"
+                },
+                "GeoInfo": {
+                    "CountyName": "桃園市"
+                },
+                "WeatherElement": {}
+            },
+            {
+                "StationName": "中大臨海站",
+                "StationId": "C0C730",
+                "ObsTime": {
+                    "DateTime": "2024-01-12T14:00:00+08:00"
+                },
+                "GeoInfo": {
+                    "CountyName": "桃園市"
+                },
+                "WeatherElement": {}
+            },
+            {
+                "StationName": "石門",
+                "StationId": "C0AJ40",
+                "ObsTime": {
+                    "DateTime": "2024-01-12T14:00:00+08:00"
+                },
+                "GeoInfo": {
+                    "CountyName": "新北市"
+                },
+                "WeatherElement": {}
+            },
+            {
+                "StationName": "觀音工業區",
+                "StationId": "C0C740",
+                "ObsTime": {
+                    "DateTime": "2024-01-12T14:00:00+08:00"
+                },
+                "GeoInfo": {
+                    "CountyName": "桃園市"
+                },
+                "WeatherElement": {}
+            },
+            {
+                "StationName": "海天一線",
+                "StationId": "C0D670",
+                "ObsTime": {
+                    "DateTime": "2024-01-12T14:00:00+08:00"
+                },
+                "GeoInfo": {
+                    "CountyName": "新竹市"
+                },
+                "WeatherElement": {}
+            },
+            {
+                "StationName": "香山濕地",
+                "StationId": "C0D680",
+                "ObsTime": {
+                    "DateTime": "2024-01-12T14:00:00+08:00"
+                },
+                "GeoInfo": {
+                    "CountyName": "新竹市"
+                },
+                "WeatherElement": {}
+            },
+            {
+                "StationName": "水湳洞",
+                "StationId": "C0AJ50",
+                "ObsTime": {
+                    "DateTime": "2024-01-12T14:00:00+08:00"
+                },
+                "GeoInfo": {
+                    "CountyName": "新北市"
+                },
+                "WeatherElement": {}
+            },
+            {
+                "StationName": "八斗子",
+                "StationId": "C0B050",
+                "ObsTime": {
+                    "DateTime": "2024-01-12T14:00:00+08:00"
+                },
+                "GeoInfo": {
+                    "CountyName": "基隆市"
+                },
+                "WeatherElement": {}
+            },
+            {
+                "StationName": "外湖",
+                "StationId": "C0D690",
+                "ObsTime": {
+                    "DateTime": "2024-01-12T14:00:00+08:00"
+                },
+                "GeoInfo": {
+                    "CountyName": "新竹縣"
+                },
+                "WeatherElement": {}
+            },
+            {
+                "StationName": "海埔",
+                "StationId": "C0E910",
+                "ObsTime": {
+                    "DateTime": "2024-01-12T14:00:00+08:00"
+                },
+                "GeoInfo": {
+                    "CountyName": "苗栗縣"
+                },
+                "WeatherElement": {}
+            },
+            {
+                "StationName": "通霄漁港",
+                "StationId": "C0E920",
+                "ObsTime": {
+                    "DateTime": "2024-01-12T14:00:00+08:00"
+                },
+                "GeoInfo": {
+                    "CountyName": "苗栗縣"
+                },
+                "WeatherElement": {}
+            },
+            {
+                "StationName": "松柏",
+                "StationId": "C0FA10",
+                "ObsTime": {
+                    "DateTime": "2024-01-12T14:00:00+08:00"
+                },
+                "GeoInfo": {
+                    "CountyName": "臺中市"
+                },
+                "WeatherElement": {}
+            },
+            {
+                "StationName": "溫寮",
+                "StationId": "C0FA20",
+                "ObsTime": {
+                    "DateTime": "2024-01-12T14:00:00+08:00"
+                },
+                "GeoInfo": {
+                    "CountyName": "臺中市"
+                },
+                "WeatherElement": {}
+            },
+            {
+                "StationName": "龍鳳",
+                "StationId": "C0E930",
+                "ObsTime": {
+                    "DateTime": "2024-01-12T14:00:00+08:00"
+                },
+                "GeoInfo": {
+                    "CountyName": "苗栗縣"
+                },
+                "WeatherElement": {}
+            },
+            {
+                "StationName": "淡江大學蘭陽校園",
+                "StationId": "C0UB00",
+                "ObsTime": {
+                    "DateTime": "2024-01-12T14:00:00+08:00"
+                },
+                "GeoInfo": {
+                    "CountyName": "宜蘭縣"
+                },
+                "WeatherElement": {}
+            },
+            {
+                "StationName": "林邊",
+                "StationId": "C0R850",
+                "ObsTime": {
+                    "DateTime": "2024-01-12T14:00:00+08:00"
+                },
+                "GeoInfo": {
+                    "CountyName": "屏東縣"
+                },
+                "WeatherElement": {}
+            },
+            {
+                "StationName": "六塊厝",
+                "StationId": "C0AJ60",
+                "ObsTime": {
+                    "DateTime": "2024-01-12T14:00:00+08:00"
+                },
+                "GeoInfo": {
+                    "CountyName": "新北市"
+                },
+                "WeatherElement": {}
+            },
+            {
+                "StationName": "田寮",
+                "StationId": "C0AJ70",
+                "ObsTime": {
+                    "DateTime": "2024-01-12T14:00:00+08:00"
+                },
+                "GeoInfo": {
+                    "CountyName": "新北市"
+                },
+                "WeatherElement": {}
+            },
+            {
+                "StationName": "新興坑尾",
+                "StationId": "C0C750",
+                "ObsTime": {
+                    "DateTime": "2024-01-12T14:00:00+08:00"
+                },
+                "GeoInfo": {
+                    "CountyName": "桃園市"
+                },
+                "WeatherElement": {}
+            },
+            {
+                "StationName": "蘇澳",
+                "StationId": "C0UB10",
+                "ObsTime": {
+                    "DateTime": "2024-01-12T14:00:00+08:00"
+                },
+                "GeoInfo": {
+                    "CountyName": "宜蘭縣"
+                },
+                "WeatherElement": {}
+            },
+            {
+                "StationName": "壯圍",
+                "StationId": "C0UB20",
+                "ObsTime": {
+                    "DateTime": "2024-01-12T14:00:00+08:00"
+                },
+                "GeoInfo": {
+                    "CountyName": "宜蘭縣"
+                },
+                "WeatherElement": {}
+            },
+            {
+                "StationName": "北關",
+                "StationId": "C0U880",
+                "ObsTime": {
+                    "DateTime": "2024-01-12T14:00:00+08:00"
+                },
+                "GeoInfo": {
+                    "CountyName": "宜蘭縣"
+                },
+                "WeatherElement": {}
+            },
+            {
+                "StationName": "防潮門",
+                "StationId": "C0G950",
+                "ObsTime": {
+                    "DateTime": "2024-01-12T14:00:00+08:00"
+                },
+                "GeoInfo": {
+                    "CountyName": "彰化縣"
+                },
+                "WeatherElement": {}
+            },
+            {
+                "StationName": "臺中電廠",
+                "StationId": "C0FA40",
+                "ObsTime": {
+                    "DateTime": "2024-01-12T14:00:00+08:00"
+                },
+                "GeoInfo": {
+                    "CountyName": "臺中市"
+                },
+                "WeatherElement": {}
+            },
+            {
+                "StationName": "福寶",
+                "StationId": "C0G960",
+                "ObsTime": {
+                    "DateTime": "2024-01-12T14:00:00+08:00"
+                },
+                "GeoInfo": {
+                    "CountyName": "彰化縣"
+                },
+                "WeatherElement": {}
+            },
+            {
+                "StationName": "三豐",
+                "StationId": "C0G970",
+                "ObsTime": {
+                    "DateTime": "2024-01-12T14:00:00+08:00"
+                },
+                "GeoInfo": {
+                    "CountyName": "彰化縣"
+                },
+                "WeatherElement": {}
+            },
+            {
+                "StationName": "箔子寮",
+                "StationId": "C0K600",
+                "ObsTime": {
+                    "DateTime": "2024-01-12T14:00:00+08:00"
+                },
+                "GeoInfo": {
+                    "CountyName": "雲林縣"
+                },
+                "WeatherElement": {}
+            },
+            {
+                "StationName": "好美里",
+                "StationId": "C0M880",
+                "ObsTime": {
+                    "DateTime": "2024-01-12T14:00:00+08:00"
+                },
+                "GeoInfo": {
+                    "CountyName": "嘉義縣"
+                },
+                "WeatherElement": {}
+            },
+            {
+                "StationName": "板橋",
+                "StationId": "C0AJ80",
+                "ObsTime": {
+                    "DateTime": "2024-01-12T14:00:00+08:00"
+                },
+                "GeoInfo": {
+                    "CountyName": "新北市"
+                },
+                "WeatherElement": {}
+            },
+            {
+                "StationName": "水試所成功",
+                "StationId": "CM0140",
+                "ObsTime": {
+                    "DateTime": "2024-01-12T14:00:00+08:00"
+                },
+                "GeoInfo": {
+                    "CountyName": "臺東縣"
+                },
+                "WeatherElement": {}
+            },
+            {
+                "StationName": "茂林蝶谷",
+                "StationId": "CM0180",
+                "ObsTime": {
+                    "DateTime": "2024-01-12T14:00:00+08:00"
+                },
+                "GeoInfo": {
+                    "CountyName": "高雄市"
+                },
+                "WeatherElement": {}
+            },
+            {
+                "StationName": "東莒",
+                "StationId": "C0W110",
+                "ObsTime": {
+                    "DateTime": "2024-01-12T14:00:00+08:00"
+                },
+                "GeoInfo": {
+                    "CountyName": "連江縣"
+                },
+                "WeatherElement": {}
+            },
+            {
+                "StationName": "西嶼",
+                "StationId": "C0W120",
+                "ObsTime": {
+                    "DateTime": "2024-01-12T14:00:00+08:00"
+                },
+                "GeoInfo": {
+                    "CountyName": "澎湖縣"
+                },
+                "WeatherElement": {}
+            },
+            {
+                "StationName": "花嶼",
+                "StationId": "C0W130",
+                "ObsTime": {
+                    "DateTime": "2024-01-12T14:00:00+08:00"
+                },
+                "GeoInfo": {
+                    "CountyName": "澎湖縣"
+                },
+                "WeatherElement": {}
+            },
+            {
+                "StationName": "金沙",
+                "StationId": "C0W140",
+                "ObsTime": {
+                    "DateTime": "2024-01-12T14:00:00+08:00"
+                },
+                "GeoInfo": {
+                    "CountyName": "金門縣"
+                },
+                "WeatherElement": {}
+            },
+            {
+                "StationName": "金寧",
+                "StationId": "C0W150",
+                "ObsTime": {
+                    "DateTime": "2024-01-12T14:00:00+08:00"
+                },
+                "GeoInfo": {
+                    "CountyName": "金門縣"
+                },
+                "WeatherElement": {}
+            },
+            {
+                "StationName": "烏坵",
+                "StationId": "C0W160",
+                "ObsTime": {
+                    "DateTime": "2024-01-12T14:00:00+08:00"
+                },
+                "GeoInfo": {
+                    "CountyName": "金門縣"
+                },
+                "WeatherElement": {}
+            },
+            {
+                "StationName": "松山",
+                "StationId": "C0AH70",
+                "ObsTime": {
+                    "DateTime": "2024-01-12T14:00:00+08:00"
+                },
+                "GeoInfo": {
+                    "CountyName": "臺北市"
+                },
+                "WeatherElement": {}
+            },
+            {
+                "StationName": "高鐵苗栗",
+                "StationId": "C0E870",
+                "ObsTime": {
+                    "DateTime": "2024-01-12T14:00:00+08:00"
+                },
+                "GeoInfo": {
+                    "CountyName": "苗栗縣"
+                },
+                "WeatherElement": {}
+            },
+            {
+                "StationName": "高鐵雲林",
+                "StationId": "C0K580",
+                "ObsTime": {
+                    "DateTime": "2024-01-12T14:00:00+08:00"
+                },
+                "GeoInfo": {
+                    "CountyName": "雲林縣"
+                },
+                "WeatherElement": {}
+            },
+            {
+                "StationName": "國一五楊N44K",
+                "StationId": "C0C690",
+                "ObsTime": {
+                    "DateTime": "2024-01-12T14:00:00+08:00"
+                },
+                "GeoInfo": {
+                    "CountyName": "桃園市"
+                },
+                "WeatherElement": {}
+            },
+            {
+                "StationName": "基隆嶼",
+                "StationId": "C0B020",
+                "ObsTime": {
+                    "DateTime": "2024-01-12T14:00:00+08:00"
+                },
+                "GeoInfo": {
+                    "CountyName": "基隆市"
+                },
+                "WeatherElement": {}
+            },
+            {
+                "StationName": "蘭嶼高中",
+                "StationId": "C0S900",
+                "ObsTime": {
+                    "DateTime": "2024-01-12T14:00:00+08:00"
+                },
+                "GeoInfo": {
+                    "CountyName": "臺東縣"
+                },
+                "WeatherElement": {}
+            },
+            {
+                "StationName": "蘭嶼燈塔",
+                "StationId": "C0S910",
+                "ObsTime": {
+                    "DateTime": "2024-01-12T14:00:00+08:00"
+                },
+                "GeoInfo": {
+                    "CountyName": "臺東縣"
+                },
+                "WeatherElement": {}
+            },
+            {
+                "StationName": "白沙灣",
+                "StationId": "C0AI20",
+                "ObsTime": {
+                    "DateTime": "2024-01-12T14:00:00+08:00"
+                },
+                "GeoInfo": {
+                    "CountyName": "新北市"
+                },
+                "WeatherElement": {}
+            },
+            {
+                "StationName": "小林",
+                "StationId": "C0V820",
+                "ObsTime": {
+                    "DateTime": "2024-01-12T14:00:00+08:00"
+                },
+                "GeoInfo": {
+                    "CountyName": "高雄市"
+                },
+                "WeatherElement": {}
+            },
+            {
+                "StationName": "大溪永福",
+                "StationId": "C0C710",
+                "ObsTime": {
+                    "DateTime": "2024-01-12T14:00:00+08:00"
+                },
+                "GeoInfo": {
+                    "CountyName": "桃園市"
+                },
+                "WeatherElement": {}
+            },
+            {
+                "StationName": "玉蘭",
+                "StationId": "C0U650",
+                "ObsTime": {
+                    "DateTime": "2024-01-12T14:00:00+08:00"
+                },
+                "GeoInfo": {
+                    "CountyName": "宜蘭縣"
+                },
+                "WeatherElement": {}
+            },
+            {
+                "StationName": "五結",
+                "StationId": "C0U780",
+                "ObsTime": {
+                    "DateTime": "2024-01-12T14:00:00+08:00"
+                },
+                "GeoInfo": {
+                    "CountyName": "宜蘭縣"
+                },
+                "WeatherElement": {}
+            },
+            {
+                "StationName": "太平山",
+                "StationId": "C0U710",
+                "ObsTime": {
+                    "DateTime": "2024-01-12T14:00:00+08:00"
+                },
+                "GeoInfo": {
+                    "CountyName": "宜蘭縣"
+                },
+                "WeatherElement": {}
+            },
+            {
+                "StationName": "南山",
+                "StationId": "C0U720",
+                "ObsTime": {
+                    "DateTime": "2024-01-12T14:00:00+08:00"
+                },
+                "GeoInfo": {
+                    "CountyName": "宜蘭縣"
+                },
+                "WeatherElement": {}
+            },
+            {
+                "StationName": "雙連埤",
+                "StationId": "C0U520",
+                "ObsTime": {
+                    "DateTime": "2024-01-12T14:00:00+08:00"
+                },
+                "GeoInfo": {
+                    "CountyName": "宜蘭縣"
+                },
+                "WeatherElement": {}
+            },
+            {
+                "StationName": "頭城",
+                "StationId": "C0U860",
+                "ObsTime": {
+                    "DateTime": "2024-01-12T14:00:00+08:00"
+                },
+                "GeoInfo": {
+                    "CountyName": "宜蘭縣"
+                },
+                "WeatherElement": {}
+            },
+            {
+                "StationName": "大礁溪",
+                "StationId": "C0U870",
+                "ObsTime": {
+                    "DateTime": "2024-01-12T14:00:00+08:00"
+                },
+                "GeoInfo": {
+                    "CountyName": "宜蘭縣"
+                },
+                "WeatherElement": {}
+            },
+            {
+                "StationName": "三星",
+                "StationId": "C0U890",
+                "ObsTime": {
+                    "DateTime": "2024-01-12T14:00:00+08:00"
+                },
+                "GeoInfo": {
+                    "CountyName": "宜蘭縣"
+                },
+                "WeatherElement": {}
+            },
+            {
+                "StationName": "內城",
+                "StationId": "C0U900",
+                "ObsTime": {
+                    "DateTime": "2024-01-12T14:00:00+08:00"
+                },
+                "GeoInfo": {
+                    "CountyName": "宜蘭縣"
+                },
+                "WeatherElement": {}
+            },
+            {
+                "StationName": "冬山",
+                "StationId": "C0U910",
+                "ObsTime": {
+                    "DateTime": "2024-01-12T14:00:00+08:00"
+                },
+                "GeoInfo": {
+                    "CountyName": "宜蘭縣"
+                },
+                "WeatherElement": {}
+            },
+            {
+                "StationName": "礁溪",
+                "StationId": "C0U600",
+                "ObsTime": {
+                    "DateTime": "2024-01-12T14:00:00+08:00"
+                },
+                "GeoInfo": {
+                    "CountyName": "宜蘭縣"
+                },
+                "WeatherElement": {}
+            },
+            {
+                "StationName": "龜山島",
+                "StationId": "C0U750",
+                "ObsTime": {
+                    "DateTime": "2024-01-12T14:00:00+08:00"
+                },
+                "GeoInfo": {
+                    "CountyName": "宜蘭縣"
+                },
+                "WeatherElement": {}
+            },
+            {
+                "StationName": "三貂角",
+                "StationId": "C0A970",
+                "ObsTime": {
+                    "DateTime": "2024-01-12T14:00:00+08:00"
+                },
+                "GeoInfo": {
+                    "CountyName": "新北市"
+                },
+                "WeatherElement": {}
+            },
+            {
+                "StationName": "羅東",
+                "StationId": "C0U940",
+                "ObsTime": {
+                    "DateTime": "2024-01-12T14:00:00+08:00"
+                },
+                "GeoInfo": {
+                    "CountyName": "宜蘭縣"
+                },
+                "WeatherElement": {}
+            },
+            {
+                "StationName": "鶯子嶺",
+                "StationId": "C0U950",
+                "ObsTime": {
+                    "DateTime": "2024-01-12T14:00:00+08:00"
+                },
+                "GeoInfo": {
+                    "CountyName": "宜蘭縣"
+                },
+                "WeatherElement": {}
+            },
+            {
+                "StationName": "大福",
+                "StationId": "C0U970",
+                "ObsTime": {
+                    "DateTime": "2024-01-12T14:00:00+08:00"
+                },
+                "GeoInfo": {
+                    "CountyName": "宜蘭縣"
+                },
+                "WeatherElement": {}
+            },
+            {
+                "StationName": "坪林石牌",
+                "StationId": "C0U980",
+                "ObsTime": {
+                    "DateTime": "2024-01-12T14:00:00+08:00"
+                },
+                "GeoInfo": {
+                    "CountyName": "宜蘭縣"
+                },
+                "WeatherElement": {}
+            },
+            {
+                "StationName": "天祥",
+                "StationId": "C0T820",
+                "ObsTime": {
+                    "DateTime": "2024-01-12T14:00:00+08:00"
+                },
+                "GeoInfo": {
+                    "CountyName": "花蓮縣"
+                },
+                "WeatherElement": {}
+            },
+            {
+                "StationName": "東華",
+                "StationId": "C0Z100",
+                "ObsTime": {
+                    "DateTime": "2024-01-12T14:00:00+08:00"
+                },
+                "GeoInfo": {
+                    "CountyName": "花蓮縣"
+                },
+                "WeatherElement": {}
+            },
+            {
+                "StationName": "鯉魚潭",
+                "StationId": "C0T870",
+                "ObsTime": {
+                    "DateTime": "2024-01-12T14:00:00+08:00"
+                },
+                "GeoInfo": {
+                    "CountyName": "花蓮縣"
+                },
+                "WeatherElement": {}
+            },
+            {
+                "StationName": "水源",
+                "StationId": "C0T9B0",
+                "ObsTime": {
+                    "DateTime": "2024-01-12T14:00:00+08:00"
+                },
+                "GeoInfo": {
+                    "CountyName": "花蓮縣"
+                },
+                "WeatherElement": {}
+            },
+            {
+                "StationName": "鳳林山",
+                "StationId": "C0T9G0",
+                "ObsTime": {
+                    "DateTime": "2024-01-12T14:00:00+08:00"
+                },
+                "GeoInfo": {
+                    "CountyName": "花蓮縣"
+                },
+                "WeatherElement": {}
+            },
+            {
+                "StationName": "光復",
+                "StationId": "C0T960",
+                "ObsTime": {
+                    "DateTime": "2024-01-12T14:00:00+08:00"
+                },
+                "GeoInfo": {
+                    "CountyName": "花蓮縣"
+                },
+                "WeatherElement": {}
+            },
+            {
+                "StationName": "西林",
+                "StationId": "C0T900",
+                "ObsTime": {
+                    "DateTime": "2024-01-12T14:00:00+08:00"
+                },
+                "GeoInfo": {
+                    "CountyName": "花蓮縣"
+                },
+                "WeatherElement": {}
+            },
+            {
+                "StationName": "月眉山",
+                "StationId": "C0T9A0",
+                "ObsTime": {
+                    "DateTime": "2024-01-12T14:00:00+08:00"
+                },
+                "GeoInfo": {
+                    "CountyName": "花蓮縣"
+                },
+                "WeatherElement": {}
+            },
+            {
+                "StationName": "大坑",
+                "StationId": "C0T9E0",
+                "ObsTime": {
+                    "DateTime": "2024-01-12T14:00:00+08:00"
+                },
+                "GeoInfo": {
+                    "CountyName": "花蓮縣"
+                },
+                "WeatherElement": {}
+            },
+            {
+                "StationName": "加路蘭山",
+                "StationId": "C0T9H0",
+                "ObsTime": {
+                    "DateTime": "2024-01-12T14:00:00+08:00"
+                },
+                "GeoInfo": {
+                    "CountyName": "花蓮縣"
+                },
+                "WeatherElement": {}
+            },
+            {
+                "StationName": "水璉",
+                "StationId": "C0T9F0",
+                "ObsTime": {
+                    "DateTime": "2024-01-12T14:00:00+08:00"
+                },
+                "GeoInfo": {
+                    "CountyName": "花蓮縣"
+                },
+                "WeatherElement": {}
+            },
+            {
+                "StationName": "豐濱",
+                "StationId": "C0T9I0",
+                "ObsTime": {
+                    "DateTime": "2024-01-12T14:00:00+08:00"
+                },
+                "GeoInfo": {
+                    "CountyName": "花蓮縣"
+                },
+                "WeatherElement": {}
+            },
+            {
+                "StationName": "明里",
+                "StationId": "C0Z020",
+                "ObsTime": {
+                    "DateTime": "2024-01-12T14:00:00+08:00"
+                },
+                "GeoInfo": {
+                    "CountyName": "花蓮縣"
+                },
+                "WeatherElement": {}
+            },
+            {
+                "StationName": "玉里",
+                "StationId": "C0Z061",
+                "ObsTime": {
+                    "DateTime": "2024-01-12T14:00:00+08:00"
+                },
+                "GeoInfo": {
+                    "CountyName": "花蓮縣"
+                },
+                "WeatherElement": {}
+            },
+            {
+                "StationName": "舞鶴",
+                "StationId": "C0Z070",
+                "ObsTime": {
+                    "DateTime": "2024-01-12T14:00:00+08:00"
+                },
+                "GeoInfo": {
+                    "CountyName": "花蓮縣"
+                },
+                "WeatherElement": {}
+            },
+            {
+                "StationName": "佳心",
+                "StationId": "C0Z050",
+                "ObsTime": {
+                    "DateTime": "2024-01-12T14:00:00+08:00"
+                },
+                "GeoInfo": {
+                    "CountyName": "花蓮縣"
+                },
+                "WeatherElement": {}
+            },
+            {
+                "StationName": "富源",
+                "StationId": "C0Z080",
+                "ObsTime": {
+                    "DateTime": "2024-01-12T14:00:00+08:00"
+                },
+                "GeoInfo": {
+                    "CountyName": "花蓮縣"
+                },
+                "WeatherElement": {}
+            },
+            {
+                "StationName": "吉安光華",
+                "StationId": "C0Z150",
+                "ObsTime": {
+                    "DateTime": "2024-01-12T14:00:00+08:00"
+                },
+                "GeoInfo": {
+                    "CountyName": "花蓮縣"
+                },
+                "WeatherElement": {}
+            },
+            {
+                "StationName": "鳳林",
+                "StationId": "C0Z160",
+                "ObsTime": {
+                    "DateTime": "2024-01-12T14:00:00+08:00"
+                },
+                "GeoInfo": {
+                    "CountyName": "花蓮縣"
+                },
+                "WeatherElement": {}
+            },
+            {
+                "StationName": "卓溪",
+                "StationId": "C0Z170",
+                "ObsTime": {
+                    "DateTime": "2024-01-12T14:00:00+08:00"
+                },
+                "GeoInfo": {
+                    "CountyName": "花蓮縣"
+                },
+                "WeatherElement": {}
+            },
+            {
+                "StationName": "新城",
+                "StationId": "C0Z180",
+                "ObsTime": {
+                    "DateTime": "2024-01-12T14:00:00+08:00"
+                },
+                "GeoInfo": {
+                    "CountyName": "花蓮縣"
+                },
+                "WeatherElement": {}
+            },
+            {
+                "StationName": "富世",
+                "StationId": "C0Z190",
+                "ObsTime": {
+                    "DateTime": "2024-01-12T14:00:00+08:00"
+                },
+                "GeoInfo": {
+                    "CountyName": "花蓮縣"
+                },
+                "WeatherElement": {}
+            },
+            {
+                "StationName": "萬榮",
+                "StationId": "C0Z200",
+                "ObsTime": {
+                    "DateTime": "2024-01-12T14:00:00+08:00"
+                },
+                "GeoInfo": {
+                    "CountyName": "花蓮縣"
+                },
+                "WeatherElement": {}
+            },
+            {
+                "StationName": "瑞穗",
+                "StationId": "C0Z210",
+                "ObsTime": {
+                    "DateTime": "2024-01-12T14:00:00+08:00"
+                },
+                "GeoInfo": {
+                    "CountyName": "花蓮縣"
+                },
+                "WeatherElement": {}
+            },
+            {
+                "StationName": "瑞穗林道",
+                "StationId": "C0Z250",
+                "ObsTime": {
+                    "DateTime": "2024-01-12T14:00:00+08:00"
+                },
+                "GeoInfo": {
+                    "CountyName": "花蓮縣"
+                },
+                "WeatherElement": {}
+            },
+            {
+                "StationName": "蕃薯寮",
+                "StationId": "C0Z270",
+                "ObsTime": {
+                    "DateTime": "2024-01-12T14:00:00+08:00"
+                },
+                "GeoInfo": {
+                    "CountyName": "花蓮縣"
+                },
+                "WeatherElement": {}
+            },
+            {
+                "StationName": "德武",
+                "StationId": "C0Z280",
+                "ObsTime": {
+                    "DateTime": "2024-01-12T14:00:00+08:00"
+                },
+                "GeoInfo": {
+                    "CountyName": "花蓮縣"
+                },
+                "WeatherElement": {}
+            },
+            {
+                "StationName": "赤柯山",
+                "StationId": "C0Z290",
+                "ObsTime": {
+                    "DateTime": "2024-01-12T14:00:00+08:00"
+                },
+                "GeoInfo": {
+                    "CountyName": "花蓮縣"
+                },
+                "WeatherElement": {}
+            },
+            {
+                "StationName": "東里",
+                "StationId": "C0Z300",
+                "ObsTime": {
+                    "DateTime": "2024-01-12T14:00:00+08:00"
+                },
+                "GeoInfo": {
+                    "CountyName": "花蓮縣"
+                },
+                "WeatherElement": {}
+            },
+            {
+                "StationName": "清水斷崖",
+                "StationId": "C0Z310",
+                "ObsTime": {
+                    "DateTime": "2024-01-12T14:00:00+08:00"
+                },
+                "GeoInfo": {
+                    "CountyName": "花蓮縣"
+                },
+                "WeatherElement": {}
+            },
+            {
+                "StationName": "清水林道",
+                "StationId": "C0Z320",
+                "ObsTime": {
+                    "DateTime": "2024-01-12T14:00:00+08:00"
+                },
+                "GeoInfo": {
+                    "CountyName": "花蓮縣"
+                },
+                "WeatherElement": {}
+            },
+            {
+                "StationName": "安通山",
+                "StationId": "C0Z330",
+                "ObsTime": {
+                    "DateTime": "2024-01-12T14:00:00+08:00"
+                },
+                "GeoInfo": {
+                    "CountyName": "花蓮縣"
+                },
+                "WeatherElement": {}
+            },
+            {
+                "StationName": "靜浦",
+                "StationId": "C0T9M0",
+                "ObsTime": {
+                    "DateTime": "2024-01-12T14:00:00+08:00"
+                },
+                "GeoInfo": {
+                    "CountyName": "花蓮縣"
+                },
+                "WeatherElement": {}
+            },
+            {
+                "StationName": "長濱",
+                "StationId": "C0S830",
+                "ObsTime": {
+                    "DateTime": "2024-01-12T14:00:00+08:00"
+                },
+                "GeoInfo": {
+                    "CountyName": "臺東縣"
+                },
+                "WeatherElement": {}
+            },
+            {
+                "StationName": "東河",
+                "StationId": "C0S810",
+                "ObsTime": {
+                    "DateTime": "2024-01-12T14:00:00+08:00"
+                },
+                "GeoInfo": {
+                    "CountyName": "臺東縣"
+                },
+                "WeatherElement": {}
+            },
+            {
+                "StationName": "綠島",
+                "StationId": "C0S730",
+                "ObsTime": {
+                    "DateTime": "2024-01-12T14:00:00+08:00"
+                },
+                "GeoInfo": {
+                    "CountyName": "臺東縣"
+                },
+                "WeatherElement": {}
+            },
+            {
+                "StationName": "下馬",
+                "StationId": "C0S660",
+                "ObsTime": {
+                    "DateTime": "2024-01-12T14:00:00+08:00"
+                },
+                "GeoInfo": {
+                    "CountyName": "臺東縣"
+                },
+                "WeatherElement": {}
+            },
+            {
+                "StationName": "向陽",
+                "StationId": "C0S750",
+                "ObsTime": {
+                    "DateTime": "2024-01-12T14:00:00+08:00"
+                },
+                "GeoInfo": {
+                    "CountyName": "臺東縣"
+                },
+                "WeatherElement": {}
+            },
+            {
+                "StationName": "紅石",
+                "StationId": "C0S760",
+                "ObsTime": {
+                    "DateTime": "2024-01-12T14:00:00+08:00"
+                },
+                "GeoInfo": {
+                    "CountyName": "臺東縣"
+                },
+                "WeatherElement": {}
+            },
+            {
+                "StationName": "池上",
+                "StationId": "C0S740",
+                "ObsTime": {
+                    "DateTime": "2024-01-12T14:00:00+08:00"
+                },
+                "GeoInfo": {
+                    "CountyName": "臺東縣"
+                },
+                "WeatherElement": {}
+            },
+            {
+                "StationName": "鹿野",
+                "StationId": "C0S710",
+                "ObsTime": {
+                    "DateTime": "2024-01-12T14:00:00+08:00"
+                },
+                "GeoInfo": {
+                    "CountyName": "臺東縣"
+                },
+                "WeatherElement": {}
+            },
+            {
+                "StationName": "關山",
+                "StationId": "C0S890",
+                "ObsTime": {
+                    "DateTime": "2024-01-12T14:00:00+08:00"
+                },
+                "GeoInfo": {
+                    "CountyName": "臺東縣"
+                },
+                "WeatherElement": {}
+            },
+            {
+                "StationName": "土阪",
+                "StationId": "C0SA80",
+                "ObsTime": {
+                    "DateTime": "2024-01-12T14:00:00+08:00"
+                },
+                "GeoInfo": {
+                    "CountyName": "臺東縣"
+                },
+                "WeatherElement": {}
+            },
+            {
+                "StationName": "大溪山",
+                "StationId": "C0S770",
+                "ObsTime": {
+                    "DateTime": "2024-01-12T14:00:00+08:00"
+                },
+                "GeoInfo": {
+                    "CountyName": "臺東縣"
+                },
+                "WeatherElement": {}
+            },
+            {
+                "StationName": "南田",
+                "StationId": "C0S840",
+                "ObsTime": {
+                    "DateTime": "2024-01-12T14:00:00+08:00"
+                },
+                "GeoInfo": {
+                    "CountyName": "臺東縣"
+                },
+                "WeatherElement": {}
+            },
+            {
+                "StationName": "金崙",
+                "StationId": "C0S790",
+                "ObsTime": {
+                    "DateTime": "2024-01-12T14:00:00+08:00"
+                },
+                "GeoInfo": {
+                    "CountyName": "臺東縣"
+                },
+                "WeatherElement": {}
+            },
+            {
+                "StationName": "太麻里",
+                "StationId": "C0S690",
+                "ObsTime": {
+                    "DateTime": "2024-01-12T14:00:00+08:00"
+                },
+                "GeoInfo": {
+                    "CountyName": "臺東縣"
+                },
+                "WeatherElement": {}
+            },
+            {
+                "StationName": "知本",
+                "StationId": "C0S700",
+                "ObsTime": {
+                    "DateTime": "2024-01-12T14:00:00+08:00"
+                },
+                "GeoInfo": {
+                    "CountyName": "臺東縣"
+                },
+                "WeatherElement": {}
+            },
+            {
+                "StationName": "富里",
+                "StationId": "C0T9N0",
+                "ObsTime": {
+                    "DateTime": "2024-01-12T14:00:00+08:00"
+                },
+                "GeoInfo": {
+                    "CountyName": "花蓮縣"
+                },
+                "WeatherElement": {}
+            },
+            {
+                "StationName": "中壢",
+                "StationId": "C0C700",
+                "ObsTime": {
+                    "DateTime": "2024-01-12T14:00:00+08:00"
+                },
+                "GeoInfo": {
+                    "CountyName": "桃園市"
+                },
+                "WeatherElement": {}
+            },
+            {
+                "StationName": "柳營",
+                "StationId": "C0X320",
+                "ObsTime": {
+                    "DateTime": "2024-01-12T14:00:00+08:00"
+                },
+                "GeoInfo": {
+                    "CountyName": "臺南市"
+                },
+                "WeatherElement": {}
+            },
+            {
+                "StationName": "關西",
+                "StationId": "C0D700",
+                "ObsTime": {
+                    "DateTime": "2024-01-12T14:00:00+08:00"
+                },
+                "GeoInfo": {
+                    "CountyName": "新竹縣"
+                },
+                "WeatherElement": {}
+            },
+            {
+                "StationName": "新美",
+                "StationId": "C0M860",
+                "ObsTime": {
+                    "DateTime": "2024-01-12T14:00:00+08:00"
+                },
+                "GeoInfo": {
+                    "CountyName": "嘉義縣"
+                },
+                "WeatherElement": {}
+            },
+            {
+                "StationName": "永靖",
+                "StationId": "C0G920",
+                "ObsTime": {
+                    "DateTime": "2024-01-12T14:00:00+08:00"
+                },
+                "GeoInfo": {
+                    "CountyName": "彰化縣"
+                },
+                "WeatherElement": {}
+            },
+            {
+                "StationName": "竹塘",
+                "StationId": "C0G940",
+                "ObsTime": {
+                    "DateTime": "2024-01-12T14:00:00+08:00"
+                },
+                "GeoInfo": {
+                    "CountyName": "彰化縣"
+                },
+                "WeatherElement": {}
+            },
+            {
+                "StationName": "雲林東勢",
+                "StationId": "C0K590",
+                "ObsTime": {
+                    "DateTime": "2024-01-12T14:00:00+08:00"
+                },
+                "GeoInfo": {
+                    "CountyName": "雲林縣"
+                },
+                "WeatherElement": {}
+            },
+            {
+                "StationName": "車城",
+                "StationId": "C0R320",
+                "ObsTime": {
+                    "DateTime": "2024-01-12T14:00:00+08:00"
+                },
+                "GeoInfo": {
+                    "CountyName": "屏東縣"
+                },
+                "WeatherElement": {}
+            },
+            {
+                "StationName": "大漢山",
+                "StationId": "C0R440",
+                "ObsTime": {
+                    "DateTime": "2024-01-12T14:00:00+08:00"
+                },
+                "GeoInfo": {
+                    "CountyName": "屏東縣"
+                },
+                "WeatherElement": {}
+            },
+            {
+                "StationName": "枋山",
+                "StationId": "C0R700",
+                "ObsTime": {
+                    "DateTime": "2024-01-12T14:00:00+08:00"
+                },
+                "GeoInfo": {
+                    "CountyName": "屏東縣"
+                },
+                "WeatherElement": {}
+            },
+            {
+                "StationName": "枋寮",
+                "StationId": "C0R660",
+                "ObsTime": {
+                    "DateTime": "2024-01-12T14:00:00+08:00"
+                },
+                "GeoInfo": {
+                    "CountyName": "屏東縣"
+                },
+                "WeatherElement": {}
+            },
+            {
+                "StationName": "楓港",
+                "StationId": "C0R670",
+                "ObsTime": {
+                    "DateTime": "2024-01-12T14:00:00+08:00"
+                },
+                "GeoInfo": {
+                    "CountyName": "屏東縣"
+                },
+                "WeatherElement": {}
+            },
+            {
+                "StationName": "檳榔",
+                "StationId": "C0R280",
+                "ObsTime": {
+                    "DateTime": "2024-01-12T14:00:00+08:00"
+                },
+                "GeoInfo": {
+                    "CountyName": "屏東縣"
+                },
+                "WeatherElement": {}
+            },
+            {
+                "StationName": "牡丹",
+                "StationId": "C0R340",
+                "ObsTime": {
+                    "DateTime": "2024-01-12T14:00:00+08:00"
+                },
+                "GeoInfo": {
+                    "CountyName": "屏東縣"
+                },
+                "WeatherElement": {}
+            },
+            {
+                "StationName": "佳樂水",
+                "StationId": "C0R680",
+                "ObsTime": {
+                    "DateTime": "2024-01-12T14:00:00+08:00"
+                },
+                "GeoInfo": {
+                    "CountyName": "屏東縣"
+                },
+                "WeatherElement": {}
+            },
+            {
+                "StationName": "墾丁",
+                "StationId": "C0R690",
+                "ObsTime": {
+                    "DateTime": "2024-01-12T14:00:00+08:00"
+                },
+                "GeoInfo": {
+                    "CountyName": "屏東縣"
+                },
+                "WeatherElement": {}
+            },
+            {
+                "StationName": "旭海",
+                "StationId": "C0R720",
+                "ObsTime": {
+                    "DateTime": "2024-01-12T14:00:00+08:00"
+                },
+                "GeoInfo": {
+                    "CountyName": "屏東縣"
+                },
+                "WeatherElement": {}
+            },
+            {
+                "StationName": "貓鼻頭",
+                "StationId": "C0R350",
+                "ObsTime": {
+                    "DateTime": "2024-01-12T14:00:00+08:00"
+                },
+                "GeoInfo": {
+                    "CountyName": "屏東縣"
+                },
+                "WeatherElement": {}
+            },
+            {
+                "StationName": "墾雷",
+                "StationId": "C0R620",
+                "ObsTime": {
+                    "DateTime": "2024-01-12T14:00:00+08:00"
+                },
+                "GeoInfo": {
+                    "CountyName": "屏東縣"
+                },
+                "WeatherElement": {}
+            },
+            {
+                "StationName": "四林格山",
+                "StationId": "C0R750",
+                "ObsTime": {
+                    "DateTime": "2024-01-12T14:00:00+08:00"
+                },
+                "GeoInfo": {
+                    "CountyName": "屏東縣"
+                },
+                "WeatherElement": {}
+            },
+            {
+                "StationName": "大坪頂",
+                "StationId": "C0R730",
+                "ObsTime": {
+                    "DateTime": "2024-01-12T14:00:00+08:00"
+                },
+                "GeoInfo": {
+                    "CountyName": "屏東縣"
+                },
+                "WeatherElement": {}
+            },
+            {
+                "StationName": "龍磐",
+                "StationId": "C0R710",
+                "ObsTime": {
+                    "DateTime": "2024-01-12T14:00:00+08:00"
+                },
+                "GeoInfo": {
+                    "CountyName": "屏東縣"
+                },
+                "WeatherElement": {}
+            },
+            {
+                "StationName": "獅子",
+                "StationId": "C0R740",
+                "ObsTime": {
+                    "DateTime": "2024-01-12T14:00:00+08:00"
+                },
+                "GeoInfo": {
+                    "CountyName": "屏東縣"
+                },
+                "WeatherElement": {}
+            },
+            {
+                "StationName": "東澳",
+                "StationId": "C0U760",
+                "ObsTime": {
+                    "DateTime": "2024-01-12T14:00:00+08:00"
+                },
+                "GeoInfo": {
+                    "CountyName": "宜蘭縣"
+                },
+                "WeatherElement": {}
+            },
+            {
+                "StationName": "南澳",
+                "StationId": "C0U770",
+                "ObsTime": {
+                    "DateTime": "2024-01-12T14:00:00+08:00"
+                },
+                "GeoInfo": {
+                    "CountyName": "宜蘭縣"
+                },
+                "WeatherElement": {}
+            },
+            {
+                "StationName": "和中",
+                "StationId": "C0T9D0",
+                "ObsTime": {
+                    "DateTime": "2024-01-12T14:00:00+08:00"
+                },
+                "GeoInfo": {
+                    "CountyName": "花蓮縣"
+                },
+                "WeatherElement": {}
+            },
+            {
+                "StationName": "翠峰湖",
+                "StationId": "C0U960",
+                "ObsTime": {
+                    "DateTime": "2024-01-12T14:00:00+08:00"
+                },
+                "GeoInfo": {
+                    "CountyName": "宜蘭縣"
+                },
+                "WeatherElement": {}
+            },
+            {
+                "StationName": "和平林道",
+                "StationId": "C0Z220",
+                "ObsTime": {
+                    "DateTime": "2024-01-12T14:00:00+08:00"
+                },
+                "GeoInfo": {
+                    "CountyName": "花蓮縣"
+                },
+                "WeatherElement": {}
+            },
+            {
+                "StationName": "和平",
+                "StationId": "C0Z230",
+                "ObsTime": {
+                    "DateTime": "2024-01-12T14:00:00+08:00"
+                },
+                "GeoInfo": {
+                    "CountyName": "花蓮縣"
+                },
+                "WeatherElement": {}
+            },
+            {
+                "StationName": "樟樹山",
+                "StationId": "C0UA60",
+                "ObsTime": {
+                    "DateTime": "2024-01-12T14:00:00+08:00"
+                },
+                "GeoInfo": {
+                    "CountyName": "宜蘭縣"
+                },
+                "WeatherElement": {}
+            },
+            {
+                "StationName": "桃源谷",
+                "StationId": "C0UA70",
+                "ObsTime": {
+                    "DateTime": "2024-01-12T14:00:00+08:00"
+                },
+                "GeoInfo": {
+                    "CountyName": "宜蘭縣"
+                },
+                "WeatherElement": {}
+            },
+            {
+                "StationName": "西帽山",
+                "StationId": "C0UA50",
+                "ObsTime": {
+                    "DateTime": "2024-01-12T14:00:00+08:00"
+                },
+                "GeoInfo": {
+                    "CountyName": "宜蘭縣"
+                },
+                "WeatherElement": {}
+            },
+            {
+                "StationName": "西德山",
+                "StationId": "C0UA40",
+                "ObsTime": {
+                    "DateTime": "2024-01-12T14:00:00+08:00"
+                },
+                "GeoInfo": {
+                    "CountyName": "宜蘭縣"
+                },
+                "WeatherElement": {}
+            },
+            {
+                "StationName": "福山植物園",
+                "StationId": "C0AH90",
+                "ObsTime": {
+                    "DateTime": "2024-01-12T14:00:00+08:00"
+                },
+                "GeoInfo": {
+                    "CountyName": "新北市"
+                },
+                "WeatherElement": {}
+            },
+            {
+                "StationName": "鴛鴦湖",
+                "StationId": "C0UA10",
+                "ObsTime": {
+                    "DateTime": "2024-01-12T14:00:00+08:00"
+                },
+                "GeoInfo": {
+                    "CountyName": "宜蘭縣"
+                },
+                "WeatherElement": {}
+            },
+            {
+                "StationName": "白嶺",
+                "StationId": "C0UA30",
+                "ObsTime": {
+                    "DateTime": "2024-01-12T14:00:00+08:00"
+                },
+                "GeoInfo": {
+                    "CountyName": "宜蘭縣"
+                },
+                "WeatherElement": {}
+            },
+            {
+                "StationName": "土場",
+                "StationId": "C0UA00",
+                "ObsTime": {
+                    "DateTime": "2024-01-12T14:00:00+08:00"
+                },
+                "GeoInfo": {
+                    "CountyName": "宜蘭縣"
+                },
+                "WeatherElement": {}
+            },
+            {
+                "StationName": "員山",
+                "StationId": "C0U990",
+                "ObsTime": {
+                    "DateTime": "2024-01-12T14:00:00+08:00"
+                },
+                "GeoInfo": {
+                    "CountyName": "宜蘭縣"
+                },
+                "WeatherElement": {}
+            },
+            {
+                "StationName": "蘆竹",
+                "StationId": "C0C620",
+                "ObsTime": {
+                    "DateTime": "2024-01-12T14:00:00+08:00"
+                },
+                "GeoInfo": {
+                    "CountyName": "桃園市"
+                },
+                "WeatherElement": {}
+            },
+            {
+                "StationName": "橫山",
+                "StationId": "C0D540",
+                "ObsTime": {
+                    "DateTime": "2024-01-12T14:00:00+08:00"
+                },
+                "GeoInfo": {
+                    "CountyName": "新竹縣"
+                },
+                "WeatherElement": {}
+            },
+            {
+                "StationName": "新豐",
+                "StationId": "C0D590",
+                "ObsTime": {
+                    "DateTime": "2024-01-12T14:00:00+08:00"
+                },
+                "GeoInfo": {
+                    "CountyName": "新竹縣"
+                },
+                "WeatherElement": {}
+            },
+            {
+                "StationName": "觀音",
+                "StationId": "C0C590",
+                "ObsTime": {
+                    "DateTime": "2024-01-12T14:00:00+08:00"
+                },
+                "GeoInfo": {
+                    "CountyName": "桃園市"
+                },
+                "WeatherElement": {}
+            },
+            {
+                "StationName": "雪霸",
+                "StationId": "C0D550",
+                "ObsTime": {
+                    "DateTime": "2024-01-12T14:00:00+08:00"
+                },
+                "GeoInfo": {
+                    "CountyName": "新竹縣"
+                },
+                "WeatherElement": {}
+            },
+            {
+                "StationName": "竹東",
+                "StationId": "C0D560",
+                "ObsTime": {
+                    "DateTime": "2024-01-12T14:00:00+08:00"
+                },
+                "GeoInfo": {
+                    "CountyName": "新竹縣"
+                },
+                "WeatherElement": {}
+            },
+            {
+                "StationName": "平鎮",
+                "StationId": "C0C650",
+                "ObsTime": {
+                    "DateTime": "2024-01-12T14:00:00+08:00"
+                },
+                "GeoInfo": {
+                    "CountyName": "桃園市"
+                },
+                "WeatherElement": {}
+            },
+            {
+                "StationName": "大溪",
+                "StationId": "C0C630",
+                "ObsTime": {
+                    "DateTime": "2024-01-12T14:00:00+08:00"
+                },
+                "GeoInfo": {
+                    "CountyName": "桃園市"
+                },
+                "WeatherElement": {}
+            },
+            {
+                "StationName": "頭份",
+                "StationId": "C0E730",
+                "ObsTime": {
+                    "DateTime": "2024-01-12T14:00:00+08:00"
+                },
+                "GeoInfo": {
+                    "CountyName": "苗栗縣"
+                },
+                "WeatherElement": {}
+            },
+            {
+                "StationName": "寶山",
+                "StationId": "C0D580",
+                "ObsTime": {
+                    "DateTime": "2024-01-12T14:00:00+08:00"
+                },
+                "GeoInfo": {
+                    "CountyName": "新竹縣"
+                },
+                "WeatherElement": {}
+            },
+            {
+                "StationName": "獅潭",
+                "StationId": "C0E820",
+                "ObsTime": {
+                    "DateTime": "2024-01-12T14:00:00+08:00"
+                },
+                "GeoInfo": {
+                    "CountyName": "苗栗縣"
+                },
+                "WeatherElement": {}
+            },
+            {
+                "StationName": "楊梅",
+                "StationId": "C0C660",
+                "ObsTime": {
+                    "DateTime": "2024-01-12T14:00:00+08:00"
+                },
+                "GeoInfo": {
+                    "CountyName": "桃園市"
+                },
+                "WeatherElement": {}
+            },
+            {
+                "StationName": "湖口",
+                "StationId": "C0D650",
+                "ObsTime": {
+                    "DateTime": "2024-01-12T14:00:00+08:00"
+                },
+                "GeoInfo": {
+                    "CountyName": "新竹縣"
+                },
+                "WeatherElement": {}
+            },
+            {
+                "StationName": "龍潭",
+                "StationId": "C0C670",
+                "ObsTime": {
+                    "DateTime": "2024-01-12T14:00:00+08:00"
+                },
+                "GeoInfo": {
+                    "CountyName": "桃園市"
+                },
+                "WeatherElement": {}
+            },
+            {
+                "StationName": "新竹市東區",
+                "StationId": "C0D660",
+                "ObsTime": {
+                    "DateTime": "2024-01-12T14:00:00+08:00"
+                },
+                "GeoInfo": {
+                    "CountyName": "新竹市"
+                },
+                "WeatherElement": {}
+            },
+            {
+                "StationName": "大河",
+                "StationId": "C0E850",
+                "ObsTime": {
+                    "DateTime": "2024-01-12T14:00:00+08:00"
+                },
+                "GeoInfo": {
+                    "CountyName": "苗栗縣"
+                },
+                "WeatherElement": {}
+            },
+            {
+                "StationName": "桃山A",
+                "StationId": "C0F9Y0",
+                "ObsTime": {
+                    "DateTime": "2024-01-12T14:00:00+08:00"
+                },
+                "GeoInfo": {
+                    "CountyName": "臺中市"
+                },
+                "WeatherElement": {}
+            },
+            {
+                "StationName": "雪山東峰A",
+                "StationId": "C0F9Z0",
+                "ObsTime": {
+                    "DateTime": "2024-01-12T14:00:00+08:00"
+                },
+                "GeoInfo": {
+                    "CountyName": "臺中市"
+                },
+                "WeatherElement": {}
+            },
+            {
+                "StationName": "雪山圈谷A",
+                "StationId": "C0F0A0",
+                "ObsTime": {
+                    "DateTime": "2024-01-12T14:00:00+08:00"
+                },
+                "GeoInfo": {
+                    "CountyName": "臺中市"
+                },
+                "WeatherElement": {}
+            },
+            {
+                "StationName": "龜山",
+                "StationId": "C0C680",
+                "ObsTime": {
+                    "DateTime": "2024-01-12T14:00:00+08:00"
+                },
+                "GeoInfo": {
+                    "CountyName": "桃園市"
+                },
+                "WeatherElement": {}
+            },
+            {
+                "StationName": "審馬陣A",
+                "StationId": "C0F0D0",
+                "ObsTime": {
+                    "DateTime": "2024-01-12T14:00:00+08:00"
+                },
+                "GeoInfo": {
+                    "CountyName": "臺中市"
+                },
+                "WeatherElement": {}
+            },
+            {
+                "StationName": "南湖圈谷A",
+                "StationId": "C0F0E0",
+                "ObsTime": {
+                    "DateTime": "2024-01-12T14:00:00+08:00"
+                },
+                "GeoInfo": {
+                    "CountyName": "臺中市"
+                },
+                "WeatherElement": {}
+            },
+            {
+                "StationName": "苗栗",
+                "StationId": "C0E750",
+                "ObsTime": {
+                    "DateTime": "2024-01-12T14:00:00+08:00"
+                },
+                "GeoInfo": {
+                    "CountyName": "苗栗縣"
+                },
+                "WeatherElement": {}
+            },
+            {
+                "StationName": "銅鑼",
+                "StationId": "C0E780",
+                "ObsTime": {
+                    "DateTime": "2024-01-12T14:00:00+08:00"
+                },
+                "GeoInfo": {
+                    "CountyName": "苗栗縣"
+                },
+                "WeatherElement": {}
+            },
+            {
+                "StationName": "西湖",
+                "StationId": "C0E810",
+                "ObsTime": {
+                    "DateTime": "2024-01-12T14:00:00+08:00"
+                },
+                "GeoInfo": {
+                    "CountyName": "苗栗縣"
+                },
+                "WeatherElement": {}
+            },
+            {
+                "StationName": "大安",
+                "StationId": "C0F9K0",
+                "ObsTime": {
+                    "DateTime": "2024-01-12T14:00:00+08:00"
+                },
+                "GeoInfo": {
+                    "CountyName": "臺中市"
+                },
+                "WeatherElement": {}
+            },
+            {
+                "StationName": "后里",
+                "StationId": "C0F9L0",
+                "ObsTime": {
+                    "DateTime": "2024-01-12T14:00:00+08:00"
+                },
+                "GeoInfo": {
+                    "CountyName": "臺中市"
+                },
+                "WeatherElement": {}
+            },
+            {
+                "StationName": "豐原",
+                "StationId": "C0F9M0",
+                "ObsTime": {
+                    "DateTime": "2024-01-12T14:00:00+08:00"
+                },
+                "GeoInfo": {
+                    "CountyName": "臺中市"
+                },
+                "WeatherElement": {}
+            },
+            {
+                "StationName": "潭子",
+                "StationId": "C0F9O0",
+                "ObsTime": {
+                    "DateTime": "2024-01-12T14:00:00+08:00"
+                },
+                "GeoInfo": {
+                    "CountyName": "臺中市"
+                },
+                "WeatherElement": {}
+            },
+            {
+                "StationName": "清水",
+                "StationId": "C0F9P0",
+                "ObsTime": {
+                    "DateTime": "2024-01-12T14:00:00+08:00"
+                },
+                "GeoInfo": {
+                    "CountyName": "臺中市"
+                },
+                "WeatherElement": {}
+            },
+            {
+                "StationName": "外埔",
+                "StationId": "C0F9Q0",
+                "ObsTime": {
+                    "DateTime": "2024-01-12T14:00:00+08:00"
+                },
+                "GeoInfo": {
+                    "CountyName": "臺中市"
+                },
+                "WeatherElement": {}
+            },
+            {
+                "StationName": "龍井",
+                "StationId": "C0F9R0",
+                "ObsTime": {
+                    "DateTime": "2024-01-12T14:00:00+08:00"
+                },
+                "GeoInfo": {
+                    "CountyName": "臺中市"
+                },
+                "WeatherElement": {}
+            },
+            {
+                "StationName": "伸港",
+                "StationId": "C0G890",
+                "ObsTime": {
+                    "DateTime": "2024-01-12T14:00:00+08:00"
+                },
+                "GeoInfo": {
+                    "CountyName": "彰化縣"
+                },
+                "WeatherElement": {}
+            },
+            {
+                "StationName": "苑裡",
+                "StationId": "C0E830",
+                "ObsTime": {
+                    "DateTime": "2024-01-12T14:00:00+08:00"
+                },
+                "GeoInfo": {
+                    "CountyName": "苗栗縣"
+                },
+                "WeatherElement": {}
+            },
+            {
+                "StationName": "石岡",
+                "StationId": "C0F0B0",
+                "ObsTime": {
+                    "DateTime": "2024-01-12T14:00:00+08:00"
+                },
+                "GeoInfo": {
+                    "CountyName": "臺中市"
+                },
+                "WeatherElement": {}
+            },
+            {
+                "StationName": "中坑",
+                "StationId": "C0F0C0",
+                "ObsTime": {
+                    "DateTime": "2024-01-12T14:00:00+08:00"
+                },
+                "GeoInfo": {
+                    "CountyName": "臺中市"
+                },
+                "WeatherElement": {}
+            },
+            {
+                "StationName": "魚池",
+                "StationId": "C0I370",
+                "ObsTime": {
+                    "DateTime": "2024-01-12T14:00:00+08:00"
+                },
+                "GeoInfo": {
+                    "CountyName": "南投縣"
+                },
+                "WeatherElement": {}
+            },
+            {
+                "StationName": "國姓",
+                "StationId": "C0I420",
+                "ObsTime": {
+                    "DateTime": "2024-01-12T14:00:00+08:00"
+                },
+                "GeoInfo": {
+                    "CountyName": "南投縣"
+                },
+                "WeatherElement": {}
+            },
+            {
+                "StationName": "仁愛",
+                "StationId": "C0I390",
+                "ObsTime": {
+                    "DateTime": "2024-01-12T14:00:00+08:00"
+                },
+                "GeoInfo": {
+                    "CountyName": "南投縣"
+                },
+                "WeatherElement": {}
+            },
+            {
+                "StationName": "水里",
+                "StationId": "C0I360",
+                "ObsTime": {
+                    "DateTime": "2024-01-12T14:00:00+08:00"
+                },
+                "GeoInfo": {
+                    "CountyName": "南投縣"
+                },
+                "WeatherElement": {}
+            },
+            {
+                "StationName": "集集",
+                "StationId": "C0I380",
+                "ObsTime": {
+                    "DateTime": "2024-01-12T14:00:00+08:00"
+                },
+                "GeoInfo": {
+                    "CountyName": "南投縣"
+                },
+                "WeatherElement": {}
+            },
+            {
+                "StationName": "名間",
+                "StationId": "C0I410",
+                "ObsTime": {
+                    "DateTime": "2024-01-12T14:00:00+08:00"
+                },
+                "GeoInfo": {
+                    "CountyName": "南投縣"
+                },
+                "WeatherElement": {}
+            },
+            {
+                "StationName": "萬大林道",
+                "StationId": "C0I490",
+                "ObsTime": {
+                    "DateTime": "2024-01-12T14:00:00+08:00"
+                },
+                "GeoInfo": {
+                    "CountyName": "南投縣"
+                },
+                "WeatherElement": {}
+            },
+            {
+                "StationName": "梅峰",
+                "StationId": "C0I480",
+                "ObsTime": {
+                    "DateTime": "2024-01-12T14:00:00+08:00"
+                },
+                "GeoInfo": {
+                    "CountyName": "南投縣"
+                },
+                "WeatherElement": {}
+            },
+            {
+                "StationName": "玉山風口",
+                "StationId": "C0I520",
+                "ObsTime": {
+                    "DateTime": "2024-01-12T14:00:00+08:00"
+                },
+                "GeoInfo": {
+                    "CountyName": "南投縣"
+                },
+                "WeatherElement": {}
+            },
+            {
+                "StationName": "小奇萊",
+                "StationId": "C0I530",
+                "ObsTime": {
+                    "DateTime": "2024-01-12T14:00:00+08:00"
+                },
+                "GeoInfo": {
+                    "CountyName": "南投縣"
+                },
+                "WeatherElement": {}
+            },
+            {
+                "StationName": "奇萊稜線A",
+                "StationId": "C0I540",
+                "ObsTime": {
+                    "DateTime": "2024-01-12T14:00:00+08:00"
+                },
+                "GeoInfo": {
+                    "CountyName": "南投縣"
+                },
+                "WeatherElement": {}
+            },
+            {
+                "StationName": "大里",
+                "StationId": "C0F9N0",
+                "ObsTime": {
+                    "DateTime": "2024-01-12T14:00:00+08:00"
+                },
+                "GeoInfo": {
+                    "CountyName": "臺中市"
+                },
+                "WeatherElement": {}
+            },
+            {
+                "StationName": "烏日",
+                "StationId": "C0F9S0",
+                "ObsTime": {
+                    "DateTime": "2024-01-12T14:00:00+08:00"
+                },
+                "GeoInfo": {
+                    "CountyName": "臺中市"
+                },
+                "WeatherElement": {}
+            },
+            {
+                "StationName": "西屯",
+                "StationId": "C0F9T0",
+                "ObsTime": {
+                    "DateTime": "2024-01-12T14:00:00+08:00"
+                },
+                "GeoInfo": {
+                    "CountyName": "臺中市"
+                },
+                "WeatherElement": {}
+            },
+            {
+                "StationName": "南屯",
+                "StationId": "C0F9U0",
+                "ObsTime": {
+                    "DateTime": "2024-01-12T14:00:00+08:00"
+                },
+                "GeoInfo": {
+                    "CountyName": "臺中市"
+                },
+                "WeatherElement": {}
+            },
+            {
+                "StationName": "福興",
+                "StationId": "C0G770",
+                "ObsTime": {
+                    "DateTime": "2024-01-12T14:00:00+08:00"
+                },
+                "GeoInfo": {
+                    "CountyName": "彰化縣"
+                },
+                "WeatherElement": {}
+            },
+            {
+                "StationName": "秀水",
+                "StationId": "C0G780",
+                "ObsTime": {
+                    "DateTime": "2024-01-12T14:00:00+08:00"
+                },
+                "GeoInfo": {
+                    "CountyName": "彰化縣"
+                },
+                "WeatherElement": {}
+            },
+            {
+                "StationName": "埔鹽",
+                "StationId": "C0G800",
+                "ObsTime": {
+                    "DateTime": "2024-01-12T14:00:00+08:00"
+                },
+                "GeoInfo": {
+                    "CountyName": "彰化縣"
+                },
+                "WeatherElement": {}
+            },
+            {
+                "StationName": "埔心",
+                "StationId": "C0G810",
+                "ObsTime": {
+                    "DateTime": "2024-01-12T14:00:00+08:00"
+                },
+                "GeoInfo": {
+                    "CountyName": "彰化縣"
+                },
+                "WeatherElement": {}
+            },
+            {
+                "StationName": "埤頭",
+                "StationId": "C0G830",
+                "ObsTime": {
+                    "DateTime": "2024-01-12T14:00:00+08:00"
+                },
+                "GeoInfo": {
+                    "CountyName": "彰化縣"
+                },
+                "WeatherElement": {}
+            },
+            {
+                "StationName": "社頭",
+                "StationId": "C0G860",
+                "ObsTime": {
+                    "DateTime": "2024-01-12T14:00:00+08:00"
+                },
+                "GeoInfo": {
+                    "CountyName": "彰化縣"
+                },
+                "WeatherElement": {}
+            },
+            {
+                "StationName": "二水",
+                "StationId": "C0G880",
+                "ObsTime": {
+                    "DateTime": "2024-01-12T14:00:00+08:00"
+                },
+                "GeoInfo": {
+                    "CountyName": "彰化縣"
+                },
+                "WeatherElement": {}
+            },
+            {
+                "StationName": "造橋",
+                "StationId": "C0E740",
+                "ObsTime": {
+                    "DateTime": "2024-01-12T14:00:00+08:00"
+                },
+                "GeoInfo": {
+                    "CountyName": "苗栗縣"
+                },
+                "WeatherElement": {}
+            },
+            {
+                "StationName": "梅花",
+                "StationId": "C0D360",
+                "ObsTime": {
+                    "DateTime": "2024-01-12T14:00:00+08:00"
+                },
+                "GeoInfo": {
+                    "CountyName": "新竹縣"
+                },
+                "WeatherElement": {}
+            },
+            {
+                "StationName": "福山",
+                "StationId": "C0A560",
+                "ObsTime": {
+                    "DateTime": "2024-01-12T14:00:00+08:00"
+                },
+                "GeoInfo": {
+                    "CountyName": "新北市"
+                },
+                "WeatherElement": {}
+            },
+            {
+                "StationName": "坪林",
+                "StationId": "C0A530",
+                "ObsTime": {
+                    "DateTime": "2024-01-12T14:00:00+08:00"
+                },
+                "GeoInfo": {
+                    "CountyName": "新北市"
+                },
+                "WeatherElement": {}
+            },
+            {
+                "StationName": "四堵",
+                "StationId": "C0A540",
+                "ObsTime": {
+                    "DateTime": "2024-01-12T14:00:00+08:00"
+                },
+                "GeoInfo": {
+                    "CountyName": "新北市"
+                },
+                "WeatherElement": {}
+            },
+            {
+                "StationName": "泰平",
+                "StationId": "C0A550",
+                "ObsTime": {
+                    "DateTime": "2024-01-12T14:00:00+08:00"
+                },
+                "GeoInfo": {
+                    "CountyName": "新北市"
+                },
+                "WeatherElement": {}
+            },
+            {
+                "StationName": "峨眉",
+                "StationId": "C0D430",
+                "ObsTime": {
+                    "DateTime": "2024-01-12T14:00:00+08:00"
+                },
+                "GeoInfo": {
+                    "CountyName": "新竹縣"
+                },
+                "WeatherElement": {}
+            },
+            {
+                "StationName": "竹南",
+                "StationId": "C0E420",
+                "ObsTime": {
+                    "DateTime": "2024-01-12T14:00:00+08:00"
+                },
+                "GeoInfo": {
+                    "CountyName": "苗栗縣"
+                },
+                "WeatherElement": {}
+            },
+            {
+                "StationName": "南庄",
+                "StationId": "C0E430",
+                "ObsTime": {
+                    "DateTime": "2024-01-12T14:00:00+08:00"
+                },
+                "GeoInfo": {
+                    "CountyName": "苗栗縣"
+                },
+                "WeatherElement": {}
+            },
+            {
+                "StationName": "五指山",
+                "StationId": "C0A870",
+                "ObsTime": {
+                    "DateTime": "2024-01-12T14:00:00+08:00"
+                },
+                "GeoInfo": {
+                    "CountyName": "新北市"
+                },
+                "WeatherElement": {}
+            },
+            {
+                "StationName": "汐止",
+                "StationId": "C0AH00",
+                "ObsTime": {
+                    "DateTime": "2024-01-12T14:00:00+08:00"
+                },
+                "GeoInfo": {
+                    "CountyName": "新北市"
+                },
+                "WeatherElement": {}
+            },
+            {
+                "StationName": "三峽",
+                "StationId": "C0AC60",
+                "ObsTime": {
+                    "DateTime": "2024-01-12T14:00:00+08:00"
+                },
+                "GeoInfo": {
+                    "CountyName": "新北市"
+                },
+                "WeatherElement": {}
+            },
+            {
+                "StationName": "信義",
+                "StationId": "C0AC70",
+                "ObsTime": {
+                    "DateTime": "2024-01-12T14:00:00+08:00"
+                },
+                "GeoInfo": {
+                    "CountyName": "臺北市"
+                },
+                "WeatherElement": {}
+            },
+            {
+                "StationName": "文山",
+                "StationId": "C0AC80",
+                "ObsTime": {
+                    "DateTime": "2024-01-12T14:00:00+08:00"
+                },
+                "GeoInfo": {
+                    "CountyName": "臺北市"
+                },
+                "WeatherElement": {}
+            },
+            {
+                "StationName": "新莊",
+                "StationId": "C0ACA0",
+                "ObsTime": {
+                    "DateTime": "2024-01-12T14:00:00+08:00"
+                },
+                "GeoInfo": {
+                    "CountyName": "新北市"
+                },
+                "WeatherElement": {}
+            },
+            {
+                "StationName": "山佳",
+                "StationId": "C0A520",
+                "ObsTime": {
+                    "DateTime": "2024-01-12T14:00:00+08:00"
+                },
+                "GeoInfo": {
+                    "CountyName": "新北市"
+                },
+                "WeatherElement": {}
+            },
+            {
+                "StationName": "富貴角",
+                "StationId": "C0A920",
+                "ObsTime": {
+                    "DateTime": "2024-01-12T14:00:00+08:00"
+                },
+                "GeoInfo": {
+                    "CountyName": "新北市"
+                },
+                "WeatherElement": {}
+            },
+            {
+                "StationName": "桶後",
+                "StationId": "C0A570",
+                "ObsTime": {
+                    "DateTime": "2024-01-12T14:00:00+08:00"
+                },
+                "GeoInfo": {
+                    "CountyName": "新北市"
+                },
+                "WeatherElement": {}
+            },
+            {
+                "StationName": "瑞芳",
+                "StationId": "C0A660",
+                "ObsTime": {
+                    "DateTime": "2024-01-12T14:00:00+08:00"
+                },
+                "GeoInfo": {
+                    "CountyName": "新北市"
+                },
+                "WeatherElement": {}
+            },
+            {
+                "StationName": "福隆",
+                "StationId": "C0A880",
+                "ObsTime": {
+                    "DateTime": "2024-01-12T14:00:00+08:00"
+                },
+                "GeoInfo": {
+                    "CountyName": "新北市"
+                },
+                "WeatherElement": {}
+            },
+            {
+                "StationName": "雙溪",
+                "StationId": "C0A890",
+                "ObsTime": {
+                    "DateTime": "2024-01-12T14:00:00+08:00"
+                },
+                "GeoInfo": {
+                    "CountyName": "新北市"
+                },
+                "WeatherElement": {}
+            },
+            {
+                "StationName": "多加屯",
+                "StationId": "C0UA20",
+                "ObsTime": {
+                    "DateTime": "2024-01-12T14:00:00+08:00"
+                },
+                "GeoInfo": {
+                    "CountyName": "宜蘭縣"
+                },
+                "WeatherElement": {}
+            },
+            {
+                "StationName": "鼻頭角",
+                "StationId": "C0A950",
+                "ObsTime": {
+                    "DateTime": "2024-01-12T14:00:00+08:00"
+                },
+                "GeoInfo": {
+                    "CountyName": "新北市"
+                },
+                "WeatherElement": {}
+            },
+            {
+                "StationName": "大坪",
+                "StationId": "C0A860",
+                "ObsTime": {
+                    "DateTime": "2024-01-12T14:00:00+08:00"
+                },
+                "GeoInfo": {
+                    "CountyName": "新北市"
+                },
+                "WeatherElement": {}
+            },
+            {
+                "StationName": "三和",
+                "StationId": "C0A930",
+                "ObsTime": {
+                    "DateTime": "2024-01-12T14:00:00+08:00"
+                },
+                "GeoInfo": {
+                    "CountyName": "新北市"
+                },
+                "WeatherElement": {}
+            },
+            {
+                "StationName": "金山",
+                "StationId": "C0A940",
+                "ObsTime": {
+                    "DateTime": "2024-01-12T14:00:00+08:00"
+                },
+                "GeoInfo": {
+                    "CountyName": "新北市"
+                },
+                "WeatherElement": {}
+            },
+            {
+                "StationName": "石碇",
+                "StationId": "C0A640",
+                "ObsTime": {
+                    "DateTime": "2024-01-12T14:00:00+08:00"
+                },
+                "GeoInfo": {
+                    "CountyName": "新北市"
+                },
+                "WeatherElement": {}
+            },
+            {
+                "StationName": "火燒寮",
+                "StationId": "C0A650",
+                "ObsTime": {
+                    "DateTime": "2024-01-12T14:00:00+08:00"
+                },
+                "GeoInfo": {
+                    "CountyName": "新北市"
+                },
+                "WeatherElement": {}
+            },
+            {
+                "StationName": "復興",
+                "StationId": "C0C460",
+                "ObsTime": {
+                    "DateTime": "2024-01-12T14:00:00+08:00"
+                },
+                "GeoInfo": {
+                    "CountyName": "桃園市"
+                },
+                "WeatherElement": {}
+            },
+            {
+                "StationName": "桃園",
+                "StationId": "C0C480",
+                "ObsTime": {
+                    "DateTime": "2024-01-12T14:00:00+08:00"
+                },
+                "GeoInfo": {
+                    "CountyName": "桃園市"
+                },
+                "WeatherElement": {}
+            },
+            {
+                "StationName": "八德",
+                "StationId": "C0C490",
+                "ObsTime": {
+                    "DateTime": "2024-01-12T14:00:00+08:00"
+                },
+                "GeoInfo": {
+                    "CountyName": "桃園市"
+                },
+                "WeatherElement": {}
+            },
+            {
+                "StationName": "內湖",
+                "StationId": "C0A9F0",
+                "ObsTime": {
+                    "DateTime": "2024-01-12T14:00:00+08:00"
+                },
+                "GeoInfo": {
+                    "CountyName": "臺北市"
+                },
+                "WeatherElement": {}
+            },
+            {
+                "StationName": "中和",
+                "StationId": "C0AG80",
+                "ObsTime": {
+                    "DateTime": "2024-01-12T14:00:00+08:00"
+                },
+                "GeoInfo": {
+                    "CountyName": "新北市"
+                },
+                "WeatherElement": {}
+            },
+            {
+                "StationName": "暖暖",
+                "StationId": "C0B060",
+                "ObsTime": {
+                    "DateTime": "2024-01-12T14:00:00+08:00"
+                },
+                "GeoInfo": {
+                    "CountyName": "基隆市"
+                },
+                "WeatherElement": {}
+            },
+            {
+                "StationName": "天母",
+                "StationId": "C0A9C0",
+                "ObsTime": {
+                    "DateTime": "2024-01-12T14:00:00+08:00"
+                },
+                "GeoInfo": {
+                    "CountyName": "臺北市"
+                },
+                "WeatherElement": {}
+            },
+            {
+                "StationName": "社子",
+                "StationId": "C0A980",
+                "ObsTime": {
+                    "DateTime": "2024-01-12T14:00:00+08:00"
+                },
+                "GeoInfo": {
+                    "CountyName": "臺北市"
+                },
+                "WeatherElement": {}
+            },
+            {
+                "StationName": "大屯山",
+                "StationId": "C0AC40",
+                "ObsTime": {
+                    "DateTime": "2024-01-12T14:00:00+08:00"
+                },
+                "GeoInfo": {
+                    "CountyName": "臺北市"
+                },
+                "WeatherElement": {}
+            },
+            {
+                "StationName": "三芝",
+                "StationId": "C0AD00",
+                "ObsTime": {
+                    "DateTime": "2024-01-12T14:00:00+08:00"
+                },
+                "GeoInfo": {
+                    "CountyName": "新北市"
+                },
+                "WeatherElement": {}
+            },
+            {
+                "StationName": "八里",
+                "StationId": "C0AD10",
+                "ObsTime": {
+                    "DateTime": "2024-01-12T14:00:00+08:00"
+                },
+                "GeoInfo": {
+                    "CountyName": "新北市"
+                },
+                "WeatherElement": {}
+            },
+            {
+                "StationName": "蘆洲",
+                "StationId": "C0AD30",
+                "ObsTime": {
+                    "DateTime": "2024-01-12T14:00:00+08:00"
+                },
+                "GeoInfo": {
+                    "CountyName": "新北市"
+                },
+                "WeatherElement": {}
+            },
+            {
+                "StationName": "土城",
+                "StationId": "C0AD40",
+                "ObsTime": {
+                    "DateTime": "2024-01-12T14:00:00+08:00"
+                },
+                "GeoInfo": {
+                    "CountyName": "新北市"
+                },
+                "WeatherElement": {}
+            },
+            {
+                "StationName": "鶯歌",
+                "StationId": "C0AD50",
+                "ObsTime": {
+                    "DateTime": "2024-01-12T14:00:00+08:00"
+                },
+                "GeoInfo": {
+                    "CountyName": "新北市"
+                },
+                "WeatherElement": {}
+            },
+            {
+                "StationName": "永和",
+                "StationId": "C0AH10",
+                "ObsTime": {
+                    "DateTime": "2024-01-12T14:00:00+08:00"
+                },
+                "GeoInfo": {
+                    "CountyName": "新北市"
+                },
+                "WeatherElement": {}
+            },
+            {
+                "StationName": "五分山",
+                "StationId": "C0AH30",
+                "ObsTime": {
+                    "DateTime": "2024-01-12T14:00:00+08:00"
+                },
+                "GeoInfo": {
+                    "CountyName": "新北市"
+                },
+                "WeatherElement": {}
+            },
+            {
+                "StationName": "平等",
+                "StationId": "C0AH40",
+                "ObsTime": {
+                    "DateTime": "2024-01-12T14:00:00+08:00"
+                },
+                "GeoInfo": {
+                    "CountyName": "臺北市"
+                },
+                "WeatherElement": {}
+            },
+            {
+                "StationName": "林口",
+                "StationId": "C0AH50",
+                "ObsTime": {
+                    "DateTime": "2024-01-12T14:00:00+08:00"
+                },
+                "GeoInfo": {
+                    "CountyName": "新北市"
+                },
+                "WeatherElement": {}
+            },
+            {
+                "StationName": "深坑",
+                "StationId": "C0AH80",
+                "ObsTime": {
+                    "DateTime": "2024-01-12T14:00:00+08:00"
+                },
+                "GeoInfo": {
+                    "CountyName": "新北市"
+                },
+                "WeatherElement": {}
+            },
+            {
+                "StationName": "七堵",
+                "StationId": "C0B010",
+                "ObsTime": {
+                    "DateTime": "2024-01-12T14:00:00+08:00"
+                },
+                "GeoInfo": {
+                    "CountyName": "基隆市"
+                },
+                "WeatherElement": {}
+            },
+            {
+                "StationName": "五股",
+                "StationId": "C0AI00",
+                "ObsTime": {
+                    "DateTime": "2024-01-12T14:00:00+08:00"
+                },
+                "GeoInfo": {
+                    "CountyName": "新北市"
+                },
+                "WeatherElement": {}
+            },
+            {
+                "StationName": "屈尺",
+                "StationId": "C0AI10",
+                "ObsTime": {
+                    "DateTime": "2024-01-12T14:00:00+08:00"
+                },
+                "GeoInfo": {
+                    "CountyName": "新北市"
+                },
+                "WeatherElement": {}
+            },
+            {
+                "StationName": "三重",
+                "StationId": "C0AI30",
+                "ObsTime": {
+                    "DateTime": "2024-01-12T14:00:00+08:00"
+                },
+                "GeoInfo": {
+                    "CountyName": "新北市"
+                },
+                "WeatherElement": {}
+            },
+            {
+                "StationName": "石牌",
+                "StationId": "C0AI40",
+                "ObsTime": {
+                    "DateTime": "2024-01-12T14:00:00+08:00"
+                },
+                "GeoInfo": {
+                    "CountyName": "臺北市"
+                },
+                "WeatherElement": {}
+            },
+            {
+                "StationName": "金峰嘉蘭",
+                "StationId": "C0S920",
+                "ObsTime": {
+                    "DateTime": "2024-01-12T14:00:00+08:00"
+                },
+                "GeoInfo": {
+                    "CountyName": "臺東縣"
+                },
+                "WeatherElement": {}
+            },
+            {
+                "StationName": "延平",
+                "StationId": "C0S930",
+                "ObsTime": {
+                    "DateTime": "2024-01-12T14:00:00+08:00"
+                },
+                "GeoInfo": {
+                    "CountyName": "臺東縣"
+                },
+                "WeatherElement": {}
+            },
+            {
+                "StationName": "石寧山",
+                "StationId": "C0S940",
+                "ObsTime": {
+                    "DateTime": "2024-01-12T14:00:00+08:00"
+                },
+                "GeoInfo": {
+                    "CountyName": "臺東縣"
+                },
+                "WeatherElement": {}
+            },
+            {
+                "StationName": "七塊厝",
+                "StationId": "C0S950",
+                "ObsTime": {
+                    "DateTime": "2024-01-12T14:00:00+08:00"
+                },
+                "GeoInfo": {
+                    "CountyName": "臺東縣"
+                },
+                "WeatherElement": {}
+            },
+            {
+                "StationName": "知本(水試所)",
+                "StationId": "C0SA60",
+                "ObsTime": {
+                    "DateTime": "2024-01-12T14:00:00+08:00"
+                },
+                "GeoInfo": {
+                    "CountyName": "臺東縣"
+                },
+                "WeatherElement": {}
+            },
+            {
+                "StationName": "香蘭",
+                "StationId": "C0S960",
+                "ObsTime": {
+                    "DateTime": "2024-01-12T14:00:00+08:00"
+                },
+                "GeoInfo": {
+                    "CountyName": "臺東縣"
+                },
+                "WeatherElement": {}
+            },
+            {
+                "StationName": "加津林",
+                "StationId": "C0S970",
+                "ObsTime": {
+                    "DateTime": "2024-01-12T14:00:00+08:00"
+                },
+                "GeoInfo": {
+                    "CountyName": "臺東縣"
+                },
+                "WeatherElement": {}
+            },
+            {
+                "StationName": "勝林山",
+                "StationId": "C0S980",
+                "ObsTime": {
+                    "DateTime": "2024-01-12T14:00:00+08:00"
+                },
+                "GeoInfo": {
+                    "CountyName": "臺東縣"
+                },
+                "WeatherElement": {}
+            },
+            {
+                "StationName": "山豬窟",
+                "StationId": "C0S990",
+                "ObsTime": {
+                    "DateTime": "2024-01-12T14:00:00+08:00"
+                },
+                "GeoInfo": {
+                    "CountyName": "臺東縣"
+                },
+                "WeatherElement": {}
+            },
+            {
+                "StationName": "歷坵",
+                "StationId": "C0SA00",
+                "ObsTime": {
+                    "DateTime": "2024-01-12T14:00:00+08:00"
+                },
+                "GeoInfo": {
+                    "CountyName": "臺東縣"
+                },
+                "WeatherElement": {}
+            },
+            {
+                "StationName": "檳榔四格山",
+                "StationId": "C0SA10",
+                "ObsTime": {
+                    "DateTime": "2024-01-12T14:00:00+08:00"
+                },
+                "GeoInfo": {
+                    "CountyName": "臺東縣"
+                },
+                "WeatherElement": {}
+            },
+            {
+                "StationName": "金崙山",
+                "StationId": "C0SA20",
+                "ObsTime": {
+                    "DateTime": "2024-01-12T14:00:00+08:00"
+                },
+                "GeoInfo": {
+                    "CountyName": "臺東縣"
+                },
+                "WeatherElement": {}
+            },
+            {
+                "StationName": "都歷",
+                "StationId": "C0SA30",
+                "ObsTime": {
+                    "DateTime": "2024-01-12T14:00:00+08:00"
+                },
+                "GeoInfo": {
+                    "CountyName": "臺東縣"
+                },
+                "WeatherElement": {}
+            },
+            {
+                "StationName": "瑞和",
+                "StationId": "C0SA40",
+                "ObsTime": {
+                    "DateTime": "2024-01-12T14:00:00+08:00"
+                },
+                "GeoInfo": {
+                    "CountyName": "臺東縣"
+                },
+                "WeatherElement": {}
+            },
+            {
+                "StationName": "達仁林場",
+                "StationId": "C0SA90",
+                "ObsTime": {
+                    "DateTime": "2024-01-12T14:00:00+08:00"
+                },
+                "GeoInfo": {
+                    "CountyName": "臺東縣"
+                },
+                "WeatherElement": {}
+            },
+            {
+                "StationName": "牡丹池山",
+                "StationId": "C0R840",
+                "ObsTime": {
+                    "DateTime": "2024-01-12T14:00:00+08:00"
+                },
+                "GeoInfo": {
+                    "CountyName": "屏東縣"
+                },
+                "WeatherElement": {}
+            },
+            {
+                "StationName": "高士",
+                "StationId": "C0R830",
+                "ObsTime": {
+                    "DateTime": "2024-01-12T14:00:00+08:00"
+                },
+                "GeoInfo": {
+                    "CountyName": "屏東縣"
+                },
+                "WeatherElement": {}
+            },
+            {
+                "StationName": "白鷺",
+                "StationId": "C0R820",
+                "ObsTime": {
+                    "DateTime": "2024-01-12T14:00:00+08:00"
+                },
+                "GeoInfo": {
+                    "CountyName": "屏東縣"
+                },
+                "WeatherElement": {}
+            },
+            {
+                "StationName": "內獅",
+                "StationId": "C0R810",
+                "ObsTime": {
+                    "DateTime": "2024-01-12T14:00:00+08:00"
+                },
+                "GeoInfo": {
+                    "CountyName": "屏東縣"
+                },
+                "WeatherElement": {}
+            },
+            {
+                "StationName": "丹路",
+                "StationId": "C0R800",
+                "ObsTime": {
+                    "DateTime": "2024-01-12T14:00:00+08:00"
+                },
+                "GeoInfo": {
+                    "CountyName": "屏東縣"
+                },
+                "WeatherElement": {}
+            },
+            {
+                "StationName": "九棚",
+                "StationId": "C0R790",
+                "ObsTime": {
+                    "DateTime": "2024-01-12T14:00:00+08:00"
+                },
+                "GeoInfo": {
+                    "CountyName": "屏東縣"
+                },
+                "WeatherElement": {}
+            },
+            {
+                "StationName": "滿州",
+                "StationId": "C0R780",
+                "ObsTime": {
+                    "DateTime": "2024-01-12T14:00:00+08:00"
+                },
+                "GeoInfo": {
+                    "CountyName": "屏東縣"
+                },
+                "WeatherElement": {}
+            },
+            {
+                "StationName": "保力",
+                "StationId": "C0R770",
+                "ObsTime": {
+                    "DateTime": "2024-01-12T14:00:00+08:00"
+                },
+                "GeoInfo": {
+                    "CountyName": "屏東縣"
+                },
+                "WeatherElement": {}
+            },
+            {
+                "StationName": "南仁湖",
+                "StationId": "C0R760",
+                "ObsTime": {
+                    "DateTime": "2024-01-12T14:00:00+08:00"
+                },
+                "GeoInfo": {
+                    "CountyName": "屏東縣"
+                },
+                "WeatherElement": {}
+            },
+            {
+                "StationName": "合歡山",
+                "StationId": "C0H9C0",
+                "ObsTime": {
+                    "DateTime": "2024-01-12T14:00:00+08:00"
+                },
+                "GeoInfo": {
+                    "CountyName": "南投縣"
+                },
+                "WeatherElement": {}
+            },
+            {
+                "StationName": "大坑",
+                "StationId": "C0F970",
+                "ObsTime": {
+                    "DateTime": "2024-01-12T14:00:00+08:00"
+                },
+                "GeoInfo": {
+                    "CountyName": "臺中市"
+                },
+                "WeatherElement": {}
+            },
+            {
+                "StationName": "溪湖",
+                "StationId": "C0G660",
+                "ObsTime": {
+                    "DateTime": "2024-01-12T14:00:00+08:00"
+                },
+                "GeoInfo": {
+                    "CountyName": "彰化縣"
+                },
+                "WeatherElement": {}
+            },
+            {
+                "StationName": "員林",
+                "StationId": "C0G650",
+                "ObsTime": {
+                    "DateTime": "2024-01-12T14:00:00+08:00"
+                },
+                "GeoInfo": {
+                    "CountyName": "彰化縣"
+                },
+                "WeatherElement": {}
+            },
+            {
+                "StationName": "草屯",
+                "StationId": "C0H960",
+                "ObsTime": {
+                    "DateTime": "2024-01-12T14:00:00+08:00"
+                },
+                "GeoInfo": {
+                    "CountyName": "南投縣"
+                },
+                "WeatherElement": {}
+            },
+            {
+                "StationName": "芬園",
+                "StationId": "C0G620",
+                "ObsTime": {
+                    "DateTime": "2024-01-12T14:00:00+08:00"
+                },
+                "GeoInfo": {
+                    "CountyName": "彰化縣"
+                },
+                "WeatherElement": {}
+            },
+            {
+                "StationName": "打鐵坑",
+                "StationId": "C0D480",
+                "ObsTime": {
+                    "DateTime": "2024-01-12T14:00:00+08:00"
+                },
+                "GeoInfo": {
+                    "CountyName": "新竹縣"
+                },
+                "WeatherElement": {}
+            },
+            {
+                "StationName": "東勢",
+                "StationId": "C0F850",
+                "ObsTime": {
+                    "DateTime": "2024-01-12T14:00:00+08:00"
+                },
+                "GeoInfo": {
+                    "CountyName": "臺中市"
+                },
+                "WeatherElement": {}
+            },
+            {
+                "StationName": "梨山",
+                "StationId": "C0F860",
+                "ObsTime": {
+                    "DateTime": "2024-01-12T14:00:00+08:00"
+                },
+                "GeoInfo": {
+                    "CountyName": "臺中市"
+                },
+                "WeatherElement": {}
+            },
+            {
+                "StationName": "竹山",
+                "StationId": "C0I110",
+                "ObsTime": {
+                    "DateTime": "2024-01-12T14:00:00+08:00"
+                },
+                "GeoInfo": {
+                    "CountyName": "南投縣"
+                },
+                "WeatherElement": {}
+            },
+            {
+                "StationName": "馬都安",
+                "StationId": "C0E610",
+                "ObsTime": {
+                    "DateTime": "2024-01-12T14:00:00+08:00"
+                },
+                "GeoInfo": {
+                    "CountyName": "苗栗縣"
+                },
+                "WeatherElement": {}
+            },
+            {
+                "StationName": "明德",
+                "StationId": "C0E550",
+                "ObsTime": {
+                    "DateTime": "2024-01-12T14:00:00+08:00"
+                },
+                "GeoInfo": {
+                    "CountyName": "苗栗縣"
+                },
+                "WeatherElement": {}
+            },
+            {
+                "StationName": "通霄",
+                "StationId": "C0E590",
+                "ObsTime": {
+                    "DateTime": "2024-01-12T14:00:00+08:00"
+                },
+                "GeoInfo": {
+                    "CountyName": "苗栗縣"
+                },
+                "WeatherElement": {}
+            },
+            {
+                "StationName": "神岡",
+                "StationId": "C0F9I0",
+                "ObsTime": {
+                    "DateTime": "2024-01-12T14:00:00+08:00"
+                },
+                "GeoInfo": {
+                    "CountyName": "臺中市"
+                },
+                "WeatherElement": {}
+            },
+            {
+                "StationName": "卓蘭",
+                "StationId": "C0E790",
+                "ObsTime": {
+                    "DateTime": "2024-01-12T14:00:00+08:00"
+                },
+                "GeoInfo": {
+                    "CountyName": "苗栗縣"
+                },
+                "WeatherElement": {}
+            },
+            {
+                "StationName": "新社",
+                "StationId": "C0F9V0",
+                "ObsTime": {
+                    "DateTime": "2024-01-12T14:00:00+08:00"
+                },
+                "GeoInfo": {
+                    "CountyName": "臺中市"
+                },
+                "WeatherElement": {}
+            },
+            {
+                "StationName": "埔里",
+                "StationId": "C0H890",
+                "ObsTime": {
+                    "DateTime": "2024-01-12T14:00:00+08:00"
+                },
+                "GeoInfo": {
+                    "CountyName": "南投縣"
+                },
+                "WeatherElement": {}
+            },
+            {
+                "StationName": "信義",
+                "StationId": "C0I080",
+                "ObsTime": {
+                    "DateTime": "2024-01-12T14:00:00+08:00"
+                },
+                "GeoInfo": {
+                    "CountyName": "南投縣"
+                },
+                "WeatherElement": {}
+            },
+            {
+                "StationName": "昆陽",
+                "StationId": "C0H990",
+                "ObsTime": {
+                    "DateTime": "2024-01-12T14:00:00+08:00"
+                },
+                "GeoInfo": {
+                    "CountyName": "南投縣"
+                },
+                "WeatherElement": {}
+            },
+            {
+                "StationName": "廬山",
+                "StationId": "C0I010",
+                "ObsTime": {
+                    "DateTime": "2024-01-12T14:00:00+08:00"
+                },
+                "GeoInfo": {
+                    "CountyName": "南投縣"
+                },
+                "WeatherElement": {}
+            },
+            {
+                "StationName": "大禹嶺",
+                "StationId": "C0T790",
+                "ObsTime": {
+                    "DateTime": "2024-01-12T14:00:00+08:00"
+                },
+                "GeoInfo": {
+                    "CountyName": "花蓮縣"
+                },
+                "WeatherElement": {}
+            },
+            {
+                "StationName": "神木村",
+                "StationId": "C0H9A0",
+                "ObsTime": {
+                    "DateTime": "2024-01-12T14:00:00+08:00"
+                },
+                "GeoInfo": {
+                    "CountyName": "南投縣"
+                },
+                "WeatherElement": {}
+            },
+            {
+                "StationName": "大雅(中科園區)",
+                "StationId": "C0F9X0",
+                "ObsTime": {
+                    "DateTime": "2024-01-12T14:00:00+08:00"
+                },
+                "GeoInfo": {
+                    "CountyName": "臺中市"
+                },
+                "WeatherElement": {}
+            },
+            {
+                "StationName": "南投",
+                "StationId": "C0I460",
+                "ObsTime": {
+                    "DateTime": "2024-01-12T14:00:00+08:00"
+                },
+                "GeoInfo": {
+                    "CountyName": "南投縣"
+                },
+                "WeatherElement": {}
+            },
+            {
+                "StationName": "花壇",
+                "StationId": "C0G910",
+                "ObsTime": {
+                    "DateTime": "2024-01-12T14:00:00+08:00"
+                },
+                "GeoInfo": {
+                    "CountyName": "彰化縣"
+                },
+                "WeatherElement": {}
+            },
+            {
+                "StationName": "線西",
+                "StationId": "C0G900",
+                "ObsTime": {
+                    "DateTime": "2024-01-12T14:00:00+08:00"
+                },
+                "GeoInfo": {
+                    "CountyName": "彰化縣"
+                },
+                "WeatherElement": {}
+            },
+            {
+                "StationName": "霧峰",
+                "StationId": "C0FA50",
+                "ObsTime": {
+                    "DateTime": "2024-01-12T14:00:00+08:00"
+                },
+                "GeoInfo": {
+                    "CountyName": "臺中市"
+                },
+                "WeatherElement": {}
+            },
+            {
+                "StationName": "崙背",
+                "StationId": "C0K250",
+                "ObsTime": {
+                    "DateTime": "2024-01-12T14:00:00+08:00"
+                },
+                "GeoInfo": {
+                    "CountyName": "雲林縣"
+                },
+                "WeatherElement": {}
+            },
+            {
+                "StationName": "奮起湖",
+                "StationId": "C0M530",
+                "ObsTime": {
+                    "DateTime": "2024-01-12T14:00:00+08:00"
+                },
+                "GeoInfo": {
+                    "CountyName": "嘉義縣"
+                },
+                "WeatherElement": {}
+            },
+            {
+                "StationName": "虎尾",
+                "StationId": "C0K330",
+                "ObsTime": {
+                    "DateTime": "2024-01-12T14:00:00+08:00"
+                },
+                "GeoInfo": {
+                    "CountyName": "雲林縣"
+                },
+                "WeatherElement": {}
+            },
+            {
+                "StationName": "四湖",
+                "StationId": "C0K280",
+                "ObsTime": {
+                    "DateTime": "2024-01-12T14:00:00+08:00"
+                },
+                "GeoInfo": {
+                    "CountyName": "雲林縣"
+                },
+                "WeatherElement": {}
+            },
+            {
+                "StationName": "宜梧",
+                "StationId": "C0K291",
+                "ObsTime": {
+                    "DateTime": "2024-01-12T14:00:00+08:00"
+                },
+                "GeoInfo": {
+                    "CountyName": "雲林縣"
+                },
+                "WeatherElement": {}
+            },
+            {
+                "StationName": "下營",
+                "StationId": "C0X060",
+                "ObsTime": {
+                    "DateTime": "2024-01-12T14:00:00+08:00"
+                },
+                "GeoInfo": {
+                    "CountyName": "臺南市"
+                },
+                "WeatherElement": {}
+            },
+            {
+                "StationName": "東後寮",
+                "StationId": "C0M520",
+                "ObsTime": {
+                    "DateTime": "2024-01-12T14:00:00+08:00"
+                },
+                "GeoInfo": {
+                    "CountyName": "嘉義縣"
+                },
+                "WeatherElement": {}
+            },
+            {
+                "StationName": "東河",
+                "StationId": "C0X050",
+                "ObsTime": {
+                    "DateTime": "2024-01-12T14:00:00+08:00"
+                },
+                "GeoInfo": {
+                    "CountyName": "臺南市"
+                },
+                "WeatherElement": {}
+            },
+            {
+                "StationName": "佳里",
+                "StationId": "C0X080",
+                "ObsTime": {
+                    "DateTime": "2024-01-12T14:00:00+08:00"
+                },
+                "GeoInfo": {
+                    "CountyName": "臺南市"
+                },
+                "WeatherElement": {}
+            },
+            {
+                "StationName": "二林",
+                "StationId": "C0G730",
+                "ObsTime": {
+                    "DateTime": "2024-01-12T14:00:00+08:00"
+                },
+                "GeoInfo": {
+                    "CountyName": "彰化縣"
+                },
+                "WeatherElement": {}
+            },
+            {
+                "StationName": "白河",
+                "StationId": "C0X210",
+                "ObsTime": {
+                    "DateTime": "2024-01-12T14:00:00+08:00"
+                },
+                "GeoInfo": {
+                    "CountyName": "臺南市"
+                },
+                "WeatherElement": {}
+            },
+            {
+                "StationName": "番路",
+                "StationId": "C0M720",
+                "ObsTime": {
+                    "DateTime": "2024-01-12T14:00:00+08:00"
+                },
+                "GeoInfo": {
+                    "CountyName": "嘉義縣"
+                },
+                "WeatherElement": {}
+            },
+            {
+                "StationName": "新營",
+                "StationId": "C0X250",
+                "ObsTime": {
+                    "DateTime": "2024-01-12T14:00:00+08:00"
+                },
+                "GeoInfo": {
+                    "CountyName": "臺南市"
+                },
+                "WeatherElement": {}
+            },
+            {
+                "StationName": "將軍",
+                "StationId": "C0X280",
+                "ObsTime": {
+                    "DateTime": "2024-01-12T14:00:00+08:00"
+                },
+                "GeoInfo": {
+                    "CountyName": "臺南市"
+                },
+                "WeatherElement": {}
+            },
+            {
+                "StationName": "褒忠",
+                "StationId": "C0K430",
+                "ObsTime": {
+                    "DateTime": "2024-01-12T14:00:00+08:00"
+                },
+                "GeoInfo": {
+                    "CountyName": "雲林縣"
+                },
+                "WeatherElement": {}
+            },
+            {
+                "StationName": "溪口",
+                "StationId": "C0M660",
+                "ObsTime": {
+                    "DateTime": "2024-01-12T14:00:00+08:00"
+                },
+                "GeoInfo": {
+                    "CountyName": "嘉義縣"
+                },
+                "WeatherElement": {}
+            },
+            {
+                "StationName": "二崙",
+                "StationId": "C0K440",
+                "ObsTime": {
+                    "DateTime": "2024-01-12T14:00:00+08:00"
+                },
+                "GeoInfo": {
+                    "CountyName": "雲林縣"
+                },
+                "WeatherElement": {}
+            },
+            {
+                "StationName": "竹崎",
+                "StationId": "C0M700",
+                "ObsTime": {
+                    "DateTime": "2024-01-12T14:00:00+08:00"
+                },
+                "GeoInfo": {
+                    "CountyName": "嘉義縣"
+                },
+                "WeatherElement": {}
+            },
+            {
+                "StationName": "中埔",
+                "StationId": "C0M640",
+                "ObsTime": {
+                    "DateTime": "2024-01-12T14:00:00+08:00"
+                },
+                "GeoInfo": {
+                    "CountyName": "嘉義縣"
+                },
+                "WeatherElement": {}
+            },
+            {
+                "StationName": "鹽水",
+                "StationId": "C0X230",
+                "ObsTime": {
+                    "DateTime": "2024-01-12T14:00:00+08:00"
+                },
+                "GeoInfo": {
+                    "CountyName": "臺南市"
+                },
+                "WeatherElement": {}
+            },
+            {
+                "StationName": "學甲",
+                "StationId": "C0X220",
+                "ObsTime": {
+                    "DateTime": "2024-01-12T14:00:00+08:00"
+                },
+                "GeoInfo": {
+                    "CountyName": "臺南市"
+                },
+                "WeatherElement": {}
+            },
+            {
+                "StationName": "後壁",
+                "StationId": "C0X260",
+                "ObsTime": {
+                    "DateTime": "2024-01-12T14:00:00+08:00"
+                },
+                "GeoInfo": {
+                    "CountyName": "臺南市"
+                },
+                "WeatherElement": {}
+            },
+            {
+                "StationName": "西螺",
+                "StationId": "C0K420",
+                "ObsTime": {
+                    "DateTime": "2024-01-12T14:00:00+08:00"
+                },
+                "GeoInfo": {
+                    "CountyName": "雲林縣"
+                },
+                "WeatherElement": {}
+            },
+            {
+                "StationName": "土庫",
+                "StationId": "C0K390",
+                "ObsTime": {
+                    "DateTime": "2024-01-12T14:00:00+08:00"
+                },
+                "GeoInfo": {
+                    "CountyName": "雲林縣"
+                },
+                "WeatherElement": {}
+            },
+            {
+                "StationName": "大林",
+                "StationId": "C0M670",
+                "ObsTime": {
+                    "DateTime": "2024-01-12T14:00:00+08:00"
+                },
+                "GeoInfo": {
+                    "CountyName": "嘉義縣"
+                },
+                "WeatherElement": {}
+            },
+            {
+                "StationName": "東石",
+                "StationId": "C0M710",
+                "ObsTime": {
+                    "DateTime": "2024-01-12T14:00:00+08:00"
+                },
+                "GeoInfo": {
+                    "CountyName": "嘉義縣"
+                },
+                "WeatherElement": {}
+            },
+            {
+                "StationName": "水上",
+                "StationId": "C0M690",
+                "ObsTime": {
+                    "DateTime": "2024-01-12T14:00:00+08:00"
+                },
+                "GeoInfo": {
+                    "CountyName": "嘉義縣"
+                },
+                "WeatherElement": {}
+            },
+            {
+                "StationName": "嘉義市東區",
+                "StationId": "C0M730",
+                "ObsTime": {
+                    "DateTime": "2024-01-12T14:00:00+08:00"
+                },
+                "GeoInfo": {
+                    "CountyName": "嘉義市"
+                },
+                "WeatherElement": {}
+            },
+            {
+                "StationName": "關子嶺",
+                "StationId": "C0X240",
+                "ObsTime": {
+                    "DateTime": "2024-01-12T14:00:00+08:00"
+                },
+                "GeoInfo": {
+                    "CountyName": "臺南市"
+                },
+                "WeatherElement": {}
+            },
+            {
+                "StationName": "虎頭埤",
+                "StationId": "C0O970",
+                "ObsTime": {
+                    "DateTime": "2024-01-12T14:00:00+08:00"
+                },
+                "GeoInfo": {
+                    "CountyName": "臺南市"
+                },
+                "WeatherElement": {}
+            },
+            {
+                "StationName": "媽廟",
+                "StationId": "C0O990",
+                "ObsTime": {
+                    "DateTime": "2024-01-12T14:00:00+08:00"
+                },
+                "GeoInfo": {
+                    "CountyName": "臺南市"
+                },
+                "WeatherElement": {}
+            },
+            {
+                "StationName": "崎頂",
+                "StationId": "C0O960",
+                "ObsTime": {
+                    "DateTime": "2024-01-12T14:00:00+08:00"
+                },
+                "GeoInfo": {
+                    "CountyName": "臺南市"
+                },
+                "WeatherElement": {}
+            },
+            {
+                "StationName": "新市",
+                "StationId": "C0O980",
+                "ObsTime": {
+                    "DateTime": "2024-01-12T14:00:00+08:00"
+                },
+                "GeoInfo": {
+                    "CountyName": "臺南市"
+                },
+                "WeatherElement": {}
+            },
+            {
+                "StationName": "北寮",
+                "StationId": "C0O830",
+                "ObsTime": {
+                    "DateTime": "2024-01-12T14:00:00+08:00"
+                },
+                "GeoInfo": {
+                    "CountyName": "臺南市"
+                },
+                "WeatherElement": {}
+            },
+            {
+                "StationName": "善化",
+                "StationId": "C0O900",
+                "ObsTime": {
+                    "DateTime": "2024-01-12T14:00:00+08:00"
+                },
+                "GeoInfo": {
+                    "CountyName": "臺南市"
+                },
+                "WeatherElement": {}
+            },
+            {
+                "StationName": "復興",
+                "StationId": "C0V210",
+                "ObsTime": {
+                    "DateTime": "2024-01-12T14:00:00+08:00"
+                },
+                "GeoInfo": {
+                    "CountyName": "高雄市"
+                },
+                "WeatherElement": {}
+            },
+            {
+                "StationName": "王爺宮",
+                "StationId": "C0O840",
+                "ObsTime": {
+                    "DateTime": "2024-01-12T14:00:00+08:00"
+                },
+                "GeoInfo": {
+                    "CountyName": "臺南市"
+                },
+                "WeatherElement": {}
+            },
+            {
+                "StationName": "大內",
+                "StationId": "C0O860",
+                "ObsTime": {
+                    "DateTime": "2024-01-12T14:00:00+08:00"
+                },
+                "GeoInfo": {
+                    "CountyName": "臺南市"
+                },
+                "WeatherElement": {}
+            },
+            {
+                "StationName": "阿蓮",
+                "StationId": "C0V530",
+                "ObsTime": {
+                    "DateTime": "2024-01-12T14:00:00+08:00"
+                },
+                "GeoInfo": {
+                    "CountyName": "高雄市"
+                },
+                "WeatherElement": {}
+            },
+            {
+                "StationName": "臺南市北區",
+                "StationId": "C0X100",
+                "ObsTime": {
+                    "DateTime": "2024-01-12T14:00:00+08:00"
+                },
+                "GeoInfo": {
+                    "CountyName": "臺南市"
+                },
+                "WeatherElement": {}
+            },
+            {
+                "StationName": "臺南市南區",
+                "StationId": "C0X110",
+                "ObsTime": {
+                    "DateTime": "2024-01-12T14:00:00+08:00"
+                },
+                "GeoInfo": {
+                    "CountyName": "臺南市"
+                },
+                "WeatherElement": {}
+            },
+            {
+                "StationName": "安平",
+                "StationId": "C0X190",
+                "ObsTime": {
+                    "DateTime": "2024-01-12T14:00:00+08:00"
+                },
+                "GeoInfo": {
+                    "CountyName": "臺南市"
+                },
+                "WeatherElement": {}
+            },
+            {
+                "StationName": "麻豆",
+                "StationId": "C0X120",
+                "ObsTime": {
+                    "DateTime": "2024-01-12T14:00:00+08:00"
+                },
+                "GeoInfo": {
+                    "CountyName": "臺南市"
+                },
+                "WeatherElement": {}
+            },
+            {
+                "StationName": "安定",
+                "StationId": "C0X150",
+                "ObsTime": {
+                    "DateTime": "2024-01-12T14:00:00+08:00"
+                },
+                "GeoInfo": {
+                    "CountyName": "臺南市"
+                },
+                "WeatherElement": {}
+            },
+            {
+                "StationName": "山上",
+                "StationId": "C0X180",
+                "ObsTime": {
+                    "DateTime": "2024-01-12T14:00:00+08:00"
+                },
+                "GeoInfo": {
+                    "CountyName": "臺南市"
+                },
+                "WeatherElement": {}
+            },
+            {
+                "StationName": "關廟",
+                "StationId": "C0X170",
+                "ObsTime": {
+                    "DateTime": "2024-01-12T14:00:00+08:00"
+                },
+                "GeoInfo": {
+                    "CountyName": "臺南市"
+                },
+                "WeatherElement": {}
+            },
+            {
+                "StationName": "官田",
+                "StationId": "C0X130",
+                "ObsTime": {
+                    "DateTime": "2024-01-12T14:00:00+08:00"
+                },
+                "GeoInfo": {
+                    "CountyName": "臺南市"
+                },
+                "WeatherElement": {}
+            },
+            {
+                "StationName": "西港",
+                "StationId": "C0X140",
+                "ObsTime": {
+                    "DateTime": "2024-01-12T14:00:00+08:00"
+                },
+                "GeoInfo": {
+                    "CountyName": "臺南市"
+                },
+                "WeatherElement": {}
+            },
+            {
+                "StationName": "仁德",
+                "StationId": "C0X160",
+                "ObsTime": {
+                    "DateTime": "2024-01-12T14:00:00+08:00"
+                },
+                "GeoInfo": {
+                    "CountyName": "臺南市"
+                },
+                "WeatherElement": {}
+            },
+            {
+                "StationName": "左鎮",
+                "StationId": "C0X200",
+                "ObsTime": {
+                    "DateTime": "2024-01-12T14:00:00+08:00"
+                },
+                "GeoInfo": {
+                    "CountyName": "臺南市"
+                },
+                "WeatherElement": {}
+            },
+            {
+                "StationName": "表湖",
+                "StationId": "C0M850",
+                "ObsTime": {
+                    "DateTime": "2024-01-12T14:00:00+08:00"
+                },
+                "GeoInfo": {
+                    "CountyName": "嘉義縣"
+                },
+                "WeatherElement": {}
+            },
+            {
+                "StationName": "舊泰武",
+                "StationId": "C0R600",
+                "ObsTime": {
+                    "DateTime": "2024-01-12T14:00:00+08:00"
+                },
+                "GeoInfo": {
+                    "CountyName": "屏東縣"
+                },
+                "WeatherElement": {}
+            },
+            {
+                "StationName": "萬山",
+                "StationId": "C0V790",
+                "ObsTime": {
+                    "DateTime": "2024-01-12T14:00:00+08:00"
+                },
+                "GeoInfo": {
+                    "CountyName": "高雄市"
+                },
+                "WeatherElement": {}
+            },
+            {
+                "StationName": "六龜",
+                "StationId": "C0V800",
+                "ObsTime": {
+                    "DateTime": "2024-01-12T14:00:00+08:00"
+                },
+                "GeoInfo": {
+                    "CountyName": "高雄市"
+                },
+                "WeatherElement": {}
+            },
+            {
+                "StationName": "里港",
+                "StationId": "C0R590",
+                "ObsTime": {
+                    "DateTime": "2024-01-12T14:00:00+08:00"
+                },
+                "GeoInfo": {
+                    "CountyName": "屏東縣"
+                },
+                "WeatherElement": {}
+            },
+            {
+                "StationName": "左營",
+                "StationId": "C0V810",
+                "ObsTime": {
+                    "DateTime": "2024-01-12T14:00:00+08:00"
+                },
+                "GeoInfo": {
+                    "CountyName": "高雄市"
+                },
+                "WeatherElement": {}
+            },
+            {
+                "StationName": "東港",
+                "StationId": "C0R640",
+                "ObsTime": {
+                    "DateTime": "2024-01-12T14:00:00+08:00"
+                },
+                "GeoInfo": {
+                    "CountyName": "屏東縣"
+                },
+                "WeatherElement": {}
+            },
+            {
+                "StationName": "竹田",
+                "StationId": "C0R650",
+                "ObsTime": {
+                    "DateTime": "2024-01-12T14:00:00+08:00"
+                },
+                "GeoInfo": {
+                    "CountyName": "屏東縣"
+                },
+                "WeatherElement": {}
+            },
+            {
+                "StationName": "萬丹",
+                "StationId": "C0R930",
+                "ObsTime": {
+                    "DateTime": "2024-01-12T14:00:00+08:00"
+                },
+                "GeoInfo": {
+                    "CountyName": "屏東縣"
+                },
+                "WeatherElement": {}
+            },
+            {
+                "StationName": "阿禮",
+                "StationId": "C0R130",
+                "ObsTime": {
+                    "DateTime": "2024-01-12T14:00:00+08:00"
+                },
+                "GeoInfo": {
+                    "CountyName": "屏東縣"
+                },
+                "WeatherElement": {}
+            },
+            {
+                "StationName": "瑪家",
+                "StationId": "C0R140",
+                "ObsTime": {
+                    "DateTime": "2024-01-12T14:00:00+08:00"
+                },
+                "GeoInfo": {
+                    "CountyName": "屏東縣"
+                },
+                "WeatherElement": {}
+            },
+            {
+                "StationName": "溪埔",
+                "StationId": "C0V350",
+                "ObsTime": {
+                    "DateTime": "2024-01-12T14:00:00+08:00"
+                },
+                "GeoInfo": {
+                    "CountyName": "高雄市"
+                },
+                "WeatherElement": {}
+            },
+            {
+                "StationName": "美濃",
+                "StationId": "C0V310",
+                "ObsTime": {
+                    "DateTime": "2024-01-12T14:00:00+08:00"
+                },
+                "GeoInfo": {
+                    "CountyName": "高雄市"
+                },
+                "WeatherElement": {}
+            },
+            {
+                "StationName": "尾寮山",
+                "StationId": "C0R100",
+                "ObsTime": {
+                    "DateTime": "2024-01-12T14:00:00+08:00"
+                },
+                "GeoInfo": {
+                    "CountyName": "屏東縣"
+                },
+                "WeatherElement": {}
+            },
+            {
+                "StationName": "阿公店",
+                "StationId": "C0V400",
+                "ObsTime": {
+                    "DateTime": "2024-01-12T14:00:00+08:00"
+                },
+                "GeoInfo": {
+                    "CountyName": "高雄市"
+                },
+                "WeatherElement": {}
+            },
+            {
+                "StationName": "內門",
+                "StationId": "C0V360",
+                "ObsTime": {
+                    "DateTime": "2024-01-12T14:00:00+08:00"
+                },
+                "GeoInfo": {
+                    "CountyName": "高雄市"
+                },
+                "WeatherElement": {}
+            },
+            {
+                "StationName": "春日",
+                "StationId": "C0R260",
+                "ObsTime": {
+                    "DateTime": "2024-01-12T14:00:00+08:00"
+                },
+                "GeoInfo": {
+                    "CountyName": "屏東縣"
+                },
+                "WeatherElement": {}
+            },
+            {
+                "StationName": "來義",
+                "StationId": "C0R240",
+                "ObsTime": {
+                    "DateTime": "2024-01-12T14:00:00+08:00"
+                },
+                "GeoInfo": {
+                    "CountyName": "屏東縣"
+                },
+                "WeatherElement": {}
+            },
+            {
+                "StationName": "古亭坑",
+                "StationId": "C0V370",
+                "ObsTime": {
+                    "DateTime": "2024-01-12T14:00:00+08:00"
+                },
+                "GeoInfo": {
+                    "CountyName": "高雄市"
+                },
+                "WeatherElement": {}
+            },
+            {
+                "StationName": "琉球嶼",
+                "StationId": "C0R270",
+                "ObsTime": {
+                    "DateTime": "2024-01-12T14:00:00+08:00"
+                },
+                "GeoInfo": {
+                    "CountyName": "屏東縣"
+                },
+                "WeatherElement": {}
+            },
+            {
+                "StationName": "鳳山",
+                "StationId": "C0V440",
+                "ObsTime": {
+                    "DateTime": "2024-01-12T14:00:00+08:00"
+                },
+                "GeoInfo": {
+                    "CountyName": "高雄市"
+                },
+                "WeatherElement": {}
+            },
+            {
+                "StationName": "屏東",
+                "StationId": "C0R170",
+                "ObsTime": {
+                    "DateTime": "2024-01-12T14:00:00+08:00"
+                },
+                "GeoInfo": {
+                    "CountyName": "屏東縣"
+                },
+                "WeatherElement": {}
+            },
+            {
+                "StationName": "鹽埔",
+                "StationId": "C0R160",
+                "ObsTime": {
+                    "DateTime": "2024-01-12T14:00:00+08:00"
+                },
+                "GeoInfo": {
+                    "CountyName": "屏東縣"
+                },
+                "WeatherElement": {}
+            },
+            {
+                "StationName": "鳳森",
+                "StationId": "C0V450",
+                "ObsTime": {
+                    "DateTime": "2024-01-12T14:00:00+08:00"
+                },
+                "GeoInfo": {
+                    "CountyName": "高雄市"
+                },
+                "WeatherElement": {}
+            },
+            {
+                "StationName": "赤山",
+                "StationId": "C0R190",
+                "ObsTime": {
+                    "DateTime": "2024-01-12T14:00:00+08:00"
+                },
+                "GeoInfo": {
+                    "CountyName": "屏東縣"
+                },
+                "WeatherElement": {}
+            },
+            {
+                "StationName": "三地門",
+                "StationId": "C0R150",
+                "ObsTime": {
+                    "DateTime": "2024-01-12T14:00:00+08:00"
+                },
+                "GeoInfo": {
+                    "CountyName": "屏東縣"
+                },
+                "WeatherElement": {}
+            },
+            {
+                "StationName": "潮州",
+                "StationId": "C0R220",
+                "ObsTime": {
+                    "DateTime": "2024-01-12T14:00:00+08:00"
+                },
+                "GeoInfo": {
+                    "CountyName": "屏東縣"
+                },
+                "WeatherElement": {}
+            },
+            {
+                "StationName": "新興",
+                "StationId": "C0V490",
+                "ObsTime": {
+                    "DateTime": "2024-01-12T14:00:00+08:00"
+                },
+                "GeoInfo": {
+                    "CountyName": "高雄市"
+                },
+                "WeatherElement": {}
+            },
+            {
+                "StationName": "湖內",
+                "StationId": "C0V640",
+                "ObsTime": {
+                    "DateTime": "2024-01-12T14:00:00+08:00"
+                },
+                "GeoInfo": {
+                    "CountyName": "高雄市"
+                },
+                "WeatherElement": {}
+            },
+            {
+                "StationName": "永安",
+                "StationId": "C0V620",
+                "ObsTime": {
+                    "DateTime": "2024-01-12T14:00:00+08:00"
+                },
+                "GeoInfo": {
+                    "CountyName": "高雄市"
+                },
+                "WeatherElement": {}
+            },
+            {
+                "StationName": "大社",
+                "StationId": "C0V770",
+                "ObsTime": {
+                    "DateTime": "2024-01-12T14:00:00+08:00"
+                },
+                "GeoInfo": {
+                    "CountyName": "高雄市"
+                },
+                "WeatherElement": {}
+            },
+            {
+                "StationName": "梓官",
+                "StationId": "C0V610",
+                "ObsTime": {
+                    "DateTime": "2024-01-12T14:00:00+08:00"
+                },
+                "GeoInfo": {
+                    "CountyName": "高雄市"
+                },
+                "WeatherElement": {}
+            },
+            {
+                "StationName": "路竹",
+                "StationId": "C0V750",
+                "ObsTime": {
+                    "DateTime": "2024-01-12T14:00:00+08:00"
+                },
+                "GeoInfo": {
+                    "CountyName": "高雄市"
+                },
+                "WeatherElement": {}
+            },
+            {
+                "StationName": "茄萣",
+                "StationId": "C0V630",
+                "ObsTime": {
+                    "DateTime": "2024-01-12T14:00:00+08:00"
+                },
+                "GeoInfo": {
+                    "CountyName": "高雄市"
+                },
+                "WeatherElement": {}
+            },
+            {
+                "StationName": "岡山",
+                "StationId": "C0V660",
+                "ObsTime": {
+                    "DateTime": "2024-01-12T14:00:00+08:00"
+                },
+                "GeoInfo": {
+                    "CountyName": "高雄市"
+                },
+                "WeatherElement": {}
+            },
+            {
+                "StationName": "彌陀",
+                "StationId": "C0V650",
+                "ObsTime": {
+                    "DateTime": "2024-01-12T14:00:00+08:00"
+                },
+                "GeoInfo": {
+                    "CountyName": "高雄市"
+                },
+                "WeatherElement": {}
+            },
+            {
+                "StationName": "橋頭",
+                "StationId": "C0V760",
+                "ObsTime": {
+                    "DateTime": "2024-01-12T14:00:00+08:00"
+                },
+                "GeoInfo": {
+                    "CountyName": "高雄市"
+                },
+                "WeatherElement": {}
+            },
+            {
+                "StationName": "仁武",
+                "StationId": "C0V680",
+                "ObsTime": {
+                    "DateTime": "2024-01-12T14:00:00+08:00"
+                },
+                "GeoInfo": {
+                    "CountyName": "高雄市"
+                },
+                "WeatherElement": {}
+            },
+            {
+                "StationName": "三民",
+                "StationId": "C0V700",
+                "ObsTime": {
+                    "DateTime": "2024-01-12T14:00:00+08:00"
+                },
+                "GeoInfo": {
+                    "CountyName": "高雄市"
+                },
+                "WeatherElement": {}
+            },
+            {
+                "StationName": "鼓山",
+                "StationId": "C0V690",
+                "ObsTime": {
+                    "DateTime": "2024-01-12T14:00:00+08:00"
+                },
+                "GeoInfo": {
+                    "CountyName": "高雄市"
+                },
+                "WeatherElement": {}
+            },
+            {
+                "StationName": "苓雅",
+                "StationId": "C0V710",
+                "ObsTime": {
+                    "DateTime": "2024-01-12T14:00:00+08:00"
+                },
+                "GeoInfo": {
+                    "CountyName": "高雄市"
+                },
+                "WeatherElement": {}
+            },
+            {
+                "StationName": "旗山",
+                "StationId": "C0V740",
+                "ObsTime": {
+                    "DateTime": "2024-01-12T14:00:00+08:00"
+                },
+                "GeoInfo": {
+                    "CountyName": "高雄市"
+                },
+                "WeatherElement": {}
+            },
+            {
+                "StationName": "長治",
+                "StationId": "C0R480",
+                "ObsTime": {
+                    "DateTime": "2024-01-12T14:00:00+08:00"
+                },
+                "GeoInfo": {
+                    "CountyName": "屏東縣"
+                },
+                "WeatherElement": {}
+            },
+            {
+                "StationName": "麟洛",
+                "StationId": "C0R570",
+                "ObsTime": {
+                    "DateTime": "2024-01-12T14:00:00+08:00"
+                },
+                "GeoInfo": {
+                    "CountyName": "屏東縣"
+                },
+                "WeatherElement": {}
+            },
+            {
+                "StationName": "新埤",
+                "StationId": "C0R550",
+                "ObsTime": {
+                    "DateTime": "2024-01-12T14:00:00+08:00"
+                },
+                "GeoInfo": {
+                    "CountyName": "屏東縣"
+                },
+                "WeatherElement": {}
+            },
+            {
+                "StationName": "南州",
+                "StationId": "C0R580",
+                "ObsTime": {
+                    "DateTime": "2024-01-12T14:00:00+08:00"
+                },
+                "GeoInfo": {
+                    "CountyName": "屏東縣"
+                },
+                "WeatherElement": {}
+            },
+            {
+                "StationName": "佳冬",
+                "StationId": "C0R540",
+                "ObsTime": {
+                    "DateTime": "2024-01-12T14:00:00+08:00"
+                },
+                "GeoInfo": {
+                    "CountyName": "屏東縣"
+                },
+                "WeatherElement": {}
+            },
+            {
+                "StationName": "高樹",
+                "StationId": "C0R470",
+                "ObsTime": {
+                    "DateTime": "2024-01-12T14:00:00+08:00"
+                },
+                "GeoInfo": {
+                    "CountyName": "屏東縣"
+                },
+                "WeatherElement": {}
+            },
+            {
+                "StationName": "九如",
+                "StationId": "C0R490",
+                "ObsTime": {
+                    "DateTime": "2024-01-12T14:00:00+08:00"
+                },
+                "GeoInfo": {
+                    "CountyName": "屏東縣"
+                },
+                "WeatherElement": {}
+            },
+            {
+                "StationName": "大寮",
+                "StationId": "C0V730",
+                "ObsTime": {
+                    "DateTime": "2024-01-12T14:00:00+08:00"
+                },
+                "GeoInfo": {
+                    "CountyName": "高雄市"
+                },
+                "WeatherElement": {}
+            },
+            {
+                "StationName": "新園",
+                "StationId": "C0R560",
+                "ObsTime": {
+                    "DateTime": "2024-01-12T14:00:00+08:00"
+                },
+                "GeoInfo": {
+                    "CountyName": "屏東縣"
+                },
+                "WeatherElement": {}
+            },
+            {
+                "StationName": "崁頂",
+                "StationId": "C0R520",
+                "ObsTime": {
+                    "DateTime": "2024-01-12T14:00:00+08:00"
+                },
+                "GeoInfo": {
+                    "CountyName": "屏東縣"
+                },
+                "WeatherElement": {}
+            },
+            {
+                "StationName": "林園",
+                "StationId": "C0V720",
+                "ObsTime": {
+                    "DateTime": "2024-01-12T14:00:00+08:00"
+                },
+                "GeoInfo": {
+                    "CountyName": "高雄市"
+                },
+                "WeatherElement": {}
+            },
+            {
+                "StationName": "溪州",
+                "StationId": "C0G720",
+                "ObsTime": {
+                    "DateTime": "2024-01-12T14:00:00+08:00"
+                },
+                "GeoInfo": {
+                    "CountyName": "彰化縣"
+                },
+                "WeatherElement": {}
+            },
+            {
+                "StationName": "斗南",
+                "StationId": "C0K460",
+                "ObsTime": {
+                    "DateTime": "2024-01-12T14:00:00+08:00"
+                },
+                "GeoInfo": {
+                    "CountyName": "雲林縣"
+                },
+                "WeatherElement": {}
+            },
+            {
+                "StationName": "斗六",
+                "StationId": "C0K400",
+                "ObsTime": {
+                    "DateTime": "2024-01-12T14:00:00+08:00"
+                },
+                "GeoInfo": {
+                    "CountyName": "雲林縣"
+                },
+                "WeatherElement": {}
+            },
+            {
+                "StationName": "朴子",
+                "StationId": "C0M650",
+                "ObsTime": {
+                    "DateTime": "2024-01-12T14:00:00+08:00"
+                },
+                "GeoInfo": {
+                    "CountyName": "嘉義縣"
+                },
+                "WeatherElement": {}
+            },
+            {
+                "StationName": "北港",
+                "StationId": "C0K410",
+                "ObsTime": {
+                    "DateTime": "2024-01-12T14:00:00+08:00"
+                },
+                "GeoInfo": {
+                    "CountyName": "雲林縣"
+                },
+                "WeatherElement": {}
+            },
+            {
+                "StationName": "太保",
+                "StationId": "C0M680",
+                "ObsTime": {
+                    "DateTime": "2024-01-12T14:00:00+08:00"
+                },
+                "GeoInfo": {
+                    "CountyName": "嘉義縣"
+                },
+                "WeatherElement": {}
+            },
+            {
+                "StationName": "林內",
+                "StationId": "C0K470",
+                "ObsTime": {
+                    "DateTime": "2024-01-12T14:00:00+08:00"
+                },
+                "GeoInfo": {
+                    "CountyName": "雲林縣"
+                },
+                "WeatherElement": {}
+            },
+            {
+                "StationName": "大城",
+                "StationId": "C0G740",
+                "ObsTime": {
+                    "DateTime": "2024-01-12T14:00:00+08:00"
+                },
+                "GeoInfo": {
+                    "CountyName": "彰化縣"
+                },
+                "WeatherElement": {}
+            },
+            {
+                "StationName": "民雄",
+                "StationId": "C0M760",
+                "ObsTime": {
+                    "DateTime": "2024-01-12T14:00:00+08:00"
+                },
+                "GeoInfo": {
+                    "CountyName": "嘉義縣"
+                },
+                "WeatherElement": {}
+            },
+            {
+                "StationName": "大埤",
+                "StationId": "C0K450",
+                "ObsTime": {
+                    "DateTime": "2024-01-12T14:00:00+08:00"
+                },
+                "GeoInfo": {
+                    "CountyName": "雲林縣"
+                },
+                "WeatherElement": {}
+            },
+            {
+                "StationName": "莿桐",
+                "StationId": "C0K480",
+                "ObsTime": {
+                    "DateTime": "2024-01-12T14:00:00+08:00"
+                },
+                "GeoInfo": {
+                    "CountyName": "雲林縣"
+                },
+                "WeatherElement": {}
+            },
+            {
+                "StationName": "臺西",
+                "StationId": "C0K530",
+                "ObsTime": {
+                    "DateTime": "2024-01-12T14:00:00+08:00"
+                },
+                "GeoInfo": {
+                    "CountyName": "雲林縣"
+                },
+                "WeatherElement": {}
+            },
+            {
+                "StationName": "水林",
+                "StationId": "C0K510",
+                "ObsTime": {
+                    "DateTime": "2024-01-12T14:00:00+08:00"
+                },
+                "GeoInfo": {
+                    "CountyName": "雲林縣"
+                },
+                "WeatherElement": {}
+            },
+            {
+                "StationName": "元長",
+                "StationId": "C0K500",
+                "ObsTime": {
+                    "DateTime": "2024-01-12T14:00:00+08:00"
+                },
+                "GeoInfo": {
+                    "CountyName": "雲林縣"
+                },
+                "WeatherElement": {}
+            },
+            {
+                "StationName": "布袋",
+                "StationId": "C0M750",
+                "ObsTime": {
+                    "DateTime": "2024-01-12T14:00:00+08:00"
+                },
+                "GeoInfo": {
+                    "CountyName": "嘉義縣"
+                },
+                "WeatherElement": {}
+            },
+            {
+                "StationName": "鹿草",
+                "StationId": "C0M780",
+                "ObsTime": {
+                    "DateTime": "2024-01-12T14:00:00+08:00"
+                },
+                "GeoInfo": {
+                    "CountyName": "嘉義縣"
+                },
+                "WeatherElement": {}
+            },
+            {
+                "StationName": "六腳",
+                "StationId": "C0M740",
+                "ObsTime": {
+                    "DateTime": "2024-01-12T14:00:00+08:00"
+                },
+                "GeoInfo": {
+                    "CountyName": "嘉義縣"
+                },
+                "WeatherElement": {}
+            },
+            {
+                "StationName": "新港",
+                "StationId": "C0M790",
+                "ObsTime": {
+                    "DateTime": "2024-01-12T14:00:00+08:00"
+                },
+                "GeoInfo": {
+                    "CountyName": "嘉義縣"
+                },
+                "WeatherElement": {}
+            },
+            {
+                "StationName": "嘉義梅山",
+                "StationId": "C0M770",
+                "ObsTime": {
+                    "DateTime": "2024-01-12T14:00:00+08:00"
+                },
+                "GeoInfo": {
+                    "CountyName": "嘉義縣"
+                },
+                "WeatherElement": {}
+            },
+            {
+                "StationName": "里佳",
+                "StationId": "C0M810",
+                "ObsTime": {
+                    "DateTime": "2024-01-12T14:00:00+08:00"
+                },
+                "GeoInfo": {
+                    "CountyName": "嘉義縣"
+                },
+                "WeatherElement": {}
+            },
+            {
+                "StationName": "達邦",
+                "StationId": "C0M820",
+                "ObsTime": {
+                    "DateTime": "2024-01-12T14:00:00+08:00"
+                },
+                "GeoInfo": {
+                    "CountyName": "嘉義縣"
+                },
+                "WeatherElement": {}
+            },
+            {
+                "StationName": "鹿寮",
+                "StationId": "C0X300",
+                "ObsTime": {
+                    "DateTime": "2024-01-12T14:00:00+08:00"
+                },
+                "GeoInfo": {
+                    "CountyName": "臺南市"
+                },
+                "WeatherElement": {}
+            },
+            {
+                "StationName": "茶山",
+                "StationId": "C0M800",
+                "ObsTime": {
+                    "DateTime": "2024-01-12T14:00:00+08:00"
+                },
+                "GeoInfo": {
+                    "CountyName": "嘉義縣"
+                },
+                "WeatherElement": {}
+            },
+            {
+                "StationName": "棋山",
+                "StationId": "C0K560",
+                "ObsTime": {
+                    "DateTime": "2024-01-12T14:00:00+08:00"
+                },
+                "GeoInfo": {
+                    "CountyName": "雲林縣"
+                },
+                "WeatherElement": {}
+            },
+            {
+                "StationName": "蔦松",
+                "StationId": "C0K550",
+                "ObsTime": {
+                    "DateTime": "2024-01-12T14:00:00+08:00"
+                },
+                "GeoInfo": {
+                    "CountyName": "雲林縣"
+                },
+                "WeatherElement": {}
+            },
+            {
+                "StationName": "北門",
+                "StationId": "C0X290",
+                "ObsTime": {
+                    "DateTime": "2024-01-12T14:00:00+08:00"
+                },
+                "GeoInfo": {
+                    "CountyName": "臺南市"
+                },
+                "WeatherElement": {}
+            },
+            {
+                "StationName": "七股",
+                "StationId": "C0X310",
+                "ObsTime": {
+                    "DateTime": "2024-01-12T14:00:00+08:00"
+                },
+                "GeoInfo": {
+                    "CountyName": "臺南市"
+                },
+                "WeatherElement": {}
+            }
+        ]
+    }
+}

@@ -22,8 +22,12 @@ public class HomeController {
 	@GetMapping("/")
 	public String index(Model model) {
 		List<EventBean> eventLsit = eventService.findAll();
-		System.out.println(eventService.findAll());
+		List<EventBean> eventTop2 = eventService.findTop2ByOrderByIdDesc();
+		List<EventBean> eventTop2Taipei = eventService.findTop2ByCountyOrderByIdDesc("台北市");
+		
 		model.addAttribute("eventList", eventLsit);
+		model.addAttribute("eventTop2", eventTop2);
+		model.addAttribute("Taipei", eventTop2Taipei);
 		return "index";
 	}
 

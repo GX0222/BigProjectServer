@@ -17,6 +17,6 @@ public class EventController {
 		return "Event/EventList";
 	}
 
-
+	
 
 }
