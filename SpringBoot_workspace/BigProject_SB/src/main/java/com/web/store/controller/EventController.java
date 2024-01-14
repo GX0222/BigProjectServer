@@ -17,25 +17,40 @@ public class EventController {
 	
 	EhService ehservice;
 	EventService eventService;
+	
+	
+	public EventController(EventService eventService) {
+		super();
+		this.eventService = eventService;
+	}
 
 	@GetMapping("/Event")
 	public String event(Model model) {
 		return "Event/Event";
 	}
 
-	@SuppressWarnings("null")
+//	@SuppressWarnings("null")
+//	@GetMapping("/EventList")
+//	public String favor(Model model) {
+//		List<ehBean> eventIds = ehservice.findAllByClassId(1);
+////		List<Integer> ids = new ArrayList<>();
+//		List<EventsBean> eventsByHobby = null;
+//		
+//		for(ehBean eventId : eventIds) {
+//			Integer id = eventId.getId();
+//			eventsByHobby.add(eventService.findAllById(id)) ;
+//		}
+//		
+//		model.addAttribute("events", eventsByHobby);
+//		return "Event/EventList";
+//	}
+	
+	
 	@GetMapping("/EventList")
-	public String favor(Model model) {
-		List<ehBean> eventIds = ehservice.findAllByClassId(1);
-//		List<Integer> ids = new ArrayList<>();
-		List<EventsBean> eventsByHobby = null;
-		
-		for(ehBean eventId : eventIds) {
-			Integer id = eventId.getId();
-			eventsByHobby.add(eventService.findAllById(id)) ;
-		}
-		
-		model.addAttribute("events", eventsByHobby);
+	public String eventlist(Model model) {
+		List<EventsBean> eventLsit = eventService.findAll();
+
+		model.addAttribute("eventList", eventLsit);
 		return "Event/EventList";
 	}
 
