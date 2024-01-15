@@ -1,6 +1,5 @@
 package com.web.store.controller;
 
-import java.util.ArrayList;
 import java.util.List;
 
 import org.springframework.stereotype.Controller;
@@ -8,9 +7,8 @@ import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.GetMapping;
 
 import com.web.store.model.EventsBean;
-import com.web.store.model.ehBean;
-import com.web.store.service.EventService;
 import com.web.store.service.EhService;
+import com.web.store.service.EventService;
 
 @Controller
 public class EventController {

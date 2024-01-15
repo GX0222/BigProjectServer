@@ -2,8 +2,6 @@ package com.web.store.service.Impl;
 
 import java.util.List;
 
-import org.springframework.beans.factory.annotation.Autowired;
-
 import com.web.store.dao.ehDao;
 import com.web.store.model.ehBean;
 import com.web.store.service.EhService;

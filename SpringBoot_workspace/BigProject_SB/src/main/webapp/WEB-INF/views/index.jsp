@@ -158,10 +158,10 @@
 				<div class="weatherDivOff">
 					<div class="row p-0 m-0">
 						<div class="weatherColOff col-4">
-							<div class="weatherBlock">台中市</div>
+							<div class="weatherBlock">台南市<br>將軍區</div>
 						</div>
 						<div class="weatherColOff col-4">
-							<div class="weatherBlock">24C</div>
+							<div class="weatherBlock">${temp }℃</div>
 						</div>
 						<div class="weatherColOff col-4">
 							<div class="weatherBlock">降雨機率：20%</div>
@@ -350,22 +350,7 @@
 		<!-- ---------- -->
 
 		<div class="homeRight col-0 col-md-3 order-1 order-md-2">
-			<div class="weatherDiv">
-				<div class="row p-0 m-0">
-					<div class="weatherColTop col-6 col-xxl-4">
-						<div class="weatherBlock">台中市</div>
-					</div>
-					<div class="weatherColTop col-6 col-xxl-4">
-						<div class="weatherBlock">24C</div>
-					</div>
-					<div class="weatherColSm col-12">
-						<div class="weatherBlock">台中市：24C</div>
-					</div>
-					<div class="weatherCol col col-xxl-4">
-						<div class="weatherBlock">降雨機率：20%</div>
-					</div>
-				</div>
-			</div>
+			<jsp:include page="WeatherTool/WeatherTool.jsp"></jsp:include>
 			<div class="couponGroup" data-simplebar>
 				<c:forEach items="${Taipei }" var="TaipeiEvents">
 					<div class="couponCon">${TaipeiEvents.getEventInfo() }</div>

@@ -2,12 +2,10 @@ package com.web.store.service.Impl;
 
 import java.util.List;
 
-import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
 import com.web.store.dao.EventDao;
 import com.web.store.model.EventsBean;
-import com.web.store.service.EhService;
 import com.web.store.service.EventService;
 
 @Service

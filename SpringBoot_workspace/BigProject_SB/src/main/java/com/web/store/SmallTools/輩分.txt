@@ -1,0 +1,38 @@
+try {
+            String apiUrl = "https://opendata.cwa.gov.tw/api/v1/rest/datastore/O-A0001-001?Authorization=CWA-91CBC5B9-4168-4014-8542-1DCD1C42241E&format=JSON&WeatherElement=NOW&GeoInfo=CountyName";
+
+            URL url = new URL(apiUrl);
+            HttpURLConnection connection = (HttpURLConnection) url.openConnection();
+
+            // 設定請求方式為GET
+            connection.setRequestMethod("GET");
+
+            // 取得回應碼
+            int responseCode = connection.getResponseCode();
+
+            // 如果回應碼是200，表示請求成功
+            if (responseCode == HttpURLConnection.HTTP_OK) {
+                // 使用 BufferedReader 讀取 API 回傳的 JSON 數據
+                BufferedReader reader = new BufferedReader(new InputStreamReader(connection.getInputStream()));
+                String line;
+                StringBuilder response = new StringBuilder();
+
+                while ((line = reader.readLine()) != null) {
+                    response.append(line);
+                }
+                reader.close();
+
+                // 在這裡可以使用 response.toString() 來處理取得的 JSON 數據
+                return response.toString();
+            } else {
+                return "請求失敗，回應碼：" + responseCode;
+            }
+        } catch (Exception e) {
+            e.printStackTrace();
+            return "發生異常：" + e.getMessage();
+        }
+        
+        
+        
+
+        
