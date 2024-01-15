@@ -3,6 +3,11 @@
 <%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c"%>
 <%@ taglib uri="http://www.springframework.org/tags" prefix="spring"%>
 
+
+<%@ page import="java.util.List" %>
+<%@ page import="java.util.ArrayList" %>
+
+
 <!DOCTYPE html>
 <html lang="en">
 
@@ -114,6 +119,20 @@
                     </c:forEach>
                     
                 </ul>
+                
+                
+<!-- 			  <div> -->
+<%-- 			        顯示分頁連結 --%>
+<%-- 			        <% for (int pageCounter = 1; pageCounter <= totalPages; pageCounter++) { %> --%>
+<%-- 			            <% if (pageCounter == currentPage) { %> --%>
+<%-- 			                <span><%= pageCounter %></span> --%>
+<%-- 			            <% } else { %> --%>
+<%-- 			                <a href="?page=<%= pageCounter %>"><%= pageCounter %></a> --%>
+<%-- 			            <% } %> --%>
+<%-- 			        <% } %> --%>
+<!-- 			    </div>                 -->
+                
+                
             </div>
             <nav aria-label="Page navigation example" style="padding: 0,auto;">
                 <ul class="pagination justify-content-center">
