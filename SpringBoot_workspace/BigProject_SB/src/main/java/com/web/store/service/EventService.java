@@ -14,4 +14,6 @@ public interface EventService {
 	public List<EventsBean> findTop2ByCountyOrderByIdDesc(String county);
 
 	public EventsBean findAllById(Integer id);
-}
+
+	
+	}

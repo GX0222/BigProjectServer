@@ -2,6 +2,7 @@ package com.web.store.service.Impl;
 
 import java.util.List;
 
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
 import com.web.store.dao.EventDao;
@@ -11,9 +12,10 @@ import com.web.store.service.EventService;
 @Service
 public class EventServiceImpl implements EventService {
 
-	EventDao eventDao;
-
-
+	@Autowired
+    private EventDao eventDao;
+	
+	
 	public EventServiceImpl(EventDao eventDao) {
 		super();
 		this.eventDao = eventDao;
@@ -53,9 +55,7 @@ public class EventServiceImpl implements EventService {
 
 		return eventDao.findAllById(id);
 	}
+	
 
-
-
-
-
+	 
 }

@@ -36,7 +36,7 @@
     <link rel="stylesheet" href="/static/Tools/Color.css">
     <!-- footer -->
     <link rel="stylesheet" href="/static/Tools/footer.css">
-
+ 
 </head>
 
 <body>
@@ -105,6 +105,15 @@
                             <div class="dataImg">
                                 <img src="/static/image/2023聖誕節.jpg">
                             </div>
+                            
+                            <!-- 使用一個普通的按鈕，點擊時呼叫JavaScript函數 -->
+				            <button onclick="checkLoginAndSubmit(${event.getId()})" class="favoriteButton">收藏</button>
+				
+				            <!-- 表單用來提交收藏 -->
+				            <form id="loveForm" action="Love.jsp" method="post">
+				                <input type="hidden" id="eventIdInput" name="eventId" value="">
+				            </form>
+                            
                             <div class="dataText">
                                 <div class="dataCounty">
                                     ${event.getCounty() }
@@ -119,41 +128,15 @@
                     </c:forEach>
                     
                 </ul>
-                
-                
-<!-- 			  <div> -->
-<%-- 			        顯示分頁連結 --%>
-<%-- 			        <% for (int pageCounter = 1; pageCounter <= totalPages; pageCounter++) { %> --%>
-<%-- 			            <% if (pageCounter == currentPage) { %> --%>
-<%-- 			                <span><%= pageCounter %></span> --%>
-<%-- 			            <% } else { %> --%>
-<%-- 			                <a href="?page=<%= pageCounter %>"><%= pageCounter %></a> --%>
-<%-- 			            <% } %> --%>
-<%-- 			        <% } %> --%>
-<!-- 			    </div>                 -->
-                
-                
-            </div>
-            <nav aria-label="Page navigation example" style="padding: 0,auto;">
-                <ul class="pagination justify-content-center">
-                    <li class="page-item">
-                        <a class="page-link" href="#" aria-label="Previous">
-                            <span aria-hidden="true">&laquo;</span>
-                        </a>
-                    </li>
-                    <li class="page-item"><a class="page-link" href="#">1</a></li>
-                    <li class="page-item"><a class="page-link" href="#">2</a></li>
-                    <li class="page-item"><a class="page-link" href="#">3</a></li>
-                    <li class="page-item">
-                        <a class="page-link" href="#" aria-label="Next">
-                            <span aria-hidden="true">&raquo;</span>
-                        </a>
-                    </li>
-                </ul>
-            </nav>
-        </div>
+
     <!-- Footer -->
 	<%@ include file="../Shared/Footer.jsp" %>
+	<!--footer end-->
+	
+    <!-- script -->
+	<script src="EventListToLove.js"></script>
+	<!-- script end -->
+	
 </body>
 
 </html>
