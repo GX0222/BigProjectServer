@@ -13,6 +13,6 @@ public interface ehDao extends JpaRepository<ehBean, Integer> {
 	
 	List<ehBean> findAllByClassId(Integer classId);
 
-	@Query("SELECT m FROM ehBean m WHERE m.event_id = :eventId")
+	@Query("SELECT m FROM ehBean m WHERE m.eventId = :eventId")
 	public List<ehBean> findByEvent_id(@Param("eventId")Integer id);
 }
