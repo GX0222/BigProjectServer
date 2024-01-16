@@ -137,6 +137,27 @@ div.dataInfo {
     margin-top: 10px;
 }
 
+/********************************* button **********************************************/
+.favoriteButton {
+		    background-color: rgba(111, 79, 48, 0.6);
+		    color: white;
+		    height:3vw;
+		    padding: 10px 20px;
+		    margin-left:2.5vw; 
+		    margin-right:0.5vw; 
+		    border: none;
+		    border-radius: 5px;
+		    cursor: pointer;
+		    display: flex;
+		    align-items: center;
+		    justify-content: center;
+		}
+		
+		.favoriteButton:hover {
+		    background-color: #b66b86;
+		}
+
+
 /* =====頁碼===== */
 
 .page-item a:link {
