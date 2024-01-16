@@ -50,7 +50,12 @@ div.weatherBlock {
 	display: flex;
 }
 
-
+div.wtSelect {
+    width: 200px;
+    height: 200px;
+    background-color: aqua;
+    position: absolute;
+}
 
 /* #weatherTool:hover {
 

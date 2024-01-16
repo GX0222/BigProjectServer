@@ -6,10 +6,14 @@ import java.net.HttpURLConnection;
 import java.net.URL;
 import java.text.SimpleDateFormat;
 import java.util.ArrayList;
+import java.util.Collections;
 import java.util.Date;
 import java.util.HashMap;
+import java.util.HashSet;
+import java.util.LinkedList;
 import java.util.List;
 import java.util.Map;
+import java.util.Set;
 
 import org.springframework.scheduling.annotation.Async;
 import org.springframework.scheduling.annotation.Scheduled;
@@ -24,6 +28,9 @@ public class WeatherTool {
 	private static final String API_URL = "https://opendata.cwa.gov.tw/api/v1/rest/datastore/O-A0001-001?Authorization=CWA-91CBC5B9-4168-4014-8542-1DCD1C42241E&format=JSON&WeatherElement=Weather,AirTemperature&GeoInfo=CountyName,TownName\r\n";
 
 	private List<Map<String, Object>> cache = new ArrayList<>();
+	
+	private List<String> countyListCache = new LinkedList<>();
+	private Set<Map<String, Object>> townListCache = new HashSet<>();
 
 	@Scheduled(cron = "0 2 * * * *")
 	public void getNowWeatherByHour() {
@@ -39,6 +46,62 @@ public class WeatherTool {
 			System.out.println("氣象資料更新: " + currentTime);
 		}
 
+	}
+	
+	public void updateAllTownList() {
+		if (cache.isEmpty()) {
+			List<Map<String, Object>> newData = getUrlData();
+			cache = newData;
+		}
+
+		for (Map<String, Object> data : cache) {
+			Map<String, Object> town = new HashMap<>();
+			town.put("CountyName", data.get("CountyName").toString());
+			town.put("TownName", data.get("TownName").toString());
+			townListCache.add(town);
+		}
+	}
+	
+	public Set<Map<String, Object>> getAllTown() {
+		if (townListCache.isEmpty()) {
+			updateAllTownList();
+		}
+		return townListCache;
+	}
+	
+	public List<String> getTownByCounty (String CountyName){
+		if (townListCache.isEmpty()) {
+			updateAllTownList();
+		}
+		List<String> townList = new ArrayList<>();
+		for (Map<String, Object> countyTown :townListCache) {
+			if (((String)countyTown.get("CountyName")).equals(CountyName)) {
+				townList.add(countyTown.get("TownName").toString());
+			}
+		}
+		Collections.sort(townList);
+		return townList;
+	}
+	
+	public void updateAllCountyList() {
+		if (cache.isEmpty()) {
+			List<Map<String, Object>> newData = getUrlData();
+			cache = newData;
+		}
+		Set<String> countys = new HashSet<>();
+		for (Map<String, Object> data : cache) {
+			String county = data.get("CountyName").toString();
+			countys.add(county);
+		}
+		countyListCache = new LinkedList<>(countys);
+		Collections.sort(countyListCache);
+	}
+	
+	public List<String> getAllCounty() {
+		if (countyListCache.isEmpty()) {
+			updateAllCountyList();
+		}
+		return countyListCache;
 	}
 
 	public List<Map<String, Object>> getNowWeather() {

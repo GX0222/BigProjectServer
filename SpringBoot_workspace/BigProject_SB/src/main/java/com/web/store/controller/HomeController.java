@@ -1,6 +1,7 @@
 package com.web.store.controller;
 
 import java.util.List;
+import java.util.Map;
 
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
@@ -8,6 +9,9 @@ import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.ModelAttribute;
+import org.springframework.web.bind.annotation.PostMapping;
+import org.springframework.web.bind.annotation.RequestBody;
+import org.springframework.web.bind.annotation.ResponseBody;
 
 import com.web.store.SmallTools.WeatherTool;
 import com.web.store.dao.EventDaoJDBC;
@@ -50,8 +54,20 @@ public class HomeController {
 		model.addAttribute("eventssss", eventssss);
 		getWeatherData(model, "臺南市", "將軍區");
 //		getWeatherData(model, "屏東縣", "滿州鄉");
+		List<String> countys = weatherTool.getAllCounty();
+		model.addAttribute("countys", countys);
 		return "index";
 	}
+	
+	@PostMapping("/getTownByCounty")
+    @ResponseBody
+    public List<String> getTownByCounty(@RequestBody Map<String, String> req) {
+		List<String> townList = weatherTool.getTownByCounty(req.get("CountyName"));
+//		System.out.println("前端發來: "+req);
+//		System.out.println(req.get("CountyName"));
+//      System.out.println(townList);
+        return townList;
+    }
 
 	@ModelAttribute("weatherTemp")
 	public void getWeatherData(Model model,String city, String town) {
