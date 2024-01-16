@@ -15,12 +15,12 @@ public class ehBean implements Serializable {
 	@Id
 	@GeneratedValue(strategy = GenerationType.IDENTITY)
 	private Integer id;
-	
+
 	private Integer eventId;
 	private Integer classId;
-	
+
 	public ehBean() {
-		
+
 	}
 
 	public ehBean(Integer id, Integer eventId, Integer classId) {
@@ -57,7 +57,7 @@ public class ehBean implements Serializable {
 	public static long getSerialversionuid() {
 		return serialVersionUID;
 	}
-	
-	
-	
+
+
+
 }

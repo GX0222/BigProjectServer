@@ -5,7 +5,7 @@
 <%@ taglib uri="http://www.springframework.org/tags" prefix="spring"%>
 
 <!DOCTYPE html>
-<div class="weatherDiv">
+<div class="weatherDiv" id="weatherTool">
 	<div class="row p-0 m-0">
 		<div class="weatherColTop col-6 col-xxl-4">
 			<div class="weatherBlock">台南市<br>將軍區</div>
@@ -17,7 +17,11 @@
 			<div class="weatherBlock">台南市 將軍區<br>${temp }℃</div>
 		</div>
 		<div class="weatherCol col col-xxl-4">
-			<div class="weatherBlock">降雨機率：20%</div>
+			<div class="weatherBlock">${weather }</div>
 		</div>
 	</div>
+</div>
+
+<div id="wtSelect" class="wtSelect">
+	123123
 </div>

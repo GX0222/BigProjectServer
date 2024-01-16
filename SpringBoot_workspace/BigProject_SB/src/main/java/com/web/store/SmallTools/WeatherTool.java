@@ -29,7 +29,7 @@ public class WeatherTool {
 	public void getNowWeatherByHour() {
 		SimpleDateFormat sdf = new SimpleDateFormat("HH:mm:ss");
 		String currentTime = sdf.format(new Date());
-		
+
 		if (currentTime.endsWith(":02:00")) {
 			// 在整點2分時執行資料抓取
 			List<Map<String, Object>> newData = getUrlData();
@@ -62,11 +62,11 @@ public class WeatherTool {
 		}
 		return resData;
 	}
-	
+
 	public Map<String, Object> getNowWeatherByTown(String city, String town) {
 		List<Map<String, Object>> cityData = new ArrayList<>();
 		cityData = getNowWeatherByCity(city);
-		
+
 		for(Map<String, Object> data : cityData) {
 			if(((String) data.get("CountyName")).equals(city)) {
 				return data;
@@ -107,9 +107,9 @@ public class WeatherTool {
 					linesRead++;
 				}
 				reader.close();
-				
+
 				//解析JSON => List<Map<String, Object>>
-				
+
 				try {
 					ObjectMapper objectMapper = new ObjectMapper();
 					JsonNode rootNode = objectMapper.readTree(response.toString());
@@ -154,5 +154,5 @@ public class WeatherTool {
 		}
 		return resData;
 	}
-	
+
 }

@@ -12,8 +12,8 @@ import com.web.store.service.EventService;
 public class EventServiceImpl implements EventService {
 
 	EventDao eventDao;
-	
-	
+
+
 	public EventServiceImpl(EventDao eventDao) {
 		super();
 		this.eventDao = eventDao;
@@ -22,14 +22,14 @@ public class EventServiceImpl implements EventService {
 
 	@Override
 	public List<EventsBean> findAll() {
-		
+
 		return eventDao.findAll();
 	}
 
 
 	@Override
 	public EventsBean findTop1ByOrderByIdDesc() {
-		
+
 		return eventDao.findTop1ByOrderByIdDesc();
 	}
 
@@ -43,19 +43,19 @@ public class EventServiceImpl implements EventService {
 
 	@Override
 	public List<EventsBean> findTop2ByCountyOrderByIdDesc(String county) {
-			
+
 		return eventDao.findTop2ByCountyOrderByIdDesc(county);
 	}
 
 
 	@Override
 	public EventsBean findAllById(Integer id) {
-		
+
 		return eventDao.findAllById(id);
 	}
 
 
 
-	
+
 
 }

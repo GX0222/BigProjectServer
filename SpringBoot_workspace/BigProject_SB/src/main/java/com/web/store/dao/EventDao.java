@@ -10,10 +10,10 @@ import com.web.store.model.EventsBean;
 @Repository
 public interface EventDao extends JpaRepository<EventsBean, Integer> {
 	EventsBean findTop1ByOrderByIdDesc();
-	
+
 	List<EventsBean> findTop2ByOrderByIdDesc();
-	
+
 	List<EventsBean> findTop2ByCountyOrderByIdDesc(String county);
-	
+
 	EventsBean findAllById(Integer id);
 }

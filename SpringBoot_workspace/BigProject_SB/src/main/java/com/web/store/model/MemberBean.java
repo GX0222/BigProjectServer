@@ -26,10 +26,10 @@ public class MemberBean implements Serializable {
 	Integer loginState;
 	Integer loginDelayTime;
 	Integer level;
-	
+
 	public MemberBean(Integer memberId, String account, String username, String password, String mail, String phone,
 			Date birthday, Integer loginState, Integer loginDelayTime, Integer level) {
-		
+
 		this.memberId = memberId;
 		this.account = account;
 		this.username = username;
@@ -122,7 +122,7 @@ public class MemberBean implements Serializable {
 		this.level = level;
 	}
 
-	
+
 //	public MemberBean(Integer pkey, String memberId, String name, String password, String address, String email,
 //			String tel, String userType, Timestamp registerTime, Double totalAmt, Double unpaid_amount,
 //			Blob memberImage, String fileName) {

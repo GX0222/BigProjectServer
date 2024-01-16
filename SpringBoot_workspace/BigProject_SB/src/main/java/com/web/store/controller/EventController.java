@@ -15,11 +15,11 @@ import jakarta.servlet.http.HttpServletRequest;
 
 @Controller
 public class EventController {
-	
+
 	EhService ehservice;
 	EventService eventService;
-	
-	
+
+
 	public EventController(EventService eventService) {
 		super();
 		this.eventService = eventService;
@@ -36,22 +36,22 @@ public class EventController {
 //		List<ehBean> eventIds = ehservice.findAllByClassId(1);
 ////		List<Integer> ids = new ArrayList<>();
 //		List<EventsBean> eventsByHobby = null;
-//		
+//
 //		for(ehBean eventId : eventIds) {
 //			Integer id = eventId.getId();
 //			eventsByHobby.add(eventService.findAllById(id)) ;
 //		}
-//		
+//
 //		model.addAttribute("events", eventsByHobby);
 //		return "Event/EventList";
 //	}
-	
-	
+
+
 	@GetMapping("/EventList")
 	public String eventlist(Model model, HttpServletRequest request) {
 		List<EventsBean> eventLsit = eventService.findAll();
 		model.addAttribute("eventList", eventLsit);
-		
+
 		// 假設items是你的數據源
 	    List<String> items = new ArrayList<>();
 	    for (int i = 1; i <= 100; i++) {
@@ -70,14 +70,14 @@ public class EventController {
 	    int startIndex = (currentPage - 1) * recordsPerPage;
 	    int endIndex = Math.min(startIndex + recordsPerPage, totalRecords);
 	    List<String> currentItems = items.subList(startIndex, endIndex);
-	    
+
 	    // 將totalPages和currentPage添加到模型
 	    model.addAttribute("totalPages", totalPages);
 	    model.addAttribute("currentPage", currentPage);
-	    
+
 		return "Event/EventList";
 	}
 
-	
+
 
 }

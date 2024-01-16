@@ -28,9 +28,9 @@ public class EventsBean implements Serializable {
 	private String eventInfo;
 	private String eventUrl;
 	private Date updateTime;
-	
+
 	public EventsBean() {
-        
+
     }
 
 	public EventsBean(Integer id, Date startTime, String eventTitle, String eventTime, String county, String location,
@@ -132,14 +132,14 @@ public class EventsBean implements Serializable {
 		return serialVersionUID;
 	}
 
-	
 
-	
 
-	
 
-	
-	
+
+
+
+
+
 //	@Transient
 //	private MultipartFile  productImage;
 //

@@ -59,8 +59,16 @@
 <link rel="stylesheet" href="/static/Tools/footer.css">
 <!-- CSS -->
 <link rel="stylesheet" href="/static/Tools/index.css">
+<link rel="stylesheet" href="/static/Tools/WeatherTool.css">
 
 <style>
+.wtSelect {
+    /* display: block; */
+    /* position: absolute; */
+    width: 200px;
+    height: 200px;
+    background-color: aqua;
+}
 </style>
 </head>
 

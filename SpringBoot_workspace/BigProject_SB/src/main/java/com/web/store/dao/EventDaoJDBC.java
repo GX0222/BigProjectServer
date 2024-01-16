@@ -9,11 +9,11 @@ import com.web.store.model.EventsBean;
 
 @Repository
 public class EventDaoJDBC {
-	
+
 	private final JdbcTemplate jdbcTemplate ;
-	
-	
-	
+
+
+
 	public EventDaoJDBC(JdbcTemplate jdbcTemplate) {
 		super();
 		this.jdbcTemplate = jdbcTemplate;

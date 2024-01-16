@@ -27,6 +27,6 @@ public class weather implements Serializable {
 	String daynightState;
 	String daynightStateVal;
 	String daynightRain;
-	
-	
+
+
 }

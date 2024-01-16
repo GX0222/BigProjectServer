@@ -16,12 +16,12 @@ public class MemberController {
 	public String love(Model model) {
 		return "Member/Love";
 	}
-	
+
 	@GetMapping("/Update")
 	public String update(Model model) {
 		return "Member/Update";
 	}
-	
+
 	@GetMapping("/List")
 	public String list(Model model) {
 		return "Member/List";
@@ -31,10 +31,10 @@ public class MemberController {
 	public String trafficimfor(Model model) {
 		return "trafficimfor";
 	}
-	
+
 	@GetMapping("/Ian/index'")
 	public String ianIndex(Model model) {
 		return "index";
 	}
-	
+
 }

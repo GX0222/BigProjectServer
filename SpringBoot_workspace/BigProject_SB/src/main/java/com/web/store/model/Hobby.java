@@ -15,9 +15,9 @@ public class Hobby implements Serializable {
     @Column(name = "id", unique = true, nullable = false)
     Integer hobbyId;
 	String hobby;
-	
+
 	public Hobby(Integer hobbyId, String hobby) {
-		
+
 		this.hobbyId = hobbyId;
 		this.hobby = hobby;
 	}
@@ -37,7 +37,7 @@ public class Hobby implements Serializable {
 	public void setHobby(String hobby) {
 		this.hobby = hobby;
 	}
-	
-	
-	
+
+
+
 }
