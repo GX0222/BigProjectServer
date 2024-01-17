@@ -56,6 +56,9 @@ public class HomeController {
 //		getWeatherData(model, "屏東縣", "滿州鄉");
 		List<String> countys = weatherTool.getAllCounty();
 		model.addAttribute("countys", countys);
+		System.out.println("=================");
+		System.out.println(weatherTool.getAllWeather());
+		System.out.println("=================");
 		return "index";
 	}
 	
@@ -76,18 +79,5 @@ public class HomeController {
 		model.addAttribute("temp", temp);
 		model.addAttribute("weather", weather);
 	}
-
-//		System.out.println("in indwx(), MHW = " + model.getAttribute("string"));
-//		System.out.println("in indwx(), MHWI = " + model.getAttribute("MHWI"));
-//		System.out.println("in indwx(), MHW2 = " + model.getAttribute("MHW2"));
-//		System.out.println("in indwx(), MHWI2 = " + model.getAttribute("MHWI2"));
-//		System.out.println("in indwx(), MHW23 = " + model.getAttribute("MHW23"));
-
-//
-//	@ModelAttribute
-//	public void m2(Model model) {
-//		model.addAttribute("MHWI","OHHO");
-//		model.addAttribute("MHW2","CC");
-//	}
 
 }

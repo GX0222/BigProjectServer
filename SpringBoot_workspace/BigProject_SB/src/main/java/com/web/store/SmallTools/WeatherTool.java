@@ -4,14 +4,17 @@ import java.io.BufferedReader;
 import java.io.InputStreamReader;
 import java.net.HttpURLConnection;
 import java.net.URL;
+import java.text.Collator;
 import java.text.SimpleDateFormat;
 import java.util.ArrayList;
 import java.util.Collections;
+import java.util.Comparator;
 import java.util.Date;
 import java.util.HashMap;
 import java.util.HashSet;
 import java.util.LinkedList;
 import java.util.List;
+import java.util.Locale;
 import java.util.Map;
 import java.util.Set;
 
@@ -27,10 +30,16 @@ public class WeatherTool {
 
 	private static final String API_URL = "https://opendata.cwa.gov.tw/api/v1/rest/datastore/O-A0001-001?Authorization=CWA-91CBC5B9-4168-4014-8542-1DCD1C42241E&format=JSON&WeatherElement=Weather,AirTemperature&GeoInfo=CountyName,TownName\r\n";
 
-	private List<Map<String, Object>> cache = new ArrayList<>();
+	private List<Map<String, Object>>[] cacheList;
+	private int cacheCount = 3;
 	
+	private List<Map<String, Object>> cache = new ArrayList<>();
+	private List<Map<String, Object>> cacheBk1 = new ArrayList<>();
+	private List<Map<String, Object>> cacheBk2 = new ArrayList<>();
+
 	private List<String> countyListCache = new LinkedList<>();
 	private Set<Map<String, Object>> townListCache = new HashSet<>();
+	private List<String> allWeather = new LinkedList<>();
 
 	@Scheduled(cron = "0 2 * * * *")
 	public void getNowWeatherByHour() {
@@ -38,16 +47,53 @@ public class WeatherTool {
 		String currentTime = sdf.format(new Date());
 
 		if (currentTime.endsWith(":02:00")) {
-			// 在整點2分時執行資料抓取
 			List<Map<String, Object>> newData = getUrlData();
-			// 更新快取
-			cache = newData;
-			// 在這裡處理新的資料，例如更新快取或其他操作
+			if (cache.isEmpty()) {
+				cache = newData;
+			} else {
+				if (cacheBk1.isEmpty()) {
+					cacheBk1 = cache;
+					cache = newData;
+				} else {
+					cacheBk2 = cacheBk1;
+					cacheBk1 = cache;
+					cache = newData;
+				}
+			}
+
+			updateAllCountyList();
+			updateAllTownList();
+			updateAllWeather();
 			System.out.println("氣象資料更新: " + currentTime);
 		}
 
 	}
-	
+
+	public List<String> getAllWeather() {
+		if (allWeather.isEmpty()) {
+			updateAllWeather();
+		}
+		return allWeather;
+	}
+
+	// 開發用，更新所有天氣狀態
+	public void updateAllWeather() {
+		if (cache.isEmpty()) {
+			List<Map<String, Object>> newData = getUrlData();
+			cache = newData;
+		}
+
+		Set<String> weatherSet = new HashSet<>();
+		for (Map<String, Object> data : cache) {
+			weatherSet.add(data.get("Weather").toString());
+		}
+
+		allWeather = new ArrayList<>(weatherSet);
+		Collator collator = Collator.getInstance(Locale.TRADITIONAL_CHINESE);
+		Collections.sort(allWeather, collator);
+		System.out.println("更新所有天氣狀態成功~");
+	}
+
 	public void updateAllTownList() {
 		if (cache.isEmpty()) {
 			List<Map<String, Object>> newData = getUrlData();
@@ -61,28 +107,28 @@ public class WeatherTool {
 			townListCache.add(town);
 		}
 	}
-	
+
 	public Set<Map<String, Object>> getAllTown() {
 		if (townListCache.isEmpty()) {
 			updateAllTownList();
 		}
 		return townListCache;
 	}
-	
-	public List<String> getTownByCounty (String CountyName){
+
+	public List<String> getTownByCounty(String CountyName) {
 		if (townListCache.isEmpty()) {
 			updateAllTownList();
 		}
 		List<String> townList = new ArrayList<>();
-		for (Map<String, Object> countyTown :townListCache) {
-			if (((String)countyTown.get("CountyName")).equals(CountyName)) {
+		for (Map<String, Object> countyTown : townListCache) {
+			if (((String) countyTown.get("CountyName")).equals(CountyName)) {
 				townList.add(countyTown.get("TownName").toString());
 			}
 		}
 		Collections.sort(townList);
 		return townList;
 	}
-	
+
 	public void updateAllCountyList() {
 		if (cache.isEmpty()) {
 			List<Map<String, Object>> newData = getUrlData();
@@ -96,7 +142,7 @@ public class WeatherTool {
 		countyListCache = new LinkedList<>(countys);
 		Collections.sort(countyListCache);
 	}
-	
+
 	public List<String> getAllCounty() {
 		if (countyListCache.isEmpty()) {
 			updateAllCountyList();
@@ -118,8 +164,8 @@ public class WeatherTool {
 			List<Map<String, Object>> newData = getUrlData();
 			cache = newData;
 		}
-		for(Map<String, Object> data : cache) {
-			if(((String) data.get("CountyName")).equals(city)) {
+		for (Map<String, Object> data : cache) {
+			if (((String) data.get("CountyName")).equals(city)) {
 				resData.add(data);
 			}
 		}
@@ -130,8 +176,8 @@ public class WeatherTool {
 		List<Map<String, Object>> cityData = new ArrayList<>();
 		cityData = getNowWeatherByCity(city);
 
-		for(Map<String, Object> data : cityData) {
-			if(((String) data.get("CountyName")).equals(city)) {
+		for (Map<String, Object> data : cityData) {
+			if (((String) data.get("CountyName")).equals(city)) {
 				return data;
 			}
 		}
@@ -171,7 +217,7 @@ public class WeatherTool {
 				}
 				reader.close();
 
-				//解析JSON => List<Map<String, Object>>
+				// 解析JSON => List<Map<String, Object>>
 
 				try {
 					ObjectMapper objectMapper = new ObjectMapper();
