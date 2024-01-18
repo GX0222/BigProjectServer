@@ -97,9 +97,9 @@
         
             <div class="info">
                 <ul>
-                	<c:forEach items="${eventPageBean.items}" var="event">
+                	<c:forEach items="${eventList}" var="event">
                 	
-                    <li class="dataList">
+                    	<li class="dataList">
                         <div class="dataDay">${event.getStartTime() }</div>
                         <a href="/Event">
                             <div class="dataImg">
@@ -108,7 +108,7 @@
                             
                             <!-- 使用一個普通的按鈕，點擊時呼叫JavaScript函數 -->
 				            <button onclick="checkLoginAndSubmit(${event.getId()})" class="favoriteButton">收藏</button>
-				
+
 				            <!-- 表單用來提交收藏 -->
 				            <form id="loveForm" action="Love.jsp" method="post">
 				                <input type="hidden" id="eventIdInput" name="eventId" value="">
