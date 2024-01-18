@@ -50,26 +50,35 @@ div.weatherBlock {
 	display: flex;
 }
 
+
+
+
 #wtSelect {
-    width: 600px;
+    width: 300px;
     height: 400px;
-    background-color: gold;
+    background-color: rgb(255, 240, 225);
+	border-radius: 5px;
 	position: fixed;
 	z-index: 2;
 	top: 50%;
     left: 50%;
     transform: translate(-50%, -50%);
-	display: inline-flex;
+	animation: expandWidth 1s forwards;
+	display: none;
 }
 
-#wtSelect .countyDiv {
+#wtSelect > .simpleBarCon {
+	display: inline-flex;
+	height: 400px;
+}
+
+#countyDivID {
 	width: 300px;
-    /* position: relative; */
     height: 100%;
     overflow: scroll;
     will-change: transform;
-    /* direction: ltr; */
-	background-color: aqua;
+
+
 }
 
 div.countyRow, div.townRow {
@@ -78,15 +87,24 @@ div.countyRow, div.townRow {
 	padding: 0px;
 	align-items: center;
 	text-align: center;
-	/* height: 350px; */
+
 }
 
-#wtSelect .townDiv {
+#townDivID {
 	width: 300px;
-    /* position: relative; */
+
     height: 100%;
     overflow: scroll;
     will-change: transform;
-    /* direction: ltr; */
-	background-color:violet;
+
+}
+
+#wtSelect a {
+	color: rgb(150, 115, 80);
+	text-decoration: none;
+	user-select: none;
+}
+
+#wtSelect div.countyRow:hover {
+	background-color: aqua;
 }

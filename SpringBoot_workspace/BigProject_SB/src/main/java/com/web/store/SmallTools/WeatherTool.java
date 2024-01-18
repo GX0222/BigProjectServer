@@ -33,10 +33,9 @@ public class WeatherTool {
 	private List<Map<String, Object>>[] cache;
 	private int cacheCount = 3;
 
-//	private List<Map<String, Object>> cache = new ArrayList<>();
-
 	private List<String> countyListCache = new LinkedList<>();
 	private Set<Map<String, Object>> townListCache = new HashSet<>();
+	private List<String> townListByCountyCache = new ArrayList<>();
 	private List<String> allWeather = new LinkedList<>();
 	
 	 public WeatherTool() {
@@ -125,6 +124,7 @@ public class WeatherTool {
 			}
 		}
 		Collections.sort(townList);
+		townListByCountyCache = new LinkedList<>(townList);
 		return townList;
 	}
 
@@ -171,16 +171,19 @@ public class WeatherTool {
 	public Map<String, Object> getNowWeatherByTown(String city, String town) {
 		List<Map<String, Object>> cityData = new ArrayList<>();
 		cityData = getNowWeatherByCity(city, 0);
-		Map<String, Object> nCompleteData;
 
 		for (Map<String, Object> data : cityData) {
 			if (((String) data.get("TownName")).equals(town)) {
 				String dWeather = data.get("Weather").toString();
 				String dTemp = data.get("AirTemperature").toString();
-				if (dWeather.equals("-99")) {
+				if (dWeather.startsWith("-99")) {
 					String newWeather = getLostDataByTown(city, town, "Weather");
 					data.put("Weather", newWeather);
-				} else if (dTemp.equals("-99")) {
+					if (dTemp.startsWith("-99")) {
+						String newTemp = getLostDataByTown(city, town, "AirTemperature");
+						data.put("AirTemperature", newTemp);
+					}
+				} else if (dTemp.startsWith("-99")) {
 					String newTemp = getLostDataByTown(city, town, "AirTemperature");
 					data.put("AirTemperature", newTemp);
 				} else {
@@ -206,10 +209,12 @@ public class WeatherTool {
 			cityData = new ArrayList<>(getNowWeatherByCity(city, i));
 			for (Map<String, Object> data : cityData) {
 				if (((String) data.get("TownName")).equals(town)) {
-					if (!((String) data.get(lostData)).equals("-99")) {
+					if (!((String) data.get(lostData)).startsWith("-99")) {
 						System.out.println("==========");
 						System.out.println("資料遺失: " + lostData);
 						System.out.println("使用備用資料: " + i);
+						System.out.println(data.get(lostData).toString());
+						System.out.println(data.get("AirTemperature").toString());
 						System.out.println("==========");
 						return data.get(lostData).toString();
 					}
@@ -222,7 +227,7 @@ public class WeatherTool {
 			Map<String, Integer> howMany = new HashMap<>();
 			for (Map<String, Object> data : cityData) {
 				String key = data.get("Weather").toString();
-				if (!key.equals("-99")) {
+				if (!key.startsWith("-99")) {
 					howMany.put(key, (howMany.getOrDefault(key, 0) + 1));
 				}
 			}
@@ -240,6 +245,8 @@ public class WeatherTool {
 			}
 			return maxWeather;
 		} else {
+			double avg; 
+//			townListByCountyCache;
 			return "87.2";
 		}
 	}

@@ -62,6 +62,9 @@ public class HomeController {
 		return "index";
 	}
 	
+	
+	
+	
 	@PostMapping("/getTownByCounty")
     @ResponseBody
     public List<String> getTownByCounty(@RequestBody Map<String, String> req) {
@@ -70,6 +73,18 @@ public class HomeController {
 //		System.out.println(req.get("CountyName"));
 //      System.out.println(townList);
         return townList;
+    }
+	
+	@PostMapping("/getWeatherByTown")
+    @ResponseBody
+    public Map<String, Object> getWeatherByTown(@RequestBody Map<String, String> req) {
+		Map<String, Object> townWeather = weatherTool.getNowWeatherByTown(req.get("CountyName"), req.get("TownName"));
+		System.out.println("===================");
+		System.out.println("前端發來: "+req.get("CountyName").toString());
+		System.out.println(req.get("TownName").toString());
+		System.out.println("===================");
+		System.out.println(townWeather.get("AirTemperature").toString());
+        return townWeather;
     }
 
 	@ModelAttribute("weatherTemp")

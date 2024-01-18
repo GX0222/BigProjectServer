@@ -23,15 +23,18 @@
 </div>
 
 <div id="wtSelect">
-	<div id="countyDivID" class="simplebar-content-wrapper countyDiv" data-simplebar>
-		<div  style="width: 200px; padding: 0px;">
-			<c:forEach items="${countys }" var="county">
-				<div class="countyRow"><a class="countyLink" data-county="${county}">${county }</a></div>
-			</c:forEach>               
+
+	<div class="simpleBarCon">
+		<div id="countyDivID" class="simplebar-content-wrapper countyDiv" data-simplebar>
+			<div>
+				<c:forEach items="${countys }" var="county">
+					<div class="countyRow"><a class="countyLink" data-county="${county}">${county }</a></div>
+				</c:forEach>               
+			</div>
 		</div>
-    </div>
-	<div id="townDivID" class="simplebar-content-wrapper townDiv" data-simplebar>
-		<div  style="width: 200px; padding: 0px;">
+		<div id="townDivID" class="simplebar-content-wrapper townDiv" data-simplebar>
+			<div>
+			</div>
 		</div>
 	</div>
 </div>
