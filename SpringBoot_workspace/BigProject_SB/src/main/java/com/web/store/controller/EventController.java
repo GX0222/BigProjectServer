@@ -15,8 +15,7 @@ import com.web.store.service.EventService;
 public class EventController {
 
 	EhService ehservice;
-	@Autowired
-    private EventService eventService;
+	EventService eventService;
 	
 	
 	public EventController(EventService eventService) {
