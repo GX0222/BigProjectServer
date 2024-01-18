@@ -3,6 +3,9 @@ package com.web.store.service.Impl;
 import java.util.List;
 
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.data.domain.Page;
+import org.springframework.data.domain.PageRequest;
+import org.springframework.data.domain.Pageable;
 import org.springframework.stereotype.Service;
 
 import com.web.store.dao.EventDao;
@@ -55,6 +58,14 @@ public class EventServiceImpl implements EventService {
 
 		return eventDao.findAllById(id);
 	}
+	
+	@Override
+    public Page<EventsBean> getEventsByCounty(String county, int pageNo, int pageSize) {
+        // 使用分頁查詢方法
+        return eventDao.findByCounty(county, PageRequest.of(pageNo, pageSize));
+    }
+
+
 	
 
 	 

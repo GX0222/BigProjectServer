@@ -3,10 +3,14 @@ package com.web.store.controller;
 
 import java.util.List;
 
-import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.data.domain.Page;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.GetMapping;
+import org.springframework.web.bind.annotation.PathVariable;
+import org.springframework.web.bind.annotation.RequestParam;
+
+import com.github.pagehelper.PageInfo;
 import com.web.store.model.EventsBean;
 import com.web.store.service.EhService;
 import com.web.store.service.EventService;
@@ -48,15 +52,29 @@ public class EventController {
 	@GetMapping("/EventList")
 	public String eventlist(Model model) {		
 		List<EventsBean> eventList = eventService.findAll();
-	    model.addAttribute("eventList", eventList);	   
+	    model.addAttribute("eventList", eventList);	  
+	    
 		return "Event/EventList";
 	}
-	
+
+		@GetMapping("/EventList/{county}")
+		public String eventList(@PathVariable String county,
+		                        @RequestParam(defaultValue = "0") int pageNo,
+		                        @RequestParam(defaultValue = "10") int pageSize,
+		                        Model model) {
+	    // 使用服務層方法獲取分頁數據
+	    Page<EventsBean> page = eventService.getEventsByCounty(county, pageNo, pageSize);
+
+	    // 將分頁數據傳遞給前端
+	    model.addAttribute("events", page.getContent());
+	    model.addAttribute("currentPage", page.getNumber()); // 注意這裡修改
+	    model.addAttribute("totalPages", page.getTotalPages());
+	    model.addAttribute("page", page);
+
+
+	    return "Event/EventList";
+	}
 
 	
-	
-
-
-
 
 }

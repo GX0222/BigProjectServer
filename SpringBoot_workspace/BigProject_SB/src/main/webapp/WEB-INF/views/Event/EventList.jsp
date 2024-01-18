@@ -2,10 +2,13 @@
 	pageEncoding="UTF-8"%>
 <%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c"%>
 <%@ taglib uri="http://www.springframework.org/tags" prefix="spring"%>
-
+<%@ page import="org.springframework.data.domain.Page" %>
+<%@ page import="java.util.List" %>
+<%@ page import="java.util.ArrayList" %>
 
 <%@ page import="java.util.List" %>
 <%@ page import="java.util.ArrayList" %>
+<%@ taglib uri="http://java.sun.com/jsp/jstl/functions" prefix="fn" %>
 
 
 <!DOCTYPE html>
@@ -17,6 +20,7 @@
     <title>活動資訊</title>
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet"
         integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN" crossorigin="anonymous">
+    <link href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" rel="stylesheet">
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"
         integrity="sha384-C6RzsynM9kWDrMNeT87bh95OGNyZPhcTNXj1NW7RuBCsyN/o0jlpcV8Qyq46cDfL"
         crossorigin="anonymous"></script>
@@ -96,46 +100,74 @@
             </ul>
         
             <div class="info">
-                <ul>
-                	<c:forEach items="${eventList}" var="event">
-                	
-                    	<li class="dataList">
-                        <div class="dataDay">${event.getStartTime() }</div>
-                        <a href="/Event">
-                            <div class="dataImg">
-                                <img src="/static/image/2023聖誕節.jpg">
-                            </div>
-                            
-                            <!-- 使用一個普通的按鈕，點擊時呼叫JavaScript函數 -->
-				            <button onclick="checkLoginAndSubmit(${event.getId()})" class="favoriteButton">收藏</button>
+				<ul>
+		            <!-- 顯示前十筆資料 -->
+		            <c:forEach items="${eventList}" var="event" varStatus="loop">
+		                <c:if test="${(currentPage * pageSize) + loop.index < 10}">
+		                    <li class="dataList">
+		                        <div class="dataDay">${event.getStartTime()}</div>
+		                        <div class="dataCounty">${event.getCounty()}</div>
+		                        <div class="dataInfo">
+		                            ${fn:substring(event.getEventInfo(), 0, 100)}
+		                            <c:if test="${fn:length(event.getEventInfo()) > 100}">...</c:if>
+		                        </div>
+		                    </li>
+		                </c:if>
+		            </c:forEach>
+		        </ul>
+				<!-- 分頁元件 -->
+		        <nav aria-label="Page navigation example">
+		            <ul class="pagination">
+		                <li class="page-item">
+		                    <a class="page-link" href="${pageContext.request.contextPath}/EventList/${county}?pageNo=0" aria-label="First">
+		                        <span aria-hidden="true">&laquo;&laquo;</span>
+		                    </a>
+		                </li>
+		                
+						<c:set var="startPage" value="${Math.max(0, Math.min(currentPage, totalPages - 5))}" />
+						<c:set var="endPage" value="${Math.max(0, Math.min(totalPages - 1, currentPage + 4))}" />
+						
+						<c:forEach var="i" begin="${startPage}" end="${endPage}">
+						    <li class="page-item">
+						        <a class="page-link" href="${pageContext.request.contextPath}/EventList/${county}?pageNo=${i}">
+						            ${i + 1} (currentPage: ${currentPage}, totalPages: ${totalPages})
+						        </a>
+						    </li>
+						</c:forEach>
 
-				            <!-- 表單用來提交收藏 -->
-				            <form id="loveForm" action="Love.jsp" method="post">
-				                <input type="hidden" id="eventIdInput" name="eventId" value="">
-				            </form>
-                            
-                            <div class="dataText">
-                                <div class="dataCounty">
-                                    ${event.getCounty() }
-                                </div>
-                                <div class="dataInfo">
-                                    ${event.getEventInfo() }
-                                </div>
-                            </div>
-                        </a>
-                    </li>
-                    
-                    </c:forEach>
-                    
-                </ul>
+
+
+
+
+								                		                
+		                <li class="page-item">
+		                    <a class="page-link" href="${pageContext.request.contextPath}/EventList/${county}?pageNo=${totalPages - 1}" aria-label="Last">
+		                        <span aria-hidden="true">&raquo;&raquo;</span>
+		                    </a>
+		                </li>
+		            </ul>
+		        </nav>
+					
+					
+			</div>
+
+										
+
+
 
     <!-- Footer -->
 	<%@ include file="../Shared/Footer.jsp" %>
 	<!--footer end-->
 	
-    <!-- script -->
-	<script src="EventListToLove.js"></script>
-	<!-- script end -->
+<!--     script -->
+<!-- 	<script src="EventListToLove.js"></script> -->
+<!-- 	<!-- script end --> -->
+
+					
+	<script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.9.2/dist/umd/popper.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+
 	
 </body>
 

@@ -1,10 +1,14 @@
 package com.web.store.service;
 
 import java.util.List;
+import java.util.Map;
+
+import org.springframework.data.domain.Page;
 
 import com.web.store.model.EventsBean;
 
 public interface EventService {
+
 	public List<EventsBean> findAll();
 
 	public EventsBean findTop1ByOrderByIdDesc();
@@ -15,5 +19,9 @@ public interface EventService {
 
 	public EventsBean findAllById(Integer id);
 
+	Page<EventsBean> getEventsByCounty(String county, int pageNo, int pageSize);
+	
+
+	
 	
 	}
