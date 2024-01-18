@@ -1,13 +1,12 @@
 package com.web.store.controller;
 
+
 import java.util.List;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.GetMapping;
-import org.springframework.web.bind.annotation.RequestParam;
-
 import com.web.store.model.EventsBean;
 import com.web.store.service.EhService;
 import com.web.store.service.EventService;
@@ -53,6 +52,8 @@ public class EventController {
 	    model.addAttribute("eventList", eventList);	   
 		return "Event/EventList";
 	}
+	
+
 	
 	
 

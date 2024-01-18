@@ -97,7 +97,7 @@
         
             <div class="info">
                 <ul>
-                	<c:forEach items="${eventList}" var="event">
+                	<c:forEach items="${eventPageBean.items}" var="event">
                 	
                     <li class="dataList">
                         <div class="dataDay">${event.getStartTime() }</div>
