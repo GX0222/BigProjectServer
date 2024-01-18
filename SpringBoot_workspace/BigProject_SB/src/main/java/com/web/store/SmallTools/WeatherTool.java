@@ -38,6 +38,13 @@ public class WeatherTool {
 	private List<String> countyListCache = new LinkedList<>();
 	private Set<Map<String, Object>> townListCache = new HashSet<>();
 	private List<String> allWeather = new LinkedList<>();
+	
+	 public WeatherTool() {
+	        this.cache = new List[cacheCount];
+	        for (int i = 0; i < cacheCount; i++) {
+	            this.cache[i] = new ArrayList<>();
+	        }
+	    }
 
 	@Scheduled(cron = "0 2 * * * *")
 	public void getNowWeatherByHour() {
@@ -72,7 +79,7 @@ public class WeatherTool {
 
 	// 開發用，更新所有天氣狀態
 	public void updateAllWeather() {
-		if (cache[0].isEmpty()) {
+		if (cache[0] == (null)) {
 			get1stNowWeather();
 		}
 
@@ -88,7 +95,7 @@ public class WeatherTool {
 	}
 
 	public void updateAllTownList() {
-		if (cache[0].isEmpty()) {
+		if (cache[0] == (null) || cache[0].isEmpty()) {
 			get1stNowWeather();
 		}
 
@@ -122,7 +129,7 @@ public class WeatherTool {
 	}
 
 	public void updateAllCountyList() {
-		if (cache[0].isEmpty()) {
+		if (cache[0] == (null) || cache[0].isEmpty()) {
 			get1stNowWeather();
 		}
 		Set<String> countys = new HashSet<>();
@@ -142,7 +149,7 @@ public class WeatherTool {
 	}
 
 	public List<Map<String, Object>> getNowWeather() {
-		if (cache[0].isEmpty()) {
+		if (cache[0] == (null) || cache[0].isEmpty()) {
 			get1stNowWeather();
 		}
 		return cache[0];
@@ -150,7 +157,7 @@ public class WeatherTool {
 
 	public List<Map<String, Object>> getNowWeatherByCity(String city, int cacheIndex) {
 		List<Map<String, Object>> resData = new ArrayList<>();
-		if (cache[0].isEmpty()) {
+		if (cache[0] == (null) || cache[0].isEmpty()) {
 			get1stNowWeather();
 		}
 		for (Map<String, Object> data : cache[cacheIndex]) {
@@ -171,14 +178,15 @@ public class WeatherTool {
 				String dWeather = data.get("Weather").toString();
 				String dTemp = data.get("AirTemperature").toString();
 				if (dWeather.equals("-99")) {
-					getLostDataByTown(city, town, "Weather");
-					nCompleteData = new HashMap<>(data);
+					String newWeather = getLostDataByTown(city, town, "Weather");
+					data.put("Weather", newWeather);
 				} else if (dTemp.equals("-99")) {
-					getLostDataByTown(city, town, "AirTemperature");
+					String newTemp = getLostDataByTown(city, town, "AirTemperature");
+					data.put("AirTemperature", newTemp);
 				} else {
 					System.out.println("資料正確");
-					return data;
 				}
+				return data;
 			}
 		}
 
@@ -192,10 +200,10 @@ public class WeatherTool {
 
 	/////////////////////////////////////////////////////////////////////
 	public String getLostDataByTown(String city, String town, String lostData) {
-		List<Map<String, Object>> cityData = new ArrayList<>();
+		List<Map<String, Object>> cityData;
 
 		for (int i = 1; i < cacheCount; i++) {
-			cityData = getNowWeatherByCity(city, i);
+			cityData = new ArrayList<>(getNowWeatherByCity(city, i));
 			for (Map<String, Object> data : cityData) {
 				if (((String) data.get("TownName")).equals(town)) {
 					if (!((String) data.get(lostData)).equals("-99")) {
@@ -204,17 +212,36 @@ public class WeatherTool {
 						System.out.println("使用備用資料: " + i);
 						System.out.println("==========");
 						return data.get(lostData).toString();
-					} 
+					}
 				}
 			}
 		}
-		
+
+		cityData = new ArrayList<>(getNowWeatherByCity(city, 0));
 		if (lostData.equals("Weather")) {
-			
-		}else {
-			
+			Map<String, Integer> howMany = new HashMap<>();
+			for (Map<String, Object> data : cityData) {
+				String key = data.get("Weather").toString();
+				if (!key.equals("-99")) {
+					howMany.put(key, (howMany.getOrDefault(key, 0) + 1));
+				}
+			}
+			String maxWeather = null;
+			int maxMany = 0;
+			for (Map.Entry<String, Integer> KV : howMany.entrySet() ) {
+				if(KV.getValue()>maxMany) {
+					maxWeather = KV.getKey();
+					maxMany = KV.getValue();
+				}
+			}
+			if(maxWeather == null || maxWeather.isEmpty()) {
+				System.out.println("氣象資料為空錯誤");
+				maxWeather = "晴天";
+			}
+			return maxWeather;
+		} else {
+			return "87.2";
 		}
-		return null;
 	}
 
 	public void get1stNowWeather() {
