@@ -105,6 +105,12 @@
 		            <c:forEach items="${eventList}" var="event" varStatus="loop">
 		                <c:if test="${(currentPage * pageSize) + loop.index < 10}">
 		                    <li class="dataList">
+								<!-- 使用一個普通的按鈕，點擊時呼叫JavaScript函數 -->
+					            <button onclick="checkLoginAndSubmit(${event.getId()})" class="favoriteButton">收藏</button>
+					            <!-- 表單用來提交收藏 -->
+					            <form id="loveForm" action="Love.jsp" method="post">
+					                <input type="hidden" id="eventIdInput" name="eventId" value="">
+					            </form>		                   
 		                        <div class="dataDay">${event.getStartTime()}</div>
 		                        <div class="dataCounty">${event.getCounty()}</div>
 		                        <div class="dataInfo">
@@ -130,7 +136,7 @@
 						<c:forEach var="i" begin="${startPage}" end="${endPage}">
 						    <li class="page-item">
 						        <a class="page-link" href="${pageContext.request.contextPath}/EventList/${county}?pageNo=${i}">
-						            ${i + 1} (currentPage: ${currentPage}, totalPages: ${totalPages})
+						            ${i + 1} (第 ${currentPage}頁, 總頁數: ${totalPages})
 						        </a>
 						    </li>
 						</c:forEach>

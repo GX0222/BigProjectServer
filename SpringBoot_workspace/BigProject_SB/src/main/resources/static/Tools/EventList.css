@@ -141,10 +141,10 @@ div.dataInfo {
 .favoriteButton {
 		    background-color: rgba(111, 79, 48, 0.6);
 		    color: white;
-		    height:3vw;
+		    height:2.5vw;
 		    padding: 10px 20px;
-		    margin-left:2.5vw; 
-		    margin-right:0.5vw; 
+/* 		    margin-left:2.5vw;  */
+/* 		    margin-right:0.5vw;  */
 		    border: none;
 		    border-radius: 5px;
 		    cursor: pointer;
