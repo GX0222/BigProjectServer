@@ -32,6 +32,7 @@
 <!-- Google Icon -->
 <link href="https://fonts.googleapis.com/icon?family=Material+Icons"
 	rel="stylesheet">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200" />
 <!-- SimpleBar-->
 <link rel="stylesheet"
 	href="https://unpkg.com/simplebar@latest/dist/simplebar.css" />
@@ -59,6 +60,8 @@
 <link rel="stylesheet" href="/static/Tools/footer.css">
 <!-- CSS -->
 <link rel="stylesheet" href="/static/Tools/index.css">
+<%-- JS --%>
+<script src="/static/Tools/index.js" defer></script>
 <!-- WeatherTool -->
 <link rel="stylesheet" href="/static/Tools/WeatherTool.css">
 <script src="/static/Tools/WeatherTool.js" defer></script>
@@ -165,7 +168,7 @@
 							<div class="weatherBlock">台南市<br>將軍區</div>
 						</div>
 						<div class="weatherColOff col-4">
-							<div class="weatherBlock">${temp }℃</div>
+							<div class="weatherBlock">${temp1st }℃</div>
 						</div>
 						<div class="weatherColOff col-4">
 							<div class="weatherBlock">降雨機率：20%</div>
@@ -355,9 +358,22 @@
 
 		<div class="homeRight col-0 col-md-3 order-1 order-md-2">
 			<jsp:include page="WeatherTool/WeatherTool.jsp"></jsp:include>
-			<div class="couponGroup" data-simplebar>
+			<div class="smallNewsGroup" data-simplebar>
 				<c:forEach items="${Taipei }" var="TaipeiEvents">
-					<div class="couponCon">${TaipeiEvents.getEventInfo() }</div>
+					<div class="smallNews">
+						<div class="snTitle">
+							${TaipeiEvents.getEventTitle() }
+						</div>
+						<div class="snTime">
+							${TaipeiEvents.getStartTime() }
+						</div>
+						<div class="snLocation">
+							${TaipeiEvents.getLocation() }
+						</div>
+						<div class="snInfo">
+							${TaipeiEvents.getEventInfo() }
+						</div>
+					</div>
 				</c:forEach>
 			</div>
 		</div>
@@ -370,18 +386,7 @@
 
 
 	<script>
-		$(document).ready(function() {
-			$('#myOffcanvas').on('click', function() {
-				if (!$('#offcanvasExample').hasClass('show')) {
-					$('.fixedDiv').animate({
-						right : '350px'
-					}, 300);
-					$('.fixedDiv').animate({
-						right : '0'
-					}, 100);
-				}
-			});
-		});
+		
 	</script>
 </body>
 

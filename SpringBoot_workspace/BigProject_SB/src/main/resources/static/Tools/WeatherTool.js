@@ -14,16 +14,19 @@ $("#wtSelect").on("click", ".countyLink", function () {
             var targetWidth = 600;
 
             if (currentWidth !== targetWidth) {
+                $("#townDivID").animate({ width: "300px" }, 500);
                 $("#wtSelect").animate({ width: targetWidth + "px" }, 500, function () {
                     $.each(towns, function (index, town) {
-                        var newTownRow = $("<div class='townRow'><a class='townLink' data-county='" + selectedCounty + "' data-town='" + town + "'>" + town + "</a></div>");
+                        var newTownRow = $("<div class='townRow'><div class='townLink' data-county='" + selectedCounty + "' data-town='" + town + "'>" + town + "</div></div>");
                         townDiv.append(newTownRow);
                         newTownRow.hide().delay(200 * index).fadeIn(300);
                     });
                 });
+                $("#countyDivID").css("border-right", "2px solid rgba(150, 115, 80, 1)");
+
             } else {
                 $.each(towns, function (index, town) {
-                    var newTownRow = $("<div class='townRow'><a class='townLink' data-county='" + selectedCounty + "' data-town='" + town + "'>" + town + "</a></div>");
+                    var newTownRow = $("<div class='townRow'><div class='townLink' data-county='" + selectedCounty + "' data-town='" + town + "'>" + town + "</div></div>");
                     townDiv.append(newTownRow);
                     newTownRow.hide().delay(200 * index).fadeIn(300);
                 });
@@ -60,11 +63,15 @@ $("#wtSelect").on("click", ".townLink", function () {
             CTDiv.html(res.CountyName + "<br>" + res.TownName);
             var tempDiv = $("#weatherTool > div > div:nth-child(2) > div");
             tempDiv.text(res.AirTemperature + "℃");
-            $("#wtSelect").fadeOut(500, function() {
-                $(this).css("width", "300px");
-                $(this).hide();
+            
+            $("#townDivID").animate({ width: "0px" }, 500, function (){
+                $(".townRow").remove();
             });
-            $(".townRow").remove();
+            $("#wtSelect").animate({ width: "300px" }, 500, function(){
+                $("#countyDivID").css("border-right", "none");
+            });
+            $("#wtSelect").fadeOut(500);
+            
         },
         error: function (error) {
             console.error("Error:", error);
@@ -82,11 +89,25 @@ $("#weatherTool").on("click", function () {
     $("#wtSelect").fadeIn(500);
 });
 
-//停止主頁面滾動
-$("#wtSelect").on('mouseenter', function () {
-    $('body').css('overflow', 'hidden');
+$("#wtClose").on("click", function () {
+    if($("#wtSelect").width() > 300){
+        $("#townDivID").animate({ width: "0px" }, 500, function (){
+            $(".townRow").remove();
+        });
+        $("#wtSelect").animate({ width: "300px" }, 500, function(){
+            $("#countyDivID").css("border-right", "none");
+        });
+        $("#wtSelect").fadeOut(500);
+    }else{
+        $("#wtSelect").fadeOut(500);  
+    }
 });
 
-$("#wtSelect").on('mouseleave', function () {
-    $('body').css('overflow', 'auto');
-});
+//停止主頁面滾動
+// $("#wtSelect").on('mouseenter', function () {
+//     $('body').css('overflow', 'hidden');
+// });
+
+// $("#wtSelect").on('mouseleave', function () {
+//     $('body').css('overflow', 'auto');
+// });

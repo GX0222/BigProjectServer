@@ -25,9 +25,8 @@ public class HomeController {
 	WeatherTool weatherTool;
 	private static final Logger logger = LoggerFactory.getLogger(HomeController.class);
 
-//	EventDaoJDBC ehDao2;
 //	JDBC
-	EventDaoJDBC ehDaoJDBC;
+//	EventDaoJDBC ehDaoJDBC;
 
 
 	public HomeController(EventService eventService, EventDaoJDBC ehDaoJDBC, WeatherTool weatherTool) {
@@ -35,7 +34,7 @@ public class HomeController {
 		this.eventService = eventService;
 		this.weatherTool = weatherTool;
 //		JDBC
-		this.ehDaoJDBC = ehDaoJDBC;
+//		this.ehDaoJDBC = ehDaoJDBC;
 	}
 
 
@@ -45,20 +44,17 @@ public class HomeController {
 		List<EventsBean> eventLsit = eventService.findAll();
 		List<EventsBean> eventTop2 = eventService.findTop2ByOrderByIdDesc();
 		List<EventsBean> eventTop2Taipei = eventService.findTop2ByCountyOrderByIdDesc("台北市");
+		String wtCounty = eventTop2.get(1).getCounty();
 //		JDBC
-		List<EventsBean> eventssss = ehDaoJDBC.findAll();
+//		List<EventsBean> eventssss = ehDaoJDBC.findAll();
+//		model.addAttribute("eventssss", eventssss);
 
 		model.addAttribute("eventList", eventLsit);
 		model.addAttribute("eventTop2", eventTop2);
 		model.addAttribute("Taipei", eventTop2Taipei);
-		model.addAttribute("eventssss", eventssss);
-		getWeatherData(model, "臺南市", "將軍區");
-//		getWeatherData(model, "屏東縣", "滿州鄉");
+		getWeatherData(model, wtCounty, "將軍區");
 		List<String> countys = weatherTool.getAllCounty();
 		model.addAttribute("countys", countys);
-		System.out.println("=================");
-		System.out.println(weatherTool.getAllWeather());
-		System.out.println("=================");
 		return "index";
 	}
 	
@@ -68,10 +64,7 @@ public class HomeController {
 	@PostMapping("/getTownByCounty")
     @ResponseBody
     public List<String> getTownByCounty(@RequestBody Map<String, String> req) {
-		List<String> townList = weatherTool.getTownByCounty(req.get("CountyName"));
-//		System.out.println("前端發來: "+req);
-//		System.out.println(req.get("CountyName"));
-//      System.out.println(townList);
+		List<String> townList = weatherTool.getTownNameByCounty(req.get("CountyName"));
         return townList;
     }
 	
@@ -79,20 +72,29 @@ public class HomeController {
     @ResponseBody
     public Map<String, Object> getWeatherByTown(@RequestBody Map<String, String> req) {
 		Map<String, Object> townWeather = weatherTool.getNowWeatherByTown(req.get("CountyName"), req.get("TownName"));
-		System.out.println("===================");
-		System.out.println("前端發來: "+req.get("CountyName").toString());
-		System.out.println(req.get("TownName").toString());
-		System.out.println("===================");
-		System.out.println(townWeather.get("AirTemperature").toString());
+//		System.out.println("===================");
+//		System.out.println("前端發來: "+req.get("CountyName").toString());
+//		System.out.println(req.get("TownName").toString());
+//		System.out.println("===================");
+//		System.out.println(townWeather.get("AirTemperature").toString());
         return townWeather;
     }
 
 	@ModelAttribute("weatherTemp")
 	public void getWeatherData(Model model,String city, String town) {
-		String temp = weatherTool.getNowWeatherByTown(city, town).get("AirTemperature").toString();
-		String weather = weatherTool.getNowWeatherByTown(city, town).get("Weather").toString();
-		model.addAttribute("temp", temp);
-		model.addAttribute("weather", weather);
+		if(city == null || city.isEmpty()) {
+			List<EventsBean> eventTop2 = eventService.findTop2ByOrderByIdDesc();
+			city = eventTop2.get(1).getCounty();	
+		}
+		Map<String, Object> weatherData = weatherTool.getNowWeatherByTown(city, town);
+		String temp = weatherData.get("AirTemperature").toString();
+		String weather = weatherData.get("Weather").toString();
+		String county = weatherData.get("CountyName").toString();
+		String townn = weatherData.get("TownName").toString();
+		model.addAttribute("temp1st", temp);
+		model.addAttribute("weather1st", weather);
+		model.addAttribute("county1st", county);
+		model.addAttribute("town1st", townn);
 	}
 
 }

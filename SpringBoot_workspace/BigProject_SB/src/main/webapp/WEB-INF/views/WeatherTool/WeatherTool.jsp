@@ -8,27 +8,31 @@
 <div class="weatherDiv" id="weatherTool">
 	<div class="row p-0 m-0">
 		<div class="weatherColTop col-6 col-xxl-4">
-			<div class="weatherBlock">台南市<br>將軍區</div>
+			<div class="weatherBlock">${county1st }<br>${town1st }</div>
 		</div>
 		<div class="weatherColTop col-6 col-xxl-4">
-			<div class="weatherBlock">${temp }℃</div>
+			<div class="weatherBlock">${temp1st }℃</div>
 		</div>
 		<div class="weatherColSm col-12">
-			<div class="weatherBlock">台南市 將軍區<br>${temp }℃</div>
+			<div class="weatherBlock">${county1st } ${town1st }<br>${temp1st }℃</div>
 		</div>
 		<div class="weatherCol col col-xxl-4">
-			<div class="weatherBlock">${weather }</div>
+			<div class="weatherBlock">${weather1st }</div>
 		</div>
 	</div>
 </div>
 
 <div id="wtSelect">
-
+	<div class="wtHead">
+		<span id="wtClose" class="material-symbols-outlined">
+			close
+		</span>
+	</div>
 	<div class="simpleBarCon">
 		<div id="countyDivID" class="simplebar-content-wrapper countyDiv" data-simplebar>
 			<div>
 				<c:forEach items="${countys }" var="county">
-					<div class="countyRow"><a class="countyLink" data-county="${county}">${county }</a></div>
+					<div class="countyRow"><div class="countyLink" data-county="${county}">${county }</div></div>
 				</c:forEach>               
 			</div>
 		</div>
