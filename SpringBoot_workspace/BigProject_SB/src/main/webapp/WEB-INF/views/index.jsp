@@ -3,6 +3,8 @@
 <%@ taglib prefix="form" uri="http://www.springframework.org/tags/form"%>
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core"%>
 <%@ taglib uri="http://www.springframework.org/tags" prefix="spring"%>
+<%@ taglib uri="http://java.sun.com/jsp/jstl/functions" prefix="fn" %>
+
 
 
 
@@ -66,9 +68,6 @@
 <link rel="stylesheet" href="/static/Tools/WeatherTool.css">
 <script src="/static/Tools/WeatherTool.js" defer></script>
 
-<style>
-
-</style>
 </head>
 
 
@@ -80,7 +79,7 @@
 		allowfullscreen> </iframe>
 </div>
 
-<body>
+<body style="background-image: url('/static/image/首頁背景.JPG');">
 
 	<div id="overlayDiv">
 		<!-- navBar -->
@@ -231,16 +230,20 @@
 					<div id="news1" class="newsCon">
 						<div class="newsImgCon">
 							<img class="newsImg"
-								src="<c:url value='/static/image/2023聖誕節.jpg' />" alt="">
+								src="<c:url value='/static/image/news01.jpg' />" alt="">
 						</div>
 						<div class="newsTextCon">
 							<div class="newsTextBgR">
 								<div class="newsText">
 									<div class="newsTextTitle">
-										<h4>${eventTop2[0].getEventTitle()}</h4>
+										<h4 class="newsH4">${eventTop2[0].getEventTitle()}</h4>
 										<hr>
 									</div>
-									${eventTop2[0].getEventInfo()}
+									<c:set var="trimmedInfo" value="${fn:substring(eventTop2[0].getEventInfo(), 0, 50)}" />
+						            ${trimmedInfo}
+						            <c:if test="${fn:length(eventTop2[0].getEventInfo()) > 50}">
+						                ...
+						            </c:if>									
 								</div>
 							</div>
 						</div>
@@ -251,16 +254,20 @@
 							<div class="newsTextBgL">
 								<div class="newsText">
 									<div class="newsTextTitle">
-										<h4>${eventTop2[1].getEventTitle()}</h4>
+										<h4 class="newsH4">${eventTop2[1].getEventTitle()}</h4>
 										<hr>
 									</div>
-									${eventTop2[1].getEventInfo()}
+									<c:set var="trimmedInfo" value="${fn:substring(eventTop2[1].getEventInfo(), 0, 50)}" />
+						            ${trimmedInfo}
+						            <c:if test="${fn:length(eventTop2[0].getEventInfo()) > 50}">
+						                ...
+						            </c:if>	
 								</div>
 							</div>
 						</div>
 						<div class="newsImgCon">
 							<img class="newsImg"
-								src="<c:url value='/static/image/2023聖誕節.jpg' />" alt="">
+								src="<c:url value='/static/image/news02.jpg' />" alt="">
 						</div>
 					</div>
 				</a>
@@ -362,17 +369,17 @@
 				<c:forEach items="${Taipei }" var="TaipeiEvents">
 					<div class="smallNews">
 						<div class="snTitle">
-							${TaipeiEvents.getEventTitle() }
+							${TaipeiEvents.getEventTitle() } →
 						</div>
-						<div class="snTime">
-							${TaipeiEvents.getStartTime() }
-						</div>
-						<div class="snLocation">
-							${TaipeiEvents.getLocation() }
-						</div>
-						<div class="snInfo">
-							${TaipeiEvents.getEventInfo() }
-						</div>
+<!-- 						<div class="snTime"> -->
+<%-- 							${TaipeiEvents.getStartTime() } --%>
+<!-- 						</div> -->
+<!-- 						<div class="snLocation"> -->
+<%-- 							${TaipeiEvents.getLocation() } --%>
+<!-- 						</div> -->
+<!-- 						<div class="snInfo"> -->
+<%-- 							${TaipeiEvents.getEventInfo() } --%>
+<!-- 						</div> -->
 					</div>
 				</c:forEach>
 			</div>

@@ -67,7 +67,7 @@ public class EventController {
 
 	    // 將分頁數據傳遞給前端
 	    model.addAttribute("events", page.getContent());
-	    model.addAttribute("currentPage", page.getNumber()); // 注意這裡修改
+	    model.addAttribute("currentPage", page.getNumber());
 	    model.addAttribute("totalPages", page.getTotalPages());
 	    model.addAttribute("page", page);
 

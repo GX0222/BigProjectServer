@@ -122,37 +122,33 @@
 		            </c:forEach>
 		        </ul>
 				<!-- 分頁元件 -->
-		        <nav aria-label="Page navigation example">
-		            <ul class="pagination">
-		                <li class="page-item">
-		                    <a class="page-link" href="${pageContext.request.contextPath}/EventList/${county}?pageNo=0" aria-label="First">
-		                        <span aria-hidden="true">&laquo;&laquo;</span>
-		                    </a>
-		                </li>
-		                
-						<c:set var="startPage" value="${Math.max(0, Math.min(currentPage, totalPages - 5))}" />
-						<c:set var="endPage" value="${Math.max(0, Math.min(totalPages - 1, currentPage + 4))}" />
-						
-						<c:forEach var="i" begin="${startPage}" end="${endPage}">
-						    <li class="page-item">
-						        <a class="page-link" href="${pageContext.request.contextPath}/EventList/${county}?pageNo=${i}">
-						            ${i + 1} (第 ${currentPage}頁, 總頁數: ${totalPages})
-						        </a>
-						    </li>
-						</c:forEach>
-
-
-
-
-
-								                		                
-		                <li class="page-item">
-		                    <a class="page-link" href="${pageContext.request.contextPath}/EventList/${county}?pageNo=${totalPages - 1}" aria-label="Last">
-		                        <span aria-hidden="true">&raquo;&raquo;</span>
-		                    </a>
-		                </li>
-		            </ul>
-		        </nav>
+				<nav aria-label="Page navigation example">
+				    <ul class="pagination">
+				        <li class="page-item">
+				            <a class="page-link" href="${pageContext.request.contextPath}/EventList/${county}?pageNo=0" aria-label="First">
+				                <span aria-hidden="true">第一頁</span>
+				            </a>
+				        </li>
+				
+				        <c:set var="startPage" value="${Math.max(0, Math.min(currentPage, totalPages - 5))}" />
+				        <c:set var="endPage" value="${Math.max(0, Math.min(totalPages - 1, currentPage + 4))}" />
+				
+				        <c:forEach var="i" begin="${startPage}" end="${endPage}">
+				            <li class="page-item">
+				                <a class="page-link" href="${pageContext.request.contextPath}/EventList/${county}?pageNo=${i}">
+				                    ${i + 1} (第 ${currentPage}頁, 總頁數: ${totalPages})
+				                </a>
+				            </li>
+				        </c:forEach>
+				
+				        <li class="page-item">
+				            <a class="page-link" href="${pageContext.request.contextPath}/EventList/${county}?pageNo=${totalPages - 1}" aria-label="Last">
+				                <span aria-hidden="true">最末頁</span>
+				            </a>
+				        </li>
+				    </ul>
+				</nav>
+		        
 					
 					
 			</div>
