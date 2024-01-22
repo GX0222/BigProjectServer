@@ -4,11 +4,19 @@ import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.GetMapping;
 
+import com.web.store.model.MemberBean;
+
+import jakarta.servlet.http.HttpSession;
+
 @Controller
 public class MemberController {
 
 	@GetMapping("/Member")
-	public String member(Model model) {
+	public String member(Model model,HttpSession session) {
+//		session.getAttribute(null);
+		MemberBean mb;
+		mb = (MemberBean) session.getAttribute("member");
+		System.out.println(mb.getUsername());
 		return "Member/Member";
 	}
 

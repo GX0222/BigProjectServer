@@ -34,7 +34,7 @@
     </div>
 	
 	    <div class="right-side">
-        <form:form method="POST" modelAttribute="member2">
+        <form:form method="POST" modelAttribute="members">
             <h2 style="align-items: center; display: flex; justify-content: center;">註冊</h2>
             <br>
             <label for="account">帳號:</label>

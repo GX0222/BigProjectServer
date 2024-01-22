@@ -1,5 +1,8 @@
 package com.web.store.login.controller;
 
+import java.util.HashMap;
+import java.util.Map;
+
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.stereotype.Controller;
@@ -94,6 +97,18 @@ public class LoginController {
 			return loginForm;
 		}
 		HttpSession session = request.getSession();
+		
+//		Map<String, String> memberData = new HashMap<>();
+//		memberData.put("account",member.getAccount());
+//		memberData.put("username",member.getUsername());
+//		memberData.put("phone",member.getPhone());
+//		memberData.put("birthday",member.getBirthday().toString());
+//		memberData.put("birthday",member.getBirthday().toString());
+		MemberBean memberData;
+		memberData = registerService.findByAccount(bean.getAccount());
+		session.setAttribute("member", memberData);
+		System.out.println(memberData);
+//		System.out.println(member.getAccount());
 		processCookies(bean, request, response);
 		String nextPath = (String)session.getAttribute("requestURI");
 		System.out.println("nextPath=" + nextPath);

@@ -53,7 +53,7 @@ public class RegisterMemberController {
 		member.setPhone("");
 		member.setMail("");
 //		member.setBirthday(null);
-		model.addAttribute("member2", member);
+		model.addAttribute("members", member);
 		
 		System.out.println("1");
 		return inputDataForm;
@@ -132,7 +132,7 @@ public class RegisterMemberController {
 	
 	@PostMapping("/register")
 	public String processFormData(
-	        @ModelAttribute("member2")  MemberBean member,
+	        @ModelAttribute("members")  MemberBean member,
 	        BindingResult result, Model model,
 	        RedirectAttributes ra
 	) {
