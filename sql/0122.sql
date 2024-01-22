@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- 主機： localhost:8964
--- 產生時間： 2024 年 01 月 22 日 12:07
+-- 產生時間： 2024 年 01 月 22 日 12:13
 -- 伺服器版本： 5.7.24
 -- PHP 版本： 8.1.0
 
@@ -20,6 +20,155 @@ SET time_zone = "+00:00";
 --
 -- 資料庫: `bigproject`
 --
+
+-- --------------------------------------------------------
+
+--
+-- 資料表結構 `bus`
+--
+
+CREATE TABLE `bus` (
+  `id` int(11) NOT NULL,
+  `bus_num` varchar(10) NOT NULL,
+  `destination` varchar(20) NOT NULL,
+  `arrival_time` timestamp NOT NULL DEFAULT CURRENT_TIMESTAMP
+) ENGINE=InnoDB DEFAULT CHARSET=utf8;
+
+-- --------------------------------------------------------
+
+--
+-- 資料表結構 `eh`
+--
+
+CREATE TABLE `eh` (
+  `id` int(11) NOT NULL,
+  `event_id` int(11) NOT NULL,
+  `class_id` int(11) NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8;
+
+--
+-- 傾印資料表的資料 `eh`
+--
+
+INSERT INTO `eh` (`id`, `event_id`, `class_id`) VALUES
+(1, 8, 1),
+(2, 9, 1),
+(3, 10, 1),
+(4, 11, 1),
+(5, 12, 1),
+(6, 12, 2),
+(7, 12, 3),
+(8, 13, 1),
+(9, 14, 1),
+(10, 14, 3),
+(11, 15, 1),
+(12, 16, 2),
+(13, 16, 3),
+(14, 17, 3),
+(15, 17, 5),
+(16, 19, 5),
+(17, 19, 3),
+(18, 20, 3),
+(19, 20, 5),
+(20, 21, 2),
+(21, 21, 5),
+(22, 22, 5),
+(23, 22, 2),
+(24, 23, 4),
+(25, 23, 1),
+(26, 24, 1),
+(27, 25, 1),
+(28, 25, 3),
+(29, 25, 4),
+(30, 26, 1),
+(31, 26, 3),
+(32, 26, 4),
+(33, 27, 1),
+(34, 28, 1),
+(35, 29, 1),
+(36, 30, 1),
+(37, 31, 1),
+(38, 32, 2),
+(39, 33, 5),
+(40, 33, 2),
+(41, 34, 2),
+(42, 34, 5),
+(43, 35, 2),
+(44, 36, 2),
+(45, 37, 2),
+(46, 37, 3),
+(47, 37, 5),
+(48, 38, 5),
+(49, 38, 2),
+(50, 39, 2),
+(51, 40, 2),
+(52, 41, 1),
+(53, 42, 2),
+(54, 42, 5),
+(55, 43, 5),
+(56, 43, 2),
+(57, 44, 2),
+(58, 44, 3),
+(59, 45, 2),
+(60, 45, 5),
+(61, 46, 5),
+(62, 46, 2),
+(63, 47, 2),
+(64, 47, 5),
+(65, 48, 5),
+(66, 48, 2),
+(67, 49, 1),
+(68, 49, 2),
+(69, 50, 1),
+(70, 50, 3),
+(71, 51, 1),
+(72, 52, 1),
+(73, 53, 2),
+(74, 53, 5),
+(75, 54, 4),
+(76, 54, 1),
+(77, 55, 2),
+(78, 56, 3),
+(79, 56, 1),
+(80, 57, 5),
+(81, 57, 2),
+(82, 58, 2),
+(83, 58, 5),
+(84, 59, 1),
+(85, 59, 3),
+(86, 60, 5),
+(87, 60, 2),
+(88, 61, 1),
+(89, 61, 3),
+(90, 62, 3),
+(91, 62, 1),
+(92, 63, 1),
+(93, 63, 2),
+(94, 63, 3),
+(95, 64, 1),
+(96, 64, 2),
+(97, 65, 5),
+(98, 65, 2),
+(99, 66, 2),
+(100, 66, 5);
+
+-- --------------------------------------------------------
+
+--
+-- 資料表結構 `event`
+--
+
+CREATE TABLE `event` (
+  `id` int(11) NOT NULL,
+  `country` varchar(255) DEFAULT NULL,
+  `event_info` varchar(255) DEFAULT NULL,
+  `event_intro` varchar(255) DEFAULT NULL,
+  `event_time` varchar(255) DEFAULT NULL,
+  `event_title` varchar(255) DEFAULT NULL,
+  `event_url` varchar(255) DEFAULT NULL,
+  `location` varchar(255) DEFAULT NULL,
+  `event_id` int(11) NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8;
 
 -- --------------------------------------------------------
 
@@ -111,9 +260,187 @@ INSERT INTO `events` (`id`, `start_time`, `event_time`, `county`, `location`, `e
 (65, '2023-12-02', '2023-12-02~2024-03-10', '高雄市', '高雄市鼓山區美術館路80號本館 104-105展覽室', '江賢二2023個展', '江賢二2023個展', '巴黎，讓江賢二創作出〈巴黎聖母院〉，臺北，則給了他〈百年廟〉，而臺東，使他開了窗，迎來了〈比西里岸之夢〉。紐約蟄伏30年，工作室從未有一縷自然光的江賢二，卻讓心靈的光，盈滿創作。精神性的崇高感，一直是江賢二作品中最重要的元素，無論是封窗或開窗創作，我們總能在他不同系列的作品中看見他用生命調色而成的光。他曾說：「不知何年開始，每天起床作畫，雖然不一定能達到精神的高度，但是我至少要求我自己，顏色要純淨、要美。」\r\n \r\n於是「湛」這個字，就在我閱讀老師所有作品時，突然湧現在腦海中。對我而言，江賢二的作品用色透徹，卻也濃郁。南朝梁武帝曾言：「巖巖山高，湛湛水深。」湛的「深厚」與「透亮」，在江賢二的畫作中全然不違和，兩個看似相異的詞彙，卻能巧妙地融為一體。而日復一日如修行者創作般的江賢二，從〈巴黎聖母院〉系列迄今，碰觸的其實都是「湛」中的精粹純練。一生愛海的他，似乎也讓「湛」成了一種詩意的基底；令人玩味的是，去湛字中的「水」所存的「甚」，更是顯化了作品的精神性，那是一種「極」的狀態，使「湛」海納了「綻」。於此，對觀者而言，江賢二的藝術不僅是粼粼透亮的光，更多的是精神底蘊的深，在拉出三維立體的浩瀚時，卻也同時裹著生命與希望。\r\n', 'https://www.kmfa.gov.tw/ExhibitionDetailC001100.aspx?Cond=f94b56a0-fe3d-4994-bacd-61f0e77dc1f8', NULL, NULL, NULL, NULL, NULL, NULL, NULL),
 (66, '2023-12-30', '2023-12-30 ~ 2024-04-07', '高雄市', '高雄市鼓山區美術館路80號本館 201-203展覽室', '透景線：實境的疊隱與擴張', '拋下數位魔幻給你的偽安全感，用雙眼尋找那條「透景線」以及沒被說出的故事吧！', '「透景線」是傳統園林構景設計學上的一個專業技術名詞，大概意為當前方景物視野被物遮蔽，設計者會巧妙地開闢出一條「線」，來引領觀者穿透「迷障」進行「腦補」，讓眼前風景得以無限延伸出去。概略手法是藉由一些人造山石、流水、點景樹叢等佈置，在有限的「實」中，擴大無限的「虛」。依著人類移動的視點遠、近、上、下移動，設計上既要誘引視線，也要有適當的屏蔽或開合，來製造出整體景觀中每個角落的神祕想像或柳暗花明又一村的驚豔。\r\n \r\n這樣機巧的概念，其實很早就出現在藝術創作上，尤其是文學；書寫創作從來就不只是臨摹自然或單純耽溺於「美」而已，更多時候想傳遞給觀者的是圖像背後的訊息，只是大部分人都無法get到作品的重點，更不用說去理解這般「引導」的企圖。如果我們以古文為例，或可理解一二。\r\n\r\n「……其石之突怒偃蹇，負土而出，爭為奇狀者，殆不可數。其嶔然相累而下者，若牛馬之飲於溪；其衝然角列而上者，若熊羆登於山。」\r\n \r\n這是一段來自唐代柳宗元《永州八記》〈鈷鉧潭西小丘記〉雜記中的描述；他在一塊不到一畝地的小丘上對著石堆寫出「破土而出」、「低頭飲水的牛馬」、「往上衝長的頭角」、「登山的熊」等想像，讓靜態石群出現激情的「動態」。後人認為當時失意被貶至窮鄉僻壤的柳宗元，其實是透過受重壓與野草掩沒的「石」，來自喻處境艱難中仍心智堅定。而後他買下了小丘並與朋友清理雜草讓奇石顯露；「即更取器用，剷刈穢草，伐去惡木，烈火而焚之。」他這些清理動作也被詮釋為內心有憤、亟欲剷除朝中閹宦的心情。\r\n \r\n最後，柳宗元在那塊整理後的荒原小丘上，得到五感平靜的撫慰；「枕席而臥，則清泠之狀與目謀，瀅瀅之聲與耳謀，悠然而虛者與神謀，淵然而靜者與心謀。」[1]\r\n \r\n這小段雜文蘊含創作者對自然景觀「自問自答」的心情轉折，豐富又易感。然而，比起寄情遣懷的古詩詞或遊記雜文，很有事的當代藝術顯然有更多「抽象」的詮釋空間；容易體現出複雜的辯證與指涉過程，創作手法也更多元，七彎八拐地將層次脈絡壓縮到一作品中。\r\n \r\n或也正因如此，當代藝術反而不易為大眾直接理解與看透；要找到進入作品的路徑，需要觀者的好奇與想像，才能得到「抽絲剝繭」的成就感。而《透景線》展覽想探討的，就是這段藝術家如何將實境同步「疊隱」並「擴張」的過程，有如數位幻象為觀者營造的視野延伸。', 'https://www.kmfa.gov.tw/ExhibitionDetailC001100.aspx?Cond=6738e3a0-4bab-4066-a169-4b9546b51ea8', NULL, NULL, NULL, NULL, NULL, NULL, NULL);
 
+-- --------------------------------------------------------
+
+--
+-- 資料表結構 `hobby`
+--
+
+CREATE TABLE `hobby` (
+  `id` int(11) NOT NULL,
+  `hobby` varchar(100) NOT NULL,
+  `seq_no` int(11) NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8;
+
+--
+-- 傾印資料表的資料 `hobby`
+--
+
+INSERT INTO `hobby` (`id`, `hobby`, `seq_no`) VALUES
+(1, '休閒旅遊', 0),
+(2, '藝文活動', 0),
+(3, '親子', 0),
+(4, '文創/市集', 0),
+(5, '博物館/美術館', 0);
+
+-- --------------------------------------------------------
+
+--
+-- 資料表結構 `member`
+--
+
+CREATE TABLE `member` (
+  `id` int(11) NOT NULL,
+  `account` varchar(100) NOT NULL,
+  `password` varchar(100) NOT NULL,
+  `username` varchar(100) NOT NULL DEFAULT 'guest',
+  `phone` varchar(11) NOT NULL,
+  `mail` varchar(100) NOT NULL,
+  `birthday` date NOT NULL,
+  `loginState` tinyint(1) NOT NULL,
+  `loginDelayTime` int(11) NOT NULL,
+  `level` int(10) NOT NULL,
+  `seqNo` int(11) NOT NULL,
+  `login_delay_time` int(11) DEFAULT NULL,
+  `login_state` int(11) DEFAULT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8;
+
+--
+-- 傾印資料表的資料 `member`
+--
+
+INSERT INTO `member` (`id`, `account`, `password`, `username`, `phone`, `mail`, `birthday`, `loginState`, `loginDelayTime`, `level`, `seqNo`, `login_delay_time`, `login_state`) VALUES
+(1, 'Ian', 'a1234', 'winterboy', '0966968777', 'showdee_boy@yahoo.com.tw', '1982-03-23', 0, 123, 9, 0, NULL, NULL);
+
+-- --------------------------------------------------------
+
+--
+-- 資料表結構 `memberfavor`
+--
+
+CREATE TABLE `memberfavor` (
+  `id` int(11) NOT NULL,
+  `memberID` int(11) NOT NULL,
+  `eventID` int(11) NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8;
+
+--
+-- 傾印資料表的資料 `memberfavor`
+--
+
+INSERT INTO `memberfavor` (`id`, `memberID`, `eventID`) VALUES
+(1, 1, 1);
+
+-- --------------------------------------------------------
+
+--
+-- 資料表結構 `memberpicture`
+--
+
+CREATE TABLE `memberpicture` (
+  `id` int(11) NOT NULL,
+  `memberID` int(11) NOT NULL,
+  `picture` blob NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8;
+
+-- --------------------------------------------------------
+
+--
+-- 資料表結構 `memberupdate`
+--
+
+CREATE TABLE `memberupdate` (
+  `id` int(11) NOT NULL,
+  `memberID` int(11) NOT NULL,
+  `eventID` int(11) NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8;
+
+--
+-- 傾印資料表的資料 `memberupdate`
+--
+
+INSERT INTO `memberupdate` (`id`, `memberID`, `eventID`) VALUES
+(1, 1, 1);
+
+-- --------------------------------------------------------
+
+--
+-- 資料表結構 `member_track`
+--
+
+CREATE TABLE `member_track` (
+  `id` int(11) NOT NULL,
+  `member_id` int(11) NOT NULL,
+  `hobby1lv` int(11) DEFAULT '0',
+  `hobby2lv` int(11) DEFAULT '0',
+  `hobby3lv` int(11) DEFAULT '0',
+  `hobby4lv` int(11) DEFAULT '0',
+  `hobby5lv` int(11) DEFAULT '0'
+) ENGINE=InnoDB DEFAULT CHARSET=utf8;
+
+-- --------------------------------------------------------
+
+--
+-- 資料表結構 `weather`
+--
+
+CREATE TABLE `weather` (
+  `id` int(11) NOT NULL,
+  `county` varchar(20) NOT NULL,
+  `day_lingt_maxt` varchar(255) DEFAULT NULL,
+  `day_lingt_mint` varchar(255) DEFAULT NULL,
+  `day_lingt_rain` varchar(255) DEFAULT NULL,
+  `day_lingt_state` varchar(255) DEFAULT NULL,
+  `day_lingt_state_val` varchar(255) DEFAULT NULL,
+  `day_night_maxt` varchar(255) DEFAULT NULL,
+  `day_night_mint` varchar(255) DEFAULT NULL,
+  `day_night_rain` varchar(255) DEFAULT NULL,
+  `day_night_state` varchar(255) DEFAULT NULL,
+  `day_night_state_val` varchar(255) DEFAULT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8;
+
+-- --------------------------------------------------------
+
+--
+-- 資料表結構 `zzzzzz_interests`
+--
+
+CREATE TABLE `zzzzzz_interests` (
+  `id` int(11) NOT NULL,
+  `member_id` int(11) NOT NULL,
+  `interestClass1` tinyint(1) NOT NULL,
+  `interestClass2` tinyint(1) NOT NULL,
+  `interestClass3` tinyint(1) NOT NULL,
+  `interestClass4` tinyint(1) NOT NULL,
+  `interestClass5` tinyint(1) NOT NULL,
+  `interestClassP1` int(11) NOT NULL,
+  `interestClassP2` int(11) NOT NULL,
+  `interestClassP3` int(11) NOT NULL,
+  `interestClassP4` int(11) NOT NULL,
+  `interestClassP5` int(11) NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8;
+
 --
 -- 已傾印資料表的索引
 --
+
+--
+-- 資料表索引 `bus`
+--
+ALTER TABLE `bus`
+  ADD PRIMARY KEY (`id`);
+
+--
+-- 資料表索引 `eh`
+--
+ALTER TABLE `eh`
+  ADD PRIMARY KEY (`id`);
+
+--
+-- 資料表索引 `event`
+--
+ALTER TABLE `event`
+  ADD PRIMARY KEY (`id`);
 
 --
 -- 資料表索引 `events`
@@ -122,14 +449,128 @@ ALTER TABLE `events`
   ADD PRIMARY KEY (`id`);
 
 --
+-- 資料表索引 `hobby`
+--
+ALTER TABLE `hobby`
+  ADD PRIMARY KEY (`id`);
+
+--
+-- 資料表索引 `member`
+--
+ALTER TABLE `member`
+  ADD PRIMARY KEY (`id`);
+
+--
+-- 資料表索引 `memberfavor`
+--
+ALTER TABLE `memberfavor`
+  ADD PRIMARY KEY (`id`);
+
+--
+-- 資料表索引 `memberpicture`
+--
+ALTER TABLE `memberpicture`
+  ADD PRIMARY KEY (`id`);
+
+--
+-- 資料表索引 `memberupdate`
+--
+ALTER TABLE `memberupdate`
+  ADD PRIMARY KEY (`id`);
+
+--
+-- 資料表索引 `member_track`
+--
+ALTER TABLE `member_track`
+  ADD PRIMARY KEY (`id`);
+
+--
+-- 資料表索引 `weather`
+--
+ALTER TABLE `weather`
+  ADD PRIMARY KEY (`id`);
+
+--
+-- 資料表索引 `zzzzzz_interests`
+--
+ALTER TABLE `zzzzzz_interests`
+  ADD PRIMARY KEY (`id`);
+
+--
 -- 在傾印的資料表使用自動遞增(AUTO_INCREMENT)
 --
+
+--
+-- 使用資料表自動遞增(AUTO_INCREMENT) `bus`
+--
+ALTER TABLE `bus`
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT;
+
+--
+-- 使用資料表自動遞增(AUTO_INCREMENT) `eh`
+--
+ALTER TABLE `eh`
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=101;
+
+--
+-- 使用資料表自動遞增(AUTO_INCREMENT) `event`
+--
+ALTER TABLE `event`
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT;
 
 --
 -- 使用資料表自動遞增(AUTO_INCREMENT) `events`
 --
 ALTER TABLE `events`
   MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=67;
+
+--
+-- 使用資料表自動遞增(AUTO_INCREMENT) `hobby`
+--
+ALTER TABLE `hobby`
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=6;
+
+--
+-- 使用資料表自動遞增(AUTO_INCREMENT) `member`
+--
+ALTER TABLE `member`
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=2;
+
+--
+-- 使用資料表自動遞增(AUTO_INCREMENT) `memberfavor`
+--
+ALTER TABLE `memberfavor`
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=2;
+
+--
+-- 使用資料表自動遞增(AUTO_INCREMENT) `memberpicture`
+--
+ALTER TABLE `memberpicture`
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT;
+
+--
+-- 使用資料表自動遞增(AUTO_INCREMENT) `memberupdate`
+--
+ALTER TABLE `memberupdate`
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=2;
+
+--
+-- 使用資料表自動遞增(AUTO_INCREMENT) `member_track`
+--
+ALTER TABLE `member_track`
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT;
+
+--
+-- 使用資料表自動遞增(AUTO_INCREMENT) `weather`
+--
+ALTER TABLE `weather`
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT;
+
+--
+-- 使用資料表自動遞增(AUTO_INCREMENT) `zzzzzz_interests`
+--
+ALTER TABLE `zzzzzz_interests`
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT;
 COMMIT;
 
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
