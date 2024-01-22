@@ -9,8 +9,9 @@ import jakarta.persistence.GeneratedValue;
 import jakarta.persistence.GenerationType;
 import jakarta.persistence.Id;
 import jakarta.persistence.Table;
+import jakarta.persistence.Transient;
 @Entity
-@Table(name="member")
+@Table(name="members")
 public class MemberBean implements Serializable {
 	private static final long serialVersionUID = 1L;
 	@Id
@@ -26,7 +27,12 @@ public class MemberBean implements Serializable {
 	Integer loginState;
 	Integer loginDelayTime;
 	Integer level;
-
+	@Transient
+	String password1;
+	@Transient
+	private String salt;
+	
+	
 	public MemberBean(Integer memberId, String account, String username, String password, String mail, String phone,
 			Date birthday, Integer loginState, Integer loginDelayTime, Integer level) {
 
@@ -40,6 +46,9 @@ public class MemberBean implements Serializable {
 		this.loginState = loginState;
 		this.loginDelayTime = loginDelayTime;
 		this.level = level;
+	}
+	public MemberBean() {
+		
 	}
 
 	public Integer getMemberId() {
@@ -120,6 +129,18 @@ public class MemberBean implements Serializable {
 
 	public void setLevel(Integer level) {
 		this.level = level;
+	}
+	public String getPassword1() {
+		return password1;
+	}
+	public void setPassword1(String password1) {
+		this.password1 = password1;
+	}
+	public String getSalt() {
+		return salt;
+	}
+	public void setSalt(String salt) {
+		this.salt = salt;
 	}
 
 

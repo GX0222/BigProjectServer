@@ -25,16 +25,11 @@ public class HomeController {
 	WeatherTool weatherTool;
 	private static final Logger logger = LoggerFactory.getLogger(HomeController.class);
 
-//	JDBC
-//	EventDaoJDBC ehDaoJDBC;
-
 
 	public HomeController(EventService eventService, EventDaoJDBC ehDaoJDBC, WeatherTool weatherTool) {
 		super();
 		this.eventService = eventService;
 		this.weatherTool = weatherTool;
-//		JDBC
-//		this.ehDaoJDBC = ehDaoJDBC;
 	}
 
 
@@ -45,9 +40,6 @@ public class HomeController {
 		List<EventsBean> eventTop2 = eventService.findTop2ByOrderByIdDesc();
 		List<EventsBean> eventTop2Taipei = eventService.findTop2ByCountyOrderByIdDesc("台北市");
 		String wtCounty = eventTop2.get(1).getCounty();
-//		JDBC
-//		List<EventsBean> eventssss = ehDaoJDBC.findAll();
-//		model.addAttribute("eventssss", eventssss);
 
 		model.addAttribute("eventList", eventLsit);
 		model.addAttribute("eventTop2", eventTop2);
