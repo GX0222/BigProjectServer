@@ -4,6 +4,7 @@ import java.util.List;
 import java.util.Map;
 
 import org.springframework.data.domain.Page;
+import org.springframework.http.HttpCookie;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.GetMapping;
@@ -34,19 +35,14 @@ public class EventController {
 	public String event(Model model, HttpSession session) {
 		Integer eventID = (Integer) session.getAttribute("eventID");
 		EventsBean eventData = eventService.findAllById(eventID);
-		model.addAttribute("eventData", eventData);
-		System.out.println(eventData.getEventTitle());
-		System.out.println("INNNNNN");	
+		model.addAttribute("eventData", eventData);	
 		return "Event/Event";
 	}
 
 	@PostMapping("/SelectEvent")
-	public String selectEvent(Model model,  HttpSession session, @RequestBody Map<String, String> req) {
-//		System.out.println(req);
-//		System.out.println(req.get("eventID"));
+	public String selectEvent(Model model, HttpSession session, @RequestBody Map<String, String> req) {
 		Integer eventID = Integer.parseInt(req.get("eventID").toString());
 		session.setAttribute("eventID", eventID);
-		System.out.println("INN");
 		return "redirect:/Event";
 	}
 
@@ -72,5 +68,12 @@ public class EventController {
 
 		return "Event/EventList";
 	}
+	
+//	@ModelAttribute
+//	public void checkLogin(HttpSession session) {
+//		if (!session.getAttribute("Login").toString().equals("Guest")) {
+//			session.getAttribute("member");
+//		}
+//	}
 
 }
