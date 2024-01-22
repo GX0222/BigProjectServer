@@ -39,7 +39,7 @@
     <div class="info">
         <div class="center">
             <div class="eTitle">
-                <h1>活動名稱</h1>
+                <h1>${eventData.getEventTitle()}</h1>
             </div>
         </div>
         <div class="eImgCon">
@@ -50,38 +50,19 @@
                 <thead class="thead-light">
                     <tr>
                         <th>活動時間</th>
-                        <th>活動主辦方</th>
                         <th>活動地點</th>
                     </tr>
                 </thead>
                 <tbody>
                     <tr>
-                        <td >2023/12/24 - 2023/12/25</td>
-                        <td >台北市政府</td>
-                        <td >中正紀念堂廣場</td>
+                        <td >${eventData.getEventTime()}</td>
+                        <td >${eventData.getLocation()}</td>
                     </tr>
                 </tbody>
             </table>
         </div>
         <div class="eTextCon">
-            <p>
-                2023年，台北再度迎來盛大的聖誕季節，而台北耶誕城活動將成為繽紛華麗的冬日盛事。這個令人期待的活動將帶來一系列令人難以置信的體驗，讓遊客和居民感受到濃濃的節慶氛圍。
-            </p>
-            <p>
-                台北耶誕城將擁有眾多精彩的活動和裝置，其中之一是聖誕樹點綴的中正紀念堂廣場。高聳的聖誕樹將以燈光秀和音樂相互輝映，為夜晚的城市增添了浪漫和祥和的氛圍。遊客可在這裡感受到濃濃的節慶氛圍，與家人和朋友一同共度美好時光。
-            </p>
-            <p>
-                此外，台北耶誕城也將設置各種主題裝置，如繽紛的耶誕燈飾、可愛的聖誕老人雕像，以及歡樂的冰雪世界。這些精心設計的裝置將點亮整個城市，為大街小巷帶來一片歡樂的景象。遊客可以隨意漫步在燦爛的燈光中，感受到節慶的熱情。
-            </p>
-            <p>
-                在耶誕城活動中，舉辦各種多彩的表演和活動也是不可或缺的一部分。歌舞表演、街頭藝人和節慶遊行將為遊客呈現一場場精彩絕倫的視覺盛宴。這不僅是對耶誕節的慶祝，更是一場展示藝術和文化的豐富活動。
-            </p>
-            <p>
-                當然，台北耶誕城也不會忘記小朋友。設有兒童遊樂區域，包括遊樂設施、繪本角落和親子互動遊戲，為孩子們打造一個充滿歡笑和奇幻的世界。這裡將是全家共度美好時光的理想場所。
-            </p>
-            <p>
-                總的來說，2023台北耶誕城活動將成為一場匯聚歡樂、燦爛和感恩的盛會。這個冬日聖誕季，讓我們一同在台北耶誕城中感受到節慶的魅力，共同迎接充滿愛與希望的新一年。
-            </p>
+            <p>  ${eventData.getEventInfo()}</p>
         </div>
         <!-- Map -->
         <div class="eMapCon">
@@ -89,7 +70,7 @@
                 <h3>Google地圖</h3>
             </div>
             <iframe width="600" height="450" frameborder="0" style="border:0"
-                src="https://www.google.com/maps/embed/v1/place?q=%E4%B8%AD%E6%AD%A3%E7%B4%80%E5%BF%B5%E5%A0%82%E5%BB%A3%E5%A0%B4&key=AIzaSyDCy0RwqQowmqnP461gmyRgD5hbhN5Uolg"
+                src="https://www.google.com/maps/embed/v1/place?q=${eventData.getLocation()}&key=AIzaSyDCy0RwqQowmqnP461gmyRgD5hbhN5Uolg"
                 allowfullscreen>
             </iframe>
         </div>
