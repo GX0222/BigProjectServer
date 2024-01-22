@@ -75,6 +75,22 @@ public class EventController {
 	    return "Event/EventList";
 	}
 
+		@GetMapping("/EventList/category/{classId}")
+	    public String eventListByClassId(@PathVariable Integer classId,
+	                                     @RequestParam(defaultValue = "0") int pageNo,
+	                                     @RequestParam(defaultValue = "10") int pageSize,
+	                                     Model model) {
+	        // 使用服務層方法獲取特定分類的分頁數據
+	        Page<EventsBean> page = eventService.getEventsByClassId(classId, pageNo, pageSize);
+
+	        // 將分頁數據傳遞給前端
+	        model.addAttribute("events", page.getContent());
+	        model.addAttribute("currentPage", page.getNumber());
+	        model.addAttribute("totalPages", page.getTotalPages());
+	        model.addAttribute("page", page);
+
+	        return "Event/EventList"; 
+	    }
 	
 
 }
