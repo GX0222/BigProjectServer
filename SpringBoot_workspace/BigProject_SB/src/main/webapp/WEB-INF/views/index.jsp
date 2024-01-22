@@ -62,8 +62,9 @@
 <link rel="stylesheet" href="/static/Tools/footer.css">
 <!-- CSS -->
 <link rel="stylesheet" href="/static/Tools/index.css">
-<%-- JS --%>
+<!-- JS -->
 <script src="/static/Tools/index.js" defer></script>
+<script src="/static/Tools/selectEvent.js" defer></script>
 <!-- WeatherTool -->
 <link rel="stylesheet" href="/static/Tools/WeatherTool.css">
 <script src="/static/Tools/WeatherTool.js" defer></script>
@@ -226,7 +227,7 @@
 				<div class="groupTitle">
 					<h3>最新消息</h3>
 				</div>
-				<a href="<c:url value='/Event' />" class="newsA">
+				<a class="newsA selectEvent" data-event="${eventTop2[0].getId()}"> <!-- href="<c:url value='/Event' />"-->
 					<div id="news1" class="newsCon">
 						<div class="newsImgCon">
 							<img class="newsImg"
@@ -248,7 +249,8 @@
 							</div>
 						</div>
 					</div>
-				</a> <a href="<c:url value='/Event' />" class="newsA">
+				</a> 
+				<a class="newsA selectEvent" data-event="${eventTop2[1].getId()}">
 					<div id="news2" class="newsCon">
 						<div class="newsTextCon">
 							<div class="newsTextBgL">
