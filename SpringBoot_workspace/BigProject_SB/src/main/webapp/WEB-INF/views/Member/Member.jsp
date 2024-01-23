@@ -60,19 +60,19 @@
 					<form>
 						<div class="mb-3">
 							<label for="name" class="form-label">姓名/暱稱/名稱：</label> <input
-								type="text" class="form-control" id="name">
+								type="text" class="form-control" id="name" value="${member.getUsername()}">
 						</div>
 						<div class="mb-3">
 							<label for="mail" class="form-label">Mail：</label> <input
-								type="email" class="form-control" id="mail">
+								type="email" class="form-control" id="mail" value="${member.getMail()}">
 						</div>
 						<div class="mb-3">
 							<label for="tel" class="form-label">電話：</label> <input type="tel"
-								class="form-control" id="tel">
+								class="form-control" id="tel" value="${member.getPhone()}">
 						</div>
 						<div class="mb-3">
 							<label for="birth" class="form-label">生日：</label> <input
-								type="date" class="form-control" id="birth">
+								type="date" class="form-control" id="birth" value="${member.getBirthday()}">
 						</div>
 						<fieldset class="mb-3">
 							<legend class="form-label">興趣：</legend>

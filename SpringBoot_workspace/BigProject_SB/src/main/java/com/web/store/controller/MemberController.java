@@ -12,11 +12,12 @@ import jakarta.servlet.http.HttpSession;
 public class MemberController {
 
 	@GetMapping("/Member")
-	public String member(Model model,HttpSession session) {
+	public String member(Model model, HttpSession session) {
 		MemberBean mb;
 		mb = (MemberBean) session.getAttribute("member");
-		if(mb.equals(null)) {
-			return "login/login";
+		System.out.println(mb.getAccount());
+		if (mb == null || mb.getAccount().equals("Guest")) {
+			return "redirect:/login/login";
 		}
 		System.out.println(mb.getUsername());
 		return "Member/Member";

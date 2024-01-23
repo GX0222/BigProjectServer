@@ -25,31 +25,39 @@ import jakarta.servlet.http.HttpSession;
 
 @Controller
 @RequestMapping("/login")
-@SessionAttributes({"LoginOK", "aaa"})
+@SessionAttributes({ "LoginOK", "aaa" })
 public class LoginController {
 	private static Logger log = LoggerFactory.getLogger(LoginController.class);
-	
+
 	String loginForm = "login/login";
 	String loginOut = "login/logout";
 //	@Autowired
 //	MemberBean member;
 	RegisterService registerService;
-	
+
 	public LoginController(RegisterService registerService) {
-		
+
 		this.registerService = registerService;
 	}
+
 	@GetMapping("/login")
 	public String login00(HttpServletRequest request, Model model,
 			@CookieValue(value = "user", required = false) String user,
 			@CookieValue(value = "password", required = false) String password,
-			@CookieValue(value = "rm", required = false) Boolean rm) {
-		if (user == null)
+			@CookieValue(value = "rm", required = false) Boolean rm, HttpSession session) {
+		MemberBean seMem = (MemberBean) session.getAttribute("member");
+		String seMemAcc = seMem.getAccount().toString();
+
+		if (seMemAcc.equals("Guest")) {
 			user = "";
-		if (password == null) {
 			password = "";
 		} else {
-			;
+			if (user == null) {
+				user = "";
+			}
+			if (password == null) {
+				password = "";
+			}
 		}
 		if (rm != null) {
 			rm = Boolean.valueOf(rm);
@@ -57,16 +65,15 @@ public class LoginController {
 			rm = false;
 		}
 		LoginBean bean = new LoginBean(user, password, rm);
-		model.addAttribute(bean); //
+		model.addAttribute(bean);
+		System.out.println(bean);
 		log.info("送出登入表單, userId=" + user);
 		return loginForm;
 	}
+
 	@PostMapping("/login")
-	public String checkAccount(
-			@ModelAttribute("loginBean") LoginBean bean,
-			BindingResult result, Model model,
-			HttpServletRequest request, HttpServletResponse response
-			) {
+	public String checkAccount(@ModelAttribute("loginBean") LoginBean bean, BindingResult result, Model model,
+			HttpServletRequest request, HttpServletResponse response) {
 		LoginBeanValidator validator = new LoginBeanValidator();
 		validator.validate(bean, result);
 		if (result.hasErrors()) {
@@ -76,8 +83,7 @@ public class LoginController {
 		MemberBean member = null;
 		try {
 			// 呼叫 loginService物件的 checkAccountPassword()，傳入account與password兩個參數
-			member = registerService.findByAccountAndPassword(bean.getAccount(), 
-					password);
+			member = registerService.findByAccountAndPassword(bean.getAccount(), password);
 			if (member != null) {
 				// OK, 登入成功, 將mb物件放入Session範圍內，識別字串為"LoginOK"
 				model.addAttribute("LoginOK", member);
@@ -94,7 +100,7 @@ public class LoginController {
 			return loginForm;
 		}
 		HttpSession session = request.getSession();
-		
+
 //		Map<String, String> memberData = new HashMap<>();
 //		memberData.put("account",member.getAccount());
 //		memberData.put("username",member.getUsername());
@@ -107,7 +113,7 @@ public class LoginController {
 		System.out.println(memberData);
 //		System.out.println(member.getAccount());
 		processCookies(bean, request, response);
-		String nextPath = (String)session.getAttribute("requestURI");
+		String nextPath = (String) session.getAttribute("requestURI");
 		System.out.println("nextPath=" + nextPath);
 		if (nextPath == null) {
 //			nextPath = "/Member/Member";
@@ -115,6 +121,7 @@ public class LoginController {
 		}
 		return "redirect:/Member";
 	}
+
 	private void processCookies(LoginBean bean, HttpServletRequest request, HttpServletResponse response) {
 		Cookie cookieUser = null;
 		Cookie cookiePassword = null;
@@ -125,9 +132,9 @@ public class LoginController {
 		if (bean.isRememberMe()) {
 
 			cookieUser = new Cookie("account", account);
-			cookieUser.setMaxAge(7 * 24 * 60 * 60);       // Cookie的存活期: 七天
+			cookieUser.setMaxAge(7 * 24 * 60 * 60); // Cookie的存活期: 七天
 			cookieUser.setPath(request.getContextPath());
-			
+
 //			String salt = BCrypt.gensalt();
 //			String encodePassword = BCrypt.hashpw(password, salt);
 			cookiePassword = new Cookie("password", password);
@@ -137,14 +144,13 @@ public class LoginController {
 			cookieRememberMe = new Cookie("rm", "true");
 			cookieRememberMe.setMaxAge(7 * 24 * 60 * 60);
 			cookieRememberMe.setPath(request.getContextPath());
-			
+
 			System.out.println("cookieRemeberMe成功");
 		} else { // 使用者沒有對 RememberMe 打勾
 			cookieUser = new Cookie("user", account);
 			cookieUser.setMaxAge(0); // MaxAge==0 表示要請瀏覽器刪除此Cookie
 			cookieUser.setPath(request.getContextPath());
-			
-			
+
 			String salt = BCrypt.gensalt();
 			String encodePassword = BCrypt.hashpw(password, salt);
 			cookiePassword = new Cookie("password", encodePassword);
@@ -159,6 +165,6 @@ public class LoginController {
 		response.addCookie(cookieUser);
 		response.addCookie(cookiePassword);
 		response.addCookie(cookieRememberMe);
-		
+
 	}
 }

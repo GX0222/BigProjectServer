@@ -24,6 +24,8 @@ public interface EventDao extends JpaRepository<EventsBean, Integer> {
 	Page<EventsBean> findByCounty(String county, Pageable pageable);
 	Page<EventsBean> getEventsByClassId(Integer classId, Pageable pageable);
     
+	public Optional<EventsBean> findById(Integer id);
+	public List<EventsBean> findByEventTitle(String eventTitle);
 
 	
 	
