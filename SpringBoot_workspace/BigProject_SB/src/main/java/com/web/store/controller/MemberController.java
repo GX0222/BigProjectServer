@@ -13,9 +13,11 @@ public class MemberController {
 
 	@GetMapping("/Member")
 	public String member(Model model,HttpSession session) {
-//		session.getAttribute(null);
 		MemberBean mb;
 		mb = (MemberBean) session.getAttribute("member");
+		if(mb.equals(null)) {
+			return "login/login";
+		}
 		System.out.println(mb.getUsername());
 		return "Member/Member";
 	}
