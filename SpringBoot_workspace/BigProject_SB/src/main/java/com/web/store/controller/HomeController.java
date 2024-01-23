@@ -88,5 +88,11 @@ public class HomeController {
 		model.addAttribute("county1st", county);
 		model.addAttribute("town1st", townn);
 	}
+	
+	
+	@GetMapping("/AboutUs")
+	public String aboutUs(Model model) {
+		return "AboutUs/AboutUs";
+	}
 
 }

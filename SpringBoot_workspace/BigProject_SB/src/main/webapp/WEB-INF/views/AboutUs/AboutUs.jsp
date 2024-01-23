@@ -26,87 +26,33 @@
     <link rel="stylesheet" href="https://unpkg.com/simplebar@latest/dist/simplebar.css" />
     <script src="https://unpkg.com/simplebar@latest/dist/simplebar.min.js"></script>
     <!-- 背景影片css -->
-    <link rel="stylesheet" href="../Tools/Tf_iframe.css">
+    <link rel="stylesheet" href="/static/Tools/Tf_iframe.css">
     <!-- NavBar -->
-    <link rel="stylesheet" href="../Tools/NavBar_2.css">
+    <link rel="stylesheet" href="/static/Tools/NavBar_2.css">
     <!-- Gruop_City.css -->
-    <link rel="stylesheet" href="../Tools/Gruop_City.css">
+    <link rel="stylesheet" href="/static/Tools/Gruop_City.css">
     <!-- Group_News.css -->
-    <link rel="stylesheet" href="../Tools/Group_News.css">
+    <link rel="stylesheet" href="/static/Tools/Group_News.css">
     <!-- AboutUs.css -->
-    <link rel="stylesheet" href="../Tools/About_Us.css">
+    <link rel="stylesheet" href="/static/Tools/About_Us.css">
     <!-- Color -->
-    <link rel="stylesheet" href="../Tools/Color.css">
+    <link rel="stylesheet" href="/static/Tools/Color.css">
     <!-- Footer.css -->
-    <link rel="stylesheet" href="../Tools/footer.css">
+    <link rel="stylesheet" href="/static/Tools/footer.css">
 
 </head>
 
 <body>
 
-    <div id="overlayDiv">
-        <!-- navBar -->
-        <nav id="myNavbar" class="navbar navbar-expand-md bg-none w-100 fixed-top m-0 p-0" style=" top: 0px;">
-            <div class="container-fluid m-0 p-0 h-100">
-                <a href="../index.html" class="navbar-brand m-0 p-0" style="font-size:x-large;">
-                    <img src="../image/logo1228.png" class=" m-0 p-0" alt="logo" width="65" height="50">
-                </a>
-                <div class="memberConMd d-flex d-md-none">
-                    <div class="nameCon">
-                        <a href="../Member.html">
-                            <img class="rounded-circle img-fluid" src="../image/IMG_0987.JPG" alt="">
-                        </a>
-                    </div>
-                    <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#mynavbar"
-                        aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
-                        <span class="navbar-toggler-icon"></span>
-                    </button>
-                </div>
-                <div class="collapse navbar-collapse" id="mynavbar">
-                    <ul class="navbar-nav me-auto mb-0">
-                        <li class="nav-item">
-                            <a id="news" onclick="nav_item_active()" class="nav-link" aria-current="page"
-                                href="../Favor1.html">活動資訊</a>
-                        </li>
-                        <li class="nav-item">
-                            <a id="trans" onclick="nav_item_active()" class="nav-link" aria-current="page"
-                                href="#">交通情報</a>
-                        </li>
-                        <li class="nav-item">
-                            <a id="forum" onclick="nav_item_active()" class="nav-link" aria-current="page"
-                                href="#">旅遊論壇</a>
-                        </li>
-                        <li class="nav-item">
-                            <a id="aboutus" onclick="nav_item_active()" class="nav-link" aria-current="page"
-                                href="#">關於我們</a>
-                        </li>
-                    </ul>
-                    <form class="d-flex" role="search">
-                        <input id="search_input" class="form-control me-2" type="search" placeholder="搜尋"
-                            aria-label="Search">
-                        <button id="search_btn" class="btn btn-outline-success" type="submit">
-                            <span class="material-icons" style="vertical-align: middle;">
-                                search
-                            </span>
-                        </button>
-                    </form>
-                    <div class="memberCon d-none d-md-flex">
-                        <div class="nameCon">
-                            <a href="../Member.html">
-                                <img class="rounded-circle img-fluid" src="../image/IMG_0987.JPG" alt="">
-                            </a>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </nav>
-        <!-- navBar End -->
-    </div>
+	<!-- navBar -->
+	<%@ include file="../Shared/PageNavBar.jsp" %>	    
+    <!-- navBar End -->
+    
     <!-- 內容 -->
     <div class="aboutContent container">
 
         <div class="image">
-            <img src="../image/aboutUs.jpg" alt="About Us Image">
+            <img src="/static/image/aboutUs.jpg" alt="About Us Image">
         </div>
         <div class="text">
             <h2>歡迎來到我們的旅遊資訊網站！</h2>
