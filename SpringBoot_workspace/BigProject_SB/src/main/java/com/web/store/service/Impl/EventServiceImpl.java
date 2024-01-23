@@ -76,6 +76,23 @@ public class EventServiceImpl implements EventService {
     }	
 
 	
+	@Override
+	public EventsBean findById(Integer id) {
+		
+		return eventDao.findById(id).get();
+	}
+	
+	@Override
+	public void save(EventsBean eb) {
+		eventDao.save(eb);
+		System.out.println("event save done");
+	}
 
+
+	@Override
+	public List<EventsBean> findByEventTitle(String eventTitle) {
+		
+		return eventDao.findByEventTitle(eventTitle);
+	}
 	 
 }

@@ -34,4 +34,21 @@ public class EhServiceImpl implements EhService{
 		return ehdao.findByEvent_id(id);
 	}
 
+	@Override
+	public void save(ehBean ehb) {
+		System.out.println("eh save done");
+		ehdao.save(ehb);
+		
+	}
+
+	@Override
+	public void delete(ehBean ehb) {
+		System.out.println("eh delete done");
+		ehdao.delete(ehb);
+		
+	}
+
+	
+	
+	
 }
