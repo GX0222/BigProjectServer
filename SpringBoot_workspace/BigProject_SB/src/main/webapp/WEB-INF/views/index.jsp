@@ -99,7 +99,7 @@
 							<div class="nameCon">
 								<a href="<c:url value='/Member' />"> <img
 									class="rounded-circle img-fluid"
-									src="<c:url value='/static/image/IMG_0987.JPG' />" alt="">
+									src="data:image/png;base64, ${memberImg}" alt="">
 								</a>
 							</div>
 							<button class="navbar-toggler" type="button"
@@ -128,7 +128,7 @@
 									onclick="nav_item_active()" class="nav-link"
 									aria-current="page" href="<c:url value='' />">關於我們</a></li>
 							</ul>
-							<form class="d-flex" role="search">
+							<%-- <form class="d-flex" role="search">
 								<input id="search_input" class="form-control me-2" type="search"
 									placeholder="搜尋" aria-label="Search">
 								<button id="search_btn" class="btn btn-outline-success"
@@ -136,7 +136,7 @@
 									<span class="material-icons" style="vertical-align: middle;">
 										search </span>
 								</button>
-							</form>
+							</form> --%>
 						</div>
 					</div>
 				</div>
