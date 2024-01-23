@@ -18,7 +18,7 @@
 			<div class="memberConMd d-flex d-md-none">
 				<div class="nameCon">
 					<a href="<c:url value='/Member' />"> <img class="rounded-circle img-fluid"
-						src="<c:url value='/static/image/IMG_0987.JPG' />" alt="">
+						src="data:image/png;base64, ${memberImg}" alt="">
 					</a>
 				</div>
 				
@@ -44,7 +44,7 @@
 				<div class="memberCon d-none d-md-flex">
 					<div class="nameCon">
 						<a href="<c:url value='/Member' />"> <img class="rounded-circle img-fluid"
-							src="<c:url value='/static/image/IMG_0987.JPG' />" alt="">
+							src="data:image/png;base64, ${memberImg}" alt="">
 						</a>
 					</div>
 				</div>
