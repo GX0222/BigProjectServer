@@ -16,11 +16,14 @@ public interface EventService {
 	public List<EventsBean> findTop2ByOrderByIdDesc();
 
 	public List<EventsBean> findTop2ByCountyOrderByIdDesc(String county);
+	
+	public List<EventsBean> getEventsByClassId(Integer classId);
 
 	public EventsBean findAllById(Integer id);
 
 	Page<EventsBean> getEventsByCounty(String county, int pageNo, int pageSize);
-	
+	Page<EventsBean> getEventsByClassId(Integer classId, int pageNo, int pageSize);
+    
 
 	
 	

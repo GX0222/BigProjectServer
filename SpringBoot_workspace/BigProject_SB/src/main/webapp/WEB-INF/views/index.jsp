@@ -121,9 +121,9 @@
 									onclick="nav_item_active()" class="nav-link"
 									aria-current="page" href="<c:url value='/Trafficimfor' />">交通情報</a>
 								</li>
-								<li class="nav-item"><a id="forum"
-									onclick="nav_item_active()" class="nav-link"
-									aria-current="page" href="<c:url value='/' />">旅遊論壇</a></li>
+<!-- 								<li class="nav-item"><a id="forum" -->
+<!-- 									onclick="nav_item_active()" class="nav-link" -->
+<%-- 									aria-current="page" href="<c:url value='/' />">旅遊論壇</a></li> --%>
 								<li class="nav-item"><a id="aboutus"
 									onclick="nav_item_active()" class="nav-link"
 									aria-current="page" href="<c:url value='' />">關於我們</a></li>

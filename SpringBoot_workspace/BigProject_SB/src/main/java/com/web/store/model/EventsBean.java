@@ -28,6 +28,7 @@ public class EventsBean implements Serializable {
 	private String eventInfo;
 	private String eventUrl;
 	private Date updateTime;
+	private Integer classId;
 
 	public EventsBean() {
 
@@ -131,6 +132,14 @@ public class EventsBean implements Serializable {
 	public static long getSerialversionuid() {
 		return serialVersionUID;
 	}
+	
+    public Integer getClassId() {
+        return classId;
+    }
+
+    public void setClassId(Integer classId) {
+        this.classId = classId;
+    }
 	
 
 
