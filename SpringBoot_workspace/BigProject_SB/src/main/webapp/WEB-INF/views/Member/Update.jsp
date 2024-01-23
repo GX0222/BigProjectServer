@@ -52,10 +52,17 @@
                 <hr />
                 <form action="" method="post">
                     <div class="form-group">
-                        <label class="control-label" for="Time">活動時間</label><br>
+                        <label class="control-label" for="datepicker">活動時間</label><br>
                         <input type="text" id="datepicker" value="">
                     </div>
-
+					<div class="form-group">
+                        <label class="control-label" for="City">活動城市</label>
+                        <input class="form-control" type="text" id="City" name="Name" value="" />
+                    </div>
+                    <div class="form-group">
+                        <label class="control-label" for="Location">活動地點</label>
+                        <input class="form-control" type="text" id="Location" name="Name" value="" />
+                    </div>
                     <div class="form-group">
                         <label class="control-label" for="Name">活動名稱</label>
                         <input class="form-control" type="text" id="Name" name="Name" value="" />
@@ -70,15 +77,17 @@
                         <label class="control-label" for="textarea">活動內容</label><br>
                         <textarea id="textarea" name="textarea" rows="10" cols="50" value="" required></textarea>
                     </div>
-
+<!--                     SHEN -->
+                    <div class="form-group">
+                        <label class="control-label" for="EventURL">活動網址</label>
+                        <input class="form-control" type="text" id="EventURL" name="Name" value="" />
+                    </div>
                     <div>
-                        <label>活動分類:</label><br>
-                        <input type="checkbox" name="checkboxes" id="checkbox1" value="1" checked="checked" /> 休閒旅遊
-                        <br>
-                        <input type="checkbox" name="checkboxes" id="checkbox2" value="2" /> 藝文活動 <br>
-                        <input type="checkbox" name="checkboxes" id="checkbox3" value="3" /> 親子 <br>
-                        <input type="checkbox" name="checkboxes" id="checkbox4" value="4" /> 文創/市集 <br>
-                        <input type="checkbox" name="checkboxes" id="checkbox5" value="5" /> 博物館/美術館
+                    	<input type="checkbox" name="checkboxes" id="checkbox1" value="1" checked="checked" /> <label for="checkbox1">休閒旅遊</label><br>
+                        <input type="checkbox" name="checkboxes" id="checkbox2" value="2" /> <label for="checkbox2">藝文活動</label> <br>
+                        <input type="checkbox" name="checkboxes" id="checkbox3" value="3" /> <label for="checkbox3">親子 </label><br>
+                        <input type="checkbox" name="checkboxes" id="checkbox4" value="4" /> <label for="checkbox4">文創/市集 </label><br>
+                        <input type="checkbox" name="checkboxes" id="checkbox5" value="5" /> <label for="checkbox5">博物館/美術館</label>
                     </div>
 
                     <br>
@@ -100,51 +109,41 @@
 	<%@ include file="../Shared/Footer.jsp" %>
 
     <script>
+    
+    $("#okButton").on("click", async function () {
 
-        $(function () {
-            $("#datepicker").datepicker();
+        var dataToServer=({
+            "eventDate":$("#datepicker").prop("value"),
+           	"eventName":$("#Name").prop("value"),
+           	"eventIntro":$("#Summary").prop("value"),
+           	"eventInfo":$("#textarea").prop("value"),
+           	"eventUrl":$("#EventURL").prop("value"),
+           	"eventCity":$("#City").prop("value"),
+           	"eventLocation":$("#Location").prop("value"),
+           	"hb1":$("#checkbox1").prop("checked")?"true":"false",
+           	"hb2":$("#checkbox2").prop("checked")?"true":"false",
+           	"hb3":$("#checkbox3").prop("checked")?"true":"false",
+           	"hb4":$("#checkbox4").prop("checked")?"true":"false",
+           	"hb5":$("#checkbox5").prop("checked")?"true":"false"
+        });
+        console.log(dataToServer);
+        $.ajax({
+        url: "/getJson4",
+        dataType: "JSON",
+        type: "post",
+        data:dataToServer,
+        success: function (msg) {
+            console.log("OK");
+            window.location = "/List";},
+        error:function(error){
+        	console.log(error.responseText);
+        }
+        
         })
-
-        var editId = sessionStorage.getItem("id");
-        $.get("/todo/item/" + editId, function (e) {
-            $("#Name").prop("value", e.title);
-            $("#IsComplete").prop("checked", e.isComplete);
-            console.log(e);
-        })
-
-        $("#okButton").on("click", async function () {
-
-            var dataToServer = {
-                datepicker: $("#datepicker").prop("value"),
-                title: $("#Name").prop("value"),
-                Summary: ($("#Summary").prop("value")),
-                textarea: ($("#textarea").prop("value")),
-                checkbox1: ($("#checkbox1").prop("checked")) ? 1 : 0,
-                checkbox2: ($("#checkbox2").prop("checked")) ? 1 : 0,
-                checkbox3: ($("#checkbox3").prop("checked")) ? 1 : 0,
-                checkbox4: ($("#checkbox4").prop("checked")) ? 1 : 0,
-                checkbox5: ($("#checkbox5").prop("checked")) ? 1 : 0,
-
-            };
-
-            $.ajax({
-                type: "put",
-                url: "/todo/item",
-                contentType: "application/json",
-                data: JSON.stringify(dataToServer),
-                success: function () {
-                    window.location = "index.html";
-                }
-
-            })
-
-            window.location = "/Activity_list.html";
-
-        })
-
-
-
-
+        
+        
+});
+    
 
     </script>
 
