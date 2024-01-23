@@ -1,6 +1,7 @@
 package com.web.store.controller;
 
 import java.sql.Date;
+import java.sql.Timestamp;
 import java.text.ParseException;
 import java.text.SimpleDateFormat;
 import java.util.ArrayList;
@@ -17,14 +18,13 @@ import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.ResponseBody;
 
 import com.web.store.model.EventsBean;
-import com.web.store.model.MemberBean;
 import com.web.store.model.MemberEventsBean;
 import com.web.store.model.ehBean;
 import com.web.store.service.EhService;
 import com.web.store.service.EventService;
 import com.web.store.service.MemberEventsService;
 
-import jakarta.servlet.http.HttpSession;
+
 
 @Controller
 public class MemberController {
@@ -43,14 +43,7 @@ public class MemberController {
 	}
 
 	@GetMapping("/Member")
-	public String member(Model model, HttpSession session) {
-		MemberBean mb;
-		mb = (MemberBean) session.getAttribute("member");
-		System.out.println(mb.getAccount());
-		if (mb == null || mb.getAccount().equals("Guest")) {
-			return "redirect:/login/login";
-		}
-		System.out.println(mb.getUsername());
+	public String member(Model model) {
 		return "Member/Member";
 	}
 
@@ -58,17 +51,39 @@ public class MemberController {
 	public String love(Model model) {
 		return "Member/Love";
 	}
-
+	
 	@GetMapping("/Update")
 	public String update(Model model) {
 		return "Member/Update";
 	}
-
+	
 	@GetMapping("/List")
 	public String list(Model model) {
 		List<MemberEventsBean> mm = memberEventsService.findByMemberId(1);
 		//在memberEvent表格裡面尋找會員有幾個活動
 		model.addAttribute("table_size",mm.size());
+//		List<String> aa1=new ArrayList<>();
+//		List<String> aa2=new ArrayList<>();
+//		List<String> aa3=new ArrayList<>();
+//		List<String> aa4=new ArrayList<>();
+//		List<Integer> aa5=new ArrayList<>();
+//		for(MemberEventsBean mbean:mm) {
+//			Integer idd = mbean.getEvent_id123();
+//			System.out.println(idd);
+////			EventsBean eb =eventService.getById(idd);
+//			EventsBean eb =eventService.findById(idd);
+//			aa1.add(eb.getEventTitle());
+//			aa2.add(eb.getEventTime().replace(" ", "").replace("-","."));
+//			aa3.add(eb.getLocation());
+//			aa4.add(eb.getEventIntro());
+//			aa5.add(eb.getId());
+//		}
+//		
+//		model.addAttribute("Event_title",aa1);
+//		model.addAttribute("EventTime",aa2);
+//		model.addAttribute("Location",aa3);
+//		model.addAttribute("EventIntro",aa4);
+//		model.addAttribute("EventId",aa5);
 		return "Member/List";
 	}
 
@@ -76,17 +91,57 @@ public class MemberController {
 	public String trafficimfor(Model model) {
 		return "trafficimfor";
 	}
-
+	
 	@GetMapping("/Ian/index'")
 	public String ianIndex(Model model) {
 		return "index";
 	}
-
+	
+	
+	@GetMapping("/Eedit")
+	public String edit(Model model) {
+		return "Member/Edit";
+	}
+	
+	@GetMapping("/test")
+	public String ttest(Model model) {
+//		List<MemberEventsBean> mm = memberEventsService.fidAll();
+		Integer a1 = 1;
+		List<MemberEventsBean> mm = memberEventsService.findByMemberId(a1);
+		
+		System.out.println(mm.get(0).getMember_id());
+		System.out.println(mm.size());
+		model.addAttribute("table_size",mm.size());
+		List<String> aa1=new ArrayList<>();
+		List<String> aa2=new ArrayList<>();
+		List<String> aa3=new ArrayList<>();
+		List<String> aa4=new ArrayList<>();
+		for(MemberEventsBean mbean:mm) {
+			Integer idd = mbean.getEvent_id123();
+			System.out.println(idd);
+//			EventsBean eb =eventService.getById(idd);
+			EventsBean eb =eventService.findById(idd);
+			aa1.add(eb.getEventTitle());
+			aa2.add(eb.getEventTime().replace(" ", "").replace("-","."));
+			aa3.add(eb.getLocation());
+			aa4.add(eb.getEventIntro());
+		}
+		
+		model.addAttribute("Event_title",aa1);
+		model.addAttribute("EventTime",aa2);
+		model.addAttribute("Location",aa3);
+		model.addAttribute("EventIntro",aa4);
+		int a=1234;
+		model.addAttribute("AA",a);
+		return "test";
+	}
+	
 	@GetMapping("/eventlist/item/{id}")
 	@ResponseBody
-
+//	public EventsBean eventlist(Model model,@PathVariable Integer id) {
 	public List<Object> eventlist(Model model,@PathVariable Integer id) {
-
+//		,@RequestParam Integer Id
+//		System.out.println(Id);
 		List<Object> out = new ArrayList<>();
 		EventsBean eb = eventService.findById(id);
 		List<ehBean> ehb = ehService.findByEvent_id(id);
@@ -94,7 +149,7 @@ public class MemberController {
 		for(ehBean a:ehb) {
 			System.out.println(a.getClassId());
 		}
-
+//		Object[] out= {eb,ehb};
 		out.add(eb);
 		out.add(ehb);
 		return out;		
@@ -118,13 +173,21 @@ public class MemberController {
 	
 	@PostMapping("/test/item")
 	@ResponseBody
-
+//	public String putMethodName(@PathVariable String id, @RequestBody Map<String,Object>  entity) {
 	public String putMethodName(@RequestParam("eventId") String id, @RequestParam("eventDate") String name,
 			@RequestParam("eventInfo") String id2,@RequestParam("eventIntro") String id3,@RequestParam("eventName") String id4) {
 		System.out.println(id+"===="+name);
-
+//		System.out.println(entity.get("eventId"));
 		return "OK";
-
+//		public String putMethodName(HttpServletRequest request) {
+			
+//	    	 request.getParameter("eventId")
+//			System.out.println(request.getParameter("eventId"));
+//			System.out.println(request.getParameter("eventDate"));
+//			System.out.println(request.getParameter("eventName"));
+//			System.out.println(request.getParameter("eventIntro"));
+//			System.out.println(request.getParameter("eventInfo"));
+//			return "OK";
 	}
 	
 	
@@ -148,14 +211,17 @@ public class MemberController {
         eventService.save(eb);
         HashMap<String, String> a = new HashMap<>();
         a.put("stu", "student");
-
+//        EventsBean updateEb = new EventsBean();
+//        updateEb.set
+//        eventService.save(updateEb);
+//        return "student";
         return a;
         }
 	
 	@PostMapping("/getJson3")
     @ResponseBody
     public  HashMap<String, String> JsonController3(@RequestParam HashMap<String,Object> eb) {
-
+//       System.out.println();
 		int hobby_num =5;
 		
 		System.out.println(eb.get("eventId"));
@@ -169,7 +235,7 @@ public class MemberController {
 		System.out.println(eb.get("hb4"));
 		System.out.println(eb.get("hb5"));
 		System.out.println(eb.keySet());
-
+//		System.out.println((eb.get("hb4")).getClass().getSimpleName());
 		System.out.println(Boolean.valueOf((String)(eb.get("hb4"))));
 		System.out.println(Boolean.valueOf("true"));
         EventsBean updateEb =eventService.findById(Integer.valueOf((String)eb.get("eventId")));
@@ -179,11 +245,12 @@ public class MemberController {
         updateEb.setEventTime((String)eb.get("eventDate"));
         eventService.save(updateEb);
         List<ehBean> ehb = ehService.findByEvent_id(Integer.valueOf((String)eb.get("eventId")));
-
+//        List<Integer> ehobbies=new ArrayList<>();
+//        System.out.println(ehobbies.isEmpty());
         
         for(ehBean a:ehb) {
 			System.out.println(a.getClassId());
-
+//			ehobbies.add(a.getClassId());
 			ehService.delete(a);
 			
 		}
@@ -213,7 +280,10 @@ public class MemberController {
         
         HashMap<String, String> a = new HashMap<>();
         a.put("stu", "student");
-
+//        EventsBean updateEb = new EventsBean();
+//        updateEb.set
+//        eventService.save(updateEb);
+//        return "student";
         return a;
         }
 	
@@ -223,10 +293,10 @@ public class MemberController {
 	@PostMapping("/getJson4")
     @ResponseBody
     public  HashMap<String, String> JsonController4(@RequestParam HashMap<String,Object> eb) {
-
+//       System.out.println();
 		int hobby_num =5;
 		
-
+//		System.out.println(eb.get("eventId"));
 		System.out.println(eb.get("eventUrl"));
 		System.out.println(eb.get("eventDate"));
 		System.out.println(eb.get("eventName"));
@@ -237,10 +307,11 @@ public class MemberController {
 		System.out.println(eb.get("hb3"));
 		System.out.println(eb.get("hb4"));
 		System.out.println(eb.get("hb5"));
-
+//		System.out.println(eb.keySet());
+//		System.out.println((eb.get("hb4")).getClass().getSimpleName());
 		System.out.println(Boolean.valueOf((String)(eb.get("hb4"))));
 		System.out.println(Boolean.valueOf("true"));
-
+//        EventsBean updateEb =eventService.findById(Integer.valueOf((String)eb.get("eventId")));
 		EventsBean updateEb = new EventsBean();
         updateEb.setEventTitle((String)eb.get("eventName"));
         updateEb.setEventInfo((String)eb.get("eventInfo"));
@@ -267,18 +338,28 @@ public class MemberController {
         
 //        today time
 		java.util.Date date = new java.util.Date();
-
+//		Timestamp timestamp2 = new Timestamp(date.getTime());
 		Date dateSQL = new Date(date.getTime());
-
+//		System.out.println(sdf2.format(timestamp2)); 
         updateEb.setUpdateTime(dateSQL);
-
+//        System.out.println("here3");
         eventService.save(updateEb);
-
+//        System.out.println("here4");
+//        List<ehBean> ehb = ehService.findByEvent_id(Integer.valueOf((String)eb.get("eventId")));
+//        List<Integer> ehobbies=new ArrayList<>();
+//        System.out.println(ehobbies.isEmpty());
+//        
+//        for(ehBean a:ehb) {
+//			System.out.println(a.getClassId());
+////			ehobbies.add(a.getClassId());
+//			ehService.delete(a);
+//			
+//		}
         List<EventsBean> FindnewEvents = eventService.findByEventTitle((String)eb.get("eventName"));
         Integer newEventID = FindnewEvents.get(FindnewEvents.size()-1).getId();
         System.out.println("event id:"+ newEventID.toString());
 		int check_hobby_exist = 0;
-
+//		System.out.println("here5");
         for(Integer i=0 ;i<hobby_num;i++) {
         	System.out.println("here1");
         	String hb ="hb"+String.valueOf(i+1);
@@ -303,14 +384,22 @@ public class MemberController {
         
         HashMap<String, String> a = new HashMap<>();
         a.put("stu", "student");
-
+//        EventsBean updateEb = new EventsBean();
+//        updateEb.set
+//        eventService.save(updateEb);
+//        return "student";
         return a;
         }
 	
 	@PostMapping("/your_backend_url")
     @ResponseBody
     public  HashMap<String, String> JsonController5(@RequestParam HashMap<String,Object> eb) {
-
+//      
+//		String jsonData = java.net.URLDecoder.decode(eb, "UTF-8");
+		
+//		System.out.println(eb.get("data"));
+//		System.out.println(eb.keySet());
+//		
 		EventsBean updateEb = eventService.findById(4);
         updateEb.setEventImage(Base64.getDecoder().decode((eb.get("data").toString()).split(",")[1]));
         eventService.save(updateEb);
@@ -321,7 +410,57 @@ public class MemberController {
 		
         HashMap<String, String> a = new HashMap<>();
         a.put("stu", "student");
-
+//        a.put("stuu", updateEb.getEventImage().toString());
+//        System.out.println(updateEb.getEventImage().);
+//        EventsBean updateEb = new EventsBean();
+//        updateEb.set
+//        eventService.save(updateEb);
+//        return "student";
         return a;
         }
+	
+	
+	
+	@PostMapping("/new_img")
+    @ResponseBody
+    public  HashMap<String, String> newImg(@RequestParam HashMap<String,Object> eb) {
+//      
+//		String jsonData = java.net.URLDecoder.decode(eb, "UTF-8");
+		
+//		System.out.println(eb.get("data"));
+//		System.out.println(eb.keySet());
+//		
+		EventsBean updateEb = eventService.findById(4);
+        updateEb.setEventImage(Base64.getDecoder().decode((eb.get("data").toString()).split(",")[1]));
+        eventService.save(updateEb);
+		
+//		updateEb.getEventImage();
+
+        HashMap<String, String> a = new HashMap<>();
+        a.put("stu", "student");
+//        a.put("stuu", updateEb.getEventImage().toString());
+//        EventsBean updateEb = new EventsBean();
+//        updateEb.set
+//        eventService.save(updateEb);
+//        return "student";
+        return a;
+        }
+	
 }
+
+
+////假设从数据库中检索到的数据是 byte[] 形式的 imageData
+//byte[] imageData = // 从数据库中获取数据的过程
+//
+////将 byte[] 转换为 Base64 编码的字符串
+//String base64Encoded = Base64.getEncoder().encodeToString(imageData);
+//
+////构建完整的 dataURL
+//String dataURL = "data:image/png;base64," + base64Encoded;
+//
+////现在 dataURL 可以在前端中使用了
+//System.out.println(dataURL);
+
+
+//在 my.ini裡面 修改所有的max_allowed_packet = 1073741824
+
