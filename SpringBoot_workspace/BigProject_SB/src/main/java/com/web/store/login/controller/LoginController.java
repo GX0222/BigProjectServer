@@ -1,8 +1,5 @@
 package com.web.store.login.controller;
 
-import java.util.HashMap;
-import java.util.Map;
-
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.stereotype.Controller;
@@ -126,18 +123,22 @@ public class LoginController {
 		String password = bean.getPassword();
 		// rm存放瀏覽器送來之RememberMe的選項，如果使用者對RememberMe打勾，rm就不會是null
 		if (bean.isRememberMe()) {
+
 			cookieUser = new Cookie("account", account);
 			cookieUser.setMaxAge(7 * 24 * 60 * 60);       // Cookie的存活期: 七天
 			cookieUser.setPath(request.getContextPath());
-			String salt = BCrypt.gensalt();
-			String encodePassword = BCrypt.hashpw(password, salt);
-			cookiePassword = new Cookie("password", encodePassword);
+			
+//			String salt = BCrypt.gensalt();
+//			String encodePassword = BCrypt.hashpw(password, salt);
+			cookiePassword = new Cookie("password", password);
 			cookiePassword.setMaxAge(7 * 24 * 60 * 60);
 			cookiePassword.setPath(request.getContextPath());
-
+			System.out.println(cookieUser);
 			cookieRememberMe = new Cookie("rm", "true");
 			cookieRememberMe.setMaxAge(7 * 24 * 60 * 60);
 			cookieRememberMe.setPath(request.getContextPath());
+			
+			System.out.println("cookieRemeberMe成功");
 		} else { // 使用者沒有對 RememberMe 打勾
 			cookieUser = new Cookie("user", account);
 			cookieUser.setMaxAge(0); // MaxAge==0 表示要請瀏覽器刪除此Cookie
@@ -153,6 +154,7 @@ public class LoginController {
 			cookieRememberMe = new Cookie("rm", "true");
 			cookieRememberMe.setMaxAge(0);
 			cookieRememberMe.setPath(request.getContextPath());
+			System.out.println("沒有Rememberme");
 		}
 		response.addCookie(cookieUser);
 		response.addCookie(cookiePassword);
