@@ -53,6 +53,8 @@ public class EventController {
 
 		return "Event/EventList";
 	}
+	
+	
 
 	@GetMapping("/EventList/{county}")
 	public String eventList(@PathVariable String county, @RequestParam(defaultValue = "0") int pageNo,

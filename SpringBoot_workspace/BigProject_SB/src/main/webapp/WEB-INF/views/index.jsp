@@ -126,7 +126,7 @@
 <%-- 									aria-current="page" href="<c:url value='/' />">旅遊論壇</a></li> --%>
 								<li class="nav-item"><a id="aboutus"
 									onclick="nav_item_active()" class="nav-link"
-									aria-current="page" href="<c:url value='' />">關於我們</a></li>
+									aria-current="page" href="<c:url value='/AboutUs' />">關於我們</a></li>
 							</ul>
 							<form class="d-flex" role="search">
 								<input id="search_input" class="form-control me-2" type="search"
