@@ -16,26 +16,32 @@ import org.springframework.web.bind.annotation.ResponseBody;
 import com.web.store.SmallTools.WeatherTool;
 import com.web.store.dao.EventDaoJDBC;
 import com.web.store.model.EventsBean;
+import com.web.store.model.MemberBean;
 import com.web.store.service.EventService;
+import com.web.store.service.MemberService;
+
+import jakarta.servlet.http.HttpSession;
 
 @Controller
 public class HomeController {
 
 	EventService eventService;
+	MemberService memberService;
 	WeatherTool weatherTool;
 	private static final Logger logger = LoggerFactory.getLogger(HomeController.class);
 
 
-	public HomeController(EventService eventService, EventDaoJDBC ehDaoJDBC, WeatherTool weatherTool) {
+	public HomeController(EventService eventService, MemberService memberService, WeatherTool weatherTool) {
 		super();
 		this.eventService = eventService;
 		this.weatherTool = weatherTool;
+		this.memberService = memberService;
 	}
 
 
 
 	@GetMapping("/")
-	public String index(Model model) {
+	public String index(Model model, HttpSession session) {
 		List<EventsBean> eventLsit = eventService.findAll();
 		List<EventsBean> eventTop2 = eventService.findTop2ByOrderByIdDesc();
 		List<EventsBean> eventTop2Taipei = eventService.findTop2ByCountyOrderByIdDesc("台北市");
@@ -47,6 +53,13 @@ public class HomeController {
 		getWeatherData(model, wtCounty, "將軍區");
 		List<String> countys = weatherTool.getAllCounty();
 		model.addAttribute("countys", countys);
+		
+		MemberBean mb = (MemberBean) session.getAttribute("member");
+		if(mb == null) {
+			mb = memberService.findByAccount("Guest");
+			session.setAttribute("member", mb);
+		}
+		
 		return "index";
 	}
 	

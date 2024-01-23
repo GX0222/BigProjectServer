@@ -60,7 +60,7 @@
 					<form>
 						<div class="mb-3">
 							<label for="name" class="form-label">姓名/暱稱/名稱：</label> <input
-								type="text" class="form-control" id="name">
+								type="text" class="form-control" id="name" value="${member.getUsername()}">
 						</div>
 						<div class="mb-3">
 							<label for="mail" class="form-label">Mail：</label> <input
