@@ -72,7 +72,8 @@
 <body>
     <!-- NavBar -->
 	<%@ include file="../Shared/PageNavBar.jsp" %>
-	
+    <!-- navBar End -->	
+    
     <div class="center">
         <div class="pageTitle">
             <h3>休閒旅遊</h3>
@@ -104,10 +105,10 @@
 			    </li>
 			</ul>
             <ul id="countyBar" class="nav nav-pills infoUlbar">
-                <li class="ulName">
-                    <a class="nav-link active" aria-current="page" href="#">全部</a>
-                </li>
-                <h4 class="noSelect">|</h4>
+<!--                 <li class="ulName"> -->
+<!--                     <a class="nav-link active" aria-current="page" href="#">全部</a> -->
+<!--                 </li> -->
+<!--                 <h4 class="noSelect">|</h4> -->
                 <li class="ulName">
                     <a class="nav-link" aria-current="page" href="#">台北市</a>
                 </li>

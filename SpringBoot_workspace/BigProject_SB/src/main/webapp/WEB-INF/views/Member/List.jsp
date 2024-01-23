@@ -58,8 +58,9 @@
 		<div class="homeRight">
 			<div class="infoCon table-responsive">
 				<h3>活動列表</h3>
+<!-- 				<a <c:url value="/Eedit"/>>123</a> -->
 				<br>
-				<table class="dataTable" style="text-align: center;">
+				<table id="eventList" class="dataTable" style="text-align: center;">
 
 					<tr
 						style="background-color: rgba(194, 150, 107, 0.178); height: 3rem;">
@@ -87,6 +88,8 @@
 
 
 						<td><span style="margin: 2rem;"> <a
+								href="./test"
+								class="btn btn-outline-primary btn-sm">新增圖片</a> |<a
 								href="./Activity_edit.html"
 								class="btn btn-outline-primary btn-sm">編輯</a> | <a href=""
 								class="btn btn-outline-danger btn-sm">刪除</a>
@@ -105,10 +108,10 @@
 							<p>新北市</p>
 						</td>
 						<td>
-							<p>我是內容我是內容我是內容我是內容我是內容我是內容我是內容</p>
+							<p>我是內容我是內容我是內容我是內容我是內容我是內容我是內容${Event_title}${EventTime}</p>
 						</td>
 						<td><span style="margin: 2rem;"> <a
-								href="./Activity_edit.html"
+								href="/edit"
 								class="btn btn-outline-primary btn-sm">編輯</a> | <a href=""
 								class="btn btn-outline-danger btn-sm">刪除</a>
 						</span></td>
@@ -131,5 +134,62 @@
 	</script>
 
 </body>
+<script>
+// 清空列表並載入新列表
+function load_event_list() {
+	$.get("/List/item", function (e) {
+         
+            
+            $("#eventList tbody").empty();
+        	$("#eventList tbody").append(`<tr style="background-color: rgba(194, 150, 107, 0.178); height: 3rem;">
+        	<th>活動快照</th>
+        	<th>活動名稱</th>
+        	<th>活動時間</th>
+        	<th>活動地點</th>
+        	<th>活動介紹</th>
+        	<th></th>
+        	</tr>`);
 
+        	 for (var i = 0; i < ${table_size}; i++) {
+        			var strNew = `<tr>
+        				<td><img src="/static/image/2023聖誕節.jpg" alt=""></td>
+        				<td>
+        					<p>`+e[i].eventTitle+`</p>
+        				</td>
+        				<td>
+        					<p>`+e[i].eventTime+`</p>
+        				</td>
+        				<td>
+        					<p>`+e[i].location+`</p>
+        				</td>
+        				<td>
+        					<p>`+e[i].eventIntro+`</p>
+        				</td>
+
+
+        				<td><span style="margin: 2rem;"> <a
+        						href="/Eedit"
+        						class="btn btn-outline-primary btn-sm" onclick="doedit(`+e[i].id+`)">編輯</a> | <a href=""
+        						class="btn btn-outline-danger btn-sm">刪除</a>
+        				</span></td>
+
+        			</tr>`;
+
+
+                    $("#eventList tbody").append(strNew);
+                 
+        		
+        //             
+                    
+                }
+        })
+    }
+
+load_event_list();
+
+function doedit(e) {
+    sessionStorage.setItem("myEventListId", e);
+};
+
+</script>
 </html>

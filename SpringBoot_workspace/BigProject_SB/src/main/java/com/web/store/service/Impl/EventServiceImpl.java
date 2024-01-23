@@ -79,7 +79,7 @@ public class EventServiceImpl implements EventService {
 	@Override
 	public EventsBean findById(Integer id) {
 		
-		return eventDao.findById(id).get();
+		return eventDao.findById(id);
 	}
 	
 	@Override
