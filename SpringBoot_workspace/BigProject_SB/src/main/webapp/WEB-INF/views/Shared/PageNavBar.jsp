@@ -18,7 +18,7 @@
 			<div class="memberConMd d-flex d-md-none">
 				<div class="nameCon">
 					<a href="<c:url value='/Member' />"> <img class="rounded-circle img-fluid"
-						src="<c:url value='/static/image/IMG_0987.JPG' />" alt="">
+						src="data:image/png;base64, ${memberImg}" alt="">
 					</a>
 				</div>
 				
@@ -35,8 +35,8 @@
 						class="nav-link" aria-current="page" href="<c:url value='/Favor' />">活動資訊</a></li>
 					<li class="nav-item"><a id="trans" onclick="nav_item_active()"
 						class="nav-link" aria-current="page" href="<c:url value='/trafficimfor' />">交通情報</a></li>
-					<li class="nav-item"><a id="forum" onclick="nav_item_active()"
-						class="nav-link" aria-current="page" href="<c:url value='' />">旅遊論壇</a></li>
+<!-- 					<li class="nav-item"><a id="forum" onclick="nav_item_active()" -->
+<%-- 						class="nav-link" aria-current="page" href="<c:url value='' />">旅遊論壇</a></li> --%>
 					<li class="nav-item"><a id="aboutus"
 						onclick="nav_item_active()" class="nav-link" aria-current="page"
 						href="<c:url value='' />">關於我們</a></li>
@@ -44,7 +44,7 @@
 				<div class="memberCon d-none d-md-flex">
 					<div class="nameCon">
 						<a href="<c:url value='/Member' />"> <img class="rounded-circle img-fluid"
-							src="<c:url value='/static/image/IMG_0987.JPG' />" alt="">
+							src="data:image/png;base64, ${memberImg}" alt="">
 						</a>
 					</div>
 				</div>

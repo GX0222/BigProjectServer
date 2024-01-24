@@ -3,10 +3,12 @@ package com.web.store.model;
 import java.io.Serializable;
 import java.sql.Date;
 
+import jakarta.persistence.Column;
 import jakarta.persistence.Entity;
 import jakarta.persistence.GeneratedValue;
 import jakarta.persistence.GenerationType;
 import jakarta.persistence.Id;
+import jakarta.persistence.Lob;
 import jakarta.persistence.Table;
 
 // 本類別封裝單筆活動資料
@@ -20,6 +22,7 @@ public class EventsBean implements Serializable {
 
 	//@Transient
 	private Date startTime;
+	private Date endTime;
 	private String eventTitle;
 	private String eventTime;
 	private String county;
@@ -28,16 +31,20 @@ public class EventsBean implements Serializable {
 	private String eventInfo;
 	private String eventUrl;
 	private Date updateTime;
-
+	private Integer classId;
+	@Lob
+    @Column(columnDefinition = "MEDIUMBLOB")
+	byte[]  eventImage;
 	public EventsBean() {
 
     }
-
-	public EventsBean(Integer id, Date startTime, String eventTitle, String eventTime, String county, String location,
-			String eventIntro, String eventInfo, String eventUrl, Date updateTime) {
-		super();
+	
+	public EventsBean(Integer id, Date startTime, Date endTime, String eventTitle, String eventTime, String county,
+			String location, String eventIntro, String eventInfo, String eventUrl, Date updateTime, Integer classId,
+			byte[] eventImage) {
 		this.id = id;
 		this.startTime = startTime;
+		this.endTime = endTime;
 		this.eventTitle = eventTitle;
 		this.eventTime = eventTime;
 		this.county = county;
@@ -46,6 +53,8 @@ public class EventsBean implements Serializable {
 		this.eventInfo = eventInfo;
 		this.eventUrl = eventUrl;
 		this.updateTime = updateTime;
+		this.classId = classId;
+		this.eventImage = eventImage;
 	}
 
 	public Integer getId() {
@@ -62,6 +71,14 @@ public class EventsBean implements Serializable {
 
 	public void setStartTime(Date startTime) {
 		this.startTime = startTime;
+	}
+
+	public Date getEndTime() {
+		return endTime;
+	}
+
+	public void setEndTime(Date endTime) {
+		this.endTime = endTime;
 	}
 
 	public String getEventTitle() {
@@ -128,9 +145,26 @@ public class EventsBean implements Serializable {
 		this.updateTime = updateTime;
 	}
 
+	public Integer getClassId() {
+		return classId;
+	}
+
+	public void setClassId(Integer classId) {
+		this.classId = classId;
+	}
+
+	public byte[] getEventImage() {
+		return eventImage;
+	}
+
+	public void setEventImage(byte[] eventImage) {
+		this.eventImage = eventImage;
+	}
+
 	public static long getSerialversionuid() {
 		return serialVersionUID;
 	}
+
 	
 
 

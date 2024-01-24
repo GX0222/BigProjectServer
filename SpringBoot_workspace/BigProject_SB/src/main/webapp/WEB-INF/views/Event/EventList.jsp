@@ -40,6 +40,32 @@
     <link rel="stylesheet" href="/static/Tools/Color.css">
     <!-- footer -->
     <link rel="stylesheet" href="/static/Tools/footer.css">
+    
+	<script>
+	    function loadCategoryData(categoryId, element) {
+	        // 移除所有項目的 active 類別
+	        var navLinks = document.querySelectorAll('.nav-link');
+	        navLinks.forEach(function(link) {
+	            link.classList.remove('active');
+	        });
+	
+	        // 將被點擊的項目設為 active
+	        element.classList.add('active');
+	
+	        // 使用原生 JavaScript 發送 AJAX 請求
+	        var xhr = new XMLHttpRequest();
+	        xhr.open("GET", "/EventList/category/" + categoryId + "?pageNo=0&pageSize=10", true);
+	        xhr.onreadystatechange = function () {
+	            if (xhr.readyState == 4 && xhr.status == 200) {
+	                // 在這裡處理 AJAX 回傳的數據，更新頁面等
+	                console.log(xhr.responseText);
+	            }
+	        };
+	        xhr.send();
+	    }
+	</script>
+
+    
  
 </head>
 
@@ -52,30 +78,38 @@
             <h3>休閒旅遊</h3>
         </div>
         <div>
-            <ul id="infoUlbar" class="nav nav-pills infoUlbar">
-                <li class="ulName">
-                    <a class="nav-link active" aria-current="page" href="#">休閒旅遊</a>
-                </li>
-                <h4 class="noSelect">|</h4>
-                <li class="ulName">
-                    <a class="nav-link" aria-current="page" href="#">藝文活動</a>
-                </li>
-                <h4 class="noSelect">|</h4>
-                <li class="ulName">
-                    <a class="nav-link" aria-current="page" href="#">親子</a>
-                </li>
-                <h4 class="noSelect">|</h4>
-                <li class="ulName">
-                    <a class="nav-link" aria-current="page" href="#">文創/市集</a>
-                </li>
-                <h4 class="noSelect">|</h4>
-                <li class="ulName">
-                    <a class="nav-link" aria-current="page" href="#">博物館/美術館</a>
-                </li>
-            </ul>
+			<ul id="infoUlbar" class="nav nav-pills infoUlbar">
+			    <li class="ulName">
+			        <a class="nav-link active" aria-current="page" href="#" onclick="loadCategoryData('all', this)">全部</a>
+			    </li>
+			    <h4 class="noSelect">|</h4>
+			    <li class="ulName">
+			        <a class="nav-link" aria-current="page" href="#" onclick="loadCategoryData(1, this)">休閒旅遊</a>
+			    </li>
+			    <h4 class="noSelect">|</h4>
+			    <li class="ulName">
+			        <a class="nav-link" aria-current="page" href="#" onclick="loadCategoryData(2, this)">藝文活動</a>
+			    </li>
+			    <h4 class="noSelect">|</h4>
+			    <li class="ulName">
+			        <a class="nav-link" aria-current="page" href="#" onclick="loadCategoryData(3, this)">親子</a>
+			    </li>
+			    <h4 class="noSelect">|</h4>
+			    <li class="ulName">
+			        <a class="nav-link" aria-current="page" href="#" onclick="loadCategoryData(4, this)">文創/市集</a>
+			    </li>
+			    <h4 class="noSelect">|</h4>
+			    <li class="ulName">
+			        <a class="nav-link" aria-current="page" href="#" onclick="loadCategoryData(5, this)">博物館/美術館</a>
+			    </li>
+			</ul>
             <ul id="countyBar" class="nav nav-pills infoUlbar">
                 <li class="ulName">
-                    <a class="nav-link active" aria-current="page" href="#">台北市</a>
+                    <a class="nav-link active" aria-current="page" href="#">全部</a>
+                </li>
+                <h4 class="noSelect">|</h4>
+                <li class="ulName">
+                    <a class="nav-link" aria-current="page" href="#">台北市</a>
                 </li>
                 <h4 class="noSelect">|</h4>
                 <li class="ulName">

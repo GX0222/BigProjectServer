@@ -52,6 +52,11 @@ public class EventServiceImpl implements EventService {
 		return eventDao.findTop2ByCountyOrderByIdDesc(county);
 	}
 
+    @Override
+    public List<EventsBean> getEventsByClassId(Integer classId) {
+        return eventDao.getEventsByClassId(classId);
+    }	
+
 
 	@Override
 	public EventsBean findAllById(Integer id) {
@@ -65,8 +70,29 @@ public class EventServiceImpl implements EventService {
         return eventDao.findByCounty(county, PageRequest.of(pageNo, pageSize));
     }
 
+	@Override
+    public Page<EventsBean> getEventsByClassId(Integer classId, int pageNo, int pageSize) {
+        return eventDao.getEventsByClassId(classId, PageRequest.of(pageNo, pageSize));
+    }	
 
 	
+	@Override
+	public EventsBean findById(Integer id) {
+		
+		return eventDao.findById(id).get();
+	}
+	
+	@Override
+	public void save(EventsBean eb) {
+		eventDao.save(eb);
+		System.out.println("event save done");
+	}
 
+
+	@Override
+	public List<EventsBean> findByEventTitle(String eventTitle) {
+		
+		return eventDao.findByEventTitle(eventTitle);
+	}
 	 
 }
