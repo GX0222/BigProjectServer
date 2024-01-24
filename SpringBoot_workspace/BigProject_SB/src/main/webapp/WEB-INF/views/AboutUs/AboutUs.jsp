@@ -43,11 +43,10 @@
 </head>
 
 <body>
-
-	<!-- navBar -->
-	<%@ include file="../Shared/PageNavBar.jsp" %>	    
-    <!-- navBar End -->
-    
+    <!-- NavBar -->
+	<%@ include file="../Shared/PageNavBar.jsp" %>
+	<!-- NavBar End-->
+	
     <!-- 內容 -->
     <div class="aboutContent container">
 

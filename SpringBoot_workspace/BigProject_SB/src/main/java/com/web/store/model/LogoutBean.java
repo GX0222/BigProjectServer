@@ -32,14 +32,14 @@ public class LogoutBean {
 	
 	public Integer getLogout() {
 		MemberBean member = (MemberBean) session.getAttribute("LoginOK");
-		String account ="";
+		String username ="";
 		if (member != null) {
-			account = member.getAccount();
+			username = member.getUsername();
 		} else {
-			account ="(未知)";
+			username ="(未知)";
 		}
 		SimpleDateFormat sdf = new SimpleDateFormat("yyyy-MM-dd HH:mm:ss");
-		log.info("使用者:" + account + "已於 " + sdf.format(new Date())  + " 登出...");
+		log.info("使用者:" + username + "已於 " + sdf.format(new Date())  + " 登出...");
 		session.invalidate();
 		return 0;
 		
