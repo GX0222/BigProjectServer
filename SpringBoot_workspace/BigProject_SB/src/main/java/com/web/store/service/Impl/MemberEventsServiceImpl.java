@@ -26,11 +26,7 @@ public class MemberEventsServiceImpl implements MemberEventsService {
 		
 		return memberEventsDao.findByMemberId(member_id);
 	}
-//	@Override
-//	public Integer getByEvent_id(Integer event_id) {
-//		
-//		return memberEventsDao.getByEvent_id(event_id);
-//	}
+
 	
 
 }
