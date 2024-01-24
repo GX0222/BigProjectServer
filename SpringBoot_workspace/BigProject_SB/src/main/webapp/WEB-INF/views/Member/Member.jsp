@@ -51,7 +51,7 @@
 			<div class="m-0 p-0 infoCon">
 				<div class="memberInfo">
 					<div class="memberImg">
-						<img class="rounded-circle img-fluid" src="<c:url value='/static/image/IMG_0987.JPG' />"
+						<img class="rounded-circle img-fluid" src="data:image/png;base64, ${memberImg}"
 							alt="">
 					</div>
 					<div class="memberLV"></div>
