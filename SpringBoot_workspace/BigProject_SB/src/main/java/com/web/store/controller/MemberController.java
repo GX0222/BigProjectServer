@@ -239,7 +239,7 @@ public class MemberController {
 		System.out.println(eb.get("hb3"));
 		System.out.println(eb.get("hb4"));
 		System.out.println(eb.get("hb5"));
-		System.out.println(eb.keySet());
+		System.out.println(eb.keySet().contains("data"));
 //		System.out.println((eb.get("hb4")).getClass().getSimpleName());
 		System.out.println(Boolean.valueOf((String)(eb.get("hb4"))));
 		System.out.println(Boolean.valueOf("true"));
@@ -248,6 +248,35 @@ public class MemberController {
         updateEb.setEventInfo((String)eb.get("eventInfo"));
         updateEb.setEventIntro((String)eb.get("eventIntro"));
         updateEb.setEventTime((String)eb.get("eventDate"));
+        
+        updateEb.setCounty((String)eb.get("eventCity"));
+        updateEb.setEventUrl((String)eb.get("eventUrl"));
+        updateEb.setLocation((String)eb.get("eventLocation"));
+        SimpleDateFormat sdf2 = new SimpleDateFormat("yyyy-MM-dd");
+        String Stime = ((String)eb.get("eventDate")).contains(":")?((String)eb.get("eventDate")).split("~")[0].split(" ")[0]:((String)eb.get("eventDate")).replace(" ","").split("~")[0];
+        String Etime = ((String)eb.get("eventDate")).contains(":")?((String)eb.get("eventDate")).split("~")[((String)eb.get("eventDate")).split("~").length-1]: ((String)eb.get("eventDate")).replace(" ","").split("~")[((String)eb.get("eventDate")).replace(" ","").split("~").length-1];
+        try {
+			Date StartTimeSql= new Date(sdf2.parse(Stime.replace("/","-").replace("_","-")).getTime());
+			System.out.println(sdf2.parse(Stime.replace("/","-").replace("_","-")));
+			
+			Date EndTimeSql= new Date(sdf2.parse(Etime.replace("/","-").replace("_","-")).getTime());
+			updateEb.setStartTime(StartTimeSql);
+			updateEb.setEndTime(EndTimeSql);
+		} catch (ParseException e) {
+			System.out.println(e);
+			e.printStackTrace();
+		}
+        
+//        today time
+		java.util.Date date = new java.util.Date();
+
+		Date dateSQL = new Date(date.getTime());
+
+        updateEb.setUpdateTime(dateSQL);
+        if(eb.keySet().contains("data")) {
+//        	System.out.println("圖片有修改");
+        	updateEb.setEventImage(Base64.getDecoder().decode((eb.get("data").toString()).split(",")[1]));
+        }
         eventService.save(updateEb);
         List<ehBean> ehb = ehService.findByEvent_id(Integer.valueOf((String)eb.get("eventId")));
 //        List<Integer> ehobbies=new ArrayList<>();
@@ -302,16 +331,16 @@ public class MemberController {
 		int hobby_num =5;
 		
 //		System.out.println(eb.get("eventId"));
-		System.out.println(eb.get("eventUrl"));
-		System.out.println(eb.get("eventDate"));
-		System.out.println(eb.get("eventName"));
-		System.out.println(eb.get("eventIntro"));
-		System.out.println(eb.get("eventInfo"));
-		System.out.println(eb.get("hb1"));
-		System.out.println(eb.get("hb2"));
-		System.out.println(eb.get("hb3"));
-		System.out.println(eb.get("hb4"));
-		System.out.println(eb.get("hb5"));
+//		System.out.println(eb.get("eventUrl"));
+//		System.out.println(eb.get("eventDate"));
+//		System.out.println(eb.get("eventName"));
+//		System.out.println(eb.get("eventIntro"));
+//		System.out.println(eb.get("eventInfo"));
+//		System.out.println(eb.get("hb1"));
+//		System.out.println(eb.get("hb2"));
+//		System.out.println(eb.get("hb3"));
+//		System.out.println(eb.get("hb4"));
+//		System.out.println(eb.get("hb5"));
 //		System.out.println(eb.keySet());
 //		System.out.println((eb.get("hb4")).getClass().getSimpleName());
 		System.out.println(Boolean.valueOf((String)(eb.get("hb4"))));
@@ -325,7 +354,7 @@ public class MemberController {
         updateEb.setCounty((String)eb.get("eventCity"));
         updateEb.setEventUrl((String)eb.get("eventUrl"));
         updateEb.setLocation((String)eb.get("eventLocation"));
-        
+        updateEb.setEventImage(Base64.getDecoder().decode((eb.get("data").toString()).split(",")[1]));
         SimpleDateFormat sdf2 = new SimpleDateFormat("yyyy-MM-dd");
         String Stime = ((String)eb.get("eventDate")).contains(":")?((String)eb.get("eventDate")).split("~")[0].split(" ")[0]:((String)eb.get("eventDate")).replace(" ","").split("~")[0];
         String Etime = ((String)eb.get("eventDate")).contains(":")?((String)eb.get("eventDate")).split("~")[((String)eb.get("eventDate")).split("~").length-1]: ((String)eb.get("eventDate")).replace(" ","").split("~")[((String)eb.get("eventDate")).replace(" ","").split("~").length-1];
@@ -396,33 +425,33 @@ public class MemberController {
         return a;
         }
 	
-	@PostMapping("/your_backend_url")
-    @ResponseBody
-    public  HashMap<String, String> JsonController5(@RequestParam HashMap<String,Object> eb) {
-//      
-//		String jsonData = java.net.URLDecoder.decode(eb, "UTF-8");
+// 	@PostMapping("/your_backend_url")
+//     @ResponseBody
+//     public  HashMap<String, String> JsonController5(@RequestParam HashMap<String,Object> eb) {
+// //      
+// //		String jsonData = java.net.URLDecoder.decode(eb, "UTF-8");
 		
-//		System.out.println(eb.get("data"));
-//		System.out.println(eb.keySet());
-//		
-		EventsBean updateEb = eventService.findById(4);
-        updateEb.setEventImage(Base64.getDecoder().decode((eb.get("data").toString()).split(",")[1]));
-        eventService.save(updateEb);
+// //		System.out.println(eb.get("data"));
+// //		System.out.println(eb.keySet());
+// //		
+// 		EventsBean updateEb = eventService.findById(4);
+//         updateEb.setEventImage(Base64.getDecoder().decode((eb.get("data").toString()).split(",")[1]));
+//         eventService.save(updateEb);
 		
-		updateEb.getEventImage();
+// 		updateEb.getEventImage();
 		
 		
 		
-        HashMap<String, String> a = new HashMap<>();
-        a.put("stu", "student");
-//        a.put("stuu", updateEb.getEventImage().toString());
-//        System.out.println(updateEb.getEventImage().);
-//        EventsBean updateEb = new EventsBean();
-//        updateEb.set
-//        eventService.save(updateEb);
-//        return "student";
-        return a;
-        }
+//         HashMap<String, String> a = new HashMap<>();
+//         a.put("stu", "student");
+// //        a.put("stuu", updateEb.getEventImage().toString());
+// //        System.out.println(updateEb.getEventImage().);
+// //        EventsBean updateEb = new EventsBean();
+// //        updateEb.set
+// //        eventService.save(updateEb);
+// //        return "student";
+//         return a;
+//         }
 	
 	
 	
