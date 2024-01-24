@@ -10,4 +10,6 @@ public interface EhService {
 	public List<ehBean> findAllByClassId(Integer classId);
 	
 	public List<ehBean> findByEvent_id(Integer id);
+	public void save(ehBean ehb);
+	public void delete(ehBean ehb);
 }

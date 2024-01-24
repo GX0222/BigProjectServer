@@ -69,7 +69,6 @@ public class EventController {
 		return "Event/EventList";
 	}
 
-
 		@GetMapping("/EventList/category/{classId}")
 	    public String eventListByClassId(@PathVariable Integer classId,
 	                                     @RequestParam(defaultValue = "0") int pageNo,
@@ -87,12 +86,5 @@ public class EventController {
 	        return "Event/EventList"; 
 	    }
 
-	
-//	@ModelAttribute
-//	public void checkLogin(HttpSession session) {
-//		if (!session.getAttribute("Login").toString().equals("Guest")) {
-//			session.getAttribute("member");
-//		}
-//	}
 
 }

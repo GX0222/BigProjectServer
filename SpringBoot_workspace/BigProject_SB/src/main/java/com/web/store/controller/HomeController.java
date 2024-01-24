@@ -16,26 +16,33 @@ import org.springframework.web.bind.annotation.ResponseBody;
 import com.web.store.SmallTools.WeatherTool;
 import com.web.store.dao.EventDaoJDBC;
 import com.web.store.model.EventsBean;
+import com.web.store.model.MemberBean;
 import com.web.store.service.EventService;
+import com.web.store.service.MemberPictureService;
+import com.web.store.service.MemberService;
+
+import jakarta.servlet.http.HttpSession;
 
 @Controller
 public class HomeController {
 
 	EventService eventService;
+	MemberService memberService;
+	MemberPictureService memberPictureService;
 	WeatherTool weatherTool;
 	private static final Logger logger = LoggerFactory.getLogger(HomeController.class);
 
-
-	public HomeController(EventService eventService, EventDaoJDBC ehDaoJDBC, WeatherTool weatherTool) {
+	public HomeController(EventService eventService, MemberService memberService,
+			MemberPictureService memberPictureService, WeatherTool weatherTool) {
 		super();
 		this.eventService = eventService;
+		this.memberService = memberService;
+		this.memberPictureService = memberPictureService;
 		this.weatherTool = weatherTool;
 	}
 
-
-
 	@GetMapping("/")
-	public String index(Model model) {
+	public String index(Model model, HttpSession session) {
 		List<EventsBean> eventLsit = eventService.findAll();
 		List<EventsBean> eventTop2 = eventService.findTop2ByOrderByIdDesc();
 		List<EventsBean> eventTop2Taipei = eventService.findTop2ByCountyOrderByIdDesc("台北市");
@@ -47,10 +54,27 @@ public class HomeController {
 		getWeatherData(model, wtCounty, "將軍區");
 		List<String> countys = weatherTool.getAllCounty();
 		model.addAttribute("countys", countys);
+		
+		checkLogin(model, session);
+		
 		return "index";
 	}
 	
-	
+	@ModelAttribute
+	public void checkLogin(Model model, HttpSession session) {
+		MemberBean mb;
+		mb = (MemberBean) session.getAttribute("member");
+		String memImg = null;
+		if (mb != null && !mb.getAccount().equals("Guest")) {
+			Integer memID = mb.getMemberId();
+			memImg = memberPictureService.getImgByMemberId(memID);
+		}else {
+			mb = memberService.findByAccount("Guest");
+			session.setAttribute("member", mb);
+			memImg = memberPictureService.getImgByMemberId(2);
+		}
+		session.setAttribute("memberImg", memImg);
+	}
 	
 	
 	@PostMapping("/getTownByCounty")
@@ -64,11 +88,6 @@ public class HomeController {
     @ResponseBody
     public Map<String, Object> getWeatherByTown(@RequestBody Map<String, String> req) {
 		Map<String, Object> townWeather = weatherTool.getNowWeatherByTown(req.get("CountyName"), req.get("TownName"));
-//		System.out.println("===================");
-//		System.out.println("前端發來: "+req.get("CountyName").toString());
-//		System.out.println(req.get("TownName").toString());
-//		System.out.println("===================");
-//		System.out.println(townWeather.get("AirTemperature").toString());
         return townWeather;
     }
 
