@@ -72,6 +72,7 @@
 <body>
     <!-- NavBar -->
 	<%@ include file="../Shared/PageNavBar.jsp" %>
+	<!-- NavBar End-->
 	
     <div class="center">
         <div class="pageTitle">

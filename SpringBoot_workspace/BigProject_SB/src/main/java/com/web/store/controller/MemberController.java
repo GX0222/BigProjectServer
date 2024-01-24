@@ -40,7 +40,12 @@ public class MemberController {
 
 	@GetMapping("/Trafficimfor")
 	public String trafficimfor(Model model) {
-		return "trafficimfor";
+		return "trafficimfor/trafficimfor";
+	}
+	
+	@GetMapping("/AboutUs")
+	public String aboutUs(Model model) {
+		return "AboutUs/AboutUs";
 	}
 
 	@GetMapping("/Ian/index'")
