@@ -11,7 +11,7 @@ import jakarta.persistence.Id;
 import jakarta.persistence.Table;
 import jakarta.persistence.Transient;
 @Entity
-@Table(name="member2")
+@Table(name="member")
 public class MemberBean implements Serializable {
 	private static final long serialVersionUID = 1L;
 	@Id
