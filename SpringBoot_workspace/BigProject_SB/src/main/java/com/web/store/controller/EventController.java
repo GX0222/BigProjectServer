@@ -68,7 +68,7 @@ public class EventController {
 
 		return "Event/EventList";
 	}
-<<<<<<< HEAD
+
 
 		@GetMapping("/EventList/category/{classId}")
 	    public String eventListByClassId(@PathVariable Integer classId,
@@ -86,8 +86,7 @@ public class EventController {
 
 	        return "Event/EventList"; 
 	    }
-=======
->>>>>>> 757c8b77a39e39dead4848ca056ae97c948b3cab
+
 	
 //	@ModelAttribute
 //	public void checkLogin(HttpSession session) {

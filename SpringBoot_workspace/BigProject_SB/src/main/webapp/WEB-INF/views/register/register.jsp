@@ -161,7 +161,7 @@
 					//             window.location.href = './index.html';
 					//         }
 // 					<!--
-<!-- 				</script> --> -->
+			</script> 
 
 
 </body>

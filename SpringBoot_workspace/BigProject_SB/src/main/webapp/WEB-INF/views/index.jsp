@@ -127,6 +127,20 @@
 								<li class="nav-item"><a id="aboutus"
 									onclick="nav_item_active()" class="nav-link"
 									aria-current="page" href="<c:url value='' />">關於我們</a></li>
+
+								<c:if test="${empty LoginOK}">
+									<li class="nav-item"><a id="logout"
+										onclick="nav_item_active()" class="nav-link"
+										aria-current="page" href="<c:url value='/login/login' />">登入</a></li>
+								</c:if>
+
+								<c:choose>
+									<c:when test="${ ! empty LoginOK }">
+										<li class="nav-item"><a id="logout"
+											onclick="nav_item_active()" class="nav-link"
+											aria-current="page" href="<c:url value='/login/logout' />">登出</a></li>
+									</c:when>
+								</c:choose>
 							</ul>
 							<form class="d-flex" role="search">
 								<input id="search_input" class="form-control me-2" type="search"

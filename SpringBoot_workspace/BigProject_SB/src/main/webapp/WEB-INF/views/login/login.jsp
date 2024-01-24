@@ -50,7 +50,7 @@
             <button type="submit" class="login-btn">登入</button>
 
             <div class="register-link">
-                <p>還沒有帳號？<a href="#">註冊</a></p>
+                <p>還沒有帳號？<a href="/register/register">註冊</a></p>
             </div>
         
 
