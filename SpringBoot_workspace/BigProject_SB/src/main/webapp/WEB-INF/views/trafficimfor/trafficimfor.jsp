@@ -24,12 +24,15 @@
     <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
     <!-- NavBar -->
     <link rel="stylesheet" href="/static/Tools/NavBar_2.css">
-    <!-- Css -->
-    <link rel="stylesheet" href="/static/Tools/EventList.css">
+    
     <!-- Traffic_Info Css -->
     <link rel="stylesheet" href="/static/Tools/Traffic_Info.css">
     <!-- Tf_iframe Css -->
     <link rel="stylesheet" href="/static/Tools/Tf_iframe.css">
+    <!-- Gruop_City.css -->
+	<link rel="stylesheet" href="/static/Tools/Gruop_City.css">
+	<!-- Group_News.css -->
+	<link rel="stylesheet" href="/static/Tools/Group_News.css">
     <!-- Color -->
     <link rel="stylesheet" href="/static/Tools/Color.css">
     <!-- footer -->
