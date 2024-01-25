@@ -62,13 +62,26 @@ public class MemberController {
 	}
 	
 	@GetMapping("/Update")
-	public String update(Model model) {
+	public String update(Model model, HttpSession session) {
+		MemberBean mb;
+		mb = (MemberBean) session.getAttribute("member");
+		System.out.println(mb.getAccount());
+		if (mb == null || mb.getAccount().equals("Guest")) {
+		return "redirect:/login/login";
+		}		
 		return "Member/Update";
 	}
 	
 	@GetMapping("/List")
-	public String list(Model model) {
-		List<MemberEventsBean> mm = memberEventsService.findByMemberId(1);
+	public String list(Model model, HttpSession session) {
+		MemberBean mb;
+		mb = (MemberBean) session.getAttribute("member");
+		System.out.println(mb.getAccount());
+		if (mb == null || mb.getAccount().equals("Guest")) {
+		return "redirect:/login/login";
+		}		
+		
+		List<MemberEventsBean> mm = memberEventsService.findByMemberId(mb.getMemberId());
 		//在memberEvent表格裡面尋找會員有幾個活動
 		model.addAttribute("table_size",mm.size());
 //		List<String> aa1=new ArrayList<>();
@@ -113,7 +126,13 @@ public class MemberController {
 	
 	
 	@GetMapping("/Eedit")
-	public String edit(Model model) {
+	public String edit(Model model, HttpSession session) {
+		MemberBean mb;
+		mb = (MemberBean) session.getAttribute("member");
+		System.out.println(mb.getAccount());
+		if (mb == null || mb.getAccount().equals("Guest")) {
+		return "redirect:/login/login";
+		}		
 		return "Member/Edit";
 	}
 	
@@ -172,8 +191,10 @@ public class MemberController {
 	
 	@GetMapping("/List/item")
 	@ResponseBody
-	public List<EventsBean> Listevent(Model model) {
-	List<MemberEventsBean> mm = memberEventsService.findByMemberId(1);
+	public List<EventsBean> Listevent(Model model, HttpSession session) {
+		MemberBean mb;
+		mb = (MemberBean) session.getAttribute("member");	
+	List<MemberEventsBean> mm = memberEventsService.findByMemberId(mb.getMemberId());
 
 	List<EventsBean> out = new ArrayList<>();
 	model.addAttribute("table_size",mm.size());
@@ -432,7 +453,7 @@ public class MemberController {
 //        eventService.save(updateEb);
 //        return "student";
         return a;
-        }
+    }
 	
 // 	@PostMapping("/your_backend_url")
 //     @ResponseBody
@@ -464,30 +485,30 @@ public class MemberController {
 	
 	
 	
-	@PostMapping("/new_img")
-    @ResponseBody
-    public  HashMap<String, String> newImg(@RequestParam HashMap<String,Object> eb) {
-//      
-//		String jsonData = java.net.URLDecoder.decode(eb, "UTF-8");
-		
-//		System.out.println(eb.get("data"));
-//		System.out.println(eb.keySet());
+//	@PostMapping("/new_img")
+//    @ResponseBody
+//    public  HashMap<String, String> newImg(@RequestParam HashMap<String,Object> eb) {
+////      
+////		String jsonData = java.net.URLDecoder.decode(eb, "UTF-8");
 //		
-		EventsBean updateEb = eventService.findById(4);
-        updateEb.setEventImage(Base64.getDecoder().decode((eb.get("data").toString()).split(",")[1]));
-        eventService.save(updateEb);
-		
-//		updateEb.getEventImage();
-
-        HashMap<String, String> a = new HashMap<>();
-        a.put("stu", "student");
-//        a.put("stuu", updateEb.getEventImage().toString());
-//        EventsBean updateEb = new EventsBean();
-//        updateEb.set
+////		System.out.println(eb.get("data"));
+////		System.out.println(eb.keySet());
+////		
+//		EventsBean updateEb = eventService.findById(4);
+//        updateEb.setEventImage(Base64.getDecoder().decode((eb.get("data").toString()).split(",")[1]));
 //        eventService.save(updateEb);
-//        return "student";
-        return a;
-        }
+//		
+////		updateEb.getEventImage();
+//
+//        HashMap<String, String> a = new HashMap<>();
+//        a.put("stu", "student");
+////        a.put("stuu", updateEb.getEventImage().toString());
+////        EventsBean updateEb = new EventsBean();
+////        updateEb.set
+////        eventService.save(updateEb);
+////        return "student";
+//        return a;
+//        }
 	
 }
 
