@@ -94,5 +94,7 @@ public class EventServiceImpl implements EventService {
 		
 		return eventDao.findByEventTitle(eventTitle);
 	}
+	
+
 	 
 }

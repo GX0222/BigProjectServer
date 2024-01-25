@@ -27,6 +27,7 @@ public interface EventService {
 	public EventsBean findById(Integer id);
 	public List<EventsBean> findByEventTitle(String eventTitle);
 	public void save(EventsBean eb);
+
 	
 	
 	}
