@@ -1,7 +1,6 @@
 package com.web.store.controller;
 
 import java.sql.Date;
-import java.sql.Timestamp;
 import java.text.ParseException;
 import java.text.SimpleDateFormat;
 import java.util.ArrayList;
@@ -18,11 +17,14 @@ import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.ResponseBody;
 
 import com.web.store.model.EventsBean;
+import com.web.store.model.MemberBean;
 import com.web.store.model.MemberEventsBean;
 import com.web.store.model.ehBean;
 import com.web.store.service.EhService;
 import com.web.store.service.EventService;
 import com.web.store.service.MemberEventsService;
+
+import jakarta.servlet.http.HttpSession;
 
 
 
@@ -43,8 +45,15 @@ public class MemberController {
 	}
 
 	@GetMapping("/Member")
-	public String member(Model model) {
-		return "Member/Member";
+	public String member(Model model, HttpSession session) {
+	MemberBean mb;
+	mb = (MemberBean) session.getAttribute("member");
+	System.out.println(mb.getAccount());
+	if (mb == null || mb.getAccount().equals("Guest")) {
+	return "redirect:/login/login";
+	}
+	System.out.println(mb.getUsername());
+	return "Member/Member";
 	}
 
 	@GetMapping("/Love")
@@ -92,11 +101,11 @@ public class MemberController {
 		return "trafficimfor/trafficimfor";
 	}
 	
-	@GetMapping("/AboutUs")
-	public String aboutUs(Model model) {
-		return "AboutUs/AboutUs";
-	}
-	
+//	@GetMapping("/AboutUs")
+//	public String aboutUs(Model model) {
+//		return "AboutUs/AboutUs";
+//	}
+//	
 	@GetMapping("/Ian/index'")
 	public String ianIndex(Model model) {
 		return "index";

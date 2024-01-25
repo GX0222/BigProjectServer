@@ -66,9 +66,11 @@ public class HomeController {
 		mb = (MemberBean) session.getAttribute("member");
 		String memImg = null;
 		if (mb != null && !mb.getAccount().equals("Guest")) {
+//			login
 			Integer memID = mb.getMemberId();
 			memImg = memberPictureService.getImgByMemberId(memID);
 		}else {
+//			guest
 			mb = memberService.findByAccount("Guest");
 			session.setAttribute("member", mb);
 			memImg = memberPictureService.getImgByMemberId(2);
