@@ -71,51 +71,51 @@
 						<th>活動介紹</th>
 						<th></th>
 					</tr>
-					<tr>
-						<td><img src="/static/image/2023聖誕節.jpg" alt=""></td>
-						<td>
-							<p>聖誕嘉年華</p>
-						</td>
-						<td>
-							<p>2023.12.25</p>
-						</td>
-						<td>
-							<p>台北統一時代百貨</p>
-						</td>
-						<td>
-							<p>我是內容我是內容我是內容我是內容我是內容我是內容我是內容</p>
-						</td>
+<!-- 					<tr> -->
+<!-- 						<td><img src="/static/image/2023聖誕節.jpg" alt=""></td> -->
+<!-- 						<td> -->
+<!-- 							<p>聖誕嘉年華</p> -->
+<!-- 						</td> -->
+<!-- 						<td> -->
+<!-- 							<p>2023.12.25</p> -->
+<!-- 						</td> -->
+<!-- 						<td> -->
+<!-- 							<p>台北統一時代百貨</p> -->
+<!-- 						</td> -->
+<!-- 						<td> -->
+<!-- 							<p>我是內容我是內容我是內容我是內容我是內容我是內容我是內容</p> -->
+<!-- 						</td> -->
 
 
-						<td><span style="margin: 2rem;"> <a
-								href="./test"
-								class="btn btn-outline-primary btn-sm">新增圖片</a> |<a
-								href="./Activity_edit.html"
-								class="btn btn-outline-primary btn-sm">編輯</a> | <a href=""
-								class="btn btn-outline-danger btn-sm">刪除</a>
-						</span></td>
+<!-- 						<td><span style="margin: 2rem;"> <a -->
+<!-- 								href="./test" -->
+<!-- 								class="btn btn-outline-primary btn-sm">新增圖片</a> |<a -->
+<!-- 								href="./Activity_edit.html" -->
+<!-- 								class="btn btn-outline-primary btn-sm">編輯</a> | <a href="" -->
+<!-- 								class="btn btn-outline-danger btn-sm">刪除</a> -->
+<!-- 						</span></td> -->
 
-					</tr>
-					<tr>
-						<td><img src="/static/image/2023聖誕節.jpg" alt=""></td>
-						<td>
-							<p>新北耶誕城</p>
-						</td>
-						<td>
-							<p>2023.12.25-2024.01.01</p>
-						</td>
-						<td>
-							<p>新北市</p>
-						</td>
-						<td>
-							<p>我是內容我是內容我是內容我是內容我是內容我是內容我是內容${Event_title}${EventTime}</p>
-						</td>
-						<td><span style="margin: 2rem;"> <a
-								href="/edit"
-								class="btn btn-outline-primary btn-sm">編輯</a> | <a href=""
-								class="btn btn-outline-danger btn-sm">刪除</a>
-						</span></td>
-					</tr>
+<!-- 					</tr> -->
+<!-- 					<tr> -->
+<!-- 						<td><img src="/static/image/2023聖誕節.jpg" alt=""></td> -->
+<!-- 						<td> -->
+<!-- 							<p>新北耶誕城</p> -->
+<!-- 						</td> -->
+<!-- 						<td> -->
+<!-- 							<p>2023.12.25-2024.01.01</p> -->
+<!-- 						</td> -->
+<!-- 						<td> -->
+<!-- 							<p>新北市</p> -->
+<!-- 						</td> -->
+<!-- 						<td> -->
+<%-- 							<p>我是內容我是內容我是內容我是內容我是內容我是內容我是內容${Event_title}${EventTime}</p> --%>
+<!-- 						</td> -->
+<!-- 						<td><span style="margin: 2rem;"> <a -->
+<!-- 								href="/edit" -->
+<!-- 								class="btn btn-outline-primary btn-sm">編輯</a> | <a href="" -->
+<!-- 								class="btn btn-outline-danger btn-sm">刪除</a> -->
+<!-- 						</span></td> -->
+<!-- 					</tr> -->
 				</table>
 
 				<div class="text-center p-3">
