@@ -36,4 +36,9 @@ public class MemberTrackServiceImpl implements MemberTrackService {
 		trackDao.save(newTrackBean);
 	}
 
+	@Override
+	public void saveTrack(MemberTrackBean mtb) {
+		trackDao.save(mtb);
+	}
+
 }

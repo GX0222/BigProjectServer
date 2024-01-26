@@ -82,7 +82,6 @@ public class HomeController {
 			memImg = memberPictureService.getImgByMemberId(2);
 			session.setAttribute("memberImg", memImg);
 		}
-		
 	}
 	
 	
