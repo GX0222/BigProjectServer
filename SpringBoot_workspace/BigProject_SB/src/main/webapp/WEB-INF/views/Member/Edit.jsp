@@ -125,20 +125,6 @@
         </div>
     </nav>
     <div class="bgCon">
-<!--         <div class="homeLeft" style="background-color: rgba(194, 150, 107, 0.178);"> -->
-<!--             <h5>會員專區</h5> -->
-<!--             <ul> -->
-<!--                 <li><a class="aa" href="/Member">基本資料</a></li> -->
-<!--                 <li><a class="aa" href="/Love">我的收藏</a></li> -->
-                
-<!--             </ul> -->
-<!--             <hr> -->
-<!--             <h5>活動專區</h5> -->
-<!--             <ul> -->
-<!--                 <li><a class="aa" href="/List">我的活動</a></li> -->
-<!--                 <li>上架活動</li> -->
-<!--             </ul> -->
-<!--         </div> -->
 		<!-- HomeLeft -->
         <%@ include file="Shared/HomeLeft.jsp" %>
         <!-- <div class="homeLeft2">
@@ -147,54 +133,6 @@
         <div class="homeRight">
             <div class="infoCon">
                 <h3>編輯活動</h3>
-<!--                 <hr /> -->
-<!--                 <form action="" method="post"> -->
-<!--                     <div class="form-group"> -->
-
-<!-- 							 <label class="control-label" for="datepicker">活動時間</label><br> -->
-<!--                         <input type="text" id="datepicker" value=""> -->
-<!--                     </div> -->
-
-<!--                     <div class="form-group"> -->
-<!--                         <label class="control-label" for="Name">活動名稱</label> -->
-<!--                         <input class="form-control" type="text" id="Name" name="Name" value="" /> -->
-<!--                     </div> -->
-
-<!--                     <div class="form-group"> -->
-<!--                         <label class="control-label" for="Summary">活動簡介</label> -->
-<!--                         <input class="form-control" type="text" id="Summary" name="Summary" value="" /> -->
-<!--                     </div> -->
-
-<!--                     <div class="form-group"> -->
-<!--                         <label class="control-label" for="textarea">活動內容</label><br> -->
-<!--                         <textarea id="textarea" name="textarea" rows="10" cols="50" value="" required></textarea> -->
-<!--                     </div> -->
-
-<!--                     <div> -->
-
-<!-- 	                        <input type="checkbox" name="checkboxes" id="checkbox1" value="1" checked="checked" /> <label for="checkbox1">休閒旅遊</label><br> -->
-<!-- 	                        <input type="checkbox" name="checkboxes" id="checkbox2" value="2" /> <label for="checkbox2">藝文活動</label> <br> -->
-<!-- 	                        <input type="checkbox" name="checkboxes" id="checkbox3" value="3" /> <label for="checkbox3">親子 </label><br> -->
-<!-- 	                        <input type="checkbox" name="checkboxes" id="checkbox4" value="4" /> <label for="checkbox4">文創/市集 </label><br> -->
-<!-- 	                        <input type="checkbox" name="checkboxes" id="checkbox5" value="5" /> <label for="checkbox5">博物館/美術館</label> -->
-
-<!--                     </div> -->
-
-<!--                     <br> -->
-
-<!--                     <div class="form-group"> -->
-<!--                         <input id="okButton" type="button" value="確定" class="btn btn-outline-primary" /> | -->
-<!-- 							 <a href="/List" class="btn btn-outline-info">取消</a> -->
-<!--                     </div> -->
-<!--                 </form> -->
-
-
-<!--             </div> -->
-
-
-<!--         </div> -->
-<!--     </div> -->
-
                       <hr />
                 <form action="" method="post">
                     <div class="form-group">

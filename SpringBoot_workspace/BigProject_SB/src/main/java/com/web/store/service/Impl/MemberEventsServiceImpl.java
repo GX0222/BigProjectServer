@@ -26,6 +26,21 @@ public class MemberEventsServiceImpl implements MemberEventsService {
 		
 		return memberEventsDao.findByMemberId(member_id);
 	}
+	@Override
+	public void save(MemberEventsBean meb) {
+		memberEventsDao.save(meb);
+		System.out.println("memberEvents save done");
+	}
+	@Override
+	public void delete(MemberEventsBean meb) {
+		memberEventsDao.delete(meb);
+		System.out.println("memberEvents delete done");
+	}
+	@Override
+	public List<MemberEventsBean> findByEventsId(Integer eventsId) {
+		
+		return memberEventsDao.findByEventsId(eventsId);
+	}
 
 	
 

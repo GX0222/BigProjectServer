@@ -12,6 +12,7 @@ import javax.management.MBeanAttributeInfo;
 
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
+import org.springframework.web.bind.annotation.DeleteMapping;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.PostMapping;
@@ -72,13 +73,26 @@ public class MemberController {
 	}
 	
 	@GetMapping("/Update")
-	public String update(Model model) {
+	public String update(Model model, HttpSession session) {
+		MemberBean mb;
+		mb = (MemberBean) session.getAttribute("member");
+		System.out.println(mb.getAccount());
+		if (mb == null || mb.getAccount().equals("Guest")) {
+		return "redirect:/login/login";
+		}		
 		return "Member/Update";
 	}
 	
 	@GetMapping("/List")
-	public String list(Model model) {
-		List<MemberEventsBean> mm = memberEventsService.findByMemberId(1);
+	public String list(Model model, HttpSession session) {
+		MemberBean mb;
+		mb = (MemberBean) session.getAttribute("member");
+		System.out.println(mb.getAccount());
+		if (mb == null || mb.getAccount().equals("Guest")) {
+		return "redirect:/login/login";
+		}		
+		
+		List<MemberEventsBean> mm = memberEventsService.findByMemberId(mb.getMemberId());
 		//在memberEvent表格裡面尋找會員有幾個活動
 		model.addAttribute("table_size",mm.size());
 //		List<String> aa1=new ArrayList<>();
@@ -123,7 +137,13 @@ public class MemberController {
 	
 	
 	@GetMapping("/Eedit")
-	public String edit(Model model) {
+	public String edit(Model model, HttpSession session) {
+		MemberBean mb;
+		mb = (MemberBean) session.getAttribute("member");
+		System.out.println(mb.getAccount());
+		if (mb == null || mb.getAccount().equals("Guest")) {
+		return "redirect:/login/login";
+		}		
 		return "Member/Edit";
 	}
 	
@@ -133,7 +153,7 @@ public class MemberController {
 		Integer a1 = 1;
 		List<MemberEventsBean> mm = memberEventsService.findByMemberId(a1);
 		
-		System.out.println(mm.get(0).getMember_id());
+		System.out.println(mm.get(0).getMemberId());
 		System.out.println(mm.size());
 		model.addAttribute("table_size",mm.size());
 		List<String> aa1=new ArrayList<>();
@@ -141,7 +161,7 @@ public class MemberController {
 		List<String> aa3=new ArrayList<>();
 		List<String> aa4=new ArrayList<>();
 		for(MemberEventsBean mbean:mm) {
-			Integer idd = mbean.getEvent_id123();
+			Integer idd = mbean.getEventsId();
 			System.out.println(idd);
 //			EventsBean eb =eventService.getById(idd);
 			EventsBean eb =eventService.findById(idd);
@@ -182,13 +202,15 @@ public class MemberController {
 	
 	@GetMapping("/List/item")
 	@ResponseBody
-	public List<EventsBean> Listevent(Model model) {
-	List<MemberEventsBean> mm = memberEventsService.findByMemberId(1);
+	public List<EventsBean> Listevent(Model model, HttpSession session) {
+		MemberBean mb;
+		mb = (MemberBean) session.getAttribute("member");	
+	List<MemberEventsBean> mm = memberEventsService.findByMemberId(mb.getMemberId());
 
 	List<EventsBean> out = new ArrayList<>();
 	model.addAttribute("table_size",mm.size());
 	for(MemberEventsBean mbean:mm) {
-		Integer idd = mbean.getEvent_id123();
+		Integer idd = mbean.getEventsId();
 		EventsBean eb =eventService.findById(idd);
 		out.add(eb);
 	}
@@ -345,7 +367,9 @@ public class MemberController {
 	
 	@PostMapping("/getJson4")
     @ResponseBody
-    public  HashMap<String, String> JsonController4(@RequestParam HashMap<String,Object> eb) {
+    public  HashMap<String, String> JsonController4(@RequestParam HashMap<String,Object> eb, HttpSession session) {
+		MemberBean mb;
+		mb = (MemberBean) session.getAttribute("member");
 //       System.out.println();
 		int hobby_num =5;
 		
@@ -411,6 +435,12 @@ public class MemberController {
         List<EventsBean> FindnewEvents = eventService.findByEventTitle((String)eb.get("eventName"));
         Integer newEventID = FindnewEvents.get(FindnewEvents.size()-1).getId();
         System.out.println("event id:"+ newEventID.toString());
+        //save memberevent
+        MemberEventsBean meb = new MemberEventsBean();
+		meb.setEventsId(newEventID);
+		meb.setMemberId(mb.getMemberId());
+		memberEventsService.save(meb);
+        
 		int check_hobby_exist = 0;
 //		System.out.println("here5");
         for(Integer i=0 ;i<hobby_num;i++) {
@@ -442,7 +472,7 @@ public class MemberController {
 //        eventService.save(updateEb);
 //        return "student";
         return a;
-        }
+    }
 	
 // 	@PostMapping("/your_backend_url")
 //     @ResponseBody
@@ -474,30 +504,71 @@ public class MemberController {
 	
 	
 	
-	@PostMapping("/new_img")
-    @ResponseBody
-    public  HashMap<String, String> newImg(@RequestParam HashMap<String,Object> eb) {
-//      
-//		String jsonData = java.net.URLDecoder.decode(eb, "UTF-8");
-		
-//		System.out.println(eb.get("data"));
-//		System.out.println(eb.keySet());
+//	@PostMapping("/new_img")
+//    @ResponseBody
+//    public  HashMap<String, String> newImg(@RequestParam HashMap<String,Object> eb) {
+////      
+////		String jsonData = java.net.URLDecoder.decode(eb, "UTF-8");
 //		
-		EventsBean updateEb = eventService.findById(4);
-        updateEb.setEventImage(Base64.getDecoder().decode((eb.get("data").toString()).split(",")[1]));
-        eventService.save(updateEb);
-		
-//		updateEb.getEventImage();
+////		System.out.println(eb.get("data"));
+////		System.out.println(eb.keySet());
+////		
+//		EventsBean updateEb = eventService.findById(4);
+//        updateEb.setEventImage(Base64.getDecoder().decode((eb.get("data").toString()).split(",")[1]));
+//        eventService.save(updateEb);
+//		
+////		updateEb.getEventImage();
+//
+//        HashMap<String, String> a = new HashMap<>();
+//        a.put("stu", "student");
+////        a.put("stuu", updateEb.getEventImage().toString());
+////        EventsBean updateEb = new EventsBean();
+////        updateEb.set
+////        eventService.save(updateEb);
+////        return "student";
+//        return a;
+//        }
 
+
+	@DeleteMapping("/deteteJson")
+    @ResponseBody
+    public  HashMap<String, String> JsonController5(@RequestParam HashMap<String,Object> eb) {
+		int hobby_num =5;
+		System.out.println("1");
+		System.out.println("eventid:"+eb.get("eventId").toString());
+
+		System.out.println(Boolean.valueOf((String)(eb.get("hb4"))));
+		System.out.println(Boolean.valueOf("true"));
+
+		EventsBean deleteEb =eventService.findById(Integer.valueOf((String)eb.get("eventId")));
+		eventService.delete(deleteEb);
+        List<ehBean> ehb = ehService.findByEvent_id(Integer.valueOf((String)eb.get("eventId")));
+//      List<Integer> ehobbies=new ArrayList<>();
+//      System.out.println(ehobbies.isEmpty());
+      
+        for(ehBean a:ehb) {
+			System.out.println(a.getClassId());
+//			ehobbies.add(a.getClassId());
+			ehService.delete(a);
+			
+		}
+        List<MemberEventsBean> deletemeb = memberEventsService.findByEventsId(Integer.valueOf((String)eb.get("eventId")));
+        
+        for(MemberEventsBean b:deletemeb) {
+        	memberEventsService.delete(b);
+        }
+     
+        
         HashMap<String, String> a = new HashMap<>();
         a.put("stu", "student");
-//        a.put("stuu", updateEb.getEventImage().toString());
-//        EventsBean updateEb = new EventsBean();
-//        updateEb.set
-//        eventService.save(updateEb);
-//        return "student";
+
         return a;
-        }
+    }
+	
+	
+	
+	
+	
 	
 }
 

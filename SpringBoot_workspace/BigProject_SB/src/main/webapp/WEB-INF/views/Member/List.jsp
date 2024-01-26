@@ -170,7 +170,7 @@ function load_event_list() {
         				<td><span style="margin: 2rem;"> <a
         						href="/Eedit"
         						class="btn btn-outline-primary btn-sm" onclick="doedit(`+e[i].id+`)">編輯</a> | <a href=""
-        						class="btn btn-outline-danger btn-sm">刪除</a>
+        						class="btn btn-outline-danger btn-sm" onclick="dodelete(`+e[i].id+`)">刪除</a>
         				</span></td>
 
         			</tr>`;
@@ -185,11 +185,39 @@ function load_event_list() {
         })
     }
 
-load_event_list();
+	load_event_list();
+	
+	function doedit(e) {
+	    sessionStorage.setItem("myEventListId", e);
+	};
+	function dodelete(e) {
+		var delete_check = confirm('確任刪除嗎？');
 
-function doedit(e) {
-    sessionStorage.setItem("myEventListId", e);
-};
+		if (delete_check) {
+// 		    alert('你按了確定按鈕'+e);
+			var dataToServer={"eventId":e};
+// 			console.log(dataToServer);
+
+			$.ajax({
+		        url: "/deteteJson",
+		        dataType: "JSON",
+		        type: "delete",
+		        data:dataToServer,
+		        success: function (msg) {
+		            console.log("OK");
+		            window.location = "/List";
+		            },
+		        error:function(error){
+		        	console.log("error");
+
+		        	console.log(error.responseText);
+		        }
+		        
+		        })
+		} else {
+// 		    alert('你按了取消按鈕'+e);
+		}
+	};
 
 </script>
 </html>

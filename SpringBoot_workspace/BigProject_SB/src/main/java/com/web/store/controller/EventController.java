@@ -1,5 +1,6 @@
 package com.web.store.controller;
 
+import java.io.Console;
 import java.util.List;
 import java.util.Map;
 
@@ -37,10 +38,14 @@ public class EventController {
 	}
 
 	@GetMapping("/Event")
-	public String event(Model model, HttpSession session) {
+	public String event(@RequestParam(name = "eventId", required = false) Integer eventId, Model model, HttpSession session) {
+	    // 如果 eventId 存在，則使用它查詢相應的事件資料
+	   
 		Integer eventID = (Integer) session.getAttribute("eventID");
-		EventsBean eventData = eventService.findAllById(eventID);
-		model.addAttribute("eventData", eventData);
+		if (eventId != null) {
+	        EventsBean eventData = eventService.findAllById(eventId);
+	        model.addAttribute("eventData", eventData);
+	    }
 		return "Event/Event";
 	}
 
@@ -71,12 +76,28 @@ public class EventController {
 	}
 
 	@GetMapping("/EventList")
-	public String eventlist(Model model) {
+	public String eventlist(Model model, HttpSession session) {
 		List<EventsBean> eventList = eventService.findAll();
-		model.addAttribute("eventList", eventList);
-
+		model.addAttribute("eventList", eventList);		
+		
 		return "Event/EventList";
 	}
+	
+	@GetMapping("/EventList/{eventId}")
+	public String viewEvent(@PathVariable Integer eventId, Model model, HttpSession session) {
+	    // 根據 eventId 從服務中取得相應的活動資料
+	    EventsBean eventData = eventService.findAllById(eventId);
+
+	    // 將活動資料放入 model 中，以便在 JSP 中顯示
+	    model.addAttribute("eventData", eventData);
+
+	    // 這裡可以加入其他邏輯，例如檢查登入狀態等
+
+	    return "redirect:/Event"; // 返回專屬活動頁面的名稱，例如 "EventDetails"
+	}
+
+	
+	
 
 	@GetMapping("/EventList/{county}")
 	public String eventList(@PathVariable String county, @RequestParam(defaultValue = "0") int pageNo,
@@ -108,4 +129,10 @@ public class EventController {
 		return "Event/EventList";
 	}
 
+	
+	
+	
+	
+	
+	
 }

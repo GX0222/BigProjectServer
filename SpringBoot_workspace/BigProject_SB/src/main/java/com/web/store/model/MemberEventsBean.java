@@ -16,36 +16,42 @@ public class MemberEventsBean implements Serializable{
 	@Id
 	@GeneratedValue(strategy = GenerationType.IDENTITY)
 	Integer member_events_id;
-	@Column(name = "member_id")
-	Integer member_id;
-//	@Column(name = "event_id")
-	Integer events_id;
+//	@Column(name = "member_id")
+	Integer memberId;
+//	@Column(name = "events_id")
+	Integer eventsId;
 	public MemberEventsBean() {}
-	public MemberEventsBean(Integer member_eventsId, Integer member_id, Integer event_id) {
-		this.member_events_id = member_eventsId;
-		this.member_id = member_id;
-		this.events_id = event_id;
+	
+	
+	public MemberEventsBean(Integer member_events_id, Integer memberId, Integer eventsId) {
+		this.member_events_id = member_events_id;
+		this.memberId = memberId;
+		this.eventsId = eventsId;
 	}
+
+
 	public Integer getMember_events_id() {
 		return member_events_id;
 	}
 	public void setMember_events_id(Integer member_events_id) {
 		this.member_events_id = member_events_id;
 	}
-	public Integer getMember_id() {
-		return member_id;
+	public Integer getMemberId() {
+		return memberId;
 	}
-	public void setMember_id(Integer member_id) {
-		this.member_id = member_id;
+	public void setMemberId(Integer memberId) {
+		this.memberId = memberId;
 	}
-	public Integer getEvent_id123() {
-//		System.out.println(event_id);
-//		System.out.println("路過");
-		return events_id;
+	public Integer getEventsId() {
+		return eventsId;
 	}
-	public void setEvent_id(Integer event_id) {
-		this.events_id = event_id;
+	public void setEventsId(Integer eventsId) {
+		this.eventsId = eventsId;
 	}
+	public static long getSerialversionuid() {
+		return serialVersionUID;
+	}
+	
 	
 	
 	
