@@ -206,18 +206,31 @@ public class MemberController {
 	
 	@GetMapping("/List/item")
 	@ResponseBody
-	public List<EventsBean> Listevent(Model model, HttpSession session) {
+//	public List<EventsBean> Listevent(Model model, HttpSession session) {
+	public List<Object> Listevent(Model model, HttpSession session) {
 		MemberBean mb;
 		mb = (MemberBean) session.getAttribute("member");	
 	List<MemberEventsBean> mm = memberEventsService.findByMemberId(mb.getMemberId());
-
-	List<EventsBean> out = new ArrayList<>();
+	List<Object> out = new ArrayList<>();
+	List<EventsBean> ebs = new ArrayList<>();
+	List<String> imgstr = new ArrayList<>();
 	model.addAttribute("table_size",mm.size());
 	for(MemberEventsBean mbean:mm) {
 		Integer idd = mbean.getEventsId();
 		EventsBean eb =eventService.findById(idd);
-		out.add(eb);
+		ebs.add(eb);
+		if (eb.getEventImage() == null) {
+			eb =eventService.findById(4);
+			imgstr.add("data:image/png;base64, "+Base64.getEncoder().encodeToString(eb.getEventImage()));
+		}else {
+			imgstr.add("data:image/png;base64, "+Base64.getEncoder().encodeToString(eb.getEventImage()));
+		}
+//		imgstr.add("123");
+		
 	}
+	out.add(ebs);
+	out.add(imgstr);
+	
 	return out;
 	}
 	

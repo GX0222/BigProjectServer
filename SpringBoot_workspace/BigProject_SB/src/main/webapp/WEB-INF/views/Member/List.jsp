@@ -135,7 +135,11 @@
 
 </body>
 <script>
+
 // 清空列表並載入新列表
+
+// console.log(e[0].eventImage);
+
 function load_event_list() {
 	$.get("/List/item", function (e) {
          
@@ -152,25 +156,25 @@ function load_event_list() {
 
         	 for (var i = 0; i < ${table_size}; i++) {
         			var strNew = `<tr>
-        				<td><img src="/static/image/2023聖誕節.jpg" alt=""></td>
+        				<td><img src= "`+ e[1][i]+`" alt=""></td>
         				<td>
-        					<p>`+e[i].eventTitle+`</p>
+        					<p>`+e[0][i].eventTitle+`</p>
         				</td>
         				<td>
-        					<p>`+e[i].eventTime+`</p>
+        					<p>`+e[0][i].eventTime+`</p>
         				</td>
         				<td>
-        					<p>`+e[i].location+`</p>
+        					<p>`+e[0][i].location+`</p>
         				</td>
         				<td>
-        					<p>`+e[i].eventIntro+`</p>
+        					<p>`+e[0][i].eventIntro+`</p>
         				</td>
 
 
         				<td><span style="margin: 2rem;"> <a
         						href="/Eedit"
-        						class="btn btn-outline-primary btn-sm" onclick="doedit(`+e[i].id+`)">編輯</a> | <a href=""
-        						class="btn btn-outline-danger btn-sm" onclick="dodelete(`+e[i].id+`)">刪除</a>
+        						class="btn btn-outline-primary btn-sm" onclick="doedit(`+e[0][i].id+`)">編輯</a> | <a href=""
+        						class="btn btn-outline-danger btn-sm" onclick="dodelete(`+e[0][i].id+`)">刪除</a>
         				</span></td>
 
         			</tr>`;
