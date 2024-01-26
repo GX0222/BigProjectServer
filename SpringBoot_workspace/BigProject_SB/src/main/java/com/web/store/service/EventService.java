@@ -6,6 +6,7 @@ import java.util.Map;
 import org.springframework.data.domain.Page;
 
 import com.web.store.model.EventsBean;
+import com.web.store.model.ehBean;
 
 public interface EventService {
 
@@ -27,6 +28,6 @@ public interface EventService {
 	public EventsBean findById(Integer id);
 	public List<EventsBean> findByEventTitle(String eventTitle);
 	public void save(EventsBean eb);
-	
+	public void delete(EventsBean eb);
 	
 	}

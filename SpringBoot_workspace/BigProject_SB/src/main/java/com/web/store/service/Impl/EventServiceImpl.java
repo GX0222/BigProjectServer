@@ -94,5 +94,14 @@ public class EventServiceImpl implements EventService {
 		
 		return eventDao.findByEventTitle(eventTitle);
 	}
+
+
+	@Override
+	public void delete(EventsBean eb) {
+		System.out.println("event delete done");
+		eventDao.delete(eb);
+	}
+	
+	
 	 
 }
