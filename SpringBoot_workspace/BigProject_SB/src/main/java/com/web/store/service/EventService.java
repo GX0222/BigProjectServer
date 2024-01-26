@@ -28,11 +28,6 @@ public interface EventService {
 	public EventsBean findById(Integer id);
 	public List<EventsBean> findByEventTitle(String eventTitle);
 	public void save(EventsBean eb);
-<<<<<<< HEAD
 	public void delete(EventsBean eb);
-=======
-
-	
->>>>>>> 9a823d88a5cdddbbc196d7115a2513ef0bc25ab1
 	
 	}
