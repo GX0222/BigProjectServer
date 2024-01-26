@@ -63,6 +63,41 @@
 	        };
 	        xhr.send();
 	    }
+	    
+	    function loadCountyData(county) {
+	        var xhr = new XMLHttpRequest();
+	        xhr.open("GET", "/EventList/" + county, true);
+	        xhr.onreadystatechange = function () {
+	            if (xhr.readyState == 4 && xhr.status == 200) {
+	                // 在這裡處理 AJAX 回傳的資料，更新頁面等
+	                console.log(xhr.responseText);
+	            }
+	        };
+	        xhr.send();
+	    }
+	    
+	    
+	    function checkLoginAndSubmit(eventId) {
+	        // 使用 AJAX 發送 POST 請求
+	        var xhr = new XMLHttpRequest();
+	        xhr.open("POST", "/EventList/SelectEvent", true);
+	        xhr.setRequestHeader('Content-Type', 'application/json; charset=utf-8');
+
+	        xhr.onreadystatechange = function () {
+	            if (xhr.readyState == 4 && xhr.status == 200) {
+	                // 在這裡處理 AJAX 回傳的數據，更新頁面等
+	                console.log(xhr.responseText);
+	            }
+	        };
+
+	        // 將 eventId 包裝成 JSON 格式的字串
+	        var data = JSON.stringify({ "eventID": eventId });
+
+	        // 發送請求
+	        xhr.send(data);
+	    }
+
+
 	</script>
 
     
@@ -75,9 +110,6 @@
     <!-- navBar End -->	
     
     <div class="center">
-        <div class="pageTitle">
-            <h3>休閒旅遊</h3>
-        </div>
         <div>
 			<ul id="infoUlbar" class="nav nav-pills infoUlbar">
 			    <li class="ulName">
@@ -110,52 +142,49 @@
 <!--                 </li> -->
 <!--                 <h4 class="noSelect">|</h4> -->
                 <li class="ulName">
-                    <a class="nav-link" aria-current="page" href="#">台北市</a>
+                    <a class="nav-link" aria-current="page" href="#" onclick="loadCountyData('台北市')">台北市</a>
                 </li>
                 <h4 class="noSelect">|</h4>
                 <li class="ulName">
-                    <a class="nav-link" aria-current="page" href="#">新北市</a>
+                    <a class="nav-link" aria-current="page" href="#" onclick="loadCountyData('新北市')">新北市</a>
                 </li>
                 <h4 class="noSelect">|</h4>
                 <li class="ulName">
-                    <a class="nav-link" aria-current="page" href="#">桃園市</a>
+                    <a class="nav-link" aria-current="page" href="#" onclick="loadCountyData('桃園市')">桃園市</a>
                 </li>
                 <h4 class="noSelect">|</h4>
                 <li class="ulName">
-                    <a class="nav-link" aria-current="page" href="#">台中市</a>
+                    <a class="nav-link" aria-current="page" href="#" onclick="loadCountyData('台中市')">台中市</a>
                 </li>
                 <h4 class="noSelect">|</h4>
                 <li class="ulName">
-                    <a class="nav-link" aria-current="page" href="#">台南市</a>
+                    <a class="nav-link" aria-current="page" href="#" onclick="loadCountyData('台南市')">台南市</a>
                 </li>
                 <h4 class="noSelect">|</h4>
                 <li class="ulName">
-                    <a class="nav-link" aria-current="page" href="#">高雄市</a>
+                    <a class="nav-link" aria-current="page" href="#" onclick="loadCountyData('高雄市')">高雄市</a>
                 </li>
             </ul>
-        
             <div class="info">
 				<ul>
-		            <!-- 顯示前十筆資料 -->
-		            <c:forEach items="${eventList}" var="event" varStatus="loop">
-		                <c:if test="${(currentPage * pageSize) + loop.index < 10}">
-		                    <li class="dataList">
-								<!-- 使用一個普通的按鈕，點擊時呼叫JavaScript函數 -->
-					            <button onclick="checkLoginAndSubmit(${event.getId()})" class="favoriteButton">收藏</button>
-					            <!-- 表單用來提交收藏 -->
-					            <form id="loveForm" action="Love.jsp" method="post">
-					                <input type="hidden" id="eventIdInput" name="eventId" value="">
-					            </form>		                   
-		                        <div class="dataDay">${event.getStartTime()}</div>
-		                        <div class="dataCounty">${event.getCounty()}</div>
-		                        <div class="dataInfo">
-		                            ${fn:substring(event.getEventInfo(), 0, 100)}
-		                            <c:if test="${fn:length(event.getEventInfo()) > 100}">...</c:if>
-		                        </div>
-		                    </li>
-		                </c:if>
-		            </c:forEach>
-		        </ul>
+				    <!-- 顯示前十筆資料 -->
+				    <c:forEach items="${eventList}" var="event" varStatus="loop">
+				        <c:if test="${(currentPage * pageSize) + loop.index < 10}">
+							<li class="dataList">
+							        <button type="button" onclick="checkLoginAndSubmit(${event.getId()})" class="favoriteButton">收藏</button>
+							        <div class="dataDay">${event.getStartTime()}</div>
+							        <div class="dataCounty">${event.getCounty()}</div>
+							    <a href="/Event?eventId=${event.getId()}" class="eventLink">
+							        <div class="dataInfo selectEvent">				                
+							            ${fn:substring(event.getEventInfo(), 0, 100)}
+							            <c:if test="${fn:length(event.getEventInfo()) > 100}">...</c:if> 
+							    </a>
+							        </div>
+							</li>
+				        </c:if>
+				    </c:forEach>
+				</ul>
+
 				<!-- 分頁元件 -->
 				<nav aria-label="Page navigation example">
 				    <ul class="pagination">
