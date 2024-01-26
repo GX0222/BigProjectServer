@@ -36,7 +36,7 @@ public class MemberPictureServiceImpl implements MemberPictureService {
 	}
 
 	@Override
-	public void save(MemberPictureBeam mpeb) {
+	public void save(MemberPictureBean mpeb) {
 		memPicDao.save(mpeb);
 		System.out.println("MemberPicture done");
 		

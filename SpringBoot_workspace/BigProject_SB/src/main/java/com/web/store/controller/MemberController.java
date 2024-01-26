@@ -8,8 +8,6 @@ import java.util.Base64;
 import java.util.HashMap;
 import java.util.List;
 
-import javax.management.MBeanAttributeInfo;
-
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.DeleteMapping;
@@ -22,7 +20,7 @@ import org.springframework.web.bind.annotation.ResponseBody;
 import com.web.store.model.EventsBean;
 import com.web.store.model.MemberBean;
 import com.web.store.model.MemberEventsBean;
-import com.web.store.model.MemberPictureBeam;
+import com.web.store.model.MemberPictureBean;
 import com.web.store.model.ehBean;
 import com.web.store.service.EhService;
 import com.web.store.service.EventService;
@@ -492,7 +490,7 @@ public  HashMap<String, String> JsonController7(@RequestParam HashMap<String,Obj
 //		System.out.println(eb.get("data"));
 //		System.out.println(eb.keySet());
 //		
-	MemberPictureBeam memPicBeam;
+	MemberPictureBean memPicBeam;
 	memPicBeam = memberPictureService.findByMemberId(mb.getMemberId());
 	if((eb.get("data").toString())!=null) {
 		memPicBeam.setPicture(Base64.getDecoder().decode((eb.get("data").toString()).split(",")[1]));
