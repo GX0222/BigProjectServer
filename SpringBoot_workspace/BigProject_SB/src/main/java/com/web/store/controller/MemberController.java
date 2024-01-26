@@ -8,6 +8,8 @@ import java.util.Base64;
 import java.util.HashMap;
 import java.util.List;
 
+import javax.management.MBeanAttributeInfo;
+
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.DeleteMapping;
@@ -52,7 +54,6 @@ public class MemberController {
 	public String member(Model model, HttpSession session) {
 	MemberBean mb;
 	mb = (MemberBean) session.getAttribute("member");
-
 	if (mb == null || mb.getAccount().equals("Guest")) {
 	return "redirect:/login/login";
 	}
@@ -64,7 +65,16 @@ public class MemberController {
 	}
 
 	@GetMapping("/Love")
-	public String love(Model model) {
+	public String love(Model model, HttpSession session) {
+//		MemberBean mb = (MemberBean) session.getAttribute("member");
+//		Integer memId = mb.getMemberId();
+//		List<Integer> eveL = xxx.findEventIdByMemberid(memId);
+//		List<EventsBean> eventBL;
+//		for(Integer eveLL:eveL) {
+//			eventBL.add(findByEventId(eveLL));
+//		}
+//		model.addAttribute("",eventBL);
+		
 		return "Member/Love";
 	}
 	
@@ -121,11 +131,11 @@ public class MemberController {
 		return "trafficimfor/trafficimfor";
 	}
 	
-//	@GetMapping("/AboutUs")
-//	public String aboutUs(Model model) {
-//		return "AboutUs/AboutUs";
-//	}
-//	
+	@GetMapping("/AboutUs")
+	public String aboutUs(Model model) {
+		return "AboutUs/AboutUs";
+	}
+	
 	@GetMapping("/Ian/index'")
 	public String ianIndex(Model model) {
 		return "index";

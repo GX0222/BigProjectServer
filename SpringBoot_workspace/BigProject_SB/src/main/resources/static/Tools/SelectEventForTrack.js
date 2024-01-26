@@ -1,5 +1,5 @@
 $(document).ready(function() {
-	$(".selectEvent").click(function(e) {
+	$(".selectEventForTrack").click(function(e) {
 		e.preventDefault();
 
 		var eventID = $(this).data("event");
@@ -8,8 +8,7 @@ $(document).ready(function() {
 			type: "POST",
 			url: "/SelectEvent",
 			contentType: "application/json",
-			data: JSON.stringify({ eventID: eventID,
-									track: "false" }),
+			data: JSON.stringify({ eventID: eventID }),
 			success: function(res) {
 				console.log(res);
 				window.location.href = "/Event";

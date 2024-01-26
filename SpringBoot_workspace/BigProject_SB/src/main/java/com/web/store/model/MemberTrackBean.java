@@ -11,7 +11,7 @@ import jakarta.persistence.Table;
 
 @Entity
 @Table(name="member_track")
-public class MemberTrack implements Serializable {
+public class MemberTrackBean implements Serializable {
 	private static final long serialVersionUID = 1L;
 	@Id
     @GeneratedValue(strategy=GenerationType.IDENTITY)
@@ -24,11 +24,11 @@ public class MemberTrack implements Serializable {
 	Integer hobby4lv;
 	Integer hobby5lv;
 	
-	public MemberTrack() {
+	public MemberTrackBean() {
 		
 	}
 
-	public MemberTrack(Integer id, Integer memberId, Integer hobby1lv, Integer hobby2lv, Integer hobby3lv,
+	public MemberTrackBean(Integer id, Integer memberId, Integer hobby1lv, Integer hobby2lv, Integer hobby3lv,
 			Integer hobby4lv, Integer hobby5lv) {
 		super();
 		this.id = id;
