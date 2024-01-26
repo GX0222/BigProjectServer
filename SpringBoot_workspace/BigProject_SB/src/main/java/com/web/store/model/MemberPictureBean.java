@@ -12,7 +12,7 @@ import jakarta.persistence.Table;
 
 @Entity
 @Table(name = "memberpicture")
-public class MemberPictureBeam implements Serializable {
+public class MemberPictureBean implements Serializable {
 	private static final long serialVersionUID = 1L;
 	@Id
     @GeneratedValue(strategy=GenerationType.IDENTITY)
@@ -23,11 +23,11 @@ public class MemberPictureBeam implements Serializable {
 	@Column(name = "picture", columnDefinition = "longblob")
 	byte[] picture;
 	
-	public MemberPictureBeam() {
+	public MemberPictureBean() {
 		
 	}
 	
-	public MemberPictureBeam(Integer id, Integer memberId, byte[] picture) {
+	public MemberPictureBean(Integer id, Integer memberId, byte[] picture) {
 		super();
 		this.id = id;
 		this.memberId = memberId;

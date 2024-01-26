@@ -69,13 +69,20 @@ public class HomeController {
 //			login
 			Integer memID = mb.getMemberId();
 			memImg = memberPictureService.getImgByMemberId(memID);
+			if (memImg != null && !memImg.isEmpty()) {
+				session.setAttribute("memberImg", memImg);
+			}else {
+				memImg = memberPictureService.getImgByMemberId(2);
+				session.setAttribute("memberImg", memImg);
+			}
 		}else {
 //			guest
 			mb = memberService.findByAccount("Guest");
 			session.setAttribute("member", mb);
 			memImg = memberPictureService.getImgByMemberId(2);
+			session.setAttribute("memberImg", memImg);
 		}
-		session.setAttribute("memberImg", memImg);
+		
 	}
 	
 	

@@ -5,7 +5,7 @@ import java.util.Base64;
 import org.springframework.stereotype.Service;
 
 import com.web.store.dao.MemberPictureDao;
-import com.web.store.model.MemberPictureBeam;
+import com.web.store.model.MemberPictureBean;
 import com.web.store.service.MemberPictureService;
 
 @Service
@@ -19,14 +19,14 @@ public class MemberPictureServiceImpl implements MemberPictureService {
 	}
 
 	@Override
-	public MemberPictureBeam findByMemberId(Integer memberId) {
+	public MemberPictureBean findByMemberId(Integer memberId) {
 		
 		return memPicDao.findByMemberId(memberId);
 	}
 
 	@Override
 	public String getImgByMemberId(Integer memberId) {
-		MemberPictureBeam memPicBeam;
+		MemberPictureBean memPicBeam;
 		memPicBeam = findByMemberId(memberId);
 		byte[] MemPicByte = memPicBeam.getPicture();
 		if(memPicBeam != null && MemPicByte != null) {
