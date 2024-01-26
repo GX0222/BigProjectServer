@@ -35,4 +35,12 @@ public class MemberPictureServiceImpl implements MemberPictureService {
 		return Base64.getEncoder().encodeToString(findByMemberId(2).getPicture());
 	}
 
+	@Override
+	public void save(MemberPictureBeam mpeb) {
+		memPicDao.save(mpeb);
+		System.out.println("MemberPicture done");
+		
+	}
+	
+	
 }

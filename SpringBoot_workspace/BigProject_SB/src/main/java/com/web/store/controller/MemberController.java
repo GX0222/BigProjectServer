@@ -20,10 +20,12 @@ import org.springframework.web.bind.annotation.ResponseBody;
 import com.web.store.model.EventsBean;
 import com.web.store.model.MemberBean;
 import com.web.store.model.MemberEventsBean;
+import com.web.store.model.MemberPictureBeam;
 import com.web.store.model.ehBean;
 import com.web.store.service.EhService;
 import com.web.store.service.EventService;
 import com.web.store.service.MemberEventsService;
+import com.web.store.service.MemberPictureService;
 
 import jakarta.servlet.http.HttpSession;
 
@@ -34,26 +36,30 @@ public class MemberController {
 	MemberEventsService memberEventsService;
 	EventService eventService;
 	EhService ehService;
-	
+	MemberPictureService memberPictureService;
 	
 	
 
-	public MemberController(MemberEventsService memberEventsService, EventService eventService, EhService ehService) {
+	public MemberController(MemberEventsService memberEventsService, EventService eventService, EhService ehService, MemberPictureService memberPictureService) {
 		super();
 		this.memberEventsService = memberEventsService;
 		this.eventService = eventService;
 		this.ehService = ehService;
+		this.memberPictureService = memberPictureService;
 	}
 
 	@GetMapping("/Member")
 	public String member(Model model, HttpSession session) {
 	MemberBean mb;
 	mb = (MemberBean) session.getAttribute("member");
-	System.out.println(mb.getAccount());
+
 	if (mb == null || mb.getAccount().equals("Guest")) {
 	return "redirect:/login/login";
 	}
 	System.out.println(mb.getUsername());
+	String memImg = memberPictureService.getImgByMemberId(mb.getMemberId());
+	session.setAttribute("memberImg", memImg);
+	System.out.println("GO member finished");
 	return "Member/Member";
 	}
 
@@ -66,8 +72,8 @@ public class MemberController {
 	public String update(Model model, HttpSession session) {
 		MemberBean mb;
 		mb = (MemberBean) session.getAttribute("member");
-		System.out.println(mb.getAccount());
-		if (mb == null || mb.getAccount().equals("Guest")) {
+
+		if (mb == null  || mb.getAccount().equals("Guest")) {
 		return "redirect:/login/login";
 		}		
 		return "Member/Update";
@@ -76,8 +82,8 @@ public class MemberController {
 	@GetMapping("/List")
 	public String list(Model model, HttpSession session) {
 		MemberBean mb;
+		System.out.println("1");
 		mb = (MemberBean) session.getAttribute("member");
-		System.out.println(mb.getAccount());
 		if (mb == null || mb.getAccount().equals("Guest")) {
 		return "redirect:/login/login";
 		}		
@@ -130,7 +136,7 @@ public class MemberController {
 	public String edit(Model model, HttpSession session) {
 		MemberBean mb;
 		mb = (MemberBean) session.getAttribute("member");
-		System.out.println(mb.getAccount());
+//		System.out.println(mb.getAccount());
 		if (mb == null || mb.getAccount().equals("Guest")) {
 		return "redirect:/login/login";
 		}		
@@ -464,9 +470,52 @@ public class MemberController {
         return a;
     }
 	
+	
+@PostMapping("/memberImgChange")
+@ResponseBody
+public  HashMap<String, String> JsonController7(@RequestParam HashMap<String,Object> eb, HttpSession session) {
+	MemberBean mb;
+	mb = (MemberBean) session.getAttribute("member");
+//      
+//		String jsonData = java.net.URLDecoder.decode(eb, "UTF-8");
+		
+//		System.out.println(eb.get("data"));
+//		System.out.println(eb.keySet());
+//		
+	MemberPictureBeam memPicBeam;
+	memPicBeam = memberPictureService.findByMemberId(mb.getMemberId());
+	if((eb.get("data").toString())!=null) {
+		memPicBeam.setPicture(Base64.getDecoder().decode((eb.get("data").toString()).split(",")[1]));
+		memberPictureService.save(memPicBeam);
+		HashMap<String, String> a = new HashMap<>();
+	    a.put("stu", "student");
+	}
+	
+//	EventsBean updateEb = eventService.findById(4);
+//    updateEb.setEventImage(Base64.getDecoder().decode((eb.get("data").toString()).split(",")[1]));
+//    eventService.save(updateEb);
+		
+
+		
+		
+		
+      HashMap<String, String> a = new HashMap<>();
+      a.put("stu", "data null");
+//        a.put("stuu", updateEb.getEventImage().toString());
+//        System.out.println(updateEb.getEventImage().);
+//        EventsBean updateEb = new EventsBean();
+//        updateEb.set
+//        eventService.save(updateEb);
+//        return "student";
+      System.out.println("changImg finished");
+      return a;
+      }
+	
+	
+	
 // 	@PostMapping("/your_backend_url")
 //     @ResponseBody
-//     public  HashMap<String, String> JsonController5(@RequestParam HashMap<String,Object> eb) {
+//     public  HashMap<String, String> JsonController6(@RequestParam HashMap<String,Object> eb) {
 // //      
 // //		String jsonData = java.net.URLDecoder.decode(eb, "UTF-8");
 		
