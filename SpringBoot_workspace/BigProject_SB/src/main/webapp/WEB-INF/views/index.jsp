@@ -241,7 +241,7 @@
 				<div class="groupTitle">
 					<h3>最新消息</h3>
 				</div>
-				<a class="newsA selectEvent" data-event="${eventTop2[0].getId()}"> <!-- href="<c:url value='/Event' />"-->
+				<a class="newsA selectEvent" data-event="${eventTop2[0].getId()}" data-track="true"> <!-- href="<c:url value='/Event' />"-->
 					<div id="news1" class="newsCon">
 						<div class="newsImgCon">
 							<img class="newsImg"
@@ -264,7 +264,7 @@
 						</div>
 					</div>
 				</a> 
-				<a class="newsA selectEvent" data-event="${eventTop2[1].getId()}">
+				<a class="newsA selectEvent" data-event="${eventTop2[1].getId()}" data-track="true">
 					<div id="news2" class="newsCon">
 						<div class="newsTextCon">
 							<div class="newsTextBgL">

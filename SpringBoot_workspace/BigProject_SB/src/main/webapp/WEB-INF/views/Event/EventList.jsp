@@ -40,62 +40,63 @@
     <link rel="stylesheet" href="/static/Tools/Color.css">
     <!-- footer -->
     <link rel="stylesheet" href="/static/Tools/footer.css">
+    <script src="/static/Tools/selectEvent.js" defer></script>
     
 	<script>
-	    function loadCategoryData(categoryId, element) {
-	        // 移除所有項目的 active 類別
-	        var navLinks = document.querySelectorAll('.nav-link');
-	        navLinks.forEach(function(link) {
-	            link.classList.remove('active');
-	        });
+// 	    function loadCategoryData(categoryId, element) {
+// 	        // 移除所有項目的 active 類別
+// 	        var navLinks = document.querySelectorAll('.nav-link');
+// 	        navLinks.forEach(function(link) {
+// 	            link.classList.remove('active');
+// 	        });
 	
-	        // 將被點擊的項目設為 active
-	        element.classList.add('active');
+// 	        // 將被點擊的項目設為 active
+// 	        element.classList.add('active');
 	
-	        // 使用原生 JavaScript 發送 AJAX 請求
-	        var xhr = new XMLHttpRequest();
-	        xhr.open("GET", "/EventList/category/" + categoryId + "?pageNo=0&pageSize=10", true);
-	        xhr.onreadystatechange = function () {
-	            if (xhr.readyState == 4 && xhr.status == 200) {
-	                // 在這裡處理 AJAX 回傳的數據，更新頁面等
-	                console.log(xhr.responseText);
-	            }
-	        };
-	        xhr.send();
-	    }
+// 	        // 使用原生 JavaScript 發送 AJAX 請求
+// 	        var xhr = new XMLHttpRequest();
+// 	        xhr.open("GET", "/EventList/category/" + categoryId + "?pageNo=0&pageSize=10", true);
+// 	        xhr.onreadystatechange = function () {
+// 	            if (xhr.readyState == 4 && xhr.status == 200) {
+// 	                // 在這裡處理 AJAX 回傳的數據，更新頁面等
+// 	                console.log(xhr.responseText);
+// 	            }
+// 	        };
+// 	        xhr.send();
+// 	    }
 	    
-	    function loadCountyData(county) {
-	        var xhr = new XMLHttpRequest();
-	        xhr.open("GET", "/EventList/" + county, true);
-	        xhr.onreadystatechange = function () {
-	            if (xhr.readyState == 4 && xhr.status == 200) {
-	                // 在這裡處理 AJAX 回傳的資料，更新頁面等
-	                console.log(xhr.responseText);
-	            }
-	        };
-	        xhr.send();
-	    }
+// 	    function loadCountyData(county) {
+// 	        var xhr = new XMLHttpRequest();
+// 	        xhr.open("GET", "/EventList/" + county, true);
+// 	        xhr.onreadystatechange = function () {
+// 	            if (xhr.readyState == 4 && xhr.status == 200) {
+// 	                // 在這裡處理 AJAX 回傳的資料，更新頁面等
+// 	                console.log(xhr.responseText);
+// 	            }
+// 	        };
+// 	        xhr.send();
+// 	    }
 	    
 	    
-	    function checkLoginAndSubmit(eventId) {
-	        // 使用 AJAX 發送 POST 請求
-	        var xhr = new XMLHttpRequest();
-	        xhr.open("POST", "/EventList/SelectEvent", true);
-	        xhr.setRequestHeader('Content-Type', 'application/json; charset=utf-8');
+// 	    function checkLoginAndSubmit(eventId) {
+// 	        // 使用 AJAX 發送 POST 請求
+// 	        var xhr = new XMLHttpRequest();
+// 	        xhr.open("POST", "/EventList/SelectEvent", true);
+// 	        xhr.setRequestHeader('Content-Type', 'application/json; charset=utf-8');
 
-	        xhr.onreadystatechange = function () {
-	            if (xhr.readyState == 4 && xhr.status == 200) {
-	                // 在這裡處理 AJAX 回傳的數據，更新頁面等
-	                console.log(xhr.responseText);
-	            }
-	        };
+// 	        xhr.onreadystatechange = function () {
+// 	            if (xhr.readyState == 4 && xhr.status == 200) {
+// 	                // 在這裡處理 AJAX 回傳的數據，更新頁面等
+// 	                console.log(xhr.responseText);
+// 	            }
+// 	        };
 
-	        // 將 eventId 包裝成 JSON 格式的字串
-	        var data = JSON.stringify({ "eventID": eventId });
+// 	        // 將 eventId 包裝成 JSON 格式的字串
+// 	        var data = JSON.stringify({ "eventID": eventId });
 
-	        // 發送請求
-	        xhr.send(data);
-	    }
+// 	        // 發送請求
+// 	        xhr.send(data);
+// 	    }
 
 
 	</script>
@@ -174,8 +175,8 @@
 							        <button type="button" onclick="checkLoginAndSubmit(${event.getId()})" class="favoriteButton">收藏</button>
 							        <div class="dataDay">${event.getStartTime()}</div>
 							        <div class="dataCounty">${event.getCounty()}</div>
-							    <a href="/Event?eventId=${event.getId()}" class="eventLink">
-							        <div class="dataInfo selectEvent">				                
+							    <a class="eventLink selectEvent" data-event="${event.getId() }" data-track="false">
+							        <div class="dataInfo">				                
 							            ${fn:substring(event.getEventInfo(), 0, 100)}
 							            <c:if test="${fn:length(event.getEventInfo()) > 100}">...</c:if> 
 							    </a>
@@ -230,9 +231,8 @@
 <!-- 	<!-- script end --> -->
 
 					
-	<script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
-    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.9.2/dist/umd/popper.min.js"></script>
-    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+    <%-- <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.9.2/dist/umd/popper.min.js"></script> --%>
+
 
 	
 </body>
