@@ -3,7 +3,7 @@
 <%@ taglib prefix="form" uri="http://www.springframework.org/tags/form"%>
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core"%>
 <%@ taglib uri="http://www.springframework.org/tags" prefix="spring"%>
-<%@ taglib uri="http://java.sun.com/jsp/jstl/functions" prefix="fn" %>
+<%@ taglib uri="http://java.sun.com/jsp/jstl/functions" prefix="fn"%>
 
 
 
@@ -34,7 +34,8 @@
 <!-- Google Icon -->
 <link href="https://fonts.googleapis.com/icon?family=Material+Icons"
 	rel="stylesheet">
-<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200" />
+<link rel="stylesheet"
+	href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200" />
 <!-- SimpleBar-->
 <link rel="stylesheet"
 	href="https://unpkg.com/simplebar@latest/dist/simplebar.css" />
@@ -97,9 +98,14 @@
 						</a>
 						<div class="memberConMd d-flex">
 							<div class="nameCon">
-								<a href="<c:url value='/Member' />"> <img
-									class="rounded-circle img-fluid"
-									src="data:image/png;base64, ${memberImg}" alt="">
+								<a href="<c:url value='/Member' />"> 
+									<c:if test="${member.getAccount() != 'Guest' }">
+										<img class="rounded-circle img-fluid"
+											src="data:image/png;base64, ${memberImg}" />
+									</c:if> 
+									<c:if test="${member.getAccount() == 'Guest' }">										
+										<span class="material-symbols-outlined"> login </span>										
+									</c:if>
 								</a>
 							</div>
 							<button class="navbar-toggler" type="button"
@@ -113,32 +119,39 @@
 					<div class="collapseCon">
 						<div class="collapse navbar-collapse" id="mynavbar">
 							<ul class="navbar-nav me-auto mb-2 mb-lg-0">
-								<li class="nav-item"><a id="news"
-									onclick="nav_item_active()" class="nav-link"
-									aria-current="page" href="<c:url value='/EventList' />">活動資訊</a>
+								<li class="nav-item">
+									<a id="news" class="nav-link" aria-current="page" href="<c:url value='/EventList' />">
+										活動資訊
+									</a>
 								</li>
-								<li class="nav-item"><a id="trans"
-									onclick="nav_item_active()" class="nav-link"
-									aria-current="page" href="<c:url value='/Trafficimfor' />">交通情報</a>
+								<li class="nav-item">
+									<a id="trans" class="nav-link" aria-current="page" href="<c:url value='/Trafficimfor' />">
+										交通情報
+									</a>
 								</li>
-<!-- 								<li class="nav-item"><a id="forum" -->
-<!-- 									onclick="nav_item_active()" class="nav-link" -->
-<%-- 									aria-current="page" href="<c:url value='/' />">旅遊論壇</a></li> --%>
-								<li class="nav-item"><a id="aboutus"
-									onclick="nav_item_active()" class="nav-link"
-									aria-current="page" href="<c:url value='/AboutUs' />">關於我們</a></li>
-
+								<!-- 								<li class="nav-item"><a id="forum" -->
+								<!-- 									onclick="nav_item_active()" class="nav-link" -->
+								<%-- 									aria-current="page" href="<c:url value='/' />">旅遊論壇</a></li> --%>
+								<li class="nav-item">
+									<a id="aboutus" class="nav-link" aria-current="page" href="<c:url value='/AboutUs' />">
+										關於我們
+									</a>
+								</li>
 								<c:if test="${empty LoginOK}">
-									<li class="nav-item"><a id="logout"
-										onclick="nav_item_active()" class="nav-link"
-										aria-current="page" href="<c:url value='/login/login' />">登入</a></li>
+									<li class="nav-item">
+										<a class="nav-link" aria-current="page" href="<c:url value='/login/login' />">
+											登入
+										</a>
+									</li>
 								</c:if>
 
 								<c:choose>
 									<c:when test="${ ! empty LoginOK }">
-										<li class="nav-item"><a id="logout"
-											onclick="nav_item_active()" class="nav-link"
-											aria-current="page" href="<c:url value='/login/logout' />">登出</a></li>
+										<li class="nav-item">
+											<a class="nav-link" aria-current="page" href="<c:url value='/login/logout' />">
+												登出
+											</a>
+										</li>
 									</c:when>
 								</c:choose>
 							</ul>
@@ -179,7 +192,9 @@
 				<div class="weatherDivOff">
 					<div class="row p-0 m-0">
 						<div class="weatherColOff col-4">
-							<div class="weatherBlock">台南市<br>將軍區</div>
+							<div class="weatherBlock">
+								台南市<br>將軍區
+							</div>
 						</div>
 						<div class="weatherColOff col-4">
 							<div class="weatherBlock">${temp1st }℃</div>
@@ -241,7 +256,8 @@
 				<div class="groupTitle">
 					<h3>最新消息</h3>
 				</div>
-				<a class="newsA selectEvent" data-event="${eventTop2[0].getId()}" data-track="true"> <!-- href="<c:url value='/Event' />"-->
+				<a class="newsA selectEvent" data-event="${eventTop2[0].getId()}"
+					data-track="true"> <!-- href="<c:url value='/Event' />"-->
 					<div id="news1" class="newsCon">
 						<div class="newsImgCon">
 							<img class="newsImg"
@@ -254,17 +270,18 @@
 										<h4 class="newsH4">${eventTop2[0].getEventTitle()}</h4>
 										<hr>
 									</div>
-									<c:set var="trimmedInfo" value="${fn:substring(eventTop2[0].getEventInfo(), 0, 50)}" />
-						            ${trimmedInfo}
-						            <c:if test="${fn:length(eventTop2[0].getEventInfo()) > 50}">
+									<c:set var="trimmedInfo"
+										value="${fn:substring(eventTop2[0].getEventInfo(), 0, 50)}" />
+									${trimmedInfo}
+									<c:if test="${fn:length(eventTop2[0].getEventInfo()) > 50}">
 						                ...
-						            </c:if>									
+						            </c:if>
 								</div>
 							</div>
 						</div>
 					</div>
-				</a> 
-				<a class="newsA selectEvent" data-event="${eventTop2[1].getId()}" data-track="true">
+				</a> <a class="newsA selectEvent" data-event="${eventTop2[1].getId()}"
+					data-track="true">
 					<div id="news2" class="newsCon">
 						<div class="newsTextCon">
 							<div class="newsTextBgL">
@@ -273,11 +290,12 @@
 										<h4 class="newsH4">${eventTop2[1].getEventTitle()}</h4>
 										<hr>
 									</div>
-									<c:set var="trimmedInfo" value="${fn:substring(eventTop2[1].getEventInfo(), 0, 50)}" />
-						            ${trimmedInfo}
-						            <c:if test="${fn:length(eventTop2[0].getEventInfo()) > 50}">
+									<c:set var="trimmedInfo"
+										value="${fn:substring(eventTop2[1].getEventInfo(), 0, 50)}" />
+									${trimmedInfo}
+									<c:if test="${fn:length(eventTop2[0].getEventInfo()) > 50}">
 						                ...
-						            </c:if>	
+						            </c:if>
 								</div>
 							</div>
 						</div>
@@ -384,24 +402,22 @@
 			<div class="smallNewsGroup" data-simplebar>
 				<c:forEach items="${Taipei }" var="TaipeiEvents">
 					<div class="smallNews">
-						<div class="snTitle">
-							${TaipeiEvents.getEventTitle() } →
-						</div>
-<!-- 						<div class="snTime"> -->
-<%-- 							${TaipeiEvents.getStartTime() } --%>
-<!-- 						</div> -->
-<!-- 						<div class="snLocation"> -->
-<%-- 							${TaipeiEvents.getLocation() } --%>
-<!-- 						</div> -->
-<!-- 						<div class="snInfo"> -->
-<%-- 							${TaipeiEvents.getEventInfo() } --%>
-<!-- 						</div> -->
+						<div class="snTitle">${TaipeiEvents.getEventTitle() }→</div>
+						<!-- 						<div class="snTime"> -->
+						<%-- 							${TaipeiEvents.getStartTime() } --%>
+						<!-- 						</div> -->
+						<!-- 						<div class="snLocation"> -->
+						<%-- 							${TaipeiEvents.getLocation() } --%>
+						<!-- 						</div> -->
+						<!-- 						<div class="snInfo"> -->
+						<%-- 							${TaipeiEvents.getEventInfo() } --%>
+						<!-- 						</div> -->
 					</div>
 				</c:forEach>
 			</div>
 		</div>
 	</div>
-	
+
 
 	<!-- Footer -->
 	<%@ include file="Shared/Footer.jsp"%>
