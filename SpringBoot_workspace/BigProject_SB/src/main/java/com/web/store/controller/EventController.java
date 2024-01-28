@@ -13,6 +13,8 @@ import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestParam;
 
+import com.github.pagehelper.PageHelper;
+import com.github.pagehelper.PageInfo;
 import com.web.store.dao.MemberTrackDao;
 import com.web.store.model.EventsBean;
 import com.web.store.model.MemberBean;
@@ -89,54 +91,21 @@ public class EventController {
 	}
 
 	@GetMapping("/EventList")
-	public String eventlist(Model model, HttpSession session) {
+	public String eventlist(Model model, HttpSession session,
+							@RequestParam(defaultValue = "1") int pageNum,
+				            @RequestParam(defaultValue = "10") int pageSize) {
+		
+		PageHelper.startPage(pageNum, pageSize);
 		List<EventsBean> eventList = eventService.findAll();
+		
+		PageInfo<EventsBean> pageInfo = new PageInfo<>(eventList);	
+		
 		model.addAttribute("eventList", eventList);
+		model.addAttribute("pageInfo", pageInfo);
+		model.addAttribute("pageNum", pageNum);
 
 		return "Event/EventList";
 	}
 
-	@GetMapping("/EventList/{eventId}")
-	public String viewEvent(@PathVariable Integer eventId, Model model, HttpSession session) {
-		// 根據 eventId 從服務中取得相應的活動資料
-		EventsBean eventData = eventService.findAllById(eventId);
-
-		// 將活動資料放入 model 中，以便在 JSP 中顯示
-		model.addAttribute("eventData", eventData);
-
-		// 這裡可以加入其他邏輯，例如檢查登入狀態等
-
-		return "redirect:/Event"; // 返回專屬活動頁面的名稱，例如 "EventDetails"
-	}
-
-	@GetMapping("/EventList/{county}")
-	public String eventList(@PathVariable String county, @RequestParam(defaultValue = "0") int pageNo,
-			@RequestParam(defaultValue = "10") int pageSize, Model model) {
-		// 使用服務層方法獲取分頁數據
-		Page<EventsBean> page = eventService.getEventsByCounty(county, pageNo, pageSize);
-
-		// 將分頁數據傳遞給前端
-		model.addAttribute("events", page.getContent());
-		model.addAttribute("currentPage", page.getNumber());
-		model.addAttribute("totalPages", page.getTotalPages());
-		model.addAttribute("page", page);
-
-		return "Event/EventList";
-	}
-
-	@GetMapping("/EventList/category/{classId}")
-	public String eventListByClassId(@PathVariable Integer classId, @RequestParam(defaultValue = "0") int pageNo,
-			@RequestParam(defaultValue = "10") int pageSize, Model model) {
-		// 使用服務層方法獲取特定分類的分頁數據
-		Page<EventsBean> page = eventService.getEventsByClassId(classId, pageNo, pageSize);
-
-		// 將分頁數據傳遞給前端
-		model.addAttribute("events", page.getContent());
-		model.addAttribute("currentPage", page.getNumber());
-		model.addAttribute("totalPages", page.getTotalPages());
-		model.addAttribute("page", page);
-
-		return "Event/EventList";
-	}
 
 }

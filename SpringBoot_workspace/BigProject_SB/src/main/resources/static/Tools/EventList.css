@@ -135,7 +135,15 @@ div.dataCounty {
 div.dataInfo {
     font-size: large;
     margin-top: 10px;
+    color: rgb(114, 87, 61);
+    
 }
+
+div.dataInfo:hover {
+    color: rgb(1, 172, 254); 
+    
+}
+
 
 /********************************* button **********************************************/
 .favoriteButton {

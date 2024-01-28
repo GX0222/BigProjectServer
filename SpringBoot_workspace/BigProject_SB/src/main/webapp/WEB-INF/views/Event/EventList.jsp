@@ -176,43 +176,33 @@
 							        <div class="dataDay">${event.getStartTime()}</div>
 							        <div class="dataCounty">${event.getCounty()}</div>
 							    <a class="eventLink selectEvent" data-event="${event.getId() }" data-track="false">
-							        <div class="dataInfo">				                
-							            ${fn:substring(event.getEventInfo(), 0, 100)}
-							            <c:if test="${fn:length(event.getEventInfo()) > 100}">...</c:if> 
+							        <div class="dataInfo">
+			                            <h4>${event.getEventTitle()}</h4> 
+			                            ${fn:substring(event.getEventInfo(), 0, 100)}
+			                            <c:if test="${fn:length(event.getEventInfo()) > 100}">...</c:if>
+			                        </div>
 							    </a>
-							        </div>
 							</li>
 				        </c:if>
 				    </c:forEach>
 				</ul>
+	        </div>
 
-				<!-- 分頁元件 -->
-				<nav aria-label="Page navigation example">
-				    <ul class="pagination">
-				        <li class="page-item">
-				            <a class="page-link" href="${pageContext.request.contextPath}/EventList/${county}?pageNo=0" aria-label="First">
-				                <span aria-hidden="true">第一頁</span>
-				            </a>
-				        </li>
-				
-				        <c:set var="startPage" value="${Math.max(0, Math.min(currentPage, totalPages - 5))}" />
-				        <c:set var="endPage" value="${Math.max(0, Math.min(totalPages - 1, currentPage + 4))}" />
-				
-				        <c:forEach var="i" begin="${startPage}" end="${endPage}">
-				            <li class="page-item">
-				                <a class="page-link" href="${pageContext.request.contextPath}/EventList/${county}?pageNo=${i}">
-				                    ${i + 1} (第 ${currentPage}頁, 總頁數: ${totalPages})
-				                </a>
-				            </li>
-				        </c:forEach>
-				
-				        <li class="page-item">
-				            <a class="page-link" href="${pageContext.request.contextPath}/EventList/${county}?pageNo=${totalPages - 1}" aria-label="Last">
-				                <span aria-hidden="true">最末頁</span>
-				            </a>
-				        </li>
-				    </ul>
-				</nav>
+			<!-- 分頁元件 -->
+			<div>
+			<hr />
+			總筆數: ${pageInfo.total }<br />
+			
+			頁數: ${pageNum } / ${pageInfo } <br />
+			<c:if test="${pageInfo.hasPreviousPage}">
+			    <a href="?pageNum=${pageInfo.prePage }">上一頁</a>
+			</c:if>
+			|
+			<c:if test="${pageInfo.hasNextPage}">
+			    <a href="?pageNum=${pageInfo.nextPage }">下一頁</a>
+			</c:if>
+			<hr />
+			</div> 				
 		        
 					
 					
@@ -225,13 +215,6 @@
     <!-- Footer -->
 	<%@ include file="../Shared/Footer.jsp" %>
 	<!--footer end-->
-	
-<!--     script -->
-<!-- 	<script src="EventListToLove.js"></script> -->
-<!-- 	<!-- script end --> -->
-
-					
-    <%-- <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.9.2/dist/umd/popper.min.js"></script> --%>
 
 
 	
