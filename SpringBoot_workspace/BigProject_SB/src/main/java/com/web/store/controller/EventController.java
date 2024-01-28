@@ -91,23 +91,33 @@ public class EventController {
 	}
 
 	@GetMapping("/EventList")
-	public String eventlist(Model model, HttpSession session,
-							@RequestParam(defaultValue = "1") int pageNum,
-				            @RequestParam(defaultValue = "10") int pageSize) {
-		
-		PageHelper.startPage(pageNum, pageSize);
-		List<EventsBean> eventList = eventService.findAll();
-		
-		PageInfo<EventsBean> pageInfo = new PageInfo<>(eventList);	
-		
-		model.addAttribute("eventList", eventList);
-		model.addAttribute("pageInfo", pageInfo);
-		model.addAttribute("pageNum", pageNum);
+	public String eventList(Model model, HttpSession session, @RequestParam(defaultValue = "1") int pageNum,
+			@RequestParam(defaultValue = "10") int pageSize) {
 
-		
-		
+		Page<EventsBean> eventPages = eventService.getEventPage(pageNum, pageSize);
+		List<EventsBean> pageEvents = eventPages.getContent();
+
+		model.addAttribute("eventList", pageEvents);
+		model.addAttribute("totalPages", eventPages.getTotalPages());
+		model.addAttribute("pageNum", eventPages.getNumber()+1);
+		model.addAttribute("countEvents", eventPages.getTotalElements());
+
 		return "Event/EventList";
 	}
+	
+	@GetMapping("/ShowEventList")
+	public String showEventList(Model model, HttpSession session, @RequestParam(defaultValue = "1") int pageNum,
+			@RequestParam(defaultValue = "10") int pageSize) {
 
+		Page<EventsBean> eventPages = eventService.getEventPage(pageNum, pageSize);
+		List<EventsBean> pageEvents = eventPages.getContent();
+
+		model.addAttribute("eventList", pageEvents);
+		model.addAttribute("totalPages", eventPages.getTotalPages());
+		model.addAttribute("pageNum", eventPages.getNumber()+1);
+		model.addAttribute("countEvents", eventPages.getTotalElements());
+
+		return "Event/ShowEventList";
+	}
 
 }

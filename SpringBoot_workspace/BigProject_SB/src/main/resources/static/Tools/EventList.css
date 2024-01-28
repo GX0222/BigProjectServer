@@ -173,10 +173,14 @@ div.dataInfo:hover {
 }
 
 .page-item a:visited {
-    color: #7d7c7c;
+    color: #585858;
 }
 
 .page-item a:hover {
     color: rgba(150, 115, 80);
 }
 
+.selectedPage {
+    color: rgba(150, 115, 80) !important;
+    background-color: rgb(225, 225, 225);
+}

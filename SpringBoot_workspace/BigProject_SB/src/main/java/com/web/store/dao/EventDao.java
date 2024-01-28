@@ -28,7 +28,7 @@ public interface EventDao extends JpaRepository<EventsBean, Integer> {
 	List<EventsBean> findByEventTitle(String title);
 	public Optional<EventsBean> findById(Integer id);
 
-
+	long count();
 	
 	
 }
