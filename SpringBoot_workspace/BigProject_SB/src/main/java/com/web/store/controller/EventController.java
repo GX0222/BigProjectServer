@@ -104,6 +104,8 @@ public class EventController {
 		model.addAttribute("pageInfo", pageInfo);
 		model.addAttribute("pageNum", pageNum);
 
+		
+		
 		return "Event/EventList";
 	}
 
