@@ -14,4 +14,5 @@ public interface EhService {
 	public void delete(ehBean ehb);
 	public List<ehBean> findClassIdByEventId(Integer eventId);
 	public List<Integer> findClassIdByEventIdToIntList(Integer eventId);
+	public List<Integer> findTop5ByEventidByClassIdToIntList(Integer classId);
 }

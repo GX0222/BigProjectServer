@@ -56,6 +56,7 @@ public class MemberController {
 	return "redirect:/login/login";
 	}
 	System.out.println(mb.getUsername());
+	
 	String memImg = memberPictureService.getImgByMemberId(mb.getMemberId());
 	session.setAttribute("memberImg", memImg);
 	System.out.println("GO member finished");

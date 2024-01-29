@@ -16,7 +16,7 @@ public interface EventDao extends JpaRepository<EventsBean, Integer> {
 
 	List<EventsBean> findTop2ByOrderByIdDesc();
 
-	List<EventsBean> findTop2ByCountyOrderByIdDesc(String county);
+	List<EventsBean> findTop5ByCountyOrderByIdDesc(String county);
 	
 	List<EventsBean> getEventsByClassId(Integer classId);
 

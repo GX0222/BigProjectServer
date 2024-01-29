@@ -34,7 +34,7 @@ div.groupTitle {
 div.groupTitle>h3 {
 	margin: 0px;
 	padding: 0px;
-	font-weight:bold;
+	font-weight: bold;
 	color: rgb(142, 94, 69);
 }
 
@@ -94,7 +94,7 @@ div.smallNewsGroup {
 	margin: 0px;
 	margin-top: 10px;
 	padding: 5px;
-/* 	border: solid 2px rgba(0, 0, 0, 0.1); */
+	/* 	border: solid 2px rgba(0, 0, 0, 0.1); */
 	/* box-shadow: 0 0 5px rgba(0, 0, 0, 0.2); */
 	border-radius: 5px;
 	/* background-color: rgba(0, 0, 0, 0.1); */
@@ -103,15 +103,15 @@ div.smallNewsGroup {
 
 div.smallNews {
 	max-height: 100px;
-	width:100%;
+	width: 100%;
 	aspect-ratio: 1/1;
-	font-weight:bold;
-	font-size:x-large;
+	font-weight: bold;
+	font-size: x-large;
 	color: rgb(142, 94, 69);
 	border: solid 1px rgb(142, 94, 69);
-/* 	border-radius: 5px; */
-/* 	margin: 1vw 2vw; */
-	margin-bottom:1vw;
+	/* 	border-radius: 5px; */
+	/* 	margin: 1vw 2vw; */
+	margin-bottom: 1vw;
 	padding: 1vw;
 	background-color: white;
 	overflow: hidden;
@@ -121,13 +121,15 @@ div.smallNews {
 div.snTitle {
 	margin: 0px;
 	padding: 0px;
-/* 	background-color: aqua; */
+	font-size: large;
+	/* 	background-color: aqua; */
 }
 
 div.snInfo {
 	margin: 0px;
 	padding: 0px;
-/* 	background-color: blueviolet; */
+	font-size: medium;
+	/* 	background-color: blueviolet; */
 }
 
 /* ==================================================== */

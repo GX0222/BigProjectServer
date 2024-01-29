@@ -55,38 +55,16 @@ public class EventController {
 		session.setAttribute("eventID", eventID);
 		MemberBean mb = (MemberBean) session.getAttribute("member");
 		if (mb != null && !mb.getAccount().equals("Guest")) {
-			System.out.println("111");
 			if (req.get("track").toString().equals("true")) {
 				MemberTrackBean mtb = trackService.findByMemberId(mb.getMemberId());
-				System.out.println("2222");
 				if (mtb == null) {
 					trackService.addNewTrack(mb.getMemberId());
-					System.out.println("333");
+					mtb = trackService.findByMemberId(mb.getMemberId());
 				}
-				System.out.println("444");
 				List<Integer> hobbys = ehservice.findClassIdByEventIdToIntList(eventID);
-				Map<Integer, Integer> hobbyLevels = new HashMap<>();
-				hobbyLevels.put(1, mtb.getHobby1lv());
-				hobbyLevels.put(2, mtb.getHobby2lv());
-				hobbyLevels.put(3, mtb.getHobby3lv());
-				hobbyLevels.put(4, mtb.getHobby4lv());
-				hobbyLevels.put(5, mtb.getHobby5lv());
-
-				for (Integer hobby : hobbys) {
-					Integer oldLV = hobbyLevels.getOrDefault(hobby, 0);
-					hobbyLevels.put(hobby, oldLV + 1);
-				}
-
-				mtb.setHobby1lv(hobbyLevels.getOrDefault(1, 0));
-				mtb.setHobby2lv(hobbyLevels.getOrDefault(2, 0));
-				mtb.setHobby3lv(hobbyLevels.getOrDefault(3, 0));
-				mtb.setHobby4lv(hobbyLevels.getOrDefault(4, 0));
-				mtb.setHobby5lv(hobbyLevels.getOrDefault(5, 0));
-
-				trackService.saveTrack(mtb);
+				trackService.runTrack(mtb, hobbys);
 			}
 		}
-
 		return "redirect:/Event";
 	}
 

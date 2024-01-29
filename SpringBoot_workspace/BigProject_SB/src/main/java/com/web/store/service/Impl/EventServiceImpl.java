@@ -43,9 +43,9 @@ public class EventServiceImpl implements EventService {
 	}
 
 	@Override
-	public List<EventsBean> findTop2ByCountyOrderByIdDesc(String county) {
+	public List<EventsBean> findTop5ByCountyOrderByIdDesc(String county) {
 
-		return eventDao.findTop2ByCountyOrderByIdDesc(county);
+		return eventDao.findTop5ByCountyOrderByIdDesc(county);
 	}
 
 	@Override

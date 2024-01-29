@@ -115,8 +115,8 @@ public class LoginController {
 		memberData = registerService.findByAccount(bean.getAccount());
 		session.setAttribute("member", memberData);
 
-		String memImg = memPicSer.getImgByMemberId(memberData.getMemberId());
-		session.setAttribute("memberImg", memImg);
+//		String memImg = memPicSer.getImgByMemberId(memberData.getMemberId());
+//		session.setAttribute("memberImg", memImg);
 		System.out.println(memberData);
 //		System.out.println(member.getAccount());
 		processCookies(bean, request, response);

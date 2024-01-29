@@ -14,7 +14,7 @@ public interface EventService {
 
 	public List<EventsBean> findTop2ByOrderByIdDesc();
 
-	public List<EventsBean> findTop2ByCountyOrderByIdDesc(String county);
+	public List<EventsBean> findTop5ByCountyOrderByIdDesc(String county);
 	
 	public List<EventsBean> getEventsByClassId(Integer classId);
 
