@@ -105,4 +105,20 @@ public class EventServiceImpl implements EventService {
         return eventDao.findAll(pageable);
 	}
 
+	@Override
+	public List<EventsBean> findByCounty(String county) {
+		
+		return eventDao.findByCounty(county);
+	}
+
+	@Override
+	public Page<EventsBean> getEventPageClass(int pageNum, int pageSize, String county) {
+		Pageable pageable = PageRequest.of(pageNum - 1, pageSize);
+        return eventDao.findByCounty(county, pageable);
+	}
+	
+	
+	
+	
+
 }
