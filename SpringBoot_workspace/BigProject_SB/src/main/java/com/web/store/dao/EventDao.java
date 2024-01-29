@@ -30,5 +30,7 @@ public interface EventDao extends JpaRepository<EventsBean, Integer> {
 
 	long count();
 	
+	List<EventsBean> findByCounty(String county);
+
 	
 }

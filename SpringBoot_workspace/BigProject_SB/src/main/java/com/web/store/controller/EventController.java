@@ -8,14 +8,10 @@ import org.springframework.data.domain.Page;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.GetMapping;
-import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestParam;
 
-import com.github.pagehelper.PageHelper;
-import com.github.pagehelper.PageInfo;
-import com.web.store.dao.MemberTrackDao;
 import com.web.store.model.EventsBean;
 import com.web.store.model.MemberBean;
 import com.web.store.model.MemberTrackBean;
@@ -69,8 +65,9 @@ public class EventController {
 	}
 
 	@GetMapping("/EventList")
-	public String eventList(Model model, HttpSession session, @RequestParam(defaultValue = "1") int pageNum,
-			@RequestParam(defaultValue = "10") int pageSize) {
+	public String eventList(Model model, HttpSession session, 
+							@RequestParam(defaultValue = "1") int pageNum,
+							@RequestParam(defaultValue = "10") int pageSize) {
 
 		Page<EventsBean> eventPages = eventService.getEventPage(pageNum, pageSize);
 		List<EventsBean> pageEvents = eventPages.getContent();
@@ -84,8 +81,9 @@ public class EventController {
 	}
 	
 	@GetMapping("/ShowEventList")
-	public String showEventList(Model model, HttpSession session, @RequestParam(defaultValue = "1") int pageNum,
-			@RequestParam(defaultValue = "10") int pageSize) {
+	public String showEventList(Model model, HttpSession session, 
+								@RequestParam(defaultValue = "1") int pageNum,
+								@RequestParam(defaultValue = "10") int pageSize) {
 
 		Page<EventsBean> eventPages = eventService.getEventPage(pageNum, pageSize);
 		List<EventsBean> pageEvents = eventPages.getContent();
@@ -97,5 +95,29 @@ public class EventController {
 
 		return "Event/ShowEventList";
 	}
+	
+	@GetMapping("/GetEventClass")
+//	@ResponseBody
+	public String getEventClass(Model model, HttpSession session, 
+								@RequestParam HashMap<String, Object > countyB,
+								@RequestParam(defaultValue = "1") int pageNum,
+								@RequestParam(defaultValue = "10") int pageSize) {
+//	public String getEventClass() {
+//		System.out.println(countyB.get("listCounty"));
+//		model.addAttribute("eventList", eventService.findByCounty("台北市"));
+		
+		Page<EventsBean> eventPages = eventService.getEventPageClass(pageNum, pageSize, (String)countyB.get("listCounty"));
+		List<EventsBean> pageEvents = eventPages.getContent();
+		
+//		model.addAttribute("eventList", eventService.findByCounty((String)countyB.get("listCounty")));
+		model.addAttribute("eventList", pageEvents);
+		model.addAttribute("totalPages", eventPages.getTotalPages());
+		model.addAttribute("pageNum", eventPages.getNumber()+1);
+		model.addAttribute("countEvents", eventPages.getTotalElements());
+		return "Event/ShowPage";
+	
+	}
+	
+	
 
 }

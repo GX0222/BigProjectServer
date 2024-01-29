@@ -21,8 +21,7 @@ public interface EventService {
 	public EventsBean findAllById(Integer id);
 
 	Page<EventsBean> getEventsByCounty(String county, int pageNo, int pageSize);
-	Page<EventsBean> getEventsByClassId(Integer classId, int pageNo, int pageSize);
-    
+	Page<EventsBean> getEventsByClassId(Integer classId, int pageNo, int pageSize);   
 	public EventsBean findById(Integer id);
 	public List<EventsBean> findByEventTitle(String eventTitle);
 	public void save(EventsBean eb);
@@ -31,5 +30,9 @@ public interface EventService {
 	public Integer count();
 	
 	public Page<EventsBean> getEventPage(int pageNum, int pageSize);
+	
+	public List<EventsBean> findByCounty(String county);
+	
+	public Page<EventsBean> getEventPageClass(int pageNum, int pageSize, String county); 
 	
 	}
