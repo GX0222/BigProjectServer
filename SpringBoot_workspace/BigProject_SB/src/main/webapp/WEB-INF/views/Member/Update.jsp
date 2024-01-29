@@ -48,7 +48,7 @@
 
         <div class="homeRight">
             <div class="infoCon">
-                <h3>編輯活動</h3>
+                <h3>新增活動</h3>
                 <hr />
                 <form action="" method="post">
                     <div class="form-group">
@@ -104,7 +104,7 @@
             </div>
 
 			<div >
-				<canvas id="imageCanvas" width="1" height="1"></canvas>
+				<canvas id="imageCanvas" width="1" height="1" style="display:none"></canvas>
 			</div>
         </div>
     </div>
@@ -224,9 +224,9 @@
 
                     dataURL = canvas.toDataURL("image/png");
                     
-                    context.clearRect(0, 0, canvas.width, canvas.height);
-				    canvas.width = 1;
-                    canvas.height = 1;
+//                     context.clearRect(0, 0, canvas.width, canvas.height);
+// 				    canvas.width = 1;
+//                     canvas.height = 1;
                     
                     
                     
