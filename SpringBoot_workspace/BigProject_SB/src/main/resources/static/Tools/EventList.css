@@ -135,7 +135,15 @@ div.dataCounty {
 div.dataInfo {
     font-size: large;
     margin-top: 10px;
+    color: rgb(114, 87, 61);
+    
 }
+
+div.dataInfo:hover {
+    color: rgb(1, 172, 254); 
+    
+}
+
 
 /********************************* button **********************************************/
 .favoriteButton {
@@ -165,10 +173,14 @@ div.dataInfo {
 }
 
 .page-item a:visited {
-    color: #7d7c7c;
+    color: #585858;
 }
 
 .page-item a:hover {
     color: rgba(150, 115, 80);
 }
 
+.selectedPage {
+    color: rgba(150, 115, 80) !important;
+    background-color: rgb(225, 225, 225);
+}

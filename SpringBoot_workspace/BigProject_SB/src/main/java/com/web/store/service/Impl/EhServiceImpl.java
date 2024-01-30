@@ -69,4 +69,18 @@ public class EhServiceImpl implements EhService {
 		return res;
 	}
 
+	@Override
+	public List<Integer> findTop5ByEventidByClassIdToIntList(Integer classId) {
+		List<ehBean> beans = ehdao.findTop5ByClassIdOrderByEventIdDesc(classId);
+		List<Integer> res = new ArrayList<>();
+		if (beans != null) {
+			for (ehBean bean : beans) {
+				res.add(bean.getEventId());
+			}
+		} else {
+			res.add(0);
+		}
+		return res;
+	}
+
 }

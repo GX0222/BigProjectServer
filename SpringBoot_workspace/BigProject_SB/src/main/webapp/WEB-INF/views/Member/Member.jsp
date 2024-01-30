@@ -218,8 +218,9 @@
 	     				        context.clearRect(0, 0, canvas.width, canvas.height);
 	     				        canvas.width = 1;
 	                             canvas.height = 1;
-	                             window.location = "/Member";
+	                             window.location.href = "/Member";
 // 	                             $("#bigHead").prop("src","data:image/png;base64, ${memberImg}");
+// 	                             window.location.reload();
 	     				    },
 	     				    error: function(error) {
 	     				        console.error("Error sending data:", error);

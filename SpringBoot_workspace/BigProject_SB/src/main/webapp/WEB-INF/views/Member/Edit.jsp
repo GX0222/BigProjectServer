@@ -188,7 +188,7 @@
             </div>
 
 			<div >
-				<canvas id="imageCanvas" width="1" height="1"></canvas>
+				<canvas id="imageCanvas" width="1" height="1" style="display:none"></canvas>
 			</div>
         </div>
     </div>
@@ -207,8 +207,8 @@ $.get("/eventlist/item/" + editId, function (e) {
     
 	$("#datepicker").prop("value",e[0].eventTime);
 	$("#Name").prop("value",e[0].eventTitle);
-	$("#Summary").prop("value",e[0].eventInfo);
-	$("#textarea").prop("value",e[0].eventIntro);
+	$("#Summary").prop("value",e[0].eventIntro);
+	$("#textarea").prop("value",e[0].eventInfo);
 	$("#EventURL").prop("value",e[0].eventUrl);
    	$("#City").prop("value",e[0].county);
    	$("#Location").prop("value",e[0].location);
@@ -374,9 +374,9 @@ $("#okButton").on("click", async function () {
 
 		                    dataURL = canvas.toDataURL("image/png");
 		                    
-		                    context.clearRect(0, 0, canvas.width, canvas.height);
-						    canvas.width = 1;
-		                    canvas.height = 1;
+// 		                    context.clearRect(0, 0, canvas.width, canvas.height);
+// 						    canvas.width = 1;
+// 		                    canvas.height = 1;
 		                    imageUpdate_check =imageUpdate_check+1;
 
 		                };
