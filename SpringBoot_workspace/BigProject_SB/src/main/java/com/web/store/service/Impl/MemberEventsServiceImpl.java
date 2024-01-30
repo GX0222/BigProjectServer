@@ -18,12 +18,12 @@ public class MemberEventsServiceImpl implements MemberEventsService {
 	}
 	@Override
 	public List<MemberEventsBean> fidAll() {
-		
+
 		return memberEventsDao.findAll();
 	}
 	@Override
 	public List<MemberEventsBean> findByMemberId(Integer member_id) {
-		
+
 		return memberEventsDao.findByMemberId(member_id);
 	}
 	@Override
@@ -38,10 +38,10 @@ public class MemberEventsServiceImpl implements MemberEventsService {
 	}
 	@Override
 	public List<MemberEventsBean> findByEventsId(Integer eventsId) {
-		
+
 		return memberEventsDao.findByEventsId(eventsId);
 	}
 
-	
+
 
 }

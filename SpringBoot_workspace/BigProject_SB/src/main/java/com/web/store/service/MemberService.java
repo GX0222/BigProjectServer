@@ -6,6 +6,6 @@ import com.web.store.model.MemberBean;
 
 public interface MemberService {
 	public List<MemberBean> findAll();
-	
+
 	public MemberBean findByAccount(String account);
  }

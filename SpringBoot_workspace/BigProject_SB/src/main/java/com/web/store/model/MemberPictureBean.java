@@ -22,11 +22,11 @@ public class MemberPictureBean implements Serializable {
 	@Lob
 	@Column(name = "picture", columnDefinition = "longblob")
 	byte[] picture;
-	
+
 	public MemberPictureBean() {
-		
+
 	}
-	
+
 	public MemberPictureBean(Integer id, Integer memberId, byte[] picture) {
 		super();
 		this.id = id;
@@ -61,6 +61,6 @@ public class MemberPictureBean implements Serializable {
 	public static long getSerialversionuid() {
 		return serialVersionUID;
 	}
-	
-	
+
+
 }

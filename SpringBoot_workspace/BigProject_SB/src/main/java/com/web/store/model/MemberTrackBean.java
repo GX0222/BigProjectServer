@@ -23,9 +23,9 @@ public class MemberTrackBean implements Serializable {
 	Integer hobby3lv;
 	Integer hobby4lv;
 	Integer hobby5lv;
-	
+
 	public MemberTrackBean() {
-		
+
 	}
 
 	public MemberTrackBean(Integer id, Integer memberId, Integer hobby1lv, Integer hobby2lv, Integer hobby3lv,
@@ -99,7 +99,7 @@ public class MemberTrackBean implements Serializable {
 	public static long getSerialversionuid() {
 		return serialVersionUID;
 	}
-	
-	
-	
+
+
+
 }

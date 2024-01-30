@@ -20,11 +20,11 @@ import jakarta.servlet.http.HttpSession;
 @SessionAttributes({"LoginOK"})
 public class LogoutController {
 	private static Logger log = LoggerFactory.getLogger(LogoutController.class);
-	
+
 	@GetMapping("/logout")
 	public String logout(
-			HttpSession session, 
-			Model model, 
+			HttpSession session,
+			Model model,
 			SessionStatus status,
 			RedirectAttributes redirectAtt ) {
 		String name = "";
@@ -37,10 +37,10 @@ public class LogoutController {
 		log.info(name + "已登出");
 		// 登出時執行下列兩敘述
 		status.setComplete(); 	// 移除@SessionAttributes({"LoginOK"}) 標示的屬性物件
-		session.invalidate(); 	// 此敘述不能省略	
-		
+		session.invalidate(); 	// 此敘述不能省略
+
 		return "redirect:/";	// 跳轉回http://localhost:80/
-		
+
 	}
 
 }

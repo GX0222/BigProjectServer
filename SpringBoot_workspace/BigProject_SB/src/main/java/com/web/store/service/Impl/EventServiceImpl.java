@@ -8,7 +8,6 @@ import org.springframework.data.domain.PageRequest;
 import org.springframework.data.domain.Pageable;
 import org.springframework.stereotype.Service;
 
-import com.github.pagehelper.PageInfo;
 import com.web.store.dao.EventDao;
 import com.web.store.model.EventsBean;
 import com.web.store.service.EventService;
@@ -107,7 +106,7 @@ public class EventServiceImpl implements EventService {
 
 	@Override
 	public List<EventsBean> findByCounty(String county) {
-		
+
 		return eventDao.findByCounty(county);
 	}
 
@@ -116,9 +115,9 @@ public class EventServiceImpl implements EventService {
 		Pageable pageable = PageRequest.of(pageNum - 1, pageSize);
         return eventDao.findByCounty(county, pageable);
 	}
-	
-	
-	
-	
+
+
+
+
 
 }

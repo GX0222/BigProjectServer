@@ -8,9 +8,9 @@ import org.springframework.validation.Validator;
 import com.web.store.model.MemberBean;
 @Component
 public class MemberValidator implements Validator {
-	
+
 //	private static Logger log = LoggerFactory.getLogger(MemberValidator.class);
-	
+
 	@Override
 	public boolean supports(Class<?> clazz) {
 		return MemberBean.class.isAssignableFrom(clazz);
@@ -28,7 +28,7 @@ public class MemberValidator implements Validator {
 			ValidationUtils.rejectIfEmptyOrWhitespace(errors, "phone", 		"", "電話欄不能空白");
 //			ValidationUtils.rejectIfEmpty(errors, "multipartFile",    "", "必須挑選圖片");
 			System.out.println("ㄅ");
-			
+
 			if ( !errors.hasFieldErrors("account")) {
 				System.out.println("ㄆ");
 				if (member.getAccount().length() < 5) {
@@ -36,7 +36,7 @@ public class MemberValidator implements Validator {
 					System.out.println("ㄇ ");
 				}
 			}
-			
+
 			if (! member.getPassword().equals(member.getPassword1())) {
 				System.out.println("ㄈ ");
 				errors.rejectValue("password","", "密碼欄與確認密碼不一致");
@@ -46,7 +46,7 @@ public class MemberValidator implements Validator {
 //			if (member.getMultipartFile().getSize() == 0) {
 //				errors.rejectValue("multipartFile", "", "必須挑選圖片");
 //			}
-		
+
 	}
 
 }
