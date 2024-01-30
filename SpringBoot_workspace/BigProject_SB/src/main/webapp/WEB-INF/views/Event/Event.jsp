@@ -30,7 +30,10 @@
     <link rel="stylesheet" href="/static/Tools/Color.css">
     <!-- footer -->
     <link rel="stylesheet" href="/static/Tools/footer.css">
-
+    <!-- 收藏的愛心 -->
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200" />
+	<!-- 收藏的js -->
+	<script src="/static/Tools/eventFavor.js" defer></script>
 </head>
 
 <body>
@@ -44,6 +47,11 @@
         </div>
         <div class="eImgCon">
             <img src="/static/image/2023聖誕節.jpg" alt="">
+        </div>
+        <br><br><br>
+        <div>
+        <button class ="eventFavor" data-event="${eventData.getId()}">
+				<span class="material-symbols-outlined"> favorite收藏</span></button>
         </div>
         <div class="eInfo">
             <table class="table" style="text-align: center;">    <!-- 加入 style="text-align: center;" -->

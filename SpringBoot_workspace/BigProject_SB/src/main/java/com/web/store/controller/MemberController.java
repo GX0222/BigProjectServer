@@ -63,19 +63,10 @@ public class MemberController {
 	return "Member/Member";
 	}
 
-	@GetMapping("/Love")
-	public String love(Model model, HttpSession session) {
-//		MemberBean mb = (MemberBean) session.getAttribute("member");
-//		Integer memId = mb.getMemberId();
-//		List<Integer> eveL = xxx.findEventIdByMemberid(memId);
-//		List<EventsBean> eventBL;
-//		for(Integer eveLL:eveL) {
-//			eventBL.add(findByEventId(eveLL));
-//		}
-//		model.addAttribute("",eventBL);
-
-		return "Member/Love";
-	}
+//	@GetMapping("/Love")
+//	public String love(Model model) {
+//		return "Member/Love";
+//	}
 
 	@GetMapping("/Update")
 	public String update(Model model, HttpSession session) {

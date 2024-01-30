@@ -27,7 +27,7 @@ document.addEventListener('DOMContentLoaded', function() {
             event.preventDefault();
 
             // 取得事件相關的資訊，例如事件ID等
-            const eventId = /* 在這裡取得事件ID，你可能需要使用event.getAttribute或其他方法 */;
+//            const eventId = /* 在這裡取得事件ID，你可能需要使用event.getAttribute或其他方法 */;
 
             // 發送AJAX請求
             const xhr = new XMLHttpRequest();
