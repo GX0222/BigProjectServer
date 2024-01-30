@@ -23,10 +23,10 @@ public class MemberController {
 		return "Member/Member";
 	}
 
-	@GetMapping("/Love")
-	public String love(Model model) {
-		return "Member/Love";
-	}
+//	@GetMapping("/Love")
+//	public String love(Model model) {
+//		return "Member/Love";
+//	}
 
 	@GetMapping("/Update")
 	public String update(Model model) {
