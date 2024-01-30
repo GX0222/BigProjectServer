@@ -13,7 +13,7 @@ import com.web.store.service.MemberPictureService;
 public class MemberPictureServiceImpl implements MemberPictureService {
 
 	MemberPictureDao memPicDao;
-	
+
 	public MemberPictureServiceImpl(MemberPictureDao memPicDao) {
 		super();
 		this.memPicDao = memPicDao;
@@ -21,7 +21,7 @@ public class MemberPictureServiceImpl implements MemberPictureService {
 
 	@Override
 	public MemberPictureBean findByMemberId(Integer memberId) {
-		
+
 		return memPicDao.findByMemberId(memberId);
 	}
 
@@ -43,7 +43,7 @@ public class MemberPictureServiceImpl implements MemberPictureService {
 	public void save(@NonNull MemberPictureBean mpb) {
 		memPicDao.save(mpb);
 		System.out.println("MemberPicture done");
-		
+
 	}
 
 	@Override
@@ -51,7 +51,7 @@ public class MemberPictureServiceImpl implements MemberPictureService {
 		MemberPictureBean mpb = new MemberPictureBean();
 		mpb.setMemberId(memId);
 		memPicDao.save(mpb);
-		
+
 	}
-	
+
 }

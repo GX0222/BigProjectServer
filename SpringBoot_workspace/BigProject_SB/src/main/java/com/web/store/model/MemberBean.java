@@ -31,8 +31,8 @@ public class MemberBean implements Serializable {
 	String password1;
 	@Transient
 	private String salt;
-	
-	
+
+
 	public MemberBean(Integer memberId, String account, String username, String password, String mail, String phone,
 			Date birthday, Integer loginState, Integer loginDelayTime, Integer level) {
 
@@ -48,7 +48,7 @@ public class MemberBean implements Serializable {
 		this.level = level;
 	}
 	public MemberBean() {
-		
+
 	}
 
 	public Integer getMemberId() {

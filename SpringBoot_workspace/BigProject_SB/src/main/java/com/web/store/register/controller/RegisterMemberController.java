@@ -21,21 +21,21 @@ import jakarta.servlet.ServletContext;
 @Controller
 @RequestMapping("/register")
 public class RegisterMemberController {
-	
-	private static Logger log = LoggerFactory.getLogger(RegisterMemberController.class);
-	
-//	String rootDirectory = GlobalService.IMAGE_FILE_FOLDER_MEMBER;
-	String inputDataForm = "/register/register"; 
-	
-	RegisterService registerService;
-	
-	ServletContext servletContext;
-	
-	
-	
 
-	
-	
+	private static Logger log = LoggerFactory.getLogger(RegisterMemberController.class);
+
+//	String rootDirectory = GlobalService.IMAGE_FILE_FOLDER_MEMBER;
+	String inputDataForm = "/register/register";
+
+	RegisterService registerService;
+
+	ServletContext servletContext;
+
+
+
+
+
+
 //	@Autowired
 	public RegisterMemberController(RegisterService registerService, ServletContext servletContext) {
 		this.registerService = registerService;
@@ -54,7 +54,7 @@ public class RegisterMemberController {
 		member.setMail("");
 //		member.setBirthday(null);
 		model.addAttribute("members", member);
-		
+
 		System.out.println("1");
 		return inputDataForm;
 	}
@@ -67,7 +67,7 @@ public class RegisterMemberController {
 //		MemberValidator validator = new MemberValidator();
 //		validator.validate(member, result);
 //		if (result.hasErrors()) {
-////          下列敘述可以理解Spring MVC如何處理錯誤			
+////          下列敘述可以理解Spring MVC如何處理錯誤
 ////			List<ObjectError> list = result.getAllErrors();
 ////			for (ObjectError error : list) {
 ////				System.out.println("有錯誤：" + error);
@@ -76,16 +76,16 @@ public class RegisterMemberController {
 //		}
 ////		MultipartFile multipartFile = member.getMultipartFile();
 ////		String originalFilename = multipartFile.getOriginalFilename();
-////		
+////
 ////		if (originalFilename.length() > 0 && originalFilename.lastIndexOf(".") > -1) {
 ////			member.setFileName(originalFilename);
 ////		}
-//		
+//
 ////		String ext = "";
 ////		if (originalFilename.lastIndexOf(".") > -1) {
 ////			ext = originalFilename.substring(originalFilename.lastIndexOf("."));
 ////		}
-//		
+//
 //		// 建立Blob物件，交由 Hibernate 寫入資料庫
 ////		if (multipartFile != null && !multipartFile.isEmpty()) {
 ////			try {
@@ -96,27 +96,27 @@ public class RegisterMemberController {
 ////				throw new RuntimeException("檔案上傳發生異常: " + e.getMessage());
 ////			}
 ////		}
-////        String mimeType = servletContext.getMimeType(originalFilename); 
+////        String mimeType = servletContext.getMimeType(originalFilename);
 ////        member.setMimeType(mimeType);
-////		
+////
 //		// 檢查 account是否重複
 //		if (registerService.existsByAccount(member.getAccount())) {
 //			result.rejectValue("account", "", "帳號已存在，請重新輸入");
 //			return inputDataForm;
 //		}
-//		
+//
 //		member.setPassword(GlobalService.encodeBCryptPassword(member.getPassword()));
 //		try {
 //			registerService.save(member);
 //			log.info("新增MemberBean成功：" + member);
 //			ra.addFlashAttribute("SUCCESS", "會員: " + member.getAccount() +  "資料新增成功");
-//		} 
+//		}
 //		catch (Exception ex) {
 //			System.out.println(ex.getClass().getName() + ", ex.getMessage()=" + ex.getMessage());
 //			result.rejectValue("account", "", "發生異常，請通知系統人員..." + ex.getMessage());
 //			return inputDataForm;
 //		}
-////		
+////
 ////		try {
 ////			File imageFolder = new File(rootDirectory);
 ////			if (!imageFolder.exists())
@@ -129,14 +129,14 @@ public class RegisterMemberController {
 ////		}
 //		return "redirect:/";
 //	}
-	
+
 	@PostMapping("/register")
 	public String processFormData(
 	        @ModelAttribute("members")  MemberBean member,
 	        BindingResult result, Model model,
 	        RedirectAttributes ra
 	) {
-		
+
 	    MemberValidator validator = new MemberValidator();
 	    validator.validate(member, result);
 	    System.out.println("2");
@@ -186,11 +186,11 @@ public class RegisterMemberController {
 	        return inputDataForm;  // 請替換為實際的表單視圖名稱
 	    }
 	    System.out.println("13");
-	    
+
 	    return "redirect:/login/login";
 	}
 
-	
+
 //	@ModelAttribute
 //	public registerBean prepareMemberBean() {
 //		registerBean member = new registerBean();
@@ -199,5 +199,5 @@ public class RegisterMemberController {
 ////		member.setUserType("M");
 //		return member;
 //	}
-	
+
 }

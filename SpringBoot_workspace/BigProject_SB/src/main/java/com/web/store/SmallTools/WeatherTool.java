@@ -179,10 +179,10 @@ public class WeatherTool {
 //			System.out.println(resData);
 		return resData;
 	}
-	
+
 	public boolean checkTown (String county, String town) {
 		getTownNameByCounty(county);
-		
+
 		return townNameListByCountyCache.contains(town);
 	}
 
@@ -272,7 +272,7 @@ public class WeatherTool {
 			for (int i = 0 ; i<cacheCount;i++) {
 				System.out.println(dataByCountyCache[i]);
 				for ( Map<String, Object> data :dataByCountyCache[i]) {
-					
+
 					Double dataTemp =  Double.parseDouble(data.get("AirTemperature").toString()) ;
 					if(dataTemp > -30.0) {
 						avg += dataTemp;
@@ -284,7 +284,7 @@ public class WeatherTool {
 					DecimalFormat decimalFormat = new DecimalFormat("#.#");
 					System.out.println("使用平均資料: cache "+i);
 					return decimalFormat.format(avgTemp);
-				}	
+				}
 			}
 			return "無資料";
 		}

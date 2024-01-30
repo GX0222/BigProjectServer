@@ -66,7 +66,7 @@ public class EventController {
 	}
 
 	@GetMapping("/EventList")
-	public String eventList(Model model, HttpSession session, 
+	public String eventList(Model model, HttpSession session,
 							@RequestParam(defaultValue = "1") int pageNum,
 							@RequestParam(defaultValue = "10") int pageSize) {
 
@@ -80,9 +80,9 @@ public class EventController {
 
 		return "Event/EventList";
 	}
-	
+
 	@GetMapping("/ShowEventList")
-	public String showEventList(Model model, HttpSession session, 
+	public String showEventList(Model model, HttpSession session,
 								@RequestParam(defaultValue = "1") int pageNum,
 								@RequestParam(defaultValue = "10") int pageSize) {
 
@@ -96,16 +96,17 @@ public class EventController {
 
 		return "Event/ShowEventList";
 	}
-	
+
 	@GetMapping("/GetEventClass")
 //	@ResponseBody
-	public String getEventClass(Model model, HttpSession session, 
+	public String getEventClass(Model model, HttpSession session,
 								@RequestParam HashMap<String, Object > countyB,
 								@RequestParam(defaultValue = "1") int pageNum,
 								@RequestParam(defaultValue = "10") int pageSize) {
 //	public String getEventClass() {
 //		System.out.println(countyB.get("listCounty"));
 //		model.addAttribute("eventList", eventService.findByCounty("台北市"));
+<<<<<<< HEAD
 		System.out.println(countyB.get("eventClassType"));
 //		System.out.println(countyB.get("eventClassContent"));
 		
@@ -143,12 +144,18 @@ public class EventController {
 		}
 		
 		
+=======
+
+		Page<EventsBean> eventPages = eventService.getEventPageClass(pageNum, pageSize, (String)countyB.get("listCounty"));
+		List<EventsBean> pageEvents = eventPages.getContent();
+
+>>>>>>> 45e842841b28f9341ca9ec9487022c45504d375f
 //		model.addAttribute("eventList", eventService.findByCounty((String)countyB.get("listCounty")));
 		
 		return "Event/ShowPage";
-	
+
 	}
-	
-	
+
+
 
 }

@@ -112,7 +112,7 @@ public class EventServiceImpl implements EventService {
 
 	@Override
 	public List<EventsBean> findByCounty(String county) {
-		
+
 		return eventDao.findByCounty(county);
 	}
 
@@ -122,6 +122,7 @@ public class EventServiceImpl implements EventService {
         return eventDao.findByCounty(county, pageable);
 	}
 
+<<<<<<< HEAD
 	@Override
 	public Page<EventsBean> getEventPageHobby(int pageNum, int pageSize, Integer hobby) {
 //		System.out.println("123");
@@ -150,5 +151,10 @@ public class EventServiceImpl implements EventService {
 	
 	
 	
+=======
+
+
+
+>>>>>>> 45e842841b28f9341ca9ec9487022c45504d375f
 
 }

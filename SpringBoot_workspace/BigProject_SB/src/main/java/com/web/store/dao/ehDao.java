@@ -18,9 +18,9 @@ public interface ehDao extends JpaRepository<ehBean, Integer> {
 
 	@Query("SELECT m FROM ehBean m WHERE m.eventId = :eventId")
 	public List<ehBean> findByEvent_id(@Param("eventId")Integer id);
-	
+
 	List<ehBean> findClassIdByEventId(Integer eventId);
-	
+
 	List<ehBean> findTop5ByClassIdOrderByEventIdDesc(Integer classId);
 	
 	public List<ehBean> findByClassId(Integer classId);
