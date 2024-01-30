@@ -34,5 +34,6 @@ public interface EventService {
 	public List<EventsBean> findByCounty(String county);
 	
 	public Page<EventsBean> getEventPageClass(int pageNum, int pageSize, String county); 
+	public Page<EventsBean> getEventPageHobby(int pageNum, int pageSize, Integer hobby); 
 	
 	}

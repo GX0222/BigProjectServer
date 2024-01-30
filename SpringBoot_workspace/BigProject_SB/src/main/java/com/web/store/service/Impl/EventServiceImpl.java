@@ -1,16 +1,19 @@
 package com.web.store.service.Impl;
 
+import java.util.ArrayList;
 import java.util.List;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.data.domain.Page;
+import org.springframework.data.domain.PageImpl;
 import org.springframework.data.domain.PageRequest;
 import org.springframework.data.domain.Pageable;
 import org.springframework.stereotype.Service;
 
-import com.github.pagehelper.PageInfo;
 import com.web.store.dao.EventDao;
+import com.web.store.dao.ehDao;
 import com.web.store.model.EventsBean;
+import com.web.store.model.ehBean;
 import com.web.store.service.EventService;
 
 @Service
@@ -18,10 +21,12 @@ public class EventServiceImpl implements EventService {
 
 	@Autowired
 	private EventDao eventDao;
-
-	public EventServiceImpl(EventDao eventDao) {
+	private ehDao EhDao;
+	
+	public EventServiceImpl(EventDao eventDao ,ehDao EhDao) {
 		super();
 		this.eventDao = eventDao;
+		this.EhDao = EhDao;
 	}
 
 	@Override
@@ -116,6 +121,31 @@ public class EventServiceImpl implements EventService {
 		Pageable pageable = PageRequest.of(pageNum - 1, pageSize);
         return eventDao.findByCounty(county, pageable);
 	}
+
+	@Override
+	public Page<EventsBean> getEventPageHobby(int pageNum, int pageSize, Integer hobby) {
+//		System.out.println("123");
+		List<ehBean> myeh = EhDao.findByClassId(hobby);
+//		System.out.println("111    "+  String.valueOf(myeh.size()) );
+		List<EventsBean> events = new ArrayList<>();
+		for (ehBean eh :myeh) {
+			
+			events.add(eventDao.findAllById(eh.getEventId()));
+		}
+//		Pageable pageable = PageRequest.of(pageNum - 1, pageSize);
+		
+		int start = (pageNum - 1) * pageSize;
+	    int end = Math.min((start + pageSize), events.size());
+
+	    Pageable pageable = PageRequest.of(pageNum - 1, pageSize);
+	    List<EventsBean> eventsOnPage = events.subList(start, end);
+
+	    return new PageImpl<>(eventsOnPage, pageable, events.size());
+
+	}
+	
+	
+	
 	
 	
 	

@@ -22,4 +22,6 @@ public interface ehDao extends JpaRepository<ehBean, Integer> {
 	List<ehBean> findClassIdByEventId(Integer eventId);
 	
 	List<ehBean> findTop5ByClassIdOrderByEventIdDesc(Integer classId);
+	
+	public List<ehBean> findByClassId(Integer classId);
 }
