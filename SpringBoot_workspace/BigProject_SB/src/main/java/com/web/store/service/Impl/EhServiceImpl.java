@@ -83,4 +83,12 @@ public class EhServiceImpl implements EhService {
 		return res;
 	}
 
+	@Override
+	public List<ehBean> findByClassId(Integer classId) {
+		
+		return ehdao.findByClassId(classId);
+	}
+
+	
+	
 }

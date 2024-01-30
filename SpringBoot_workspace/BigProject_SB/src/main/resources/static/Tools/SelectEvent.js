@@ -1,5 +1,7 @@
 $(document).ready(function() {
-	$(".selectEvent").on("click", function(e) {
+//	$(".selectEvent").on("click", function(e) {
+	$("#AAAA").on("click",".selectEvent", function(e) {
+	
 		e.preventDefault();
 
 		var eventID = $(this).data("event");
@@ -24,7 +26,8 @@ $(document).ready(function() {
 });
 
 $(document).ready(function() {
-	$(".selectEventForTrack").on("click", function(e) {
+//	$(".selectEventForTrack").on("click", function(e) {
+	$("#AAAA").on("click",".selectEventForTrack", function(e) {
 		e.preventDefault();
 
 		var eventID = $(this).data("event");
