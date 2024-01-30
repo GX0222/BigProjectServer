@@ -32,9 +32,11 @@
     <!-- Color -->
     <link rel="stylesheet" href="/static/Tools/Color.css">
 
-    <style>
-       
-    </style>
+	<style>
+	a {
+		text-decoration: none; /* 移除底線 */
+	}
+	</style>
 
 
 
@@ -50,143 +52,147 @@
         <div class="homeRight">
             <div class="infoCon">
                 <div class="dataRow m-0 p-0">
-                    
-                    <div class="dataCon">
-                        <div class="material-symbols-outlined">
-                            favorite
-                        </div>
-                        <div class="imgCon">
-                            <img src="<c:url value='/static/image/2023聖誕節.jpg' />">
-                        </div>
-                        <div class="dataTitle">
-                            2023聖誕節
-                        </div>
-                        <div class="dataTime">
-                            1月29日 ~ 2月31日
-                        </div>
-                        <div class="dataPosi">
-                            地點：台中市西區健行路1049號金典綠園道商場三樓
-                        </div>
-                    </div>
-                    <div class="dataCon">
-                        <div class="material-symbols-outlined">
-                            favorite
-                        </div>
-                        <div class="imgCon">
-                            <img src="<c:url value='/static/image/2023聖誕節.jpg' />">
-                        </div>
-                        <div class="dataTitle BGC_Gray">
-                            2023聖誕節
-                        </div>
-                        <div class="dataTime BGC_Gray">
-                            1月29日 ~ 2月31日
-                        </div>
-                        <div class="dataPosi BGC_Gray">
-                            地點：台中市西區健行路1049號金典綠園道商場三樓
-                        </div>
-                    </div>
-                    <div class="dataCon">
-                        <span class="material-symbols-outlined">
-                            favorite
-                        </span>
-                        <div class="imgCon">
-                            <img src="<c:url value='/static/image/2023聖誕節.jpg' />">
-                        </div>
-                        <div class="dataTitle BGC_Gray">
-                            2023聖誕節
-                        </div>
-                        <div class="dataTime BGC_Gray">
-                            1月29日 ~ 2月31日
-                        </div>
-                        <div class="dataPosi BGC_Gray">
-                            地點：台中市西區健行路1049號金典綠園道商場三樓
-                        </div>
-                    </div>
-                    <div class="dataCon">
-                        <span class="material-symbols-outlined">
-                            favorite
-                        </span>
-                        <div class="imgCon">
-                            <img src="<c:url value='/static/image/2023聖誕節.jpg' />">
-                        </div>
-                        <div class="dataTitle BGC_Gray">
-                            2023聖誕節
-                        </div>
-                        <div class="dataTime BGC_Gray">
-                            1月29日 ~ 2月31日
-                        </div>
-                        <div class="dataPosi BGC_Gray">
-                            地點：台中市西區健行路1049號金典綠園道商場三樓
-                        </div>
-                    </div>
-                    <div class="dataCon">
-                        <span class="material-symbols-outlined">
-                            favorite
-                        </span>
-                        <div class="imgCon">
-                            <img src="<c:url value='/static/image/2023聖誕節.jpg' />">
-                        </div>
-                        <div class="dataTitle BGC_Gray">
-                            2023聖誕節
-                        </div>
-                        <div class="dataTime BGC_Gray">
-                            1月29日 ~ 2月31日
-                        </div>
-                        <div class="dataPosi BGC_Gray">
-                            地點：台中市西區健行路1049號金典綠園道商場三樓
-                        </div>
-                    </div>
-                    <div class="dataCon">
-                        <span class="material-symbols-outlined">
-                            favorite
-                        </span>
-                        <div class="imgCon">
-                            <img src="<c:url value='/static/image/2023聖誕節.jpg' />">
-                        </div>
-                        <div class="dataTitle BGC_Gray">
-                            2023聖誕節
-                        </div>
-                        <div class="dataTime BGC_Gray">
-                            1月29日 ~ 2月31日
-                        </div>
-                        <div class="dataPosi BGC_Gray">
-                            地點：台中市西區健行路1049號金典綠園道商場三樓
-                        </div>
-                    </div>
-                    <div class="dataCon">
-                        <span class="material-symbols-outlined">
-                            favorite
-                        </span>
-                        <div class="imgCon">
-                            <img src="<c:url value='/static/image/2023聖誕節.jpg' />">
-                        </div>
-                        <div class="dataTitle BGC_Gray">
-                            2023聖誕節
-                        </div>
-                        <div class="dataTime BGC_Gray">
-                            1月29日 ~ 2月31日
-                        </div>
-                        <div class="dataPosi BGC_Gray">
-                            地點：台中市西區健行路1049號金典綠園道商場三樓
-                        </div>
-                    </div>
-                    <div class="dataCon">
-                        <span class="material-symbols-outlined">
-                            favorite
-                        </span>
-                        <div class="imgCon">
-                            <img src="<c:url value='/static/image/2023聖誕節.jpg' />">
-                        </div>
-                        <div class="dataTitle BGC_Gray">
-                            2023聖誕節
-                        </div>
-                        <div class="dataTime BGC_Gray">
-                            1月29日 ~ 2月31日
-                        </div>
-                        <div class="dataPosi BGC_Gray">
-                            地點：台中市西區健行路1049號金典綠園道商場三樓
-                        </div>
-                    </div>
+
+
+<%-- 					<c:if test="${not empty eventDataList}"> --%>
+					
+					 <c:forEach var="eventData" items="${eventDataList}">
+						<a href="<c:url value='/Event' />">
+							<div class="dataCon">
+<!-- 								<div class="material-symbols-outlined">favorite</div> -->
+								<div class="imgCon">
+									<img src="<c:url value='/static/image/2023聖誕節.jpg' />">
+								</div>
+								<div class="dataTitle">${eventData.getEventTitle()}</div>
+								<div class="dataTime">${eventData.getEventTime()}</div>
+								<div class="dataPosi">${eventData.getLocation()}</div>
+							</div>
+						</a>
+					</c:forEach>
+						
+<%-- 					</c:if> --%>
+					
+					
+					
+<!--                     <div class="dataCon"> -->
+<!--                         <div class="material-symbols-outlined"> -->
+<!--                             favorite -->
+<!--                         </div> -->
+<!--                         <div class="imgCon"> -->
+<%--                             <img src="<c:url value='/static/image/2023聖誕節.jpg' />"> --%>
+<!--                         </div> -->
+<!--                         <div class="dataTitle BGC_Gray"> -->
+<!--                             2023聖誕節 -->
+<!--                         </div> -->
+<!--                         <div class="dataTime BGC_Gray"> -->
+<!--                             1月29日 ~ 2月31日 -->
+<!--                         </div> -->
+<!--                         <div class="dataPosi BGC_Gray"> -->
+<!--                             地點：台中市西區健行路1049號金典綠園道商場三樓 -->
+<!--                         </div> -->
+<!--                     </div> -->
+<!--                     <div class="dataCon"> -->
+<!--                         <span class="material-symbols-outlined"> -->
+<!--                             favorite -->
+<!--                         </span> -->
+<!--                         <div class="imgCon"> -->
+<%--                             <img src="<c:url value='/static/image/2023聖誕節.jpg' />"> --%>
+<!--                         </div> -->
+<!--                         <div class="dataTitle BGC_Gray"> -->
+<!--                             2023聖誕節 -->
+<!--                         </div> -->
+<!--                         <div class="dataTime BGC_Gray"> -->
+<!--                             1月29日 ~ 2月31日 -->
+<!--                         </div> -->
+<!--                         <div class="dataPosi BGC_Gray"> -->
+<!--                             地點：台中市西區健行路1049號金典綠園道商場三樓 -->
+<!--                         </div> -->
+<!--                     </div> -->
+<!--                     <div class="dataCon"> -->
+<!--                         <span class="material-symbols-outlined"> -->
+<!--                             favorite -->
+<!--                         </span> -->
+<!--                         <div class="imgCon"> -->
+<%--                             <img src="<c:url value='/static/image/2023聖誕節.jpg' />"> --%>
+<!--                         </div> -->
+<!--                         <div class="dataTitle BGC_Gray"> -->
+<!--                             2023聖誕節 -->
+<!--                         </div> -->
+<!--                         <div class="dataTime BGC_Gray"> -->
+<!--                             1月29日 ~ 2月31日 -->
+<!--                         </div> -->
+<!--                         <div class="dataPosi BGC_Gray"> -->
+<!--                             地點：台中市西區健行路1049號金典綠園道商場三樓 -->
+<!--                         </div> -->
+<!--                     </div> -->
+<!--                     <div class="dataCon"> -->
+<!--                         <span class="material-symbols-outlined"> -->
+<!--                             favorite -->
+<!--                         </span> -->
+<!--                         <div class="imgCon"> -->
+<%--                             <img src="<c:url value='/static/image/2023聖誕節.jpg' />"> --%>
+<!--                         </div> -->
+<!--                         <div class="dataTitle BGC_Gray"> -->
+<!--                             2023聖誕節 -->
+<!--                         </div> -->
+<!--                         <div class="dataTime BGC_Gray"> -->
+<!--                             1月29日 ~ 2月31日 -->
+<!--                         </div> -->
+<!--                         <div class="dataPosi BGC_Gray"> -->
+<!--                             地點：台中市西區健行路1049號金典綠園道商場三樓 -->
+<!--                         </div> -->
+<!--                     </div> -->
+<!--                     <div class="dataCon"> -->
+<!--                         <span class="material-symbols-outlined"> -->
+<!--                             favorite -->
+<!--                         </span> -->
+<!--                         <div class="imgCon"> -->
+<%--                             <img src="<c:url value='/static/image/2023聖誕節.jpg' />"> --%>
+<!--                         </div> -->
+<!--                         <div class="dataTitle BGC_Gray"> -->
+<!--                             2023聖誕節 -->
+<!--                         </div> -->
+<!--                         <div class="dataTime BGC_Gray"> -->
+<!--                             1月29日 ~ 2月31日 -->
+<!--                         </div> -->
+<!--                         <div class="dataPosi BGC_Gray"> -->
+<!--                             地點：台中市西區健行路1049號金典綠園道商場三樓 -->
+<!--                         </div> -->
+<!--                     </div> -->
+<!--                     <div class="dataCon"> -->
+<!--                         <span class="material-symbols-outlined"> -->
+<!--                             favorite -->
+<!--                         </span> -->
+<!--                         <div class="imgCon"> -->
+<%--                             <img src="<c:url value='/static/image/2023聖誕節.jpg' />"> --%>
+<!--                         </div> -->
+<!--                         <div class="dataTitle BGC_Gray"> -->
+<!--                             2023聖誕節 -->
+<!--                         </div> -->
+<!--                         <div class="dataTime BGC_Gray"> -->
+<!--                             1月29日 ~ 2月31日 -->
+<!--                         </div> -->
+<!--                         <div class="dataPosi BGC_Gray"> -->
+<!--                             地點：台中市西區健行路1049號金典綠園道商場三樓 -->
+<!--                         </div> -->
+<!--                     </div> -->
+<!--                     <div class="dataCon"> -->
+<!--                         <span class="material-symbols-outlined"> -->
+<!--                             favorite -->
+<!--                         </span> -->
+<!--                         <div class="imgCon"> -->
+<%--                             <img src="<c:url value='/static/image/2023聖誕節.jpg' />"> --%>
+<!--                         </div> -->
+<!--                         <div class="dataTitle BGC_Gray"> -->
+<!--                             2023聖誕節 -->
+<!--                         </div> -->
+<!--                         <div class="dataTime BGC_Gray"> -->
+<!--                             1月29日 ~ 2月31日 -->
+<!--                         </div> -->
+<!--                         <div class="dataPosi BGC_Gray"> -->
+<!--                             地點：台中市西區健行路1049號金典綠園道商場三樓 -->
+<!--                         </div> -->
+<!--                     </div> -->
                 </div>
                 <div class="text-center p-3">
                     <small class="text-muted">沒有更多摟~</small>
