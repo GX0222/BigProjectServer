@@ -1,5 +1,5 @@
 $(document).ready(function () {
-	$("a.page-link").click(function (e) {
+	$("a.page-link").on("click",function (e) {
 		e.preventDefault();
 
 		var pageNum = $(this).data("page");

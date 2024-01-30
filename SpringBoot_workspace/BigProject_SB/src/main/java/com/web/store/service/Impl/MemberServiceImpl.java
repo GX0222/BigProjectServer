@@ -14,8 +14,8 @@ public class MemberServiceImpl implements MemberService {
 
 	@Autowired
 	private MemberDao memberDao;
-	
-	
+
+
 	public MemberServiceImpl(MemberDao memberDao) {
 		super();
 		this.memberDao = memberDao;
@@ -23,13 +23,13 @@ public class MemberServiceImpl implements MemberService {
 
 	@Override
 	public List<MemberBean> findAll() {
-		
+
 		return memberDao.findAll();
 	}
 
 	@Override
 	public MemberBean findByAccount(String account) {
-		
+
 		return memberDao.findByAccount(account);
 	}
 

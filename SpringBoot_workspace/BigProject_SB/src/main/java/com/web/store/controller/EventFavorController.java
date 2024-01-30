@@ -24,14 +24,14 @@ import jakarta.servlet.http.HttpSession;
 public class EventFavorController {
 	EventFavorService efs;
 	EventService es;
-	
+
 	EventsBean eb = new EventsBean();
 //	EventsBean eb;
-	
+
 	public EventFavorController(EventFavorService efs, EventService es) {
 	this.efs = efs;
 	this.es = es;
-	
+
 }
 //	@PostMapping("/Member/Love")
 //	public String showFavorites(
@@ -41,12 +41,12 @@ public class EventFavorController {
 //		Integer eventID = Integer.parseInt(req.get("eventID").toString());
 //		session.setAttribute("eventID", eventID);
 //		return "Member/Love";
-//		
+//
 //	}
 	@GetMapping("/Love")
 	public String showFavorites(Model model, HttpSession session) {
 		MemberBean mb = (MemberBean) session.getAttribute("member");
-		
+
 		Integer memId = mb.getMemberId();
 		List<EventFavorBean> eventF = efs.selectEvents(memId);
 		System.out.println("memId : "+memId);
@@ -69,10 +69,10 @@ public class EventFavorController {
 			System.out.println(eventDataList);
 		}
 		System.out.println("4");
-	    return "Member/Love"; 
+	    return "Member/Love";
 	}
 
-	
+
     @PostMapping("/Event")
     @ResponseBody
     public String addToFavorites(
@@ -84,13 +84,13 @@ public class EventFavorController {
     	Integer memId = mb.getMemberId();
 //    	System.out.println(req.get("eventId"));
 //    	List<EventFavorBean> eventF = efs.findAllByEventid(memId);
-    	
+
     	if(memId == 2) {
     		System.out.println("請先登入會員");
     		System.out.println(memId);
     	}else {
     	    try {
-        	    
+
 //    	    	EventFavorBean events = efs.findByEventid(eb.getId());
     	    	EventFavorBean efb = new EventFavorBean();
     	    	efb.setEventid(Integer.valueOf(req.get("eventId")));
@@ -98,7 +98,7 @@ public class EventFavorController {
     	    	System.out.println(eb.getId());
     	    	efs.save(efb);
     	        System.out.println("save成功");
-    	        
+
     	    } catch (Exception e) {
     	        // 在這裡處理保存操作的異常
     	        e.printStackTrace();
@@ -109,7 +109,7 @@ public class EventFavorController {
 
         return "活動收藏成功";
     }
-	
+
     @DeleteMapping("/Event")
     @ResponseBody
     public String deleteToFavorites(
@@ -137,6 +137,6 @@ public class EventFavorController {
         // 取消收藏邏輯...
         return "活動刪除成功";
     }
-	
-	
+
+
 }

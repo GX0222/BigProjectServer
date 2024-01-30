@@ -73,7 +73,7 @@ public class HomeController {
 				List<EventsBean> top5Eve = new ArrayList<>();
 				for(Integer eveId:top5EveId) {
 					if(eveId != 0) {
-						top5Eve.add(eventService.findById(eveId));				
+						top5Eve.add(eventService.findById(eveId));
 					}
 				}
 				model.addAttribute("smallNews", top5Eve);

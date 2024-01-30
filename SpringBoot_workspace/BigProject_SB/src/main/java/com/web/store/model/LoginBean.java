@@ -5,7 +5,7 @@ public class LoginBean {
 	String password;
 	String invalidCredentials;
 	boolean rememberMe;
-	
+
 	public LoginBean() {
 	}
 
@@ -60,5 +60,5 @@ public class LoginBean {
 		builder.append("]");
 		return builder.toString();
 	}
-	
+
 }

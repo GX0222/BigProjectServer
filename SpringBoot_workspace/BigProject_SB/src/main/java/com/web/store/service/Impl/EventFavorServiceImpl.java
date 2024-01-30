@@ -10,10 +10,10 @@ import com.web.store.model.EventFavorBean;
 import com.web.store.service.EventFavorService;
 @Service
 public class EventFavorServiceImpl implements EventFavorService {
-	
-	
+
+
 	EventFavorDao efd;
-	
+
 	public EventFavorServiceImpl(EventFavorDao efd) {
 		this.efd = efd;
 	}
@@ -44,15 +44,15 @@ public class EventFavorServiceImpl implements EventFavorService {
 
 	@Override
 	public void update(EventFavorBean eventid) {
-		
-		
+
+
 	}
 
 
 
 	@Override
 	public List<EventFavorBean> findAllByEventid(Integer eventid) {
-		
+
 		return efd.findAllByEventid(eventid);
 	}
 
@@ -60,7 +60,7 @@ public class EventFavorServiceImpl implements EventFavorService {
 
 	@Override
 	public List<EventFavorBean> findEventidByMemberid(Integer memberID) {
-		
+
 		return efd.findEventidByMemberid(memberID);
 	}
 
@@ -68,7 +68,7 @@ public class EventFavorServiceImpl implements EventFavorService {
 
 	@Override
 	public EventFavorBean findByEventid(Integer eventid) {
-		
+
 		return efd.findByEventid(eventid);
 	}
 
@@ -83,7 +83,7 @@ public class EventFavorServiceImpl implements EventFavorService {
 
 //	@Override
 //	public EventsBean findByEventId(Integer eventId) {
-//		
+//
 //		return (EventsBean) efd.findByEventId(eventId);
 //	}
 

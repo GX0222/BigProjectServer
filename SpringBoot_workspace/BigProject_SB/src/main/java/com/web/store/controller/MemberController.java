@@ -37,8 +37,8 @@ public class MemberController {
 	EventService eventService;
 	EhService ehService;
 	MemberPictureService memberPictureService;
-	
-	
+
+
 
 	public MemberController(MemberEventsService memberEventsService, EventService eventService, EhService ehService, MemberPictureService memberPictureService) {
 		super();
@@ -56,7 +56,7 @@ public class MemberController {
 	return "redirect:/login/login";
 	}
 	System.out.println(mb.getUsername());
-	
+
 	String memImg = memberPictureService.getImgByMemberId(mb.getMemberId());
 	session.setAttribute("memberImg", memImg);
 	System.out.println("GO member finished");
@@ -75,10 +75,10 @@ public class MemberController {
 
 		if (mb == null  || mb.getAccount().equals("Guest")) {
 		return "redirect:/login/login";
-		}		
+		}
 		return "Member/Update";
 	}
-	
+
 	@GetMapping("/List")
 	public String list(Model model, HttpSession session) {
 		MemberBean mb;
@@ -86,8 +86,8 @@ public class MemberController {
 		mb = (MemberBean) session.getAttribute("member");
 		if (mb == null || mb.getAccount().equals("Guest")) {
 		return "redirect:/login/login";
-		}		
-		
+		}
+
 		List<MemberEventsBean> mm = memberEventsService.findByMemberId(mb.getMemberId());
 		//在memberEvent表格裡面尋找會員有幾個活動
 		model.addAttribute("table_size",mm.size());
@@ -107,7 +107,7 @@ public class MemberController {
 //			aa4.add(eb.getEventIntro());
 //			aa5.add(eb.getId());
 //		}
-//		
+//
 //		model.addAttribute("Event_title",aa1);
 //		model.addAttribute("EventTime",aa2);
 //		model.addAttribute("Location",aa3);
@@ -120,18 +120,18 @@ public class MemberController {
 	public String trafficimfor(Model model) {
 		return "trafficimfor/trafficimfor";
 	}
-	
+
 	@GetMapping("/AboutUs")
 	public String aboutUs(Model model) {
 		return "AboutUs/AboutUs";
 	}
-	
+
 	@GetMapping("/Ian/index'")
 	public String ianIndex(Model model) {
 		return "index";
 	}
-	
-	
+
+
 	@GetMapping("/Eedit")
 	public String edit(Model model, HttpSession session) {
 		MemberBean mb;
@@ -139,16 +139,16 @@ public class MemberController {
 //		System.out.println(mb.getAccount());
 		if (mb == null || mb.getAccount().equals("Guest")) {
 		return "redirect:/login/login";
-		}		
+		}
 		return "Member/Edit";
 	}
-	
+
 	@GetMapping("/test")
 	public String ttest(Model model) {
 //		List<MemberEventsBean> mm = memberEventsService.fidAll();
 		Integer a1 = 1;
 		List<MemberEventsBean> mm = memberEventsService.findByMemberId(a1);
-		
+
 		System.out.println(mm.get(0).getMemberId());
 		System.out.println(mm.size());
 		model.addAttribute("table_size",mm.size());
@@ -166,7 +166,7 @@ public class MemberController {
 			aa3.add(eb.getLocation());
 			aa4.add(eb.getEventIntro());
 		}
-		
+
 		model.addAttribute("Event_title",aa1);
 		model.addAttribute("EventTime",aa2);
 		model.addAttribute("Location",aa3);
@@ -175,7 +175,7 @@ public class MemberController {
 		model.addAttribute("AA",a);
 		return "test";
 	}
-	
+
 	@GetMapping("/eventlist/item/{id}")
 	@ResponseBody
 //	public EventsBean eventlist(Model model,@PathVariable Integer id) {
@@ -185,23 +185,23 @@ public class MemberController {
 		List<Object> out = new ArrayList<>();
 		EventsBean eb = eventService.findById(id);
 		List<ehBean> ehb = ehService.findByEvent_id(id);
-		
+
 		for(ehBean a:ehb) {
 			System.out.println(a.getClassId());
 		}
 //		Object[] out= {eb,ehb};
 		out.add(eb);
 		out.add(ehb);
-		return out;		
+		return out;
 	}
-	
-	
+
+
 	@GetMapping("/List/item")
 	@ResponseBody
 //	public List<EventsBean> Listevent(Model model, HttpSession session) {
 	public List<Object> Listevent(Model model, HttpSession session) {
 		MemberBean mb;
-		mb = (MemberBean) session.getAttribute("member");	
+		mb = (MemberBean) session.getAttribute("member");
 	List<MemberEventsBean> mm = memberEventsService.findByMemberId(mb.getMemberId());
 	List<Object> out = new ArrayList<>();
 	List<EventsBean> ebs = new ArrayList<>();
@@ -218,14 +218,14 @@ public class MemberController {
 			imgstr.add("data:image/png;base64, "+Base64.getEncoder().encodeToString(eb.getEventImage()));
 		}
 //		imgstr.add("123");
-		
+
 	}
 	out.add(ebs);
 	out.add(imgstr);
-	
+
 	return out;
 	}
-	
+
 	@PostMapping("/test/item")
 	@ResponseBody
 //	public String putMethodName(@PathVariable String id, @RequestBody Map<String,Object>  entity) {
@@ -235,7 +235,7 @@ public class MemberController {
 //		System.out.println(entity.get("eventId"));
 		return "OK";
 //		public String putMethodName(HttpServletRequest request) {
-			
+
 //	    	 request.getParameter("eventId")
 //			System.out.println(request.getParameter("eventId"));
 //			System.out.println(request.getParameter("eventDate"));
@@ -244,14 +244,14 @@ public class MemberController {
 //			System.out.println(request.getParameter("eventInfo"));
 //			return "OK";
 	}
-	
-	
+
+
 	@PostMapping("/getJson")
     @ResponseBody
     public String JsonController(@RequestParam("id") String id, @RequestParam("name") String name) {
         System.out.println(id+"===="+name);
         return "student";}
-	
+
 	@PostMapping("/getJson2")
     @ResponseBody
     public  HashMap<String, String> JsonController2(@RequestParam("eventId") String id, @RequestParam("eventName") String name,
@@ -272,13 +272,13 @@ public class MemberController {
 //        return "student";
         return a;
         }
-	
+
 	@PostMapping("/getJson3")
     @ResponseBody
     public  HashMap<String, String> JsonController3(@RequestParam HashMap<String,Object> eb) {
 //       System.out.println();
 		int hobby_num =5;
-		
+
 		System.out.println(eb.get("eventId"));
 		System.out.println(eb.get("eventDate"));
 		System.out.println(eb.get("eventName"));
@@ -298,7 +298,7 @@ public class MemberController {
         updateEb.setEventInfo((String)eb.get("eventInfo"));
         updateEb.setEventIntro((String)eb.get("eventIntro"));
         updateEb.setEventTime((String)eb.get("eventDate"));
-        
+
         updateEb.setCounty((String)eb.get("eventCity"));
         updateEb.setEventUrl((String)eb.get("eventUrl"));
         updateEb.setLocation((String)eb.get("eventLocation"));
@@ -308,7 +308,7 @@ public class MemberController {
         try {
 			Date StartTimeSql= new Date(sdf2.parse(Stime.replace("/","-").replace("_","-")).getTime());
 			System.out.println(sdf2.parse(Stime.replace("/","-").replace("_","-")));
-			
+
 			Date EndTimeSql= new Date(sdf2.parse(Etime.replace("/","-").replace("_","-")).getTime());
 			updateEb.setStartTime(StartTimeSql);
 			updateEb.setEndTime(EndTimeSql);
@@ -316,7 +316,7 @@ public class MemberController {
 			System.out.println(e);
 			e.printStackTrace();
 		}
-        
+
 //        today time
 		java.util.Date date = new java.util.Date();
 
@@ -331,14 +331,14 @@ public class MemberController {
         List<ehBean> ehb = ehService.findByEvent_id(Integer.valueOf((String)eb.get("eventId")));
 //        List<Integer> ehobbies=new ArrayList<>();
 //        System.out.println(ehobbies.isEmpty());
-        
+
         for(ehBean a:ehb) {
 			System.out.println(a.getClassId());
 //			ehobbies.add(a.getClassId());
 			ehService.delete(a);
-			
+
 		}
-        
+
 		int check_hobby_exist = 0;
         for(Integer i=0 ;i<hobby_num;i++) {
         	System.out.println("here1");
@@ -353,15 +353,15 @@ public class MemberController {
         		check_hobby_exist++;
         	}
         }
-        
+
         if(check_hobby_exist==0) {
         	ehBean updateEh = new ehBean();
     		updateEh.setEventId(Integer.valueOf((String)eb.get("eventId")));
     		updateEh.setClassId(1);
     		ehService.save(updateEh);
         }
-        
-        
+
+
         HashMap<String, String> a = new HashMap<>();
         a.put("stu", "student");
 //        EventsBean updateEb = new EventsBean();
@@ -370,10 +370,10 @@ public class MemberController {
 //        return "student";
         return a;
         }
-	
-	
-	
-	
+
+
+
+
 	@PostMapping("/getJson4")
     @ResponseBody
     public  HashMap<String, String> JsonController4(@RequestParam HashMap<String,Object> eb, HttpSession session) {
@@ -381,7 +381,7 @@ public class MemberController {
 		mb = (MemberBean) session.getAttribute("member");
 //       System.out.println();
 		int hobby_num =5;
-		
+
 //		System.out.println(eb.get("eventId"));
 //		System.out.println(eb.get("eventUrl"));
 //		System.out.println(eb.get("eventDate"));
@@ -413,7 +413,7 @@ public class MemberController {
         try {
 			Date StartTimeSql= new Date(sdf2.parse(Stime.replace("/","-").replace("_","-")).getTime());
 			System.out.println(sdf2.parse(Stime.replace("/","-").replace("_","-")));
-			
+
 			Date EndTimeSql= new Date(sdf2.parse(Etime.replace("/","-").replace("_","-")).getTime());
 			updateEb.setStartTime(StartTimeSql);
 			updateEb.setEndTime(EndTimeSql);
@@ -421,12 +421,12 @@ public class MemberController {
 			System.out.println(e);
 			e.printStackTrace();
 		}
-        
+
 //        today time
 		java.util.Date date = new java.util.Date();
 //		Timestamp timestamp2 = new Timestamp(date.getTime());
 		Date dateSQL = new Date(date.getTime());
-//		System.out.println(sdf2.format(timestamp2)); 
+//		System.out.println(sdf2.format(timestamp2));
         updateEb.setUpdateTime(dateSQL);
 //        System.out.println("here3");
         eventService.save(updateEb);
@@ -434,12 +434,12 @@ public class MemberController {
 //        List<ehBean> ehb = ehService.findByEvent_id(Integer.valueOf((String)eb.get("eventId")));
 //        List<Integer> ehobbies=new ArrayList<>();
 //        System.out.println(ehobbies.isEmpty());
-//        
+//
 //        for(ehBean a:ehb) {
 //			System.out.println(a.getClassId());
 ////			ehobbies.add(a.getClassId());
 //			ehService.delete(a);
-//			
+//
 //		}
         List<EventsBean> FindnewEvents = eventService.findByEventTitle((String)eb.get("eventName"));
         Integer newEventID = FindnewEvents.get(FindnewEvents.size()-1).getId();
@@ -449,7 +449,7 @@ public class MemberController {
 		meb.setEventsId(newEventID);
 		meb.setMemberId(mb.getMemberId());
 		memberEventsService.save(meb);
-        
+
 		int check_hobby_exist = 0;
 //		System.out.println("here5");
         for(Integer i=0 ;i<hobby_num;i++) {
@@ -465,15 +465,15 @@ public class MemberController {
         		check_hobby_exist++;
         	}
         }
-        
+
         if(check_hobby_exist==0) {
         	ehBean updateEh = new ehBean();
     		updateEh.setEventId(Integer.valueOf((String)eb.get("eventId")));
     		updateEh.setClassId(1);
     		ehService.save(updateEh);
         }
-        
-        
+
+
         HashMap<String, String> a = new HashMap<>();
         a.put("stu", "student");
 //        EventsBean updateEb = new EventsBean();
@@ -482,19 +482,19 @@ public class MemberController {
 //        return "student";
         return a;
     }
-	
-	
+
+
 @PostMapping("/memberImgChange")
 @ResponseBody
 public  HashMap<String, String> JsonController7(@RequestParam HashMap<String,Object> eb, HttpSession session) {
 	MemberBean mb;
 	mb = (MemberBean) session.getAttribute("member");
-//      
+//
 //		String jsonData = java.net.URLDecoder.decode(eb, "UTF-8");
-		
+
 //		System.out.println(eb.get("data"));
 //		System.out.println(eb.keySet());
-//		
+//
 	MemberPictureBean memPicBeam;
 	memPicBeam = memberPictureService.findByMemberId(mb.getMemberId());
 	if((eb.get("data").toString())!=null) {
@@ -503,15 +503,15 @@ public  HashMap<String, String> JsonController7(@RequestParam HashMap<String,Obj
 		HashMap<String, String> a = new HashMap<>();
 	    a.put("stu", "student");
 	}
-	
+
 //	EventsBean updateEb = eventService.findById(4);
 //    updateEb.setEventImage(Base64.getDecoder().decode((eb.get("data").toString()).split(",")[1]));
 //    eventService.save(updateEb);
-		
 
-		
-		
-		
+
+
+
+
       HashMap<String, String> a = new HashMap<>();
       a.put("stu", "data null");
 //        a.put("stuu", updateEb.getEventImage().toString());
@@ -523,26 +523,26 @@ public  HashMap<String, String> JsonController7(@RequestParam HashMap<String,Obj
       System.out.println("changImg finished");
       return a;
       }
-	
-	
-	
+
+
+
 // 	@PostMapping("/your_backend_url")
 //     @ResponseBody
 //     public  HashMap<String, String> JsonController6(@RequestParam HashMap<String,Object> eb) {
-// //      
+// //
 // //		String jsonData = java.net.URLDecoder.decode(eb, "UTF-8");
-		
+
 // //		System.out.println(eb.get("data"));
 // //		System.out.println(eb.keySet());
-// //		
+// //
 // 		EventsBean updateEb = eventService.findById(4);
 //         updateEb.setEventImage(Base64.getDecoder().decode((eb.get("data").toString()).split(",")[1]));
 //         eventService.save(updateEb);
-		
+
 // 		updateEb.getEventImage();
-		
-		
-		
+
+
+
 //         HashMap<String, String> a = new HashMap<>();
 //         a.put("stu", "student");
 // //        a.put("stuu", updateEb.getEventImage().toString());
@@ -553,22 +553,22 @@ public  HashMap<String, String> JsonController7(@RequestParam HashMap<String,Obj
 // //        return "student";
 //         return a;
 //         }
-	
-	
-	
+
+
+
 //	@PostMapping("/new_img")
 //    @ResponseBody
 //    public  HashMap<String, String> newImg(@RequestParam HashMap<String,Object> eb) {
-////      
+////
 ////		String jsonData = java.net.URLDecoder.decode(eb, "UTF-8");
-//		
+//
 ////		System.out.println(eb.get("data"));
 ////		System.out.println(eb.keySet());
-////		
+////
 //		EventsBean updateEb = eventService.findById(4);
 //        updateEb.setEventImage(Base64.getDecoder().decode((eb.get("data").toString()).split(",")[1]));
 //        eventService.save(updateEb);
-//		
+//
 ////		updateEb.getEventImage();
 //
 //        HashMap<String, String> a = new HashMap<>();
@@ -597,31 +597,31 @@ public  HashMap<String, String> JsonController7(@RequestParam HashMap<String,Obj
         List<ehBean> ehb = ehService.findByEvent_id(Integer.valueOf((String)eb.get("eventId")));
 //      List<Integer> ehobbies=new ArrayList<>();
 //      System.out.println(ehobbies.isEmpty());
-      
+
         for(ehBean a:ehb) {
 			System.out.println(a.getClassId());
 //			ehobbies.add(a.getClassId());
 			ehService.delete(a);
-			
+
 		}
         List<MemberEventsBean> deletemeb = memberEventsService.findByEventsId(Integer.valueOf((String)eb.get("eventId")));
-        
+
         for(MemberEventsBean b:deletemeb) {
         	memberEventsService.delete(b);
         }
-     
-        
+
+
         HashMap<String, String> a = new HashMap<>();
         a.put("stu", "student");
 
         return a;
     }
-	
-	
-	
-	
-	
-	
+
+
+
+
+
+
 }
 
 

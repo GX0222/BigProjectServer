@@ -18,13 +18,13 @@ import com.web.store.register.service.RegisterService;
 @Service
 @Transactional
 public class RegisterServiceImpl implements RegisterService {
-	
+
 	MemberBean memberbean;
-	
+
 	RegisterDaoRepository registerDaoRepository;
-	
+
 	private static Logger log = LoggerFactory.getLogger(RegisterServiceImpl.class);
-	
+
 	public RegisterServiceImpl(RegisterDaoRepository registerDaoRepository) {
 		this.registerDaoRepository = registerDaoRepository;
 	}
@@ -34,7 +34,7 @@ public class RegisterServiceImpl implements RegisterService {
 		log.info("會員註冊功能之Service: 儲存會員資料");
 		registerDaoRepository.save(rb);
 	}
-	
+
 	@Override
 	public boolean existsByAccount(String account) {
 		log.info("會員註冊功能之Service: 檢查會員輸入的編號是否已被使用");
@@ -42,7 +42,7 @@ public class RegisterServiceImpl implements RegisterService {
 		boolean exist = reg != null;
 		return exist;
 	}
-	
+
 	@Override
 	public MemberBean findByAccount(String account) {
 		log.info("會員註冊功能之Service: 由會員編號找出對應的會員");
@@ -64,20 +64,20 @@ public class RegisterServiceImpl implements RegisterService {
 	@Override
 	public MemberBean findByAccountAndPassword(String account, String password) {
 		MemberBean member = registerDaoRepository.findByAccount(account);
-		
+
 		if(member != null && BCrypt.checkpw(password, member.getPassword())) {
-			;
+
 		}else {
 			member = null;
-		};
-		log.info("會員登入功能之Service: 檢查帳號/密碼結果:" 
+		}
+		log.info("會員登入功能之Service: 檢查帳號/密碼結果:"
 				+ (member == null? "帳號/密碼錯誤" : "帳號/密碼正確"));
 		return member;
 	}
 	@Override
 	public boolean isValidmailAddress(String mail) {
 		boolean result = true;
-		final String regex = 
+		final String regex =
 				"^[a-zA-Z0-9_!#$%&'*+/=?`{|}~^-]+(?:\\.[a-zA-Z0-9_!#$%&'*+/=?`{|}~^-]+↵\n"
 		    	+ ")*@[a-zA-Z0-9-]+(?:\\.[a-zA-Z0-9-]+)*$";
 		Pattern pattern = Pattern.compile(regex);
@@ -93,15 +93,15 @@ public class RegisterServiceImpl implements RegisterService {
 //	@Override
 //	public MemberBean findByAccountAndPassword(String account, String password) {
 //		MemberBean reg = registerDaoRepository.findByAccount(account);
-		
+
 //		if (reg !=  null && GlobalService.checkBCryptPassword(password, reg.getPassword())) {
 //			;
 //		} else {
 //			reg = null;
 //		};
-//	    log.info("會員登入功能之Service: 檢查帳號/密碼結果:" 
+//	    log.info("會員登入功能之Service: 檢查帳號/密碼結果:"
 //					+ (reg == null? "帳號/密碼正確" : "帳號/密碼錯誤"));
-//		
+//
 //		return null;
 //	}
 

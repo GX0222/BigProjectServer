@@ -15,7 +15,7 @@ import jakarta.servlet.http.HttpSession;
 
 //每個請求送達Server端時，都由本過濾器來檢查該請求所要求的資源是否需要登入才能使用。
 //檢查的邏輯為：
-//判斷該請求所要求的資源是否需要登入才能使用， 
+//判斷該請求所要求的資源是否需要登入才能使用，
 //如果需要登入
 //		判斷是否已經登入，
 //		如果已經登入，
@@ -27,7 +27,7 @@ import jakarta.servlet.http.HttpSession;
 //方法讀入，放入List型別的實例變數 url 內。
 public class CheckLoginInterceptor implements HandlerInterceptor {
 	private static Logger log = LoggerFactory.getLogger(CheckLoginInterceptor.class);
-	
+
 	List<String> url = Arrays.asList(
 			"");
 	String servletPath;
@@ -41,17 +41,17 @@ public class CheckLoginInterceptor implements HandlerInterceptor {
 		System.out.println("-------------------------------------");
 		boolean byPass = true;
 		boolean isRequestedSessionIdValid = false;
-		servletPath = req.getServletPath();  
+		servletPath = req.getServletPath();
 		contextPath = req.getContextPath();
 		requestURI  = req.getRequestURI();
 		isRequestedSessionIdValid = req.isRequestedSessionIdValid();
 		log.info("CheckLoginInterceptor#preHandle(), servletPath=" + servletPath);
-		if (mustLogin()) {           
-			if (checkLogin(req)) {   
-				log.info(servletPath + " 需要登入，但已經登入"); 
+		if (mustLogin()) {
+			if (checkLogin(req)) {
+				log.info(servletPath + " 需要登入，但已經登入");
 				byPass = true;
 				System.out.println("Y");
-			} else {				
+			} else {
 				//  需要登入，尚未登入，所以送回登入畫面
 				log.info(servletPath + " 需要登入，尚未登入，所以送回登入畫面");
 				HttpSession session = req.getSession();
@@ -61,7 +61,7 @@ public class CheckLoginInterceptor implements HandlerInterceptor {
 				} else {
 					// 記住原本的"requestURI"，稍後如果登入成功，系統可以自動轉入
 					// 原本要執行的程式。
-					session.setAttribute("requestURI", requestURI);	
+					session.setAttribute("requestURI", requestURI);
 					System.out.println("Y2");
 				}
 				resp.sendRedirect(contextPath + "/login/login");

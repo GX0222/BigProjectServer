@@ -9,9 +9,9 @@ import org.springframework.validation.Validator;
 import com.web.store.model.LoginBean;
 
 public class LoginBeanValidator implements Validator {
-	
+
 	private static Logger log = LoggerFactory.getLogger(LoginBeanValidator.class);
-	
+
 	@Override
 	public boolean supports(Class<?> clazz) {
 		return LoginBean.class.isAssignableFrom(clazz);

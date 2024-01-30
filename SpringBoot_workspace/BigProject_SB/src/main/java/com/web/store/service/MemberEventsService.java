@@ -2,7 +2,6 @@ package com.web.store.service;
 
 import java.util.List;
 
-import com.web.store.model.EventsBean;
 import com.web.store.model.MemberEventsBean;
 
 public interface MemberEventsService {
