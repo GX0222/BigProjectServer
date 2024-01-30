@@ -4,6 +4,9 @@ $(document).ready(function () {
 
 		var eventID = $(this).data("event");
 		var track = $(this).data("track");
+		if (track == null){
+			track = "false";
+		}
 		console.log("Event ID:", eventID);
 		$.ajax({
 			type: "POST",
