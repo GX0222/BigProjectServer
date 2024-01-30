@@ -88,7 +88,7 @@ public class MemberTrackServiceImpl implements MemberTrackService {
 		}
 
 //		System.out.println(maxKeyValue);
-		if (maxKeyValue > 10) {
+		if (maxKeyValue > 15) {
 			maxKeyValue--;
 			switch (maxKey) {
 			case 1:
@@ -110,8 +110,10 @@ public class MemberTrackServiceImpl implements MemberTrackService {
 				break;
 			}
 			trackDao.save(mtb);
+			return maxKey;
+		}else {
+			return 0;
 		}
-		return maxKey;
 
 	}
 
