@@ -32,7 +32,9 @@ function loadCountyData(countyA){
         }
     });
     
-        $(".page-link").removeClass("selectedPage");
-        $(this).addClass("selectedPage");
-        $('html, body').scrollTop(0);
+//        $(".page-link").removeClass("selectedPage");
+////        console.log(this);
+//        $(this).addClass("selectedPage");
+////        console.log(this);
+//        $('html, body').scrollTop(0);
 }

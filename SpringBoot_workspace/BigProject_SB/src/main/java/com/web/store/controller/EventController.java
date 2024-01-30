@@ -108,7 +108,9 @@ public class EventController {
 		
 		Page<EventsBean> eventPages = eventService.getEventPageClass(pageNum, pageSize, (String)countyB.get("listCounty"));
 		List<EventsBean> pageEvents = eventPages.getContent();
-		
+		System.out.println(eventPages);
+		System.out.println("pageEvents");
+		System.out.println(pageEvents);
 //		model.addAttribute("eventList", eventService.findByCounty((String)countyB.get("listCounty")));
 		model.addAttribute("eventList", pageEvents);
 		model.addAttribute("totalPages", eventPages.getTotalPages());

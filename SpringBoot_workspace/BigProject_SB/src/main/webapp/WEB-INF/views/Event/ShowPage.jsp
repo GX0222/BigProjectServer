@@ -83,7 +83,7 @@
 					</a></li>
 					<c:forEach var="page" begin="1" end="${totalPages}">
 						<li class="page-item"><a class="page-link"
-							href="<c:url value='/EventListPage' />" data-page="${page}">
+							 data-page="${page}">
 								${page} </a></li>
 					</c:forEach>
 					<li class="page-item"><a class="page-link" href="#"
