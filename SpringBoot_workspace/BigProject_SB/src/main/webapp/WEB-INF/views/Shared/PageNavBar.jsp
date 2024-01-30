@@ -32,14 +32,14 @@
 			<div class="collapse navbar-collapse" id="mynavbar">
 				<ul class="navbar-nav me-auto mb-0">
 					<li class="nav-item"><a id="news" onclick="nav_item_active()"
-						class="nav-link" aria-current="page" href="<c:url value='/Favor' />">活動資訊</a></li>
+						class="nav-link" aria-current="page" href="<c:url value='/EventList' />">活動資訊</a></li>
 					<li class="nav-item"><a id="trans" onclick="nav_item_active()"
-						class="nav-link" aria-current="page" href="<c:url value='/trafficimfor' />">交通情報</a></li>
+						class="nav-link" aria-current="page" href="<c:url value='/Trafficimfor' />">交通情報</a></li>
 <!-- 					<li class="nav-item"><a id="forum" onclick="nav_item_active()" -->
 <%-- 						class="nav-link" aria-current="page" href="<c:url value='' />">旅遊論壇</a></li> --%>
 					<li class="nav-item"><a id="aboutus"
 						onclick="nav_item_active()" class="nav-link" aria-current="page"
-						href="<c:url value='' />">關於我們</a></li>
+						href="<c:url value='/AboutUs' />">關於我們</a></li>
 				</ul>
 				<div class="memberCon d-none d-md-flex">
 					<div class="nameCon">

@@ -16,7 +16,7 @@ import com.web.store.config.BCrypt;
 import com.web.store.login.validator.LoginBeanValidator;
 import com.web.store.model.LoginBean;
 import com.web.store.model.MemberBean;
-import com.web.store.model.MemberPictureBeam;
+import com.web.store.model.MemberPictureBean;
 import com.web.store.register.service.RegisterService;
 import com.web.store.service.MemberPictureService;
 
@@ -115,8 +115,8 @@ public class LoginController {
 		memberData = registerService.findByAccount(bean.getAccount());
 		session.setAttribute("member", memberData);
 
-		String memImg = memPicSer.getImgByMemberId(memberData.getMemberId());
-		session.setAttribute("memberImg", memImg);
+//		String memImg = memPicSer.getImgByMemberId(memberData.getMemberId());
+//		session.setAttribute("memberImg", memImg);
 		System.out.println(memberData);
 //		System.out.println(member.getAccount());
 		processCookies(bean, request, response);

@@ -10,8 +10,9 @@ import com.web.store.model.MemberEventsBean;
 
 public interface MemberEventsDao extends JpaRepository<MemberEventsBean, Integer>{
 	List<MemberEventsBean> findAll();
-	@Query("SELECT m FROM MemberEventsBean m WHERE m.member_id = :memberId")
-	List<MemberEventsBean> findByMemberId(@Param("memberId")Integer memberId);
-
+	@Query("SELECT m FROM MemberEventsBean m WHERE m.memberId = :memberId123")
+	List<MemberEventsBean> findByMemberId(@Param("memberId123")Integer memberId);
+	
+	List<MemberEventsBean> findByEventsId(Integer eventsId);
 
 }

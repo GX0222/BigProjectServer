@@ -12,4 +12,7 @@ public interface EhService {
 	public List<ehBean> findByEvent_id(Integer id);
 	public void save(ehBean ehb);
 	public void delete(ehBean ehb);
+	public List<ehBean> findClassIdByEventId(Integer eventId);
+	public List<Integer> findClassIdByEventIdToIntList(Integer eventId);
+	public List<Integer> findTop5ByEventidByClassIdToIntList(Integer classId);
 }

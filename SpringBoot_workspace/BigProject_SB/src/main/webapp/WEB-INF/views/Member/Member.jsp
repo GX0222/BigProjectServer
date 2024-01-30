@@ -51,8 +51,8 @@
 			<div class="m-0 p-0 infoCon">
 				<div class="memberInfo">
 					<div class="memberImg">
-						<img class="rounded-circle img-fluid" src="data:image/png;base64, ${memberImg}"
-							alt="">
+						<img class="rounded-circle img-fluid" id="bigHead" src="data:image/png;base64, ${memberImg}"
+							onclick="memberimgChange()">
 					</div>
 					<div class="memberLV"></div>
 				</div>
@@ -114,10 +114,133 @@
 
 	<script>
 		$(document).ready(function() {
-
+			
 		});
 	</script>
-
+<input type="file" id="imgupload" accept="image/png,image/jpeg" style="display:none"/>
+<canvas id="imageCanvas" width="1" height="1" style="display:none"></canvas>
 </body>
+	<script>
+	function memberimgChange(){
+		console.log("1");
+		$('#imgupload').trigger('click');
+	}
+	
+	 document.getElementById('imgupload').addEventListener('change', function (event) {
+	        const file = event.target.files[0];
+//	         cleanCV2();
+	        check_changeCNV = 0;
+	        img_height = 1;
+	        img_width = 1;
+	        var img_height = 1;
+	        var img_width = 1;
+	        if (file) {
+	            // 创建FileReader对象
+	            const reader = new FileReader();
 
+	            // 监听FileReader的加载事件
+	            reader.onload = function (e) {
+	                // 宣告一個變數resultArray 這個變數是一個 Uint8Array
+	                const resultArray = new Uint8Array(e.target.result);
+
+	                // 将文件内容存储在AAA变量中
+	                const AAA = resultArray;
+
+	                // 可以在这里对Uint8Array执行你的其他操作
+
+	                const canvas = document.getElementById('imageCanvas');
+	                const context = canvas.getContext('2d');
+
+
+	                // 从 Uint8Array 创建一个 Blob 对象
+	                const blob = new Blob([AAA], { type: 'image/png' });
+
+	                // 创建一个临时 URL，用于指向 Blob 对象
+	                const url = URL.createObjectURL(blob);
+
+	                // 创建一个新 Image 对象
+	                const image = new Image();
+
+	                // 当图像加载完成时绘制到 Canvas 上
+	                image.onload = function () {
+	                    if(image.width == image.height){
+	                    	canvas.width = image.width;
+	                        canvas.height = image.height;
+	                        img_height = image.height;
+	                        img_width = image.width;
+	                     console.log("new w:"+canvas.width);
+	                     console.log("new h:"+canvas.height);
+	                     context.drawImage(image, 0, 0);
+	                    
+	                    }else if(image.width >image.height){
+	                    	canvas.height = image.height;
+	                    	canvas.width = (image.height);
+	                    	img_height = image.height;
+	                        img_width = image.width;
+	                     console.log("new w:"+canvas.width);
+	                     console.log("new h:"+canvas.height);
+	                     start = (image.width-(image.height))/2;
+	                     end= 0;
+	                     context.drawImage(image, start,end,canvas.width,canvas.height,0,0,canvas.width,canvas.height);
+	                    }else{
+	                    	canvas.width = image.width;
+	                    	canvas.height = image.width;
+	                    	img_height = image.height;
+	                        img_width = image.width;
+	                     console.log("new w:"+canvas.width);
+	                     console.log("new h:"+canvas.height);
+	                     start = 0;
+	                     end = (image.height-(image.width))/2;
+	                     context.drawImage(image, start,end,canvas.width,canvas.height,0,0,canvas.width,canvas.height);
+
+	                    }
+	                	
+
+	                    dataURL = canvas.toDataURL("image/png");
+	                    
+// 	                    context.clearRect(0, 0, canvas.width, canvas.height);
+// 					    canvas.width = 1;
+// 	                    canvas.height = 1;
+	                    
+	                    
+	                    
+	     				var jsonData = {"data":dataURL};
+	    				console.log(jsonData);
+
+	     				// 使用Ajax發送到後端
+	     				  $.ajax({
+	     			        url: "/memberImgChange",
+	     			        dataType: "JSON",
+	     			        type: "post",
+	     				    data: jsonData,
+	     				    success: function(response) {
+	     				        console.log("Data sent successfully:", response);
+	     				        context.clearRect(0, 0, canvas.width, canvas.height);
+	     				        canvas.width = 1;
+	                             canvas.height = 1;
+	                             window.location.href = "/Member";
+// 	                             $("#bigHead").prop("src","data:image/png;base64, ${memberImg}");
+// 	                             window.location.reload();
+	     				    },
+	     				    error: function(error) {
+	     				        console.error("Error sending data:", error);
+	     				    }
+	     				});
+	                    
+
+	                };
+
+//	                 设置图像的源为临时 URL
+	                image.src = url;
+
+	            };
+
+	            // 读取文件内容
+	            reader.readAsArrayBuffer(file);
+
+	        }
+	    });
+
+	</script>
+	
 </html>

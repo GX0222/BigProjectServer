@@ -53,6 +53,14 @@
                 <p>還沒有帳號？<a href="/register/register">註冊</a></p>
             </div>
         
+
+<!--         <div class="social-login"> -->
+<!--             <p>或使用其他登入：</p> -->
+<!--             <img id="test" src="./image/icon_google.png" alt="Google"> -->
+<!--             <img id="line" src="./image/icon_line.png" alt="Line"> -->
+<!--             <img id="fb" src="./image/icon_fb.png" alt="FB"> -->
+<!--             <script src="./Tools/login.js" type="module"></script> -->
+<!--         </div> -->
     </div>
 </form:form>
 

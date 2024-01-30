@@ -1,6 +1,7 @@
 package com.web.store.dao;
 
 import java.util.List;
+import java.util.Optional;
 
 import org.springframework.data.domain.Page;
 import org.springframework.data.domain.Pageable;
@@ -15,7 +16,7 @@ public interface EventDao extends JpaRepository<EventsBean, Integer> {
 
 	List<EventsBean> findTop2ByOrderByIdDesc();
 
-	List<EventsBean> findTop2ByCountyOrderByIdDesc(String county);
+	List<EventsBean> findTop5ByCountyOrderByIdDesc(String county);
 	
 	List<EventsBean> getEventsByClassId(Integer classId);
 
@@ -25,6 +26,11 @@ public interface EventDao extends JpaRepository<EventsBean, Integer> {
 	Page<EventsBean> getEventsByClassId(Integer classId, Pageable pageable);
     
 	List<EventsBean> findByEventTitle(String title);
+	public Optional<EventsBean> findById(Integer id);
+
+	long count();
 	
+	List<EventsBean> findByCounty(String county);
+
 	
 }

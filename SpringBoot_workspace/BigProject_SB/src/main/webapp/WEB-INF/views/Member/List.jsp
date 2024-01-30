@@ -58,8 +58,9 @@
 		<div class="homeRight">
 			<div class="infoCon table-responsive">
 				<h3>活動列表</h3>
+<!-- 				<a <c:url value="/Eedit"/>>123</a> -->
 				<br>
-				<table class="dataTable" style="text-align: center;">
+				<table id="eventList" class="dataTable" style="text-align: center;">
 
 					<tr
 						style="background-color: rgba(194, 150, 107, 0.178); height: 3rem;">
@@ -70,49 +71,51 @@
 						<th>活動介紹</th>
 						<th></th>
 					</tr>
-					<tr>
-						<td><img src="/static/image/2023聖誕節.jpg" alt=""></td>
-						<td>
-							<p>聖誕嘉年華</p>
-						</td>
-						<td>
-							<p>2023.12.25</p>
-						</td>
-						<td>
-							<p>台北統一時代百貨</p>
-						</td>
-						<td>
-							<p>我是內容我是內容我是內容我是內容我是內容我是內容我是內容</p>
-						</td>
+<!-- 					<tr> -->
+<!-- 						<td><img src="/static/image/2023聖誕節.jpg" alt=""></td> -->
+<!-- 						<td> -->
+<!-- 							<p>聖誕嘉年華</p> -->
+<!-- 						</td> -->
+<!-- 						<td> -->
+<!-- 							<p>2023.12.25</p> -->
+<!-- 						</td> -->
+<!-- 						<td> -->
+<!-- 							<p>台北統一時代百貨</p> -->
+<!-- 						</td> -->
+<!-- 						<td> -->
+<!-- 							<p>我是內容我是內容我是內容我是內容我是內容我是內容我是內容</p> -->
+<!-- 						</td> -->
 
 
-						<td><span style="margin: 2rem;"> <a
-								href="./Activity_edit.html"
-								class="btn btn-outline-primary btn-sm">編輯</a> | <a href=""
-								class="btn btn-outline-danger btn-sm">刪除</a>
-						</span></td>
+<!-- 						<td><span style="margin: 2rem;"> <a -->
+<!-- 								href="./test" -->
+<!-- 								class="btn btn-outline-primary btn-sm">新增圖片</a> |<a -->
+<!-- 								href="./Activity_edit.html" -->
+<!-- 								class="btn btn-outline-primary btn-sm">編輯</a> | <a href="" -->
+<!-- 								class="btn btn-outline-danger btn-sm">刪除</a> -->
+<!-- 						</span></td> -->
 
-					</tr>
-					<tr>
-						<td><img src="/static/image/2023聖誕節.jpg" alt=""></td>
-						<td>
-							<p>新北耶誕城</p>
-						</td>
-						<td>
-							<p>2023.12.25-2024.01.01</p>
-						</td>
-						<td>
-							<p>新北市</p>
-						</td>
-						<td>
-							<p>我是內容我是內容我是內容我是內容我是內容我是內容我是內容</p>
-						</td>
-						<td><span style="margin: 2rem;"> <a
-								href="./Activity_edit.html"
-								class="btn btn-outline-primary btn-sm">編輯</a> | <a href=""
-								class="btn btn-outline-danger btn-sm">刪除</a>
-						</span></td>
-					</tr>
+<!-- 					</tr> -->
+<!-- 					<tr> -->
+<!-- 						<td><img src="/static/image/2023聖誕節.jpg" alt=""></td> -->
+<!-- 						<td> -->
+<!-- 							<p>新北耶誕城</p> -->
+<!-- 						</td> -->
+<!-- 						<td> -->
+<!-- 							<p>2023.12.25-2024.01.01</p> -->
+<!-- 						</td> -->
+<!-- 						<td> -->
+<!-- 							<p>新北市</p> -->
+<!-- 						</td> -->
+<!-- 						<td> -->
+<%-- 							<p>我是內容我是內容我是內容我是內容我是內容我是內容我是內容${Event_title}${EventTime}</p> --%>
+<!-- 						</td> -->
+<!-- 						<td><span style="margin: 2rem;"> <a -->
+<!-- 								href="/edit" -->
+<!-- 								class="btn btn-outline-primary btn-sm">編輯</a> | <a href="" -->
+<!-- 								class="btn btn-outline-danger btn-sm">刪除</a> -->
+<!-- 						</span></td> -->
+<!-- 					</tr> -->
 				</table>
 
 				<div class="text-center p-3">
@@ -131,5 +134,94 @@
 	</script>
 
 </body>
+<script>
 
+// 清空列表並載入新列表
+
+// console.log(e[0].eventImage);
+
+function load_event_list() {
+	$.get("/List/item", function (e) {
+         
+            
+            $("#eventList tbody").empty();
+        	$("#eventList tbody").append(`<tr style="background-color: rgba(194, 150, 107, 0.178); height: 3rem;">
+        	<th>活動快照</th>
+        	<th>活動名稱</th>
+        	<th>活動時間</th>
+        	<th>活動地點</th>
+        	<th>活動介紹</th>
+        	<th></th>
+        	</tr>`);
+
+        	 for (var i = 0; i < ${table_size}; i++) {
+        			var strNew = `<tr>
+        				<td><img src= "`+ e[1][i]+`" alt=""></td>
+        				<td>
+        					<p>`+e[0][i].eventTitle+`</p>
+        				</td>
+        				<td>
+        					<p>`+e[0][i].eventTime+`</p>
+        				</td>
+        				<td>
+        					<p>`+e[0][i].location+`</p>
+        				</td>
+        				<td>
+        					<p>`+e[0][i].eventIntro+`</p>
+        				</td>
+
+
+        				<td><span style="margin: 2rem;"> <a
+        						href="/Eedit"
+        						class="btn btn-outline-primary btn-sm" onclick="doedit(`+e[0][i].id+`)">編輯</a> | <a href=""
+        						class="btn btn-outline-danger btn-sm" onclick="dodelete(`+e[0][i].id+`)">刪除</a>
+        				</span></td>
+
+        			</tr>`;
+
+
+                    $("#eventList tbody").append(strNew);
+                 
+        		
+        //             
+                    
+                }
+        })
+    }
+
+	load_event_list();
+	
+	function doedit(e) {
+	    sessionStorage.setItem("myEventListId", e);
+	};
+	function dodelete(e) {
+		var delete_check = confirm('確任刪除嗎？');
+
+		if (delete_check) {
+// 		    alert('你按了確定按鈕'+e);
+			var dataToServer={"eventId":e};
+// 			console.log(dataToServer);
+
+			$.ajax({
+		        url: "/deteteJson",
+		        dataType: "JSON",
+		        type: "delete",
+		        data:dataToServer,
+		        success: function (msg) {
+		            console.log("OK");
+		            window.location = "/List";
+		            },
+		        error:function(error){
+		        	console.log("error");
+
+		        	console.log(error.responseText);
+		        }
+		        
+		        })
+		} else {
+// 		    alert('你按了取消按鈕'+e);
+		}
+	};
+
+</script>
 </html>

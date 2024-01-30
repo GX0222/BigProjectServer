@@ -5,9 +5,11 @@ import java.util.List;
 import org.springframework.data.jpa.repository.JpaRepository;
 import org.springframework.data.jpa.repository.Query;
 import org.springframework.data.repository.query.Param;
+import org.springframework.stereotype.Repository;
 
 import com.web.store.model.ehBean;
 
+@Repository
 public interface ehDao extends JpaRepository<ehBean, Integer> {
 	@Override
 	List<ehBean> findAll();
@@ -16,4 +18,8 @@ public interface ehDao extends JpaRepository<ehBean, Integer> {
 
 	@Query("SELECT m FROM ehBean m WHERE m.eventId = :eventId")
 	public List<ehBean> findByEvent_id(@Param("eventId")Integer id);
+	
+	List<ehBean> findClassIdByEventId(Integer eventId);
+	
+	List<ehBean> findTop5ByClassIdOrderByEventIdDesc(Integer classId);
 }

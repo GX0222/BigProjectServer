@@ -1,22 +1,23 @@
 package com.web.store.controller;
 
+import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
 
 import org.springframework.data.domain.Page;
-import org.springframework.http.HttpCookie;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.GetMapping;
-import org.springframework.web.bind.annotation.ModelAttribute;
-import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestParam;
 
 import com.web.store.model.EventsBean;
+import com.web.store.model.MemberBean;
+import com.web.store.model.MemberTrackBean;
 import com.web.store.service.EhService;
 import com.web.store.service.EventService;
+import com.web.store.service.MemberTrackService;
 
 import jakarta.servlet.http.HttpSession;
 
@@ -25,17 +26,22 @@ public class EventController {
 
 	EhService ehservice;
 	EventService eventService;
+	MemberTrackService trackService;
 
-	public EventController(EventService eventService) {
+	public EventController(EhService ehservice, EventService eventService, MemberTrackService trackService) {
 		super();
+		this.ehservice = ehservice;
 		this.eventService = eventService;
+		this.trackService = trackService;
 	}
 
 	@GetMapping("/Event")
 	public String event(Model model, HttpSession session) {
+		// 如果 eventId 存在，則使用它查詢相應的事件資料
+
 		Integer eventID = (Integer) session.getAttribute("eventID");
 		EventsBean eventData = eventService.findAllById(eventID);
-		model.addAttribute("eventData", eventData);	
+		model.addAttribute("eventData", eventData);
 		return "Event/Event";
 	}
 
@@ -43,48 +49,75 @@ public class EventController {
 	public String selectEvent(Model model, HttpSession session, @RequestBody Map<String, String> req) {
 		Integer eventID = Integer.parseInt(req.get("eventID").toString());
 		session.setAttribute("eventID", eventID);
+		MemberBean mb = (MemberBean) session.getAttribute("member");
+		if (mb != null && !mb.getAccount().equals("Guest")) {
+			if (req.get("track").toString().equals("true")) {
+				MemberTrackBean mtb = trackService.findByMemberId(mb.getMemberId());
+				if (mtb == null) {
+					trackService.addNewTrack(mb.getMemberId());
+					mtb = trackService.findByMemberId(mb.getMemberId());
+				}
+				List<Integer> hobbys = ehservice.findClassIdByEventIdToIntList(eventID);
+				trackService.runTrack(mtb, hobbys);
+			}
+		}
 		return "redirect:/Event";
 	}
 
 	@GetMapping("/EventList")
-	public String eventlist(Model model) {
-		List<EventsBean> eventList = eventService.findAll();
-		model.addAttribute("eventList", eventList);
+	public String eventList(Model model, HttpSession session, 
+							@RequestParam(defaultValue = "1") int pageNum,
+							@RequestParam(defaultValue = "10") int pageSize) {
+
+		Page<EventsBean> eventPages = eventService.getEventPage(pageNum, pageSize);
+		List<EventsBean> pageEvents = eventPages.getContent();
+
+		model.addAttribute("eventList", pageEvents);
+		model.addAttribute("totalPages", eventPages.getTotalPages());
+		model.addAttribute("pageNum", eventPages.getNumber()+1);
+		model.addAttribute("countEvents", eventPages.getTotalElements());
 
 		return "Event/EventList";
 	}
+	
+	@GetMapping("/ShowEventList")
+	public String showEventList(Model model, HttpSession session, 
+								@RequestParam(defaultValue = "1") int pageNum,
+								@RequestParam(defaultValue = "10") int pageSize) {
 
-	@GetMapping("/EventList/{county}")
-	public String eventList(@PathVariable String county, @RequestParam(defaultValue = "0") int pageNo,
-			@RequestParam(defaultValue = "10") int pageSize, Model model) {
-		// 使用服務層方法獲取分頁數據
-		Page<EventsBean> page = eventService.getEventsByCounty(county, pageNo, pageSize);
+		Page<EventsBean> eventPages = eventService.getEventPage(pageNum, pageSize);
+		List<EventsBean> pageEvents = eventPages.getContent();
 
-		// 將分頁數據傳遞給前端
-		model.addAttribute("events", page.getContent());
-		model.addAttribute("currentPage", page.getNumber());
-		model.addAttribute("totalPages", page.getTotalPages());
-		model.addAttribute("page", page);
+		model.addAttribute("eventList", pageEvents);
+		model.addAttribute("totalPages", eventPages.getTotalPages());
+		model.addAttribute("pageNum", eventPages.getNumber()+1);
+		model.addAttribute("countEvents", eventPages.getTotalElements());
 
-		return "Event/EventList";
+		return "Event/ShowEventList";
 	}
-
-		@GetMapping("/EventList/category/{classId}")
-	    public String eventListByClassId(@PathVariable Integer classId,
-	                                     @RequestParam(defaultValue = "0") int pageNo,
-	                                     @RequestParam(defaultValue = "10") int pageSize,
-	                                     Model model) {
-	        // 使用服務層方法獲取特定分類的分頁數據
-	        Page<EventsBean> page = eventService.getEventsByClassId(classId, pageNo, pageSize);
-
-	        // 將分頁數據傳遞給前端
-	        model.addAttribute("events", page.getContent());
-	        model.addAttribute("currentPage", page.getNumber());
-	        model.addAttribute("totalPages", page.getTotalPages());
-	        model.addAttribute("page", page);
-
-	        return "Event/EventList"; 
-	    }
-
+	
+	@GetMapping("/GetEventClass")
+//	@ResponseBody
+	public String getEventClass(Model model, HttpSession session, 
+								@RequestParam HashMap<String, Object > countyB,
+								@RequestParam(defaultValue = "1") int pageNum,
+								@RequestParam(defaultValue = "10") int pageSize) {
+//	public String getEventClass() {
+//		System.out.println(countyB.get("listCounty"));
+//		model.addAttribute("eventList", eventService.findByCounty("台北市"));
+		
+		Page<EventsBean> eventPages = eventService.getEventPageClass(pageNum, pageSize, (String)countyB.get("listCounty"));
+		List<EventsBean> pageEvents = eventPages.getContent();
+		
+//		model.addAttribute("eventList", eventService.findByCounty((String)countyB.get("listCounty")));
+		model.addAttribute("eventList", pageEvents);
+		model.addAttribute("totalPages", eventPages.getTotalPages());
+		model.addAttribute("pageNum", eventPages.getNumber()+1);
+		model.addAttribute("countEvents", eventPages.getTotalElements());
+		return "Event/ShowPage";
+	
+	}
+	
+	
 
 }

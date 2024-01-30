@@ -1,5 +1,5 @@
 $(document).ready(function() {
-	$(".selectEvent").click(function(e) {
+	$(".selectEvent").on("click", function(e) {
 		e.preventDefault();
 
 		var eventID = $(this).data("event");
@@ -8,9 +8,11 @@ $(document).ready(function() {
 			type: "POST",
 			url: "/SelectEvent",
 			contentType: "application/json",
-			data: JSON.stringify({ eventID: eventID }),
+			data: JSON.stringify({
+				eventID: eventID,
+				track: "false"
+			}),
 			success: function(res) {
-				console.log(res);
 				window.location.href = "/Event";
 			},
 			error: function(error) {
@@ -18,5 +20,28 @@ $(document).ready(function() {
 			}
 		});
 
+	});
+});
+
+$(document).ready(function() {
+	$(".selectEventForTrack").on("click", function(e) {
+		e.preventDefault();
+
+		var eventID = $(this).data("event");
+		$.ajax({
+			type: "POST",
+			url: "/SelectEvent",
+			contentType: "application/json",
+			data: JSON.stringify({
+				eventID: eventID,
+				track: "true"
+			}),
+			success: function(res) {
+				window.location.href = "/Event";
+			},
+			error: function(error) {
+				console.error("Error:", error);
+			}
+		});
 	});
 });

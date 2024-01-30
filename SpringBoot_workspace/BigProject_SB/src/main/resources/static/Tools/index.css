@@ -14,126 +14,7 @@ body {
 
 /* ============================================= */
 
-.navbar {
-	transition: background-color 0.3s ease-in-out;
-	height: 50px;
-	min-width: 220px;
-}
 
-a.nav-link {
-	color: aliceblue;
-	text-shadow: 0px 0px 5px rgba(0, 0, 0, 1);
-	border-radius: 5px;
-	text-align: center;
-}
-
-a.nav-link:hover {
-	color: white;
-	background-color: rgba(0, 0, 0, 0.4);
-}
-
-#mynavbar {
-	width: 200px;
-	/* height: 100%; */
-	margin-left: auto;
-	margin-right: 20px;
-	margin-top: -1px;
-	background-color: rgba(0, 0, 0, 0.1);
-	border: 1px solid rgba(0, 0, 0, 0);
-	box-shadow: 0 0 10px rgba(0, 0, 0, 0.5);
-	border-radius: 5px;
-}
-
-.scrolledV2 {
-	background-color: white !important;
-	border: 1px solid rgba(0, 0, 0, 0.1) !important;
-	border-top: 0px !important;
-	border-top-left-radius: 0px !important;
-	border-top-right-radius: 0px !important;
-	box-shadow: 0 0 10px rgba(0, 0, 0, 0) !important;
-}
-
-.scrolledV2>ul .nav-item>a {
-	color: rgba(0, 0, 0, 0.7);
-	text-shadow: 0px 0px 5px rgba(0, 0, 0, 0);
-}
-
-.scrolledV2>ul .nav-item>a:hover {
-	color: plum;
-}
-
-.navbar-toggler {
-	background-color: white;
-	margin-right: 10px;
-}
-
-.navbar-toggler:focus {
-	outline: none;
-	box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
-	border-width: 1px;
-	border-style: solid;
-}
-
-#mynavbarCon {
-	width: 100vw;
-	height: 100%;
-	margin: 0px;
-	padding: 5px;
-	padding-right: 10px;
-	border: 1px solid rgba(0, 0, 0, 0);
-}
-
-.scrolled {
-	background-color: white;
-	/* box-shadow: 0 0 10px rgba(0, 0, 0, 0.1); */
-	border: 1px solid rgba(0, 0, 0, 0.1) !important;
-	/* 滾動高度超過 35vw 時的背景顏色 */
-}
-
-.collapseCon {
-	margin-left: auto;
-	margin-right: 0px;
-	/* background-color: aqua; */
-}
-
-.nameCon {
-	margin: 0px;
-	/* margin-right: 3px; */
-	padding: 0px;
-	height: 100%;
-	/* background-color: aqua; */
-	display: flex;
-	align-items: center;
-	justify-content: center;
-}
-
-.memberConMd {
-	margin: 0px;
-	padding: 0px;
-	height: 100%;
-	/* background-color: aquamarine; */
-	/* border: 1px solid rgba(0, 0, 0, 1); */
-	display: inline-flex;
-	justify-content: center;
-	align-items: center;
-}
-
-.nameCon>a {
-	height: 100%;
-	aspect-ratio: 1/1;
-	width: auto;
-	margin: 0px;
-	margin-right: 5px;
-	padding: 0px;
-}
-
-.nameCon>a>img {
-	height: 100%;
-	aspect-ratio: 1/1;
-	width: auto;
-	margin: 0px;
-	outline: 1px solid rgba(0, 0, 0, 0.2);
-}
 
 /* ============================================= */
 
@@ -153,7 +34,7 @@ div.groupTitle {
 div.groupTitle>h3 {
 	margin: 0px;
 	padding: 0px;
-	font-weight:bold;
+	font-weight: bold;
 	color: rgb(142, 94, 69);
 }
 
@@ -213,7 +94,7 @@ div.smallNewsGroup {
 	margin: 0px;
 	margin-top: 10px;
 	padding: 5px;
-/* 	border: solid 2px rgba(0, 0, 0, 0.1); */
+	/* 	border: solid 2px rgba(0, 0, 0, 0.1); */
 	/* box-shadow: 0 0 5px rgba(0, 0, 0, 0.2); */
 	border-radius: 5px;
 	/* background-color: rgba(0, 0, 0, 0.1); */
@@ -222,15 +103,15 @@ div.smallNewsGroup {
 
 div.smallNews {
 	max-height: 100px;
-	width:100%;
+	width: 100%;
 	aspect-ratio: 1/1;
-	font-weight:bold;
-	font-size:x-large;
+	font-weight: bold;
+	font-size: x-large;
 	color: rgb(142, 94, 69);
 	border: solid 1px rgb(142, 94, 69);
-/* 	border-radius: 5px; */
-/* 	margin: 1vw 2vw; */
-	margin-bottom:1vw;
+	/* 	border-radius: 5px; */
+	/* 	margin: 1vw 2vw; */
+	margin-bottom: 1vw;
 	padding: 1vw;
 	background-color: white;
 	overflow: hidden;
@@ -240,13 +121,15 @@ div.smallNews {
 div.snTitle {
 	margin: 0px;
 	padding: 0px;
-/* 	background-color: aqua; */
+	font-size: large;
+	/* 	background-color: aqua; */
 }
 
 div.snInfo {
 	margin: 0px;
 	padding: 0px;
-/* 	background-color: blueviolet; */
+	font-size: medium;
+	/* 	background-color: blueviolet; */
 }
 
 /* ==================================================== */
