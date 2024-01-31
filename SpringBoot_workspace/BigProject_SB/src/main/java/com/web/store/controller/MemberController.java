@@ -209,6 +209,7 @@ public class MemberController {
 	model.addAttribute("table_size",mm.size());
 	for(MemberEventsBean mbean:mm) {
 		Integer idd = mbean.getEventsId();
+//		System.out.println(idd);
 		EventsBean eb =eventService.findById(idd);
 		ebs.add(eb);
 		if (eb.getEventImage() == null) {
@@ -406,7 +407,10 @@ public class MemberController {
         updateEb.setCounty((String)eb.get("eventCity"));
         updateEb.setEventUrl((String)eb.get("eventUrl"));
         updateEb.setLocation((String)eb.get("eventLocation"));
-        updateEb.setEventImage(Base64.getDecoder().decode((eb.get("data").toString()).split(",")[1]));
+        if(eb.keySet().contains("data")) {
+//        	System.out.println("有圖片");
+        	updateEb.setEventImage(Base64.getDecoder().decode((eb.get("data").toString()).split(",")[1]));
+        }
         SimpleDateFormat sdf2 = new SimpleDateFormat("yyyy-MM-dd");
         String Stime = ((String)eb.get("eventDate")).contains(":")?((String)eb.get("eventDate")).split("~")[0].split(" ")[0]:((String)eb.get("eventDate")).replace(" ","").split("~")[0];
         String Etime = ((String)eb.get("eventDate")).contains(":")?((String)eb.get("eventDate")).split("~")[((String)eb.get("eventDate")).split("~").length-1]: ((String)eb.get("eventDate")).replace(" ","").split("~")[((String)eb.get("eventDate")).replace(" ","").split("~").length-1];
