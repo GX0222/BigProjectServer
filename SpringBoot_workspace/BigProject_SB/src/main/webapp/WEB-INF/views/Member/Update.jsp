@@ -114,25 +114,62 @@
 
     <script>
     let dataURL;
-    
+    var imageUpdate_check = 0;
     
     $("#okButton").on("click", async function () {
 
-        var dataToServer=({
-            "eventDate":$("#datepicker").prop("value"),
-           	"eventName":$("#Name").prop("value"),
-           	"eventIntro":$("#Summary").prop("value"),
-           	"eventInfo":$("#textarea").prop("value"),
-           	"eventUrl":$("#EventURL").prop("value"),
-           	"eventCity":$("#City").prop("value"),
-           	"eventLocation":$("#Location").prop("value"),
-           	"hb1":$("#checkbox1").prop("checked")?"true":"false",
-           	"hb2":$("#checkbox2").prop("checked")?"true":"false",
-           	"hb3":$("#checkbox3").prop("checked")?"true":"false",
-           	"hb4":$("#checkbox4").prop("checked")?"true":"false",
-           	"hb5":$("#checkbox5").prop("checked")?"true":"false",
-           	"data":dataURL
-        });
+//         var dataToServer=({
+//             "eventDate":$("#datepicker").prop("value"),
+//            	"eventName":$("#Name").prop("value"),
+//            	"eventIntro":$("#Summary").prop("value"),
+//            	"eventInfo":$("#textarea").prop("value"),
+//            	"eventUrl":$("#EventURL").prop("value"),
+//            	"eventCity":$("#City").prop("value"),
+//            	"eventLocation":$("#Location").prop("value"),
+//            	"hb1":$("#checkbox1").prop("checked")?"true":"false",
+//            	"hb2":$("#checkbox2").prop("checked")?"true":"false",
+//            	"hb3":$("#checkbox3").prop("checked")?"true":"false",
+//            	"hb4":$("#checkbox4").prop("checked")?"true":"false",
+//            	"hb5":$("#checkbox5").prop("checked")?"true":"false",
+//            	"data":dataURL
+//         });
+
+
+    	if (imageUpdate_check){
+        	var dataToServer=({
+                "eventDate":$("#datepicker").prop("value"),
+               	"eventName":$("#Name").prop("value"),
+               	"eventIntro":$("#Summary").prop("value"),
+               	"eventInfo":$("#textarea").prop("value"),
+               	"eventUrl":$("#EventURL").prop("value"),
+               	"eventCity":$("#City").prop("value"),
+               	"eventLocation":$("#Location").prop("value"),
+               	"hb1":$("#checkbox1").prop("checked")?"true":"false",
+               	"hb2":$("#checkbox2").prop("checked")?"true":"false",
+               	"hb3":$("#checkbox3").prop("checked")?"true":"false",
+               	"hb4":$("#checkbox4").prop("checked")?"true":"false",
+               	"hb5":$("#checkbox5").prop("checked")?"true":"false",
+               	"data":dataURL
+            });
+        	console.log("update time :"+imageUpdate_check.toString());
+        	imageUpdate_check = 0;
+        }else{
+        	var dataToServer=({
+                "eventDate":$("#datepicker").prop("value"),
+               	"eventName":$("#Name").prop("value"),
+               	"eventIntro":$("#Summary").prop("value"),
+               	"eventInfo":$("#textarea").prop("value"),
+               	"eventUrl":$("#EventURL").prop("value"),
+               	"eventCity":$("#City").prop("value"),
+               	"eventLocation":$("#Location").prop("value"),
+               	"hb1":$("#checkbox1").prop("checked")?"true":"false",
+               	"hb2":$("#checkbox2").prop("checked")?"true":"false",
+               	"hb3":$("#checkbox3").prop("checked")?"true":"false",
+               	"hb4":$("#checkbox4").prop("checked")?"true":"false",
+               	"hb5":$("#checkbox5").prop("checked")?"true":"false"
+            });
+        }
+    	
         console.log(dataToServer);
         $.ajax({
         url: "/getJson4",
@@ -223,7 +260,7 @@
                 	
 
                     dataURL = canvas.toDataURL("image/png");
-                    
+                    imageUpdate_check =imageUpdate_check+1;
 //                     context.clearRect(0, 0, canvas.width, canvas.height);
 // 				    canvas.width = 1;
 //                     canvas.height = 1;

@@ -77,7 +77,7 @@ public class EventServiceImpl implements EventService {
 
 	@Override
 	public EventsBean findById(Integer id) {
-
+		System.out.println("event id : "+id);
 		return eventDao.findById(id).get();
 	}
 
