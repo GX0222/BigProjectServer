@@ -106,7 +106,6 @@ public class EventController {
 //	public String getEventClass() {
 //		System.out.println(countyB.get("listCounty"));
 //		model.addAttribute("eventList", eventService.findByCounty("台北市"));
-<<<<<<< HEAD
 		System.out.println(countyB.get("eventClassType"));
 //		System.out.println(countyB.get("eventClassContent"));
 		
@@ -144,12 +143,6 @@ public class EventController {
 		}
 		
 		
-=======
-
-		Page<EventsBean> eventPages = eventService.getEventPageClass(pageNum, pageSize, (String)countyB.get("listCounty"));
-		List<EventsBean> pageEvents = eventPages.getContent();
-
->>>>>>> 45e842841b28f9341ca9ec9487022c45504d375f
 //		model.addAttribute("eventList", eventService.findByCounty((String)countyB.get("listCounty")));
 		
 		return "Event/ShowPage";
