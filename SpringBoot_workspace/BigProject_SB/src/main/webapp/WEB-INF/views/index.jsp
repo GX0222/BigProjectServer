@@ -40,6 +40,10 @@
 <link rel="stylesheet"
 	href="https://unpkg.com/simplebar@latest/dist/simplebar.css" />
 <script src="https://unpkg.com/simplebar@latest/dist/simplebar.min.js"></script>
+<!-- SockJS -->
+<script
+	src="https://cdn.jsdelivr.net/npm/sockjs-client@1/dist/sockjs.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/@stomp/stompjs@5.0.0/bundles/stomp.umd.js"></script>
 <!-- 背景影片css -->
 <link rel="stylesheet" href="/static/Tools/Bg_YTiframe.css">
 <!-- 背景影片js -->
@@ -66,6 +70,7 @@
 <!-- JS -->
 <script src="/static/Tools/index.js" defer></script>
 <script src="/static/Tools/selectEvent.js" defer></script>
+<script src="/static/Tools/WebSocket.js"></script>
 <!-- WeatherTool -->
 <link rel="stylesheet" href="/static/Tools/WeatherTool.css">
 <script src="/static/Tools/WeatherTool.js" defer></script>
