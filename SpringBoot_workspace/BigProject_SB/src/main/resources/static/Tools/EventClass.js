@@ -4,7 +4,6 @@ function loadCategoryData(classId, element) {
         url: '/GetEventClass',  
         data: { classId: classId },
         success: function(data) {
-            // 处理从后端获取的数据
             console.log(data);
         },
         error: function(error) {
@@ -42,6 +41,7 @@ function loadCountyData(countyA){
     	data:dataToServer,
         success: function(data) {
             $("#AAAA").html(data);
+            selectEventOnClick();
 //           $(document).ready(function(){
 			var element=$(".nav-link.active");
 			//	console.log($(countyA).text());

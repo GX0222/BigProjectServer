@@ -13,7 +13,8 @@ const client = new StompJs.Client({
 client.onConnect = function (frame) {
     console.log('WebSocket connected!');
     client.subscribe('/WSMessage/Mes', function (message) {
-        console.log('Received message: ' + message.body);
+        $("#PublicRoom").find(".simplebar-content").append(message.body);
+        $("#PublicRoom").find(".simplebar-content").append("<hr>");
     });
 };
 

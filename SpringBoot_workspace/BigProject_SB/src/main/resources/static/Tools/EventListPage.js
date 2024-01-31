@@ -44,7 +44,7 @@ $(document).ready(function () {
     	data:dataToServer,
         success: function(data) {
             $("#AAAA").html(data);
-           	
+			selectEventOnClick();
            	var element=$(".nav-link.active");
 			//	console.log($(countyA).text());
 		    element.each(function(){
