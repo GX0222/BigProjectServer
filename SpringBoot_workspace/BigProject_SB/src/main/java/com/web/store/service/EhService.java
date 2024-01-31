@@ -15,4 +15,5 @@ public interface EhService {
 	public List<ehBean> findClassIdByEventId(Integer eventId);
 	public List<Integer> findClassIdByEventIdToIntList(Integer eventId);
 	public List<Integer> findTop5ByEventidByClassIdToIntList(Integer classId);
+	public List<ehBean> findByClassId(Integer classId);
 }
