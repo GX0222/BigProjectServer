@@ -17,7 +17,10 @@ public interface EventFavorService {
 	List<EventFavorBean> findAllByMemberidAndEventid(Integer memberid, Integer eventid);
 
 	List<EventFavorBean> selectEvents(Integer memId);
-
+	public void save(EventFavorBean eventid);
+	public void update(EventFavorBean eventid);
+	public EventFavorBean findByEventid(Integer eventid);
+	public void delete(EventFavorBean eventFavor);
 //	 EventsBean findByEventId(Integer eventId);
 
 }
