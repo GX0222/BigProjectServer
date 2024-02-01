@@ -33,4 +33,12 @@ public class MemberServiceImpl implements MemberService {
 		return memberDao.findByAccount(account);
 	}
 
+	@Override
+	public MemberBean update(MemberBean mb) {
+		
+		return memberDao.save(mb);
+	}
+
+
+
 }

@@ -26,6 +26,7 @@ import com.web.store.service.EhService;
 import com.web.store.service.EventService;
 import com.web.store.service.MemberEventsService;
 import com.web.store.service.MemberPictureService;
+import com.web.store.service.MemberService;
 
 import jakarta.servlet.http.HttpSession;
 
@@ -37,15 +38,16 @@ public class MemberController {
 	EventService eventService;
 	EhService ehService;
 	MemberPictureService memberPictureService;
+	MemberService memberService;
 
-
-
-	public MemberController(MemberEventsService memberEventsService, EventService eventService, EhService ehService, MemberPictureService memberPictureService) {
+	public MemberController(MemberEventsService memberEventsService, EventService eventService, EhService ehService,
+			MemberPictureService memberPictureService, MemberService memberService) {
 		super();
 		this.memberEventsService = memberEventsService;
 		this.eventService = eventService;
 		this.ehService = ehService;
 		this.memberPictureService = memberPictureService;
+		this.memberService = memberService;
 	}
 
 	@GetMapping("/Member")
@@ -572,11 +574,38 @@ public  HashMap<String, String> JsonController7(@RequestParam HashMap<String,Obj
 
         return a;
     }
+	
+	 @PostMapping("/updateMember")
+	    public String updateMember(@RequestParam String username,
+	                               @RequestParam String mail,
+	                               @RequestParam String phone,
+	                               @RequestParam Date birthday,
+	                               
+	                               // 添加其他需要修改的參數
+	                               HttpSession session) {
+	        // 在這裡處理更新會員資料的邏輯
+	        MemberBean currentMember = (MemberBean) session.getAttribute("member");
 
+	        if (currentMember == null || currentMember.getAccount().equals("Guest")) {
+	            return "redirect:/login/login";
+	        }
 
+	        // 使用表單提交的數據更新 currentMember
+	        currentMember.setUsername(username);
+	        currentMember.setMail(mail);
+	        currentMember.setPhone(phone);
+	        currentMember.setBirthday(birthday);
+	        // 添加其他需要更新的欄位
 
+	        // 調用服務層保存更新後的會員資料
+	        memberService.update(currentMember);
 
-
+	        // 更新 session 中的會員資料
+	        session.setAttribute("member", currentMember);
+	        System.out.println("會員資料更新成功");
+	        // 返回到會員資料頁面或其他需要的頁面
+	        return "redirect:/Member";
+	    }
 
 }
 

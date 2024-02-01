@@ -8,12 +8,6 @@ public interface EventFavorService {
 
 	 //讓ServiceImpl實作的功能
 
-	List<EventFavorBean>findAllByEventid(Integer eventid);
-
-
-
-	List<EventFavorBean>findEventidByMemberid(Integer memberid);
-
 	 void delete(EventFavorBean eventid);
 
 	 void save(EventFavorBean eventid);
@@ -22,7 +16,12 @@ public interface EventFavorService {
 
 	 EventFavorBean findByEventid(Integer eventid);
 
+	List<EventFavorBean> findAllByEventid(Integer eventid);
 
+	List<EventFavorBean> findEventidByMemberid(Integer memberid);
+
+
+	List<EventFavorBean> findAllByMemberidAndEventid(Integer memberid, Integer eventid);
 
 	List<EventFavorBean> selectEvents(Integer memId);
 

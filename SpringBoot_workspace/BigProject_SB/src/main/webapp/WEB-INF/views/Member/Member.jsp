@@ -54,54 +54,54 @@
 						<img class="rounded-circle img-fluid" id="bigHead" src="data:image/png;base64, ${memberImg}"
 							onclick="memberimgChange()">
 					</div>
-					<div class="memberLV"></div>
+<!-- 					<div class="memberLV"></div> -->
 				</div>
-				<div class="memberForm">
-					<form>
+				<div class="memberForm" >
+					<form action="/updateMember" method="post">
 						<div class="mb-3">
 							<label for="name" class="form-label">姓名/暱稱/名稱：</label> <input
-								type="text" class="form-control" id="name" value="${member.getUsername()}">
+								type="text" class="form-control" id="name" value="${member.getUsername()}" name="username">
 						</div>
 						<div class="mb-3">
 							<label for="mail" class="form-label">Mail：</label> <input
-								type="email" class="form-control" id="mail" value="${member.getMail()}">
+								type="email" class="form-control" id="mail" value="${member.getMail()}" name="mail">
 						</div>
 						<div class="mb-3">
 							<label for="tel" class="form-label">電話：</label> <input type="tel"
-								class="form-control" id="tel" value="${member.getPhone()}">
+								class="form-control" id="tel" value="${member.getPhone()}" name="phone">
 						</div>
 						<div class="mb-3">
 							<label for="birth" class="form-label">生日：</label> <input
-								type="date" class="form-control" id="birth" value="${member.getBirthday()}">
+								type="date" class="form-control" id="birth" value="${member.getBirthday()}" name="birthday">
 						</div>
-						<fieldset class="mb-3">
-							<legend class="form-label">興趣：</legend>
-							<div class="d-inline-flex likeCheck">
-								<div class="m-0 form-check">
-									<input type="checkbox" class="form-check-input" id="01">
-									<label for="01" class="form-check-label">休閒旅遊</label>
-								</div>
-								<div class="m-0 form-check">
-									<input type="checkbox" class="form-check-input" id="02">
-									<label for="02" class="form-check-label">藝文活動</label>
-								</div>
-								<div class="m-0 form-check">
-									<input type="checkbox" class="form-check-input" id="03">
-									<label for="03" class="form-check-label">親子</label>
-								</div>
-							</div>
-							<br>
-							<div class="d-inline-flex likeCheck">
-								<div class="m-0 form-check">
-									<input type="checkbox" class="form-check-input" id="04">
-									<label for="04" class="form-check-label">文創/市集</label>
-								</div>
-								<div class="m-0 form-check">
-									<input type="checkbox" class="form-check-input" id="05">
-									<label for="05" class="form-check-label">博物館/美術館</label>
-								</div>
-							</div>
-						</fieldset>
+<!-- 						<fieldset class="mb-3"> -->
+<!-- 							<legend class="form-label">興趣：</legend> -->
+<!-- 							<div class="d-inline-flex likeCheck"> -->
+<!-- 								<div class="m-0 form-check"> -->
+<!-- 									<input type="checkbox" class="form-check-input" id="01"> -->
+<!-- 									<label for="01" class="form-check-label">休閒旅遊</label> -->
+<!-- 								</div> -->
+<!-- 								<div class="m-0 form-check"> -->
+<!-- 									<input type="checkbox" class="form-check-input" id="02"> -->
+<!-- 									<label for="02" class="form-check-label">藝文活動</label> -->
+<!-- 								</div> -->
+<!-- 								<div class="m-0 form-check"> -->
+<!-- 									<input type="checkbox" class="form-check-input" id="03"> -->
+<!-- 									<label for="03" class="form-check-label">親子</label> -->
+<!-- 								</div> -->
+<!-- 							</div> -->
+<!-- 							<br> -->
+<!-- 							<div class="d-inline-flex likeCheck"> -->
+<!-- 								<div class="m-0 form-check"> -->
+<!-- 									<input type="checkbox" class="form-check-input" id="04"> -->
+<!-- 									<label for="04" class="form-check-label">文創/市集</label> -->
+<!-- 								</div> -->
+<!-- 								<div class="m-0 form-check"> -->
+<!-- 									<input type="checkbox" class="form-check-input" id="05"> -->
+<!-- 									<label for="05" class="form-check-label">博物館/美術館</label> -->
+<!-- 								</div> -->
+<!-- 							</div> -->
+<!-- 						</fieldset> -->
 						<button type="submit" class="btn btn-primary">提交</button>
 					</form>
 				</div>

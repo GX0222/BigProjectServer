@@ -1,4 +1,4 @@
-package com.web.store.dao;
+	package com.web.store.dao;
 
 import java.util.List;
 import java.util.Optional;
@@ -14,6 +14,8 @@ import com.web.store.model.EventFavorBean;
 public interface EventFavorDao extends JpaRepository<EventFavorBean, Integer> {
 
 	EventFavorBean findByMemberid(Integer memberid);
+	
+	void delete(EventFavorBean eventFavor);
 
 	@Override
 	Optional<EventFavorBean> findById(Integer id);
@@ -28,6 +30,13 @@ public interface EventFavorDao extends JpaRepository<EventFavorBean, Integer> {
 
 	@Query(value="select * from memberfavor where memberid=:memId", nativeQuery = true)
 	List<EventFavorBean> selectEvents(@Param("memId") Integer memId);
+
+	List<EventFavorBean> findAllByMemberidAndEventid(Integer memberid, Integer eventid);
+	
+//	@Query(value="DELETE FROM memberfavor\r\n"
+//			+ "WHERE memberid = :memId\r\n"
+//			+ "  AND eventid = :eveId;", nativeQuery = true)
+//	int deleteEvent(@Param("memId") Integer mid,@Param("eveId") Integer eid) ;
 
 //	List<EventsBean> findByEventId(Integer eventid);
 
