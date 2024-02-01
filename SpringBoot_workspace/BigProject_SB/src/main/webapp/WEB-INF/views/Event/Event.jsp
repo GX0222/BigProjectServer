@@ -60,8 +60,8 @@
         </div>
         <br><br><br>
         <div>
-        <button class ="eventFavor ${efbID == '有收藏' ? 'hasfavor' : ''}" data-event="${eventData.getId()}">
-				<span class="material-symbols-outlined"> favorite收藏</span></button>
+        <button class ="eventFavor ${efbID == '有收藏' ? 'hasfavor' : ''}" data-event="${eventData.getId()}" data-member="${memberData.getMemberId() }">
+				<span   class="material-symbols-outlined"> favorite收藏</span></button>
         </div>
         <div class="eInfo">
             <table class="table" style="text-align: center;">    <!-- 加入 style="text-align: center;" -->

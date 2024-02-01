@@ -12,8 +12,4 @@ public interface MemberDao extends JpaRepository<MemberBean, Integer> {
 
 	MemberBean findByMemberId(Integer id);
 
-<<<<<<< HEAD
-	
-=======
->>>>>>> 4058e56610075682d5cd9f7f9c99134ba72e1f48
 }

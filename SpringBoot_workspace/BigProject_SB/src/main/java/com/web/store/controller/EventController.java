@@ -48,23 +48,24 @@ public class EventController {
 		EventsBean eventData = eventService.findAllById(eventID);
 		model.addAttribute("eventData", eventData);
 		MemberBean mb = (MemberBean) session.getAttribute("member");
+		model.addAttribute("memberData", mb);
 //		Integer efb = (Integer) session.getAttribute("id");
 		List<EventFavorBean> eventFDList = efService.findAllByMemberidAndEventid(mb.getMemberId(), eventID);
-		if(mb.getMemberId() == 2 || mb == null) {
-			return "請登入會員";
+		if(mb != null && !mb.getAccount().equals("Guest")) {
+			System.out.println(eventID+"為什麼ID不一樣");
+		if (!eventFDList.isEmpty()) {
+	        
+	        String efb = "有收藏";
+	        System.out.println(efb);
+	        model.addAttribute("efbID", efb); 
+	    } else {
+	        // 如果列表為空，可以處理沒有找到相關記錄的情況，例如返回一個錯誤頁面或其他邏輯
+	        model.addAttribute("efbID", "沒收藏");
+	        
+	        System.out.println("沒收藏");
+	    }
 		}else {
-				System.out.println(eventID+"為什麼ID不一樣");
-			if (!eventFDList.isEmpty()) {
-		        
-		        String efb = "有收藏";
-		        System.out.println(efb);
-		        model.addAttribute("efbID", efb); 
-		    } else {
-		        // 如果列表為空，可以處理沒有找到相關記錄的情況，例如返回一個錯誤頁面或其他邏輯
-		        model.addAttribute("efbID", "沒收藏");
-		        
-		        System.out.println("沒收藏");
-		    }
+
 			
 		}
 		return "Event/Event";
@@ -130,11 +131,6 @@ public class EventController {
 //	public String getEventClass() {
 //		System.out.println(countyB.get("listCounty"));
 //		model.addAttribute("eventList", eventService.findByCounty("台北市"));
-<<<<<<< HEAD
-
-		Page<EventsBean> eventPages = eventService.getEventPageClass(pageNum, pageSize, (String)countyB.get("listCounty"));
-		List<EventsBean> pageEvents = eventPages.getContent();
-=======
 		System.out.println(countyB.get("eventClassType"));
 //		System.out.println(countyB.get("eventClassContent"));
 		
@@ -172,7 +168,6 @@ public class EventController {
 		}
 		
 		
->>>>>>> 4058e56610075682d5cd9f7f9c99134ba72e1f48
 
 //		model.addAttribute("eventList", eventService.findByCounty((String)countyB.get("listCounty")));
 		

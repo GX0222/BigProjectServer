@@ -32,14 +32,13 @@ public interface EventService {
 	public Page<EventsBean> getEventPage(int pageNum, int pageSize);
 
 	public List<EventsBean> findByCounty(String county);
-<<<<<<< HEAD
 
-	public Page<EventsBean> getEventPageClass(int pageNum, int pageSize, String county);
 
-=======
+
+
 	
 	public Page<EventsBean> getEventPageClass(int pageNum, int pageSize, String county); 
 	public Page<EventsBean> getEventPageHobby(int pageNum, int pageSize, Integer hobby); 
 	
->>>>>>> 4058e56610075682d5cd9f7f9c99134ba72e1f48
+
 	}

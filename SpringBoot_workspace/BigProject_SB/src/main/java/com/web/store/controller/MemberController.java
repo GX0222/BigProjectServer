@@ -38,12 +38,7 @@ public class MemberController {
 	EventService eventService;
 	EhService ehService;
 	MemberPictureService memberPictureService;
-<<<<<<< HEAD
 	MemberService memberService;
-=======
-
-
->>>>>>> 4058e56610075682d5cd9f7f9c99134ba72e1f48
 
 	public MemberController(MemberEventsService memberEventsService, EventService eventService, EhService ehService,
 			MemberPictureService memberPictureService, MemberService memberService) {
@@ -627,7 +622,6 @@ public  HashMap<String, String> JsonController7(@RequestParam HashMap<String,Obj
 
         return a;
     }
-<<<<<<< HEAD
 	
 	 @PostMapping("/updateMember")
 	    public String updateMember(@RequestParam String username,
@@ -660,13 +654,6 @@ public  HashMap<String, String> JsonController7(@RequestParam HashMap<String,Obj
 	        // 返回到會員資料頁面或其他需要的頁面
 	        return "redirect:/Member";
 	    }
-=======
-
-
-
-
-
->>>>>>> 4058e56610075682d5cd9f7f9c99134ba72e1f48
 
 }
 

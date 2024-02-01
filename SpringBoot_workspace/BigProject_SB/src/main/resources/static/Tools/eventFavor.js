@@ -80,7 +80,97 @@
 //        });
 //    });
 //});
+//function refreshPage() {
+//    location.reload(true); // 强制从服务器重新加载页面
+//}
+//
+//// 取消收藏的請求
+//function deleteFavorite(eventId) {
+//    $.ajax({
+//        type: 'DELETE',
+//        url: "/DeleteFavor",  // 請更改為實際的後端端點
+//        contentType: 'application/json',
+//        data: JSON.stringify({ eventId: eventId }),
+//        success: function(response) {
+//            // 處理成功的回應
+//            alert("取消收藏成功");
+//            // 根據取消收藏狀態設置樣式
+//            $(".material-symbols-outlined").css("fill", 0);
+////            $(".eventFavor").removeAttr("data-ispersist");
+////            $(this).data("data-ispersist")
+//            console.log('Delete request successful!', response);
+////            console.log('data-ispersist:', self.data("data-ispersist"));
+//			refreshPage(); // 刷新页面
+//        },
+//        error: function(error) {
+//            // 處理錯誤
+//            console.error('Error during delete request:', error);
+//        }
+//    });
+//}
+//
+//// 添加收藏的請求
+//function addFavorite(eventId) {
+//    $.ajax({
+//        type: 'POST',
+//        url: "/AddFavor",  // 請更改為實際的後端端點
+//        contentType: 'application/json',
+//        data: JSON.stringify(
+//			{ eventId: eventId,
+//			
+//			 }),
+//			
+//        success: function(response) {
+//            // 處理成功的回應
+//            alert("文章收藏成功" + eventId.toString());
+//            // 根據收藏狀態設置樣式
+//            $(".material-symbols-outlined").css("fill", 1);
+////            $(".eventFavor").attr("data-ispersist", "OK123");
+////            $(this).data("data-ispersist")
+//            console.log('Post request successful!', response, $(".eventFavor").attr("data-ispersist"));
+////            console.log('data-ispersist:', self.data("data-ispersist"));
+//            refreshPage(); // 刷新页面
+//            
+//        },
+//        error: function(error) {
+//            // 處理錯誤
+//            console.error('Error during post request:', error);
+//        }
+//    });
+//}
+//
+//// 在點擊事件處理函數中調用
+//$(".eventFavor").click(function(e) {
+//    e.preventDefault();
+//	
+//    var memId = $(this).data('member');
+//    console.log(memId)
+//    if (memId === '2' || memId === 2) {
+//        var xx = alert("請登入會員");
+//        console.log(xx);
+//    }else{
+//	
+//	}
+//	var eventId = $(this).data('event');
+//    var eventtitle = $(".eTitle h1").text();
+//    console.log("Event ID:", eventId);
+//    console.log(eventtitle);
+//	
+//    var isFavorite = $(this).hasClass("hasfavor");
+//    console.log(isFavorite);
+//    // 根據收藏狀態調用不同的函數
+//    if (isFavorite) {
+//        deleteFavorite(eventId);
+//        $(this).removeClass("hasfavor");
+//    } else {
+//        addFavorite(eventId);
+//    }
+//    // 更新按鈕的 data-favorite 屬性
+////    $(this).removeClass("hasfavor");
+//});
 
+
+//舊的js
 function refreshPage() {
     location.reload(true); // 强制从服务器重新加载页面
 }
@@ -142,25 +232,25 @@ function addFavorite(eventId) {
 // 在點擊事件處理函數中調用
 $(".eventFavor").click(function(e) {
     e.preventDefault();
-    var memId = '${sessionScope.member.memberId}';
+    var memId = $(this).data('member');
     if (memId === '2' || memId === 2) {
         alert("請登入會員");
-        return;
-    }
+    }else{
+		var eventId = $(this).data('event');
+		var eventtitle = $(".eTitle h1").text();
+		console.log("Event ID:", eventId);
+		console.log(eventtitle);
 
-    var eventId = $(this).data('event');
-    var eventtitle = $(".eTitle h1").text();
-    console.log("Event ID:", eventId);
-    console.log(eventtitle);
+		var isFavorite = $(this).hasClass("hasfavor");
 
-    var isFavorite = $(this).hasClass("hasfavor");
-    
-    // 根據收藏狀態調用不同的函數
-    if (isFavorite) {
-        deleteFavorite(eventId);
-    } else {
-        addFavorite(eventId);
-    }
-    // 更新按鈕的 data-favorite 屬性
-    $(this).removeClass("hasfavor");
+		// 根據收藏狀態調用不同的函數
+		if (isFavorite) {
+			deleteFavorite(eventId);
+		} else {
+			addFavorite(eventId);
+		}
+		// 更新按鈕的 data-favorite 屬性
+		$(this).removeClass("hasfavor");
+	}
 });
+

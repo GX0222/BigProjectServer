@@ -76,11 +76,7 @@ public class EventFavorController {
 	}
 
 
-<<<<<<< HEAD
     @PostMapping("/AddFavor")
-=======
-    @PostMapping("/Event")
->>>>>>> 4058e56610075682d5cd9f7f9c99134ba72e1f48
     @ResponseBody
     public String addToFavorites(
     		Model model,
@@ -117,11 +113,7 @@ public class EventFavorController {
         return "活動收藏成功";
     }
 
-<<<<<<< HEAD
     @DeleteMapping("/DeleteFavor")
-=======
-    @DeleteMapping("/Event")
->>>>>>> 4058e56610075682d5cd9f7f9c99134ba72e1f48
     @ResponseBody
     public String deleteToFavorites(
     		Model model,
