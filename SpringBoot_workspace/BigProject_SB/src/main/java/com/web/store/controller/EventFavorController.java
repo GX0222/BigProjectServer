@@ -10,6 +10,7 @@ import org.springframework.web.bind.annotation.DeleteMapping;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestBody;
+import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.ResponseBody;
 
 import com.web.store.model.EventFavorBean;
@@ -24,15 +25,16 @@ import jakarta.servlet.http.HttpSession;
 public class EventFavorController {
 	EventFavorService efs;
 	EventService es;
-	
+
 	EventsBean eb = new EventsBean();
 //	EventsBean eb;
-	
+
 	public EventFavorController(EventFavorService efs, EventService es) {
 	this.efs = efs;
 	this.es = es;
-	
+
 }
+//	@RequestParam("data-ispersist") String dataPersist
 //	@PostMapping("/Member/Love")
 //	public String showFavorites(
 //			Model model,
@@ -41,12 +43,12 @@ public class EventFavorController {
 //		Integer eventID = Integer.parseInt(req.get("eventID").toString());
 //		session.setAttribute("eventID", eventID);
 //		return "Member/Love";
-//		
+//
 //	}
 	@GetMapping("/Love")
 	public String showFavorites(Model model, HttpSession session) {
 		MemberBean mb = (MemberBean) session.getAttribute("member");
-		
+
 		Integer memId = mb.getMemberId();
 		List<EventFavorBean> eventF = efs.selectEvents(memId);
 		System.out.println("memId : "+memId);
@@ -56,6 +58,7 @@ public class EventFavorController {
 
 			for (EventFavorBean eventFF : eventF) {
 				Integer eventId = eventFF.getEventid();
+				System.out.println(eventId);
 				EventsBean eventData = es.findAllById(eventId);
 				eventDataList.add(eventData);
 
@@ -69,11 +72,11 @@ public class EventFavorController {
 			System.out.println(eventDataList);
 		}
 		System.out.println("4");
-	    return "Member/Love"; 
+	    return "Member/Love";
 	}
 
-	
-    @PostMapping("/Event")
+
+    @PostMapping("/AddFavor")
     @ResponseBody
     public String addToFavorites(
     		Model model,
@@ -84,13 +87,13 @@ public class EventFavorController {
     	Integer memId = mb.getMemberId();
 //    	System.out.println(req.get("eventId"));
 //    	List<EventFavorBean> eventF = efs.findAllByEventid(memId);
-    	
+
     	if(memId == 2) {
     		System.out.println("請先登入會員");
     		System.out.println(memId);
     	}else {
     	    try {
-        	    
+
 //    	    	EventFavorBean events = efs.findByEventid(eb.getId());
     	    	EventFavorBean efb = new EventFavorBean();
     	    	efb.setEventid(Integer.valueOf(req.get("eventId")));
@@ -98,7 +101,7 @@ public class EventFavorController {
     	    	System.out.println(eb.getId());
     	    	efs.save(efb);
     	        System.out.println("save成功");
-    	        
+
     	    } catch (Exception e) {
     	        // 在這裡處理保存操作的異常
     	        e.printStackTrace();
@@ -109,34 +112,58 @@ public class EventFavorController {
 
         return "活動收藏成功";
     }
-	
-    @DeleteMapping("/Event")
+
+    @DeleteMapping("/DeleteFavor")
     @ResponseBody
     public String deleteToFavorites(
     		Model model,
-    		HttpSession session
-    		,@RequestBody Map<String, String> req ) {
+    		HttpSession session,
+    		@RequestBody Map<String, String> req
+    		) {
         // 檢查會員是否登入
     	MemberBean mb = (MemberBean) session.getAttribute("member");
     	Integer memId = mb.getMemberId();
+
+//    	String ispersist = (String) session.getAttribute("isPersist");
+//    	System.out.println("data-ispersist value: " + dataPersist);
+//    	System.out.println(ispersist);
+    	System.out.println(req.get("eventId"));
+    	Integer eventId = Integer.valueOf(req.get("eventId"));
+    	System.out.println(eventId);
         if (mb == null || memId == null || memId == 2) {
     		System.out.println("請先登入會員");
     		System.out.println(memId);
         }
-        String eventIds =req.get("eventid");
-        if(eventIds != null){
-        	try {
-        		EventFavorBean efb = new EventFavorBean();
-        		System.out.println(efb);
-        		efs.delete(efb);
-			} catch (Exception e) {
-				 e.printStackTrace();
-	    	     System.out.println("刪除操作出現異常: " + e.getMessage());
-			}
+     // 調用 EventFavorService 的 delete 方法
+        EventFavorBean eventFavor = new EventFavorBean();
+        List<EventFavorBean> eventFDList = efs.findAllByMemberidAndEventid(memId, eventId);
+        for( EventFavorBean Bean : eventFDList) {
+        	efs.delete(Bean);
         }
-        // 取消收藏邏輯...
+        System.out.println(eventFavor);
+        
+
         return "活動刪除成功";
+//		List<EventFavorBean> eventIds =efs.findAllByMemberidAndEventid(memId, eventId);
+//        System.out.println(eventIds);
+//        if (!eventIds.isEmpty()) {
+//            try {
+//                // 逐一刪除查找到的數據
+//                for (EventFavorBean eventFavor : eventIds) {
+//                    efs.delete(eventFavor);
+//                    System.out.println("活動刪除OK");
+//                }
+//                return "活動刪除成功";
+//            } catch (Exception e) {
+//                e.printStackTrace();
+//                System.out.println("刪除操作出現異常: " + e.getMessage());
+//                return "刪除操作出現異常";
+//            }
+//        } else {
+//            System.out.println("查無匹配的活動收藏數據");
+//            return "查無匹配的活動收藏數據";
+//        }
     }
-	
-	
+
+
 }

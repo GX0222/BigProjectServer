@@ -17,10 +17,10 @@
 //@RequestMapping("/register2")
 //public class regController {
 //	private static Logger log = LoggerFactory.getLogger(regController.class);
-//	
-//	String inputDataForm = "register2/register"; 
+//
+//	String inputDataForm = "register2/register";
 //	regService regservice;
-//	
+//
 //	ServletContext servletContex;
 //
 //	public regController(regService regservice, ServletContext servletContex) {
@@ -31,22 +31,22 @@
 //	public String sendEmptyForm(Model model) {
 //		registerBean member = new registerBean();
 //		model.addAttribute("member", member);
-//		
-//		
+//
+//
 //		return inputDataForm;
 //	}
 //	@PostMapping("/register")
 //	public String processFormData(
-//			
+//
 //			Model model
-//			
+//
 //			) {
 ////		MemberValidator validator = new MemberValidator();
 ////		validator.validate(member, result);
 ////		if(result.hasErrors()) {
 ////			return inputDataForm;
 ////		}
-////		
+////
 ////		if(regservice.exsistByAccount(member.getAccount())) {
 ////			result.rejectValue("memberId", "", "帳號已存在，請重新輸入");
 ////			return inputDataForm;
@@ -73,7 +73,7 @@
 ////		String password = rb.getPassword();
 ////		String mail = rb.getMail();
 ////		String phone = rb.getPhone();
-//		
+//
 //        // 呼叫Service層進行註冊
 ////        try {
 ////            memberService.registerMember(username, password);
@@ -93,9 +93,9 @@
 ////            model.addAttribute("errorMessage", e.getMessage());
 ////            System.out.println("SQL語句錯誤WHY?????");
 ////        }
-//		
+//
 //		return "redirect:/";
-//		
+//
 //	}
-//	
+//
 //}

@@ -2,7 +2,6 @@ package com.web.store.model;
 
 import java.io.Serializable;
 
-import jakarta.persistence.Column;
 import jakarta.persistence.Entity;
 import jakarta.persistence.GeneratedValue;
 import jakarta.persistence.GenerationType;
@@ -21,8 +20,8 @@ public class MemberEventsBean implements Serializable{
 //	@Column(name = "events_id")
 	Integer eventsId;
 	public MemberEventsBean() {}
-	
-	
+
+
 	public MemberEventsBean(Integer member_events_id, Integer memberId, Integer eventsId) {
 		this.member_events_id = member_events_id;
 		this.memberId = memberId;
@@ -51,9 +50,9 @@ public class MemberEventsBean implements Serializable{
 	public static long getSerialversionuid() {
 		return serialVersionUID;
 	}
-	
-	
-	
-	
-	
+
+
+
+
+
 }

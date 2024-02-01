@@ -31,8 +31,8 @@ public class MemberBean implements Serializable {
 	String password1;
 	@Transient
 	private String salt;
-	
-	
+
+
 	public MemberBean(Integer memberId, String account, String username, String password, String mail, String phone,
 			Date birthday, Integer loginState, Integer loginDelayTime, Integer level) {
 
@@ -48,7 +48,7 @@ public class MemberBean implements Serializable {
 		this.level = level;
 	}
 	public MemberBean() {
-		
+
 	}
 
 	public Integer getMemberId() {
@@ -142,148 +142,4 @@ public class MemberBean implements Serializable {
 	public void setSalt(String salt) {
 		this.salt = salt;
 	}
-
-
-//	public MemberBean(Integer pkey, String memberId, String name, String password, String address, String email,
-//			String tel, String userType, Timestamp registerTime, Double totalAmt, Double unpaid_amount,
-//			Blob memberImage, String fileName) {
-//		this.pkey = pkey;
-//		this.memberId = memberId;
-//		this.password = password;
-//		this.name = name;
-//		this.address = address;
-//		this.email = email;
-//		this.tel = tel;
-//		this.userType = userType;
-//		this.registerTime = registerTime;
-//		this.totalAmt = totalAmt;
-//		this.unpaid_amount = unpaid_amount;
-//		this.fileName = fileName;
-//		this.memberImage = memberImage;
-//	}
-//
-//
-//	public MemberBean() {
-//	}
-//
-//	public Integer getPkey() {
-//		return pkey;
-//	}
-//
-//	public void setPkey(int pkey) {
-//		this.pkey = pkey;
-//	}
-//
-//	public Blob getMemberImage() {
-//		return memberImage;
-//	}
-//
-//	public void setMemberImage(Blob memberImage) {
-//		this.memberImage = memberImage;
-//	}
-//
-//	public Clob getComment() {
-//		return comment;
-//	}
-//
-//	public void setComment(Clob comment) {
-//		this.comment = comment;
-//	}
-//
-//	public String getFileName() {
-//		return fileName;
-//	}
-//
-//	public void setFileName(String fileName) {
-//		this.fileName = fileName;
-//	}
-//
-//	public void setUserType(String userType) {
-//		this.userType = userType;
-//	}
-//
-//	public void setTs(Timestamp ts) {
-//		this.registerTime = ts;
-//	}
-//
-//	public void setTotalAmt(Double totalAmt) {
-//		this.totalAmt = totalAmt;
-//	}
-//
-//	public String getAddress() {
-//		return address;
-//	}
-//
-//	public void setAddress(String address) {
-//		this.address = address;
-//	}
-//
-//	public String getEmail() {
-//		return email;
-//	}
-//
-//	public void setEmail(String mail) {
-//		email = mail;
-//	}
-//
-//	public void setRegisterTime(Timestamp registerTime) {
-//		this.registerTime = registerTime;
-//	}
-//
-//	public String getName() {
-//		return name;
-//	}
-//
-//	public void setName(String name) {
-//		this.name = name;
-//	}
-//
-//	public String getPassword() {
-//		return password;
-//	}
-//
-//	public void setPassword(String password) {
-//		this.password = password;
-//	}
-//
-//	public String getTel() {
-//		return tel;
-//	}
-//
-//	public void setTel(String tel) {
-//		this.tel = tel;
-//	}
-//
-//	public String getMemberId() {
-//		return memberId;
-//	}
-//
-//	public void setMemberId(String memberId) {
-//		this.memberId = memberId;
-//	}
-//
-//	@Override
-//	public String toString() {
-//		return "userid=" + memberId + "   password=" + password;
-//	}
-//
-//	public String getUserType() {
-//		return userType;
-//	}
-//
-//	public Timestamp getRegisterTime() {
-//		return registerTime;
-//	}
-//
-//	public Double getTotalAmt() {
-//		return totalAmt;
-//	}
-//
-//	public Double getUnpaid_amount() {
-//		return unpaid_amount;
-//	}
-//
-//	public void setUnpaid_amount(Double unpaid_amount) {
-//		this.unpaid_amount = unpaid_amount;
-//	}
 }

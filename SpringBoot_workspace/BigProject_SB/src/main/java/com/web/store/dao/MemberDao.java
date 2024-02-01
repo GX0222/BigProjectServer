@@ -9,7 +9,8 @@ import com.web.store.model.MemberBean;
 public interface MemberDao extends JpaRepository<MemberBean, Integer> {
 
 	MemberBean findByAccount(String account);
-	
+
 	MemberBean findByMemberId(Integer id);
+
 	
 }

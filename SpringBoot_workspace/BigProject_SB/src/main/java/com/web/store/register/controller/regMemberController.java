@@ -18,16 +18,16 @@
 //@RequestMapping("/register2")
 //public class regMemberController {
 //	ServletContext context;
-//	
+//
 //	MemberService service;
-//	
+//
 //	String inputDataForm = "/register2/register";
 //
 //	public regMemberController(ServletContext context, MemberService service) {
 //		this.context = context;
 //		this.service = service;
 //	}
-//	
+//
 //	@GetMapping("/register")
 //	public String sendingEmptyForm(Model model) {
 //		registerBean member = new registerBean();
@@ -39,14 +39,14 @@
 //		member.setMail("aa999@gmail.com");
 //		member.setBirthday(null);
 //		model.addAttribute("member", member);
-//		
+//
 //		return inputDataForm;
-//		
+//
 //	}
-//	
+//
 //	@PostMapping("/register")
 //	public String insertCustomerData(
-//			@ModelAttribute("member") registerBean bean, 
+//			@ModelAttribute("member") registerBean bean,
 //			BindingResult bindingResult
 //			) {
 //		new MemberValidator().validate(bean, bindingResult);
@@ -64,9 +64,9 @@
 //		if (bean.getAccount() != null) {
 //			service.update(bean);
 //		}
-//		
+//
 //		registerBean savedBean = service.save(bean);
 //		return String.valueOf(savedBean.getAccount());
 //	}
-//	
+//
 //}

@@ -18,8 +18,8 @@ public class EventFavorBean {
 	Integer id;
 	Integer memberid;
 	Integer eventid;
-	
-	
+
+
 	public EventFavorBean(Integer id, Integer memberid, Integer eventid) {
 		super();
 		this.id = id;
@@ -27,9 +27,9 @@ public class EventFavorBean {
 		this.eventid = eventid;
 	}
 	public EventFavorBean() {
-		
+
 	}
-	
+
 	public Integer getId() {
 		return id;
 	}
@@ -52,11 +52,11 @@ public class EventFavorBean {
 		return serialVersionUID;
 	}
 
-	
-	
-	
 
-	
-	
-	
+
+
+
+
+
+
 }

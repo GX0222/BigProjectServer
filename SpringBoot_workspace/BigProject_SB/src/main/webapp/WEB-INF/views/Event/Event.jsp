@@ -39,7 +39,17 @@
 <body>
     <!-- NavBar -->
 	<%@ include file="../Shared/PageNavBar.jsp" %>
-    <div class="info">
+	
+	
+	
+	
+
+	
+<%-- 	<c:if test="${empty eventFavorBean}"> --%>
+<!-- 		<p>No Event Favor Data</p> -->
+<%-- 	</c:if> --%>
+	
+	<div class="info">
         <div class="center">
             <div class="eTitle">
                 <h1>${eventData.getEventTitle()}</h1>
@@ -50,7 +60,7 @@
         </div>
         <br><br><br>
         <div>
-        <button class ="eventFavor" data-event="${eventData.getId()}">
+        <button class ="eventFavor ${efbID == '有收藏' ? 'hasfavor' : ''}" data-event="${eventData.getId()}">
 				<span class="material-symbols-outlined"> favorite收藏</span></button>
         </div>
         <div class="eInfo">

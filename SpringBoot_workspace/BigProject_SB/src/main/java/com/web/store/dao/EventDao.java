@@ -17,20 +17,22 @@ public interface EventDao extends JpaRepository<EventsBean, Integer> {
 	List<EventsBean> findTop2ByOrderByIdDesc();
 
 	List<EventsBean> findTop5ByCountyOrderByIdDesc(String county);
-	
+
 	List<EventsBean> getEventsByClassId(Integer classId);
 
 	EventsBean findAllById(Integer id);
 
 	Page<EventsBean> findByCounty(String county, Pageable pageable);
 	Page<EventsBean> getEventsByClassId(Integer classId, Pageable pageable);
-    
+
 	List<EventsBean> findByEventTitle(String title);
+	@Override
 	public Optional<EventsBean> findById(Integer id);
 
+	@Override
 	long count();
-	
+
 	List<EventsBean> findByCounty(String county);
 
-	
+
 }

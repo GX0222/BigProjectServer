@@ -44,7 +44,7 @@ public class MemberTrackServiceImpl implements MemberTrackService {
 	public void saveTrack(@NonNull MemberTrackBean mtb) {
 		trackDao.save(mtb);
 	}
-	
+
 	@Override
 	public void runTrack(MemberTrackBean mtb, List<Integer> hobbys) {
 		Map<Integer, Integer> hobbyLevels = new HashMap<>();

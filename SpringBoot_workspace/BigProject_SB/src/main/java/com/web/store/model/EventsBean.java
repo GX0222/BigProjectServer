@@ -38,7 +38,7 @@ public class EventsBean implements Serializable {
 	public EventsBean() {
 
     }
-	
+
 	public EventsBean(Integer id, Date startTime, Date endTime, String eventTitle, String eventTime, String county,
 			String location, String eventIntro, String eventInfo, String eventUrl, Date updateTime, Integer classId,
 			byte[] eventImage) {
@@ -165,7 +165,7 @@ public class EventsBean implements Serializable {
 		return serialVersionUID;
 	}
 
-	
+
 
 
 
