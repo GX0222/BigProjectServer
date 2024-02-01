@@ -65,9 +65,7 @@ public class HomeController {
 			MemberBean mb = (MemberBean) session.getAttribute("member");
 			MemberTrackBean mtb = trackService.findByMemberId(mb.getMemberId());
 			Integer recEveId = trackService.recommendEvents(mtb);
-			System.out.println(recEveId);
-			if (recEveId < 0) {
-				System.out.println("1112222");
+			if (recEveId == 0) {
 				List<EventsBean> TaipeiTop5Eve = eventService.findTop5ByCountyOrderByIdDesc("台北市");
 				model.addAttribute("smallNews", TaipeiTop5Eve);
 			}else {

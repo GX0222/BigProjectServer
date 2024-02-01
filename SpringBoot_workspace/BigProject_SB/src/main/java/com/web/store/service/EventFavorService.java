@@ -8,13 +8,6 @@ public interface EventFavorService {
 
 	 //讓ServiceImpl實作的功能
 
-	 void delete(EventFavorBean eventid);
-
-	 void save(EventFavorBean eventid);
-
-	 void update(EventFavorBean eventid);
-
-	 EventFavorBean findByEventid(Integer eventid);
 
 	List<EventFavorBean> findAllByEventid(Integer eventid);
 

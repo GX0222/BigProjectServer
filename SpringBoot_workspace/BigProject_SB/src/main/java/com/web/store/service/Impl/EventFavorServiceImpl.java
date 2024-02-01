@@ -12,8 +12,8 @@ import com.web.store.service.EventFavorService;
 @Service
 public class EventFavorServiceImpl implements EventFavorService {
 
-	EventFavorDao efd;
 
+	EventFavorDao efd;
 
 	public EventFavorServiceImpl(EventFavorDao efd) {
 		this.efd = efd;
@@ -45,7 +45,6 @@ public class EventFavorServiceImpl implements EventFavorService {
 
 	@Override
 	public void update(EventFavorBean eventid) {
-		
 	}
 
 	@Override

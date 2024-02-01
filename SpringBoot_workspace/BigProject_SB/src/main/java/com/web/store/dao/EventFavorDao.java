@@ -14,8 +14,6 @@ import com.web.store.model.EventFavorBean;
 public interface EventFavorDao extends JpaRepository<EventFavorBean, Integer> {
 
 	EventFavorBean findByMemberid(Integer memberid);
-	
-	void delete(EventFavorBean eventFavor);
 
 	@Override
 	Optional<EventFavorBean> findById(Integer id);
