@@ -38,4 +38,29 @@ $(document).ready(function () {
             $(this).toggleClass("CRSelected");
         }
     });
+
+    
+    var target = document.querySelector('p[contenteditable="true"]');
+
+    var observer = new MutationObserver(function(mutations) {
+        mutations.forEach(function(mutation) {
+            if (mutation.type === 'attributes' || mutation.type === 'childList') {
+                var thisP = mutation.target;
+                var Room = $(thisP).closest('.Room');
+                var CRText = Room.find(".CRText");
+                var CRInput = $(thisP).closest('.CRInput');
+                var contentHeight = CRInput.height()+10;
+                CRText.css('height', 'calc(100% - ' + contentHeight + 'px)');
+
+                console.log("CH: "+contentHeight );
+                console.log(CRInput.height());
+                console.log("thisP高: "+ $(thisP).css("height"));
+                console.log("CRText高: "+CRText.css("height"));
+                console.log("CRInput高: "+CRInput.css("height"));
+            }
+        });
+    });
+
+    var config = { attributes: true, childList: true, subtree: true };
+    observer.observe(target, config);
 });

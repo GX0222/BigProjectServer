@@ -3,7 +3,7 @@
 const client = new StompJs.Client({
     brokerURL: 'ws://localhost:80/WebSocket',
     debug: function (str) {
-        console.log(str);
+        // console.log(str);
     },
     reconnectDelay: 5000,
     heartbeatIncoming: 4000,
@@ -13,8 +13,12 @@ const client = new StompJs.Client({
 client.onConnect = function (frame) {
     console.log('WebSocket connected!');
     client.subscribe('/WSMessage/Mes', function (message) {
-        $("#PublicRoom").find(".simplebar-content").append(message.body);
-        $("#PublicRoom").find(".simplebar-content").append("<hr>");
+        var parsedBody = JSON.parse(message.body);
+        var publicRoom = $("#PublicRoom");
+        var messageElement = $("<div class='resBox'>").text(parsedBody.mesg);
+        var memImg = $("<img class='resMemImg rounded-circle img-fluid'>").attr('src', "data:image/png;base64, "+parsedBody.sendMemImg);
+        var mesgg = $("<div class='resBigBox'>").append(memImg).append(messageElement);
+        publicRoom.find(".simplebar-content").append(mesgg); 
     });
 };
 
