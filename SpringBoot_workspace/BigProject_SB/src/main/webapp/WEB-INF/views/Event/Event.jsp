@@ -56,7 +56,8 @@
             </div>
         </div>
         <div class="eImgCon">
-            <img src="/static/image/2023聖誕節.jpg" alt="">
+<!--             <img src="/static/image/2023聖誕節.jpg" alt=""> -->
+            <img src="${EventImg}" alt="">
         </div>
         <br><br><br>
         <div>

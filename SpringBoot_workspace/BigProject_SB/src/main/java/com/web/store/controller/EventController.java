@@ -1,5 +1,6 @@
 package com.web.store.controller;
 
+import java.util.Base64;
 import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
@@ -49,6 +50,13 @@ public class EventController {
 		model.addAttribute("eventData", eventData);
 		MemberBean mb = (MemberBean) session.getAttribute("member");
 		model.addAttribute("memberData", mb);
+		
+		if (eventData.getEventImage() == null) {
+			eventData =eventService.findById(4);
+			model.addAttribute("EventImg","data:image/png;base64, "+Base64.getEncoder().encodeToString(eventData.getEventImage()));
+		}else {
+			model.addAttribute("EventImg","data:image/png;base64, "+Base64.getEncoder().encodeToString(eventData.getEventImage()));
+		}
 //		Integer efb = (Integer) session.getAttribute("id");
 		List<EventFavorBean> eventFDList = efService.findAllByMemberidAndEventid(mb.getMemberId(), eventID);
 		if(mb != null && !mb.getAccount().equals("Guest")) {
