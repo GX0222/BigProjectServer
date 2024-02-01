@@ -16,6 +16,7 @@ import com.web.store.model.EventFavorBean;
 import com.web.store.model.EventsBean;
 import com.web.store.model.MemberBean;
 import com.web.store.model.MemberTrackBean;
+import com.web.store.model.ehBean;
 import com.web.store.service.EhService;
 import com.web.store.service.EventFavorService;
 import com.web.store.service.EventService;
@@ -129,15 +130,52 @@ public class EventController {
 //	public String getEventClass() {
 //		System.out.println(countyB.get("listCounty"));
 //		model.addAttribute("eventList", eventService.findByCounty("台北市"));
+<<<<<<< HEAD
 
 		Page<EventsBean> eventPages = eventService.getEventPageClass(pageNum, pageSize, (String)countyB.get("listCounty"));
 		List<EventsBean> pageEvents = eventPages.getContent();
+=======
+		System.out.println(countyB.get("eventClassType"));
+//		System.out.println(countyB.get("eventClassContent"));
+		
+		Page<EventsBean> eventPages;
+		List<EventsBean> pageEvents;
+		
+		String[] classC = {"台北市","新北市","桃園市","台中市","台南市","高雄市"};
+		if(((String)countyB.get("eventClassType")).equals("h")) {
+//			System.out.println("h in");
+			if(((String)countyB.get("eventClassContent")).equals("a")) {
+				eventPages = eventService.getEventPage(pageNum, pageSize);
+				pageEvents = eventPages.getContent();
+				model.addAttribute("eventList", pageEvents);
+				model.addAttribute("totalPages", eventPages.getTotalPages());
+				model.addAttribute("pageNum", eventPages.getNumber()+1);
+				model.addAttribute("countEvents", eventPages.getTotalElements());
+			}else {
+//				System.out.println(Integer.valueOf((String)countyB.get("eventClassContent")));
+				eventPages = eventService.getEventPageHobby(pageNum, pageSize,Integer.valueOf((String)countyB.get("eventClassContent")));
+				pageEvents = eventPages.getContent();
+				model.addAttribute("eventList", pageEvents);
+				model.addAttribute("totalPages", eventPages.getTotalPages());
+				model.addAttribute("pageNum", eventPages.getNumber()+1);
+				model.addAttribute("countEvents", eventPages.getTotalElements());
+			}
+		}else if(((String)countyB.get("eventClassType")).equals("c")) {
+//			System.out.println("c in");
+//			System.out.println(classC[Integer.valueOf((String)countyB.get("eventClassContent"))]);
+			eventPages = eventService.getEventPageClass(pageNum, pageSize, classC[Integer.valueOf((String)countyB.get("eventClassContent"))]);
+			pageEvents = eventPages.getContent();
+			model.addAttribute("eventList", pageEvents);
+			model.addAttribute("totalPages", eventPages.getTotalPages());
+			model.addAttribute("pageNum", eventPages.getNumber()+1);
+			model.addAttribute("countEvents", eventPages.getTotalElements());
+		}
+		
+		
+>>>>>>> 4058e56610075682d5cd9f7f9c99134ba72e1f48
 
 //		model.addAttribute("eventList", eventService.findByCounty((String)countyB.get("listCounty")));
-		model.addAttribute("eventList", pageEvents);
-		model.addAttribute("totalPages", eventPages.getTotalPages());
-		model.addAttribute("pageNum", eventPages.getNumber()+1);
-		model.addAttribute("countEvents", eventPages.getTotalElements());
+		
 		return "Event/ShowPage";
 
 	}

@@ -1,0 +1,35 @@
+@charset "UTF-8";
+#ChatRoomCon {
+    position: fixed;
+    z-index: 87;
+    margin: 10px;
+    padding: 0;
+    background-color: aqua;
+    height: 300px;
+    width: 80px;
+    bottom: 0;
+    right: 0;
+	display: flex;
+    flex-direction: column-reverse;
+}
+
+#ChatRoomCon .ChatRoom {
+	background-color: white;
+	border-radius: 5px;
+	margin: 5px;
+	border: 2px solid rgb(142, 94, 69);
+	aspect-ratio: 1/1;
+}
+
+#ChatRoomCon .ChatRoom .Room {
+	position: absolute;
+	background-color: white;
+	border-radius: 5px;
+	margin: 5px;
+	border: 2px solid rgb(142, 94, 69);
+	right: 90px;
+	bottom: 0px;
+	height: 0px;
+	width: 0px;
+	display: none;
+}

@@ -32,14 +32,19 @@
 	crossorigin="anonymous"></script>
 
 <!-- Google Icon -->
-<link href="https://fonts.googleapis.com/icon?family=Material+Icons"
-	rel="stylesheet">
+<!-- <link href="https://fonts.googleapis.com/icon?family=Material+Icons" -->
+<!-- 	rel="stylesheet"> -->
 <link rel="stylesheet"
 	href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200" />
 <!-- SimpleBar-->
 <link rel="stylesheet"
 	href="https://unpkg.com/simplebar@latest/dist/simplebar.css" />
 <script src="https://unpkg.com/simplebar@latest/dist/simplebar.min.js"></script>
+<!-- SockJS -->
+<script
+	src="https://cdn.jsdelivr.net/npm/sockjs-client@1/dist/sockjs.min.js"></script>
+<script
+	src="https://cdn.jsdelivr.net/npm/@stomp/stompjs@5.0.0/bundles/stomp.umd.js"></script>
 <!-- 背景影片css -->
 <link rel="stylesheet" href="/static/Tools/Bg_YTiframe.css">
 <!-- 背景影片js -->
@@ -63,9 +68,12 @@
 <link rel="stylesheet" href="/static/Tools/footer.css">
 <!-- CSS -->
 <link rel="stylesheet" href="/static/Tools/index.css">
+<link rel="stylesheet" href="/static/Tools/ChatRoom.css">
 <!-- JS -->
 <script src="/static/Tools/index.js" defer></script>
 <script src="/static/Tools/selectEvent.js" defer></script>
+<script src="/static/Tools/WebSocket.js"></script>
+<script src="/static/Tools/ChatRoom.js"></script>
 <!-- WeatherTool -->
 <link rel="stylesheet" href="/static/Tools/WeatherTool.css">
 <script src="/static/Tools/WeatherTool.js" defer></script>
@@ -161,7 +169,9 @@
 	</div>
 	<!-- ========== -->
 	<div id="newBG" class="row justify-content-center">
-
+		<!-- 	ChatRoom	 -->
+		<%@ include file="Shared/ChatRoom.jsp"%>
+		<!-- ================-->
 		<!-- -----offcanvas----- -->
 		<div id="myOffcanvas" class="fixedDiv">
 			<a class="btn btn-primary OffcanBtn" data-bs-toggle="offcanvas"
