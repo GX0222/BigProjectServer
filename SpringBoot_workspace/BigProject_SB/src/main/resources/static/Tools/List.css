@@ -29,3 +29,11 @@
 .dataTable img {
 	width: 200px;
 }
+
+.tdlist {
+	width: 3vw;
+}
+
+.tdlistbt {
+	margin: 0.1vw auto;
+}

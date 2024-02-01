@@ -400,7 +400,7 @@
 			<div class="smallNewsGroup" data-simplebar>
 				<c:forEach items="${smallNews }" var="smallNew">
 					<div class="smallNews">
-						<a	class="eventLink selectEvent" data-event="${smallNew.getId() }"
+						<a	class="smallNewsa eventLink selectEvent" data-event="${smallNew.getId() }"
 								data-track="false">
 						<div class="snTitle">${smallNew.getEventTitle() }→</div>
 						<!-- 						<div class="snTime"> -->

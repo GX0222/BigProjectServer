@@ -119,17 +119,30 @@ div.smallNews {
 }
 
 div.snTitle {
+	color: rgb(142, 94, 69);	
 	margin: 0px;
 	padding: 0px;
 	font-size: large;
 	/* 	background-color: aqua; */
 }
+div.snTitle:hover {
+	color: blue;	
+}
+
+.smallNewsa {
+	text-decoration: none;
+}
 
 div.snInfo {
+	color: rgb(142, 94, 69);
 	margin: 0px;
 	padding: 0px;
 	font-size: medium;
 	/* 	background-color: blueviolet; */
+}
+
+div.snInfo:hover {
+	color: blue;	
 }
 
 /* ==================================================== */

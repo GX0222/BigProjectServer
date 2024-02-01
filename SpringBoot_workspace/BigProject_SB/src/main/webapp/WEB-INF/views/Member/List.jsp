@@ -173,10 +173,12 @@ function load_event_list() {
         				</td>
 
 
-        				<td><span style="margin: 2rem;"> <a
+        				<td class="tdlist"><span> <a
         						href="/Eedit"
-        						class="btn btn-outline-primary btn-sm" onclick="doedit(`+e[0][i].id+`)">編輯</a> | <a href=""
-        						class="btn btn-outline-danger btn-sm" onclick="dodelete(`+e[0][i].id+`)">刪除</a>
+        						class="tdlistbt btn btn-outline-primary btn-sm" onclick="doedit(`+e[0][i].id+`)">編輯</a>  
+        						<br />
+        						<a href=""
+        						class="tdlistbt btn btn-outline-danger btn-sm" onclick="dodelete(`+e[0][i].id+`)">刪除</a>
         				</span></td>
 
         			</tr>`;
