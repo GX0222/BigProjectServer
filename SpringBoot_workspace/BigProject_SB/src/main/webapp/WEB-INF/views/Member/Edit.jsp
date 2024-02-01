@@ -201,7 +201,7 @@ var imageUpdate_check = 0;
 //hobby的總個數
 var hobby_num = 5;
 var editId = sessionStorage.getItem("myEventListId");
-console.log(editId);
+// console.log(editId);
 
 $.get("/eventlist/item/" + editId, function (e) {
     
@@ -213,8 +213,8 @@ $.get("/eventlist/item/" + editId, function (e) {
    	$("#City").prop("value",e[0].county);
    	$("#Location").prop("value",e[0].location);
    	
-	console.log(typeof(e[1][0].classId));
-	console.log(e[1][0].classId);
+// 	console.log(typeof(e[1][0].classId));
+// 	console.log(e[1][0].classId);
 	$("#checkbox1").prop("checked",0)
 	for (var i = 0; i < e[1].length; i++){
 		var id = "#checkbox"+e[1][i].classId.toString()
@@ -260,7 +260,7 @@ $("#okButton").on("click", async function () {
                	"hb5":$("#checkbox5").prop("checked")?"true":"false",
                	"data":dataURL
             });
-        	console.log("update time :"+imageUpdate_check.toString());
+//         	console.log("update time :"+imageUpdate_check.toString());
         	imageUpdate_check = 0;
         }else{
         	var dataToServer=({
@@ -287,12 +287,12 @@ $("#okButton").on("click", async function () {
         type: "post",
         data:dataToServer,
         success: function (msg) {
-            console.log("OK");
+//             console.log("OK");
             window.location = "/List";},
         error:function(error){
-        	console.log("error");
+//         	console.log("error");
 
-        	console.log(error.responseText);
+//         	console.log(error.responseText);
         }
         
         })
@@ -300,7 +300,7 @@ $("#okButton").on("click", async function () {
         
 });
 
-		console.log("OK");
+// 		console.log("OK");
 		
 		 document.getElementById('formFile').addEventListener('change', function (event) {
 		        const file = event.target.files[0];
@@ -344,8 +344,8 @@ $("#okButton").on("click", async function () {
 		                        canvas.height = image.height;
 		                        img_height = image.height;
 		                        img_width = image.width;
-		                     console.log("new w:"+canvas.width);
-		                     console.log("new h:"+canvas.height);
+// 		                     console.log("new w:"+canvas.width);
+// 		                     console.log("new h:"+canvas.height);
 		                     context.drawImage(image, 0, 0);
 		                    
 		                    }else if(image.width/16 >image.height/9){
@@ -353,8 +353,8 @@ $("#okButton").on("click", async function () {
 		                    	canvas.width = (image.height/9*16);
 		                    	img_height = image.height;
 		                        img_width = image.width;
-		                     console.log("new w:"+canvas.width);
-		                     console.log("new h:"+canvas.height);
+// 		                     console.log("new w:"+canvas.width);
+// 		                     console.log("new h:"+canvas.height);
 		                     start = (image.width-(image.height/9*16))/2;
 		                     end= 0;
 		                     context.drawImage(image, start,end,canvas.width,canvas.height,0,0,canvas.width,canvas.height);
@@ -363,8 +363,8 @@ $("#okButton").on("click", async function () {
 		                    	canvas.height = image.width/16*9;
 		                    	img_height = image.height;
 		                        img_width = image.width;
-		                     console.log("new w:"+canvas.width);
-		                     console.log("new h:"+canvas.height);
+// 		                     console.log("new w:"+canvas.width);
+// 		                     console.log("new h:"+canvas.height);
 		                     start = 0;
 		                     end = (image.height-(image.width/16*9))/2;
 		                     context.drawImage(image, start,end,canvas.width,canvas.height,0,0,canvas.width,canvas.height);

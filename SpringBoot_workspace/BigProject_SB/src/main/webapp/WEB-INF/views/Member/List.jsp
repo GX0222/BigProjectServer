@@ -1,6 +1,8 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
 	pageEncoding="UTF-8"%>
 <%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c"%>
+<%@ taglib uri="http://java.sun.com/jsp/jstl/functions" prefix="fn"%>
+
 
 <!DOCTYPE html>
 <html lang="en">
@@ -167,7 +169,7 @@ function load_event_list() {
         					<p>`+e[0][i].location+`</p>
         				</td>
         				<td>
-        					<p>`+e[0][i].eventIntro+`</p>
+        					<p>`+e[0][i].eventIntro.substring(0,20)+"…"+`</p>
         				</td>
 
 
@@ -208,13 +210,13 @@ function load_event_list() {
 		        type: "delete",
 		        data:dataToServer,
 		        success: function (msg) {
-		            console.log("OK");
+// 		            console.log("OK");
 		            window.location = "/List";
 		            },
 		        error:function(error){
-		        	console.log("error");
+// 		        	console.log("error");
 
-		        	console.log(error.responseText);
+// 		        	console.log(error.responseText);
 		        }
 		        
 		        })

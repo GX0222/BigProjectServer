@@ -106,7 +106,7 @@ public class EventController {
 //	public String getEventClass() {
 //		System.out.println(countyB.get("listCounty"));
 //		model.addAttribute("eventList", eventService.findByCounty("台北市"));
-		System.out.println(countyB.get("eventClassType"));
+//		System.out.println(countyB.get("eventClassType"));
 //		System.out.println(countyB.get("eventClassContent"));
 		
 		Page<EventsBean> eventPages;

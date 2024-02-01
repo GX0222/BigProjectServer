@@ -61,7 +61,7 @@
 	<%@ include file="../Shared/PageNavBar.jsp"%>
 	<!-- navBar End -->
 
-	<div id="AAAA" class="center">
+	<div id="EventListShow" class="center">
 		<div>
 			<ul id="infoUlbar" class="nav nav-pills infoUlbar">
 				<li class="ulName"><a id="hall" class="nav-link active"
