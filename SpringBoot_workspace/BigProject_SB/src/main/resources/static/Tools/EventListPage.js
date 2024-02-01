@@ -1,8 +1,8 @@
 $(document).ready(function () {
 //	$("a.page-link").on("click",function (e) {
-	$("#AAAA").on("click",".page-link",function (e) {
+	$("#EventListShow").on("click",".page-link",function (e) {
 		e.preventDefault();
-		console.log("here1");
+//		console.log("here1");
 		var pageNum = $(this).data("page");
 //		$.ajax({
 //			type: "GET",
@@ -43,7 +43,7 @@ $(document).ready(function () {
 //    	dataType:"JSON",
     	data:dataToServer,
         success: function(data) {
-            $("#AAAA").html(data);
+            $("#EventListShow").html(data);
 			selectEventOnClick();
            	var element=$(".nav-link.active");
 			//	console.log($(countyA).text());

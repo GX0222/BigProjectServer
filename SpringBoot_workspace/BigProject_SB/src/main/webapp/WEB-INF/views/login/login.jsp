@@ -42,9 +42,9 @@
                     <form:checkbox path="rememberMe"  id="rememberMe" style="margin-left: -15px;"  />
                     <label for="rememberMe" style="width: 120px; margin-left: -20px;">記住我</label>
                 </span>
-                <span class="forgot-password">
-                    <a href="#">忘記密碼？</a>
-                </span>
+<!--                 <span class="forgot-password"> -->
+<!--                     <a href="#">忘記密碼？</a> -->
+<!--                 </span> -->
             </div>
 
             <button type="submit" class="login-btn">登入</button>

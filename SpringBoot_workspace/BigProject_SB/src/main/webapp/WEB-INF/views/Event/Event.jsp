@@ -39,19 +39,30 @@
 <body>
     <!-- NavBar -->
 	<%@ include file="../Shared/PageNavBar.jsp" %>
-    <div class="info">
+	
+	
+	
+	
+
+	
+<%-- 	<c:if test="${empty eventFavorBean}"> --%>
+<!-- 		<p>No Event Favor Data</p> -->
+<%-- 	</c:if> --%>
+	
+	<div class="info">
         <div class="center">
             <div class="eTitle">
                 <h1>${eventData.getEventTitle()}</h1>
             </div>
         </div>
         <div class="eImgCon">
-            <img src="/static/image/2023聖誕節.jpg" alt="">
+<!--             <img src="/static/image/2023聖誕節.jpg" alt=""> -->
+            <img src="${EventImg}" alt="">
         </div>
         <br><br><br>
         <div>
-        <button class ="eventFavor" data-event="${eventData.getId()}">
-				<span class="material-symbols-outlined"> favorite收藏</span></button>
+        <button class ="eventFavor ${efbID == '有收藏' ? 'hasfavor' : ''}" data-event="${eventData.getId()}" data-member="${memberData.getMemberId() }">
+				<span   class="material-symbols-outlined"> favorite收藏</span></button>
         </div>
         <div class="eInfo">
             <table class="table" style="text-align: center;">    <!-- 加入 style="text-align: center;" -->

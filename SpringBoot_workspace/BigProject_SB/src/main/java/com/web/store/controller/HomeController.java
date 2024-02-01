@@ -61,7 +61,7 @@ public class HomeController {
 		model.addAttribute("countys", countys);
 
 		if (checkLogin(model, session)) {
-//			System.out.println("有登入");
+			System.out.println("有登入");
 			MemberBean mb = (MemberBean) session.getAttribute("member");
 			MemberTrackBean mtb = trackService.findByMemberId(mb.getMemberId());
 			Integer recEveId = trackService.recommendEvents(mtb);
@@ -79,7 +79,7 @@ public class HomeController {
 				model.addAttribute("smallNews", top5Eve);
 			}
 		}else {
-//			System.out.println("沒登入");
+			System.out.println("沒登入");
 			List<EventsBean> TaipeiTop5Eve = eventService.findTop5ByCountyOrderByIdDesc("台北市");
 			model.addAttribute("smallNews", TaipeiTop5Eve);
 		}

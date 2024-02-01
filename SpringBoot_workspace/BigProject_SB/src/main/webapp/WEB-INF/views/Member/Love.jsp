@@ -1,6 +1,7 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
     pageEncoding="UTF-8"%>
 <%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c"%>
+<%@ taglib uri="http://java.sun.com/jsp/jstl/functions" prefix="fn"%>
 <!DOCTYPE html>
 <html lang="en">
 
@@ -31,7 +32,8 @@
     <link rel="stylesheet" href="/static/Tools/footer.css">
     <!-- Color -->
     <link rel="stylesheet" href="/static/Tools/Color.css">
-
+	<!-- Select Event -->
+	<script src="/static/Tools/selectEvent.js" defer></script>
 	<style>
 	a {
 		text-decoration: none; /* 移除底線 */
@@ -57,17 +59,27 @@
 <%-- 					<c:if test="${not empty eventDataList}"> --%>
 					
 					 <c:forEach var="eventData" items="${eventDataList}">
-						<a href="<c:url value='/Event' />">
-							<div class="dataCon">
+
+							<div class="dataCon selectEvent" data-event="${eventData.getId() }">
 <!-- 								<div class="material-symbols-outlined">favorite</div> -->
 								<div class="imgCon">
 									<img src="<c:url value='/static/image/2023聖誕節.jpg' />">
 								</div>
-								<div class="dataTitle">${eventData.getEventTitle()}</div>
+						<c:if test="${not empty eventData.getEventTitle()}">
+							<c:set  var="trimmedInfo"
+								value="${fn:substring(eventData.getEventTitle(), 0, 14)}" />
+<%-- 							${trimmedInfo} --%>
+								<div class="dataTitle ">
+									${trimmedInfo}
+								</div>
+								<c:if test="${fn:length(eventData.getEventTitle()) > 14}">
+						    </c:if>
+						</c:if>
+<%-- 							<div class="dataTitle">${eventData.getEventTitle()}</div> --%>
 								<div class="dataTime">${eventData.getEventTime()}</div>
 								<div class="dataPosi">${eventData.getLocation()}</div>
 							</div>
-						</a>
+
 					</c:forEach>
 						
 <%-- 					</c:if> --%>

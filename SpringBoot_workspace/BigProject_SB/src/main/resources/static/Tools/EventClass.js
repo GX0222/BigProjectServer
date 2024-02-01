@@ -4,10 +4,10 @@ function loadCategoryData(classId, element) {
         url: '/GetEventClass',  
         data: { classId: classId },
         success: function(data) {
-            console.log(data);
+//            console.log(data);
         },
         error: function(error) {
-            console.error(error);
+//            console.error(error);
         }
     });
 }
@@ -29,7 +29,7 @@ function loadCountyData(countyA){
 	var myid = "#"+$(countyA).prop("id");
 	var eventClassType = $(countyA).prop("id").substring(0,1);
 	var eventClassContent = $(countyA).prop("id").substring(1,2);
-	console.log($(countyA).prop("id").substring(0,1));
+//	console.log($(countyA).prop("id").substring(0,1));
 //	console.log($(countyA).prop("id").substring(1,2));
 //	var dataToServer = {"listCounty":$(countyA).text(),"eventClassType":eventClassType,"eventClassContent":eventClassContent};
 	var dataToServer = {"eventClassType":eventClassType,"eventClassContent":eventClassContent};
@@ -40,7 +40,7 @@ function loadCountyData(countyA){
 //    	dataType:"JSON",
     	data:dataToServer,
         success: function(data) {
-            $("#AAAA").html(data);
+            $("#EventListShow").html(data);
             selectEventOnClick();
 //           $(document).ready(function(){
 			var element=$(".nav-link.active");

@@ -61,7 +61,7 @@
 	<%@ include file="../Shared/PageNavBar.jsp"%>
 	<!-- navBar End -->
 
-	<div id="AAAA" class="center">
+	<div id="EventListShow" class="center">
 		<div>
 			<ul id="infoUlbar" class="nav nav-pills infoUlbar">
 				<li class="ulName"><a id="hall" class="nav-link active"
@@ -112,9 +112,9 @@
 					<c:forEach items="${eventList}" var="event" varStatus="loop">
 						<c:if test="${(currentPage * pageSize) + loop.index < 10}">
 							<li class="dataList">
-								<button type="button"
-									onclick="checkLoginAndSubmit(${event.getId()})"
-									class="favoriteButton">收藏</button>
+<!-- 								<button type="button" -->
+<%-- 									onclick="checkLoginAndSubmit(${event.getId()})" --%>
+<!-- 									class="favoriteButton">收藏</button> -->
 								<div class="dataDay">${event.getStartTime()}</div>
 								<div class="dataCounty">${event.getCounty()}</div> <a
 								class="eventLink selectEvent" data-event="${event.getId() }"

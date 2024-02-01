@@ -151,7 +151,7 @@
                	"hb5":$("#checkbox5").prop("checked")?"true":"false",
                	"data":dataURL
             });
-        	console.log("update time :"+imageUpdate_check.toString());
+//         	console.log("update time :"+imageUpdate_check.toString());
         	imageUpdate_check = 0;
         }else{
         	var dataToServer=({
@@ -170,17 +170,17 @@
             });
         }
     	
-        console.log(dataToServer);
+//         console.log(dataToServer);
         $.ajax({
         url: "/getJson4",
         dataType: "JSON",
         type: "post",
         data:dataToServer,
         success: function (msg) {
-            console.log("OK");
+//             console.log("OK");
             window.location = "/List";},
         error:function(error){
-        	console.log(error.responseText);
+//         	console.log(error.responseText);
         }
         
         })
@@ -231,8 +231,8 @@
                         canvas.height = image.height;
                         img_height = image.height;
                         img_width = image.width;
-                     console.log("new w:"+canvas.width);
-                     console.log("new h:"+canvas.height);
+//                      console.log("new w:"+canvas.width);
+//                      console.log("new h:"+canvas.height);
                      context.drawImage(image, 0, 0);
                     
                     }else if(image.width/16 >image.height/9){
@@ -240,8 +240,8 @@
                     	canvas.width = (image.height/9*16);
                     	img_height = image.height;
                         img_width = image.width;
-                     console.log("new w:"+canvas.width);
-                     console.log("new h:"+canvas.height);
+//                      console.log("new w:"+canvas.width);
+//                      console.log("new h:"+canvas.height);
                      start = (image.width-(image.height/9*16))/2;
                      end= 0;
                      context.drawImage(image, start,end,canvas.width,canvas.height,0,0,canvas.width,canvas.height);
@@ -250,8 +250,8 @@
                     	canvas.height = image.width/16*9;
                     	img_height = image.height;
                         img_width = image.width;
-                     console.log("new w:"+canvas.width);
-                     console.log("new h:"+canvas.height);
+//                      console.log("new w:"+canvas.width);
+//                      console.log("new h:"+canvas.height);
                      start = 0;
                      end = (image.height-(image.width/16*9))/2;
                      context.drawImage(image, start,end,canvas.width,canvas.height,0,0,canvas.width,canvas.height);
