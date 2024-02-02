@@ -127,7 +127,7 @@
 						<div class="collapse navbar-collapse" id="mynavbar">
 							<ul class="navbar-nav me-auto mb-2 mb-lg-0">
 								<li class="nav-item"><a id="news" class="nav-link"
-									aria-current="page" href="<c:url value='/EventList' />">
+									aria-current="page" href="<c:url value='/EventList#' />">
 										活動資訊 </a></li>
 								<li class="nav-item"><a id="trans" class="nav-link"
 									aria-current="page" href="<c:url value='/Trafficimfor' />">
@@ -215,36 +215,37 @@
 		<div class="homeCenter col-12 col-md-9 order-2 order-md-1">
 			<div class="row m-0 p-0 w-100">
 				<div class="col m-0 p-0">
-					<a href="<c:url value='/EventList' />" class="aa">
-						<div class="classIcon">
+					<a href="<c:url value='/EventList#' />" class="aa">
+						<div id="h1" class="classIcon">
 							<img src="<c:url value='/static/image/a011.png' />">
 						</div>
 					</a>
 				</div>
 				<div class="col m-0 p-0">
-					<a href="<c:url value='/EventList' />" class="aa">
-						<div class="classIcon">
+					<a href="<c:url value='/EventList#' />" class="aa">
+						<div id="h2" class="classIcon">
 							<img src="<c:url value='/static/image/a012.png' />">
 						</div>
 					</a>
 				</div>
 				<div class="col m-0 p-0">
-					<a href="<c:url value='/EventList' />" class="aa">
-						<div class="classIcon">
+					<a href="<c:url value='/EventList#' />" class="aa">
+						<div id="h3" class="classIcon">
 							<img src="<c:url value='/static/image/a013.png' />">
 						</div>
 					</a>
 				</div>
 				<div class="col m-0 p-0">
-					<a href="<c:url value='/EventList' />" class="aa">
-						<div class="classIcon">
+					<a href="<c:url value='/EventList#' />" class="aa">
+						<div id="h4" class="classIcon">
 							<img src="<c:url value='/static/image/a014.png' />">
 						</div>
 					</a>
 				</div>
 				<div class="col m-0 p-0">
-					<a href="<c:url value='/Ian/index' />" class="aa">
-						<div class="classIcon">
+<%-- 					<a href="<c:url value='/Ian/index' />" class="aa"> --%>
+					<a href="<c:url value='/EventList#' />" class="aa">
+						<div id="h5" class="classIcon">
 							<img src="<c:url value='/static/image/a015.png' />">
 						</div>
 					</a>
@@ -315,8 +316,8 @@
 						<div class="row justify-content-center m-0 p-0">
 
 							<div class="cityCol col-6">
-								<a href="<c:url value='/EventList' />" class="newsA">
-									<div class="cityDiv card">
+								<a href="<c:url value='/EventList#' />" class="newsA">
+									<div id="c0" class="cityDiv card">
 										<img class="cityImg rounded card-img-top"
 											src="<c:url value='/static/image/台北市.png' />">
 										<div class="card-img-overlay">
@@ -327,8 +328,8 @@
 							</div>
 
 							<div class="cityCol col-6">
-								<a href="<c:url value='/EventList' />" class="newsA">
-									<div class="cityDiv card">
+								<a href="<c:url value='/EventList#' />" class="newsA">
+									<div id="c1" class="cityDiv card">
 										<img class="cityImg rounded card-img-top"
 											src="<c:url value='/static/image/新北市.png' />">
 										<div class="card-img-overlay">
@@ -340,8 +341,8 @@
 						</div>
 					</div>
 					<div class="cityCol col-0 col-lg-4">
-						<a href="<c:url value='/EventList' />" class="newsA">
-							<div class="cityDiv card">
+						<a href="<c:url value='/EventList#' />" class="newsA">
+							<div  id="c2" class="cityDiv card">
 								<img class="cityImgV2 rounded card-img-top"
 									src="<c:url value='/static/image/桃園市.png' />">
 								<div class="card-img-overlay">
@@ -355,8 +356,8 @@
 
 				<div class="row justify-content-center m-0 p-0">
 					<div class="cityColV2 col-4">
-						<a href="<c:url value='/EventList' />" class="newsA">
-							<div class="cityDiv card">
+						<a href="<c:url value='/EventList#' />" class="newsA">
+							<div id="c3" class="cityDiv card">
 								<img class="cityImg rounded card-img-top"
 									src="<c:url value='/static/image/台中市.png' />">
 								<div class="card-img-overlay">
@@ -366,8 +367,8 @@
 						</a>
 					</div>
 					<div class="cityColV2 col-4">
-						<a href="<c:url value='/EventList' />" class="newsA">
-							<div class="cityDiv card">
+						<a href="<c:url value='/EventList#' />" class="newsA">
+							<div id="c4" class="cityDiv card">
 								<img class="cityImg rounded card-img-top"
 									src="<c:url value='/static/image/台南市.png' />">
 								<div class="card-img-overlay">
@@ -377,8 +378,8 @@
 						</a>
 					</div>
 					<div class="cityColV2 col-4">
-						<a href="<c:url value='/EventList' />" class="newsA">
-							<div class="cityDiv card">
+						<a href="<c:url value='/EventList#' />" class="newsA">
+							<div id="c5" class="cityDiv card">
 								<img class="cityImg rounded card-img-top"
 									src="<c:url value='/static/image/高雄市.png' />">
 								<div class="card-img-overlay">

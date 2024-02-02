@@ -1,16 +1,16 @@
-function loadCategoryData(classId, element) {
-    $.ajax({
-        type: 'GET',
-        url: '/GetEventClass',  
-        data: { classId: classId },
-        success: function(data) {
-//            console.log(data);
-        },
-        error: function(error) {
-//            console.error(error);
-        }
-    });
-}
+//function loadCategoryData(classId, element) {
+//    $.ajax({
+//        type: 'GET',
+//        url: '/GetEventClass',  
+//        data: { classId: classId },
+//        success: function(data) {
+////            console.log(data);
+//        },
+//        error: function(error) {
+////            console.error(error);
+//        }
+//    });
+//}
 
 function loadCountyData(countyA){
 //	var element=$(".nav-link.active");
@@ -25,10 +25,11 @@ function loadCountyData(countyA){
 				
 //	console.log("countyA"+$(countyA).text());
 //	console.log("countyA"+$(countyA).prop("id"));
-
 	var myid = "#"+$(countyA).prop("id");
 	var eventClassType = $(countyA).prop("id").substring(0,1);
 	var eventClassContent = $(countyA).prop("id").substring(1,2);
+
+
 //	console.log($(countyA).prop("id").substring(0,1));
 //	console.log($(countyA).prop("id").substring(1,2));
 //	var dataToServer = {"listCounty":$(countyA).text(),"eventClassType":eventClassType,"eventClassContent":eventClassContent};
@@ -68,3 +69,14 @@ function loadCountyData(countyA){
 ////        console.log(this);
 //        $('html, body').scrollTop(0);
 }
+
+$(document).ready(function() {
+	if("myDataClassId" in sessionStorage){
+		var dataclass = sessionStorage.getItem("myDataClassId");
+//		console.log(dataclass);
+		$("#"+dataclass).click();
+//		sessionStorage.setItem("myDataClassId", "#hall");
+		sessionStorage.removeItem('myDataClassId');
+	}
+	
+})
