@@ -166,6 +166,7 @@ public class WeatherTool {
 		if (cache[0] == (null) || cache[0].isEmpty()) {
 			get1stNowWeather();
 		}
+        city = city.replace("台", "臺");
 		System.out.println(city);
 		for (Map<String, Object> data : cache[cacheIndex]) {
 			if (((String) data.get("CountyName")).equals(city)) {
@@ -188,6 +189,7 @@ public class WeatherTool {
 
 	public Map<String, Object> getNowWeatherByTown(String city, String town) {
 		List<Map<String, Object>> cityData = new ArrayList<>();
+		city = city.replace("台", "臺");
 		cityData = getNowWeatherByCity(city, 0);
 		if(!checkTown (city, town)) {
 			town = townNameListByCountyCache.get(0);

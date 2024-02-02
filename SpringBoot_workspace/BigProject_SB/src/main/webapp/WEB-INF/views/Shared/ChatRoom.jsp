@@ -8,19 +8,33 @@
 	<div class="ChatRoom">
 		Public Room
         <div class="Room">
-            <div class="CRText">
+            <div id="PublicRoomCRT" class="CRText">
                 <div id ="PublicRoom" class="simplebar-content-wrapper" data-simplebar>
+                      
                 </div>
             </div>
             <div class="CRInput">
-                <input type="text" placeholder="請輸入...">
+                <%-- <input type="text" class="" placeholder="Aa" aria-label="Aa" aria-describedby="PublicRoomBtn">
+                <button id="PublicRoomBtn" class="" type="button">Submit</button> --%>
+                <p contenteditable="true">Aa</p>
+                <span class="material-symbols-outlined">send</span>
             </div>
         </div>
 	</div>
     <div class="ChatRoom">
 		私人 Room
-        <div class="Room">          
-            
+        <div class="Room">
+            <div  class="CRText">
+                <div id ="PerSonRoom" class="simplebar-content-wrapper" data-simplebar>
+                      
+                </div>
+            </div>
+            <div class="CRInput">
+                <%-- <input type="text" class="" placeholder="Aa" aria-label="Aa" aria-describedby="PublicRoomBtn">
+                <button id="PublicRoomBtn" class="" type="button">Submit</button> --%>
+                <p contenteditable="true">Aa</p>
+                <span class="material-symbols-outlined">send</span>
+            </div>
         </div>
 	</div>
 </div>

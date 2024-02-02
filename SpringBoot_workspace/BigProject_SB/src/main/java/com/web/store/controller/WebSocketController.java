@@ -1,5 +1,8 @@
 package com.web.store.controller;
 
+import java.util.HashMap;
+import java.util.Map;
+
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.messaging.handler.annotation.MessageMapping;
 import org.springframework.messaging.simp.SimpMessagingTemplate;
@@ -7,30 +10,41 @@ import org.springframework.messaging.simp.annotation.SubscribeMapping;
 import org.springframework.scheduling.annotation.Scheduled;
 import org.springframework.web.bind.annotation.RestController;
 
+import com.web.store.service.MemberPictureService;
+
 @RestController
 public class WebSocketController {
+
+	MemberPictureService memberPictureService;
+	
+	public WebSocketController(MemberPictureService memberPictureService) {
+		super();
+		this.memberPictureService = memberPictureService;
+	}
 
 	@Autowired
 	private SimpMessagingTemplate messagingTemplate;
 
 	@Scheduled(fixedRate = 6000) // 每分鐘觸發一次
 	public void sendDataToClient() {
+		Map<String, String> mesgMap = new HashMap<>();
 		String newData = "MHWMHWMHW";
+		Integer memID = 1;
+		String sendMemImg = memberPictureService.getImgByMemberId(memID);
+		mesgMap.put("mesg", newData);
+		mesgMap.put("sendMemImg", sendMemImg);
 		System.out.println("送送送");
 		// 使用 WebSocket 向前端傳送新數據
-		messagingTemplate.convertAndSend("/WSMessage/Mes", newData);
+		messagingTemplate.convertAndSend("/WSMessage/Mes", mesgMap);
 	}
 	
 	@MessageMapping("/WSMessage/Mes")
 	public void handleSubscription(String message) {
-	    // 在這裡處理接收到的消息
 	    System.out.println("Received message: " + message);
 	}
 
-	// 或使用 @SubscribeMapping 註釋處理訂閱消息
 	@SubscribeMapping("/WSMessage/Mes")
 	public String handleSubscription() {
-	    // 在這裡返回初始數據
 	    return "subscribe";
 	}
 

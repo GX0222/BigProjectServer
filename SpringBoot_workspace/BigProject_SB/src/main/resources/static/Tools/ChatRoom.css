@@ -1,16 +1,17 @@
 @charset "UTF-8";
+
 #ChatRoomCon {
-    position: fixed;
-    z-index: 87;
-    margin: 10px;
-    padding: 0;
-    background-color: aqua;
-    height: 300px;
-    width: 80px;
-    bottom: 0;
-    right: 0;
+	position: fixed;
+	z-index: 87;
+	margin: 10px;
+	padding: 0;
+	background-color: aqua;
+	height: 300px;
+	width: 80px;
+	bottom: 0;
+	right: 0;
 	display: flex;
-    flex-direction: column-reverse;
+	flex-direction: column-reverse;
 }
 
 #ChatRoomCon .ChatRoom {
@@ -21,15 +22,93 @@
 	aspect-ratio: 1/1;
 }
 
-#ChatRoomCon .ChatRoom .Room {
+#ChatRoomCon>.ChatRoom>.Room {
 	position: absolute;
 	background-color: white;
 	border-radius: 5px;
-	margin: 5px;
+	margin: 0px;
 	border: 2px solid rgb(142, 94, 69);
 	right: 90px;
 	bottom: 0px;
 	height: 0px;
 	width: 0px;
 	display: none;
+}
+
+#ChatRoomCon>.ChatRoom>.Room>.CRText {
+	margin: 0px;
+	padding: 0px;
+	width: 100%;
+	height: calc(100% - 50px);
+	/* border: 2px solid rgb(142, 94, 69); */
+	background-color: aquamarine;
+}
+
+div.CRText div.resBigBox{
+	/* background-color: rgb(69, 71, 142); */
+	color: aliceblue;
+	margin: 0px;
+	padding: 5px;
+	width: 100%;
+}
+
+div.CRText div.resBox{
+	background-color: rgb(142, 94, 69);
+	color: aliceblue;
+	margin: 0px;
+	padding: 5px;
+	max-width: 260px;
+	white-space: pre-wrap;
+	display: inline-flex;
+}
+
+img.resMemImg{
+	height: 40px;
+	width: 40px;
+}
+
+#ChatRoomCon>.ChatRoom>.Room>.CRInput {
+	min-height: 50px;
+	max-height: 144px;
+	height: auto;
+	margin: 0px;
+	padding: 5px;
+	display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+#ChatRoomCon>.ChatRoom>.Room>.CRInput>input,
+#ChatRoomCon>.ChatRoom>.Room>.CRInput>p{
+	margin: 0px;
+	padding: 5px 5px 5px 5px;
+	min-height: 40px;
+	max-height: 134px;
+	height: auto;
+	width: 250px;
+	border: 2px solid rgb(142, 94, 69);
+	border-radius: 5px;
+  	font-size: 20px;
+}
+
+#ChatRoomCon>.ChatRoom>.Room>.CRInput>span{
+	margin: 0px;
+	padding: 0px;
+	height: 40px;
+	width: 40px;
+}
+
+#ChatRoomCon>.ChatRoom>.Room>.CRInput>input:focus,
+#ChatRoomCon>.ChatRoom>.Room>.CRInput>p:focus {
+	outline: none;
+}
+
+#ChatRoomCon .material-symbols-outlined {
+	color: rgb(142, 94, 69);
+	text-shadow: none !important;
+  font-variation-settings:
+  'FILL' 0,
+  'wght' 400,
+  'GRAD' 0,
+  'opsz' 15
 }
