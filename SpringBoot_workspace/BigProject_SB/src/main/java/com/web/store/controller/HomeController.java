@@ -107,6 +107,8 @@ public class HomeController {
 				trackService.addNewTrack(mb.getMemberId());
 				mtb = trackService.findByMemberId(mb.getMemberId());
 			}
+			Integer WSMemID = memID;
+			model.addAttribute("WebSocketMemID", WSMemID);
 			return true;
 		} else {
 //			guest
@@ -114,6 +116,8 @@ public class HomeController {
 			session.setAttribute("member", mb);
 			memImg = memberPictureService.getImgByMemberId(2);
 			session.setAttribute("memberImg", memImg);
+			Integer WSMemID = 2;
+			model.addAttribute("WebSocketMemID", WSMemID);
 			return false;
 		}
 	}

@@ -14,14 +14,12 @@
                 </div>
             </div>
             <div class="CRInput">
-                <%-- <input type="text" class="" placeholder="Aa" aria-label="Aa" aria-describedby="PublicRoomBtn">
-                <button id="PublicRoomBtn" class="" type="button">Submit</button> --%>
-                <p contenteditable="true">Aa</p>
-                <span class="material-symbols-outlined">send</span>
+                <p class="simplebar-content-wrapper" contenteditable="true" data-simplebar></p>
+                <span class="SendMesg material-symbols-outlined" data-memID="${member.getMemberId()}">send</span>
             </div>
         </div>
 	</div>
-    <div class="ChatRoom">
+    <!-- <div class="ChatRoom">
 		私人 Room
         <div class="Room">
             <div  class="CRText">
@@ -30,11 +28,9 @@
                 </div>
             </div>
             <div class="CRInput">
-                <%-- <input type="text" class="" placeholder="Aa" aria-label="Aa" aria-describedby="PublicRoomBtn">
-                <button id="PublicRoomBtn" class="" type="button">Submit</button> --%>
-                <p contenteditable="true">Aa</p>
-                <span class="material-symbols-outlined">send</span>
+                <p class="simplebar-content-wrapper" contenteditable="true" data-simplebar></p>
+                <span class="SendMesg material-symbols-outlined" data-memID="${member.getMemberId()}">send</span>
             </div>
         </div>
-	</div>
+	</div> -->
 </div>
