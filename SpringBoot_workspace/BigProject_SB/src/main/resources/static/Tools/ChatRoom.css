@@ -15,15 +15,21 @@
 }
 
 #ChatRoomCon .ChatRoom {
-	background-color: white;
+/* 	background-color: white; */
 	border-radius: 5px;
 	margin: 5px;
-	border: 2px solid rgb(142, 94, 69);
+/* 	border: 2px solid rgb(142, 94, 69); */
 	aspect-ratio: 1/1;
 }
 
+.azxc{
+	width: 4.5vw;
+	height: 3.5vw;
+	
+}
+
 .CRSelected {
-	box-shadow: 0 0 5px;
+/* 	box-shadow: 0 0 5px; */
 }
 
 .NewMesg {
@@ -178,3 +184,4 @@ img.resMemImg{
   'GRAD' 0,
   'opsz' 15
 }
+

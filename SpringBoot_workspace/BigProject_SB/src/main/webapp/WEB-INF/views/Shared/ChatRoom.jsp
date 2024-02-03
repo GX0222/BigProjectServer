@@ -6,7 +6,8 @@
 <!DOCTYPE html>
 <div id="ChatRoomCon">
 	<div class="ChatRoom">
-		Public Room
+<!-- 		Public Room -->
+		<img class="azxc" src="<c:url value='/static/image/chat.png' />">
         <div class="Room">
             <div id="PublicRoomCRT" class="CRText">
                 <div id ="PublicRoom" class="simplebar-content-wrapper" data-simplebar>

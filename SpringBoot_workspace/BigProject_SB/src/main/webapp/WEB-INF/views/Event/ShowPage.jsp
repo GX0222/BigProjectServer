@@ -57,9 +57,9 @@
 					<c:forEach items="${eventList}" var="event" varStatus="loop">
 						<c:if test="${(currentPage * pageSize) + loop.index < 10}">
 							<li class="dataList">
-								<button type="button"
-									onclick="checkLoginAndSubmit(${event.getId()})"
-									class="favoriteButton">收藏</button>
+<!-- 								<button type="button" -->
+<%-- 									onclick="checkLoginAndSubmit(${event.getId()})" --%>
+<!-- 									class="favoriteButton">收藏</button> -->
 								<div class="dataDay">${event.getStartTime()}</div>
 								<div class="dataCounty">${event.getCounty()}</div> <a
 								class="eventLink selectEvent" data-event="${event.getId() }"
