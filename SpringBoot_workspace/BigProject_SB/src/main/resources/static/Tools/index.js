@@ -11,3 +11,9 @@ $(document).ready(function() {
         }
     });
 });
+
+$(".classIcon, .cityDiv").on("click",function(){
+//	console.log($(this).prop("id"));
+//	alert($(this).prop("id"));
+	sessionStorage.setItem("myDataClassId", $(this).prop("id"));
+})
