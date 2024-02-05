@@ -1,7 +1,7 @@
 $(document).ready(function () {
     $("#ChatRoomCon").on("click", ".ChatRoom", function (e) {
         e.preventDefault();
-        $(this).removeClass("NewMesg");
+        $(this).find(".azxc").removeClass("NewMesg");
         if (!$(e.target).closest('.Room').length) {
             var $room = $(this).find('.Room');
 

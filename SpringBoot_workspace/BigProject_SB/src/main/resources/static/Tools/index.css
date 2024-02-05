@@ -102,9 +102,10 @@ div.smallNewsGroup {
 }
 
 div.smallNews {
-	max-height: 100px;
+	min-height: 100px;
+/* 	height: auto; */
 	width: 100%;
-	aspect-ratio: 1/1;
+/* 	aspect-ratio: 1/1; */
 	font-weight: bold;
 	font-size: x-large;
 	color: rgb(142, 94, 69);
@@ -115,7 +116,7 @@ div.smallNews {
 	padding: 1vw;
 	background-color: white;
 	overflow: hidden;
-	box-shadow: 5px 5px 0 #8E5E45
+	box-shadow: 5px 5px 0 #8E5E45;
 }
 
 div.snTitle {
