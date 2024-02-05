@@ -67,6 +67,7 @@ public class EventServiceImpl implements EventService {
 	@Override
 	public Page<EventsBean> getEventsByCounty(String county, int pageNo, int pageSize) {
 		// 使用分頁查詢方法
+		county.replace("臺", "台");
 		return eventDao.findByCounty(county, PageRequest.of(pageNo, pageSize));
 	}
 
@@ -89,7 +90,7 @@ public class EventServiceImpl implements EventService {
 
 	@Override
 	public List<EventsBean> findByEventTitle(String eventTitle) {
-
+		
 		return eventDao.findByEventTitle(eventTitle);
 	}
 
@@ -112,13 +113,14 @@ public class EventServiceImpl implements EventService {
 
 	@Override
 	public List<EventsBean> findByCounty(String county) {
-
+		county.replace("臺", "台");
 		return eventDao.findByCounty(county);
 	}
 
 	@Override
 	public Page<EventsBean> getEventPageClass(int pageNum, int pageSize, String county) {
 		Pageable pageable = PageRequest.of(pageNum - 1, pageSize);
+		county.replace("臺", "台");
         return eventDao.findByCounty(county, pageable);
 	}
 
