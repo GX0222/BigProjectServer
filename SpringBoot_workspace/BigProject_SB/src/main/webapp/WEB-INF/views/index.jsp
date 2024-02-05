@@ -402,11 +402,12 @@
 					<div class="smallNews">
 						<a	class="smallNewsa eventLink selectEvent" data-event="${smallNew.getId() }"
 								data-track="false">
-						<div class="snTitle">${smallNew.getEventTitle() }→</div>
+						<div class="snTitle">${smallNew.getEventTitle() } →</div>
 						<!-- 						<div class="snTime"> -->
 						<%-- 							${smallNew.getStartTime() } --%>
 						<!-- 						</div> -->
 						<!-- 						<div class="snLocation"> -->
+						<hr>
 						<div class="snInfo">${smallNew.getLocation() }</div>
 						<!-- 						</div> -->
 						<!-- 						<div class="snInfo"> -->

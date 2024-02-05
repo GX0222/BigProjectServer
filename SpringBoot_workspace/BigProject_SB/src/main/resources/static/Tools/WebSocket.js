@@ -58,7 +58,7 @@ $(document).ready(function () {
             mesgList.forEach(function (message) {
                 console.log(message);
                 if (!ChatRoom.hasClass("CRSelected")) {
-                    ChatRoom.addClass("NewMesg");
+                    $("azxc").addClass("NewMesg");
                 }
                 console.log("REQ: " + memID);
                 if (memID == message.sendMemID) {
