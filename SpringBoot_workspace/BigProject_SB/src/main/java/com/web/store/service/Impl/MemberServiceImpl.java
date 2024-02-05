@@ -39,6 +39,11 @@ public class MemberServiceImpl implements MemberService {
 		return memberDao.save(mb);
 	}
 
+	@Override
+	public MemberBean findByMemberId(Integer memberID) {
+		return memberDao.findByMemberId(memberID);
+	}
+
 
 
 }

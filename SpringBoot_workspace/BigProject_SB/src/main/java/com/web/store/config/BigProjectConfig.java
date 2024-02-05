@@ -15,20 +15,25 @@ import org.springframework.web.socket.config.annotation.WebSocketMessageBrokerCo
 @EnableWebSocket
 @EnableWebSocketMessageBroker
 public class BigProjectConfig implements WebSocketMessageBrokerConfigurer {
+	
+	public BigProjectConfig() {
+	}
+	
     @Bean
     JdbcTemplate jdbcTemplate(DataSource dataSource) {
         return new JdbcTemplate(dataSource);
     }
     
     @Override
+    public void configureMessageBroker(MessageBrokerRegistry registry) {
+    	registry.enableSimpleBroker("/WSMessage");
+    	registry.setApplicationDestinationPrefixes("/WSCommand");
+    }
+
+    @Override
     public void registerStompEndpoints(StompEndpointRegistry registry) {
         registry.addEndpoint("/WebSocket");
 //        registry.addEndpoint("/WebSocket").withSockJS();
     }
 
-    @Override
-    public void configureMessageBroker(MessageBrokerRegistry registry) {
-        registry.enableSimpleBroker("/WSMessage");
-        registry.setApplicationDestinationPrefixes("/WSCommand");
-    }
 }

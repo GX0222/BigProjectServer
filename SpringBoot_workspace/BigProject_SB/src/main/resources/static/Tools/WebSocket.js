@@ -1,5 +1,4 @@
 
-// 創建 StompJs 客戶端並設置參數
 const client = new StompJs.Client({
     brokerURL: 'ws://localhost:80/WebSocket',
     debug: function (str) {
@@ -10,24 +9,100 @@ const client = new StompJs.Client({
     heartbeatOutgoing: 4000,
 });
 
+var ChatRoomCount = 0;
+
 client.onConnect = function (frame) {
     console.log('WebSocket connected!');
-    client.subscribe('/WSMessage/Mes', function (message) {
+    client.subscribe('/WSMessage/Subscribe', function (message) {
         var parsedBody = JSON.parse(message.body);
         var publicRoom = $("#PublicRoom");
-        var messageElement = $("<div class='resBox'>").text(parsedBody.mesg);
-        var memImg = $("<img class='resMemImg rounded-circle img-fluid'>").attr('src', "data:image/png;base64, "+parsedBody.sendMemImg);
-        var mesgg = $("<div class='resBigBox'>").append(memImg).append(messageElement);
-        publicRoom.find(".simplebar-content").append(mesgg); 
+        var ChatRoom = publicRoom.closest(".ChatRoom");
+        if (!ChatRoom.hasClass("CRSelected")) {
+            ChatRoom.addClass("NewMesg");
+        }
+        var memID = $("#ChatRoomCon > .ChatRoom > .Room > .CRInput").find("span").data("memid");
+        console.log("REQ: " + memID);
+        if (memID == parsedBody.sendMemID) {
+            var memImg = $("<img class='resMemImg rounded-circle img-fluid'>").attr('src', "data:image/png;base64, " + parsedBody.sendMemImg);
+            var mesgText = $("<div class='selfMesg'>").append(parsedBody.mesg);
+            var mesgCon = $("<div class='selfBigBox'>").append(mesgText);
+            publicRoom.find(".simplebar-content").append(mesgCon);
+        } else {
+            var memImg = $("<img class='resMemImg rounded-circle img-fluid'>").attr('src', "data:image/png;base64, " + parsedBody.sendMemImg);
+            var memName = $("<div class='resMemName'>").text(parsedBody.sendMemName);
+            var memInfo = $("<div class='resMemInfo'>").append(memImg).append(memName);
+            var mesgText = $("<div class='resMesg'>").append(parsedBody.mesg);
+            var mesgCon = $("<div class='resBigBox'>").append(memInfo).append(mesgText);
+            publicRoom.find(".simplebar-content").append(mesgCon);
+        }
+        setTimeout(function () {
+            var scrollElement = publicRoom.find('.simplebar-content-wrapper')[0];
+            $(scrollElement).animate({
+                scrollTop: scrollElement.scrollHeight
+            }, 500);
+        }, 10);
     });
 };
 
-// 定義 onStompError 函數，用於處理 Stomp 錯誤
+$(document).ready(function () {
+    $.ajax({
+        url: "/UpdateChat",
+        type: 'POST',
+        contentType: 'application/json',
+        dataType: 'json',
+        data: JSON.stringify({}),
+        success: function (mesgList) {
+            var publicRoom = $("#PublicRoom");
+            var ChatRoom = publicRoom.closest(".ChatRoom");
+            var memID = $("#ChatRoomCon > .ChatRoom > .Room > .CRInput").find("span").data("memid");
+            mesgList.forEach(function (message) {
+                console.log(message);
+                if (!ChatRoom.hasClass("CRSelected")) {
+                    ChatRoom.addClass("NewMesg");
+                }
+                console.log("REQ: " + memID);
+                if (memID == message.sendMemID) {
+                    var memImg = $("<img class='resMemImg rounded-circle img-fluid'>").attr('src', "data:image/png;base64, " + message.sendMemImg);
+                    var mesgText = $("<div class='selfMesg'>").append(message.mesg);
+                    var mesgCon = $("<div class='selfBigBox'>").append(mesgText);
+                    publicRoom.find(".simplebar-content").append(mesgCon);
+                } else {
+                    var memImg = $("<img class='resMemImg rounded-circle img-fluid'>").attr('src', "data:image/png;base64, " + message.sendMemImg);
+                    var memName = $("<div class='resMemName'>").text(message.sendMemName);
+                    var memInfo = $("<div class='resMemInfo'>").append(memImg).append(memName);
+                    var mesgText = $("<div class='resMesg'>").append(message.mesg);
+                    var mesgCon = $("<div class='resBigBox'>").append(memInfo).append(mesgText);
+                    publicRoom.find(".simplebar-content").append(mesgCon);
+                }
+            });
+            setTimeout(function () {
+                var scrollElement = publicRoom.find('.simplebar-content-wrapper');
+                $(scrollElement).animate({
+                    scrollTop: scrollElement.scrollHeight
+                }, 0);
+            }, 10);
+            console.log('聊天訊息同步成功！');
+        },        
+        error: function (error) {
+            console.error('Error retrieving MesgList data:', error);
+        }
+    });
+});
+
 client.onStompError = function (frame) {
     console.log('Broker reported error: ' + frame.headers['message']);
     console.log('Additional details: ' + frame.body);
 };
 
-// 啟動客戶端
 client.activate();
+
+
+function sendMessage(topic, message) {
+    console.log(message);
+    console.log(topic);
+    client.publish({
+        destination: topic,
+        body: JSON.stringify(message)
+    });
+}
 
