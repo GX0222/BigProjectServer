@@ -1,7 +1,11 @@
+<%@ page import="java.util.ArrayList" %>
+<%@ page import="java.util.List" %>
+<%@ page import ="com.web.store.model.EventsBean" %>
 <%@ page language="java" contentType="text/html; charset=UTF-8"
     pageEncoding="UTF-8"%>
 <%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c"%>
 <%@ taglib uri="http://java.sun.com/jsp/jstl/functions" prefix="fn"%>
+
 <!DOCTYPE html>
 <html lang="en">
 
@@ -58,30 +62,54 @@
 
 <%-- 					<c:if test="${not empty eventDataList}"> --%>
 					
-					 <c:forEach var="eventData" items="${eventDataList}">
+<%-- 					 <c:forEach var="eventData" items="${eventDataList}"> --%>
+						<%List<Object> out2 = (List<Object>) request.getAttribute("eventDataList");
+	
+						// 获取eventDataList和imgstr
+						List<EventsBean> eventData = (List<EventsBean>) out2.get(0);
+						List<String> imgstr = (List<String>) out2.get(1);
+						for (int i = 0; i < eventData.size(); i++) {
+							%>
 
-							<div class="dataCon selectEvent" data-event="${eventData.getId() }">
+							<div class="dataCon selectEvent" data-event="<%=eventData.get(i).getId()%>">
 <!-- 								<div class="material-symbols-outlined">favorite</div> -->
 								<div class="imgCon">
-									<img src="<c:url value='/static/image/2023聖誕節.jpg' />">
+<%-- 									<img src="<c:url value='/static/image/2023聖誕節.jpg' />"> --%>
+									<img src="<%=imgstr.get(i) %>" >
+<%-- 									<img src="${EventImg}"> --%>
 								</div>
-						<c:if test="${not empty eventData.getEventTitle()}">
-							<c:set  var="trimmedInfo"
-								value="${fn:substring(eventData.getEventTitle(), 0, 14)}" />
+<%-- 						<c:if test="${not empty eventData.get(i).getEventTitle()}"> --%>
+						<% if(eventData.get(i).getEventTitle()!=null){
+							String trimmedInfo;
+							if(eventData.get(i).getEventTitle().length() >14){
+								trimmedInfo=eventData.get(i).getEventTitle().substring(0,14);
+							}else{
+								trimmedInfo=eventData.get(i).getEventTitle();
+							}
+							%>
+<%-- 							<c:set  var="trimmedInfo" --%>
+<%-- 								value="${fn:substring(eventData.get(i).getEventTitle(), 0, 14)}" /> --%>
+<%-- 								value="${fn:substring(eventData.get(i).getEventTitle(), 0, 14)}" /> --%>
 <%-- 							${trimmedInfo} --%>
 								<div class="dataTitle ">
-									${trimmedInfo}
+<%-- 									${trimmedInfo} --%>
+									<%=trimmedInfo%>
 								</div>
-								<c:if test="${fn:length(eventData.getEventTitle()) > 14}">
-						    </c:if>
-						</c:if>
+<%-- 								<c:if test="${fn:length(eventData.get(i).getEventTitle()) > 14}"> --%>
+
+<%-- 						    </c:if> --%>
+<%-- 						</c:if> --%>
+						<%} %>
 <%-- 							<div class="dataTitle">${eventData.getEventTitle()}</div> --%>
-								<div class="dataTime">${eventData.getEventTime()}</div>
-								<div class="dataPosi">${eventData.getLocation()}</div>
+
+<%-- 								<div class="dataTime">${eventData.get(i).getEventTime()}</div> --%>
+								<div class="dataTime"><%=eventData.get(i).getEventTime()%></div>
+<%-- 								<div class="dataPosi">${eventData.get(i).getLocation()}</div> --%>
+								<div class="dataPosi"><%=eventData.get(i).getLocation()%></div>
 							</div>
 
-					</c:forEach>
-						
+<%-- 					</c:forEach> --%>
+						<%} %>
 <%-- 					</c:if> --%>
 					
 					

@@ -1,6 +1,8 @@
 package com.web.store.controller;
 
 import java.util.ArrayList;
+import java.util.Base64;
+import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
 
@@ -53,23 +55,49 @@ public class EventFavorController {
 		List<EventFavorBean> eventF = efs.selectEvents(memId);
 		System.out.println("memId : "+memId);
 		System.out.println(eventF);
+		
 		if (memId != null) {
+//			List<HashMap<String,Object>> out = new ArrayList<>();
+			List<Object> out = new ArrayList<>();
 			List<EventsBean> eventDataList = new ArrayList<>();
-
+			List<String> imgstr = new ArrayList<>();
+//			HashMap<String,Object> events=new HashMap<>();
 			for (EventFavorBean eventFF : eventF) {
 				Integer eventId = eventFF.getEventid();
 				System.out.println(eventId);
 				EventsBean eventData = es.findAllById(eventId);
 				eventDataList.add(eventData);
-
+//				events.put("eventData", eventData);
+				String temp;
+				if (eventData.getEventImage() == null) {
+					eventData =es.findById(4);
+					System.out.println("no pic");
+//					events.put("imgstr",("data:image/png;base64, "+Base64.getEncoder().encodeToString(eventData.getEventImage())));
+					temp = "data:image/png;base64, "+Base64.getEncoder().encodeToString(eventData.getEventImage());
+					imgstr.add(temp);
+//					imgstr.add("pic default");
+				}else {
+					System.out.println("pic");
+//					events.put("imgstr",("data:image/png;base64, "+Base64.getEncoder().encodeToString(eventData.getEventImage())));
+					
+					temp ="data:image/png;base64, "+Base64.getEncoder().encodeToString(eventData.getEventImage());
+					imgstr.add(temp);
+//					imgstr.add("pic event");
+				}
 				System.out.println("2");
+//				out.add(events);
 			}
 //	        Integer eventID = (Integer) session.getAttribute("eventID");
 //	        EventsBean eventDataList = es.findAllById(eventID);
+			
+			out.add(eventDataList);
+			out.add(imgstr);
+			
+//			System.out.println("ouy:"+out.get(0).get("eventData").getId());
+//			model.addAttribute("eventDataList", eventDataList);
+			model.addAttribute("eventDataList", out);
 
-			model.addAttribute("eventDataList", eventDataList);
-			System.out.println("3");
-			System.out.println(eventDataList);
+//			System.out.println(eventDataList);
 		}
 		System.out.println("4");
 	    return "Member/Love";
