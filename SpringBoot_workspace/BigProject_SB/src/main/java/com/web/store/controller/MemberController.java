@@ -60,6 +60,9 @@ public class MemberController {
 //	System.out.println(mb.getUsername());
 
 	String memImg = memberPictureService.getImgByMemberId(mb.getMemberId());
+	if (memImg == null || memImg.isEmpty()) {
+		memImg = memberPictureService.getImgByMemberId(2);
+	}
 	session.setAttribute("memberImg", memImg);
 //	System.out.println("GO member finished");
 	return "Member/Member";
