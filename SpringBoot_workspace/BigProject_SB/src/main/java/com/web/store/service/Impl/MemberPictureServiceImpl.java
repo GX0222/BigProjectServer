@@ -28,12 +28,28 @@ public class MemberPictureServiceImpl implements MemberPictureService {
 	@Override
 	public String getImgByMemberId(Integer memberId) {
 		MemberPictureBean memPicBeam;
+		byte[] MemPicByte;
 		memPicBeam = findByMemberId(memberId);
 		if(memPicBeam == null) {
 			addNewBean(memberId);
 		}
-		if(memPicBeam.getPicture() != null) {
-			byte[] MemPicByte = memPicBeam.getPicture();
+		MemPicByte = memPicBeam.getPicture();
+		if(MemPicByte == null) {
+//			byte[] MemPicByte = memPicBeam.getPicture();
+			MemPicByte = findByMemberId(2).getPicture();
+		}
+		return Base64.getEncoder().encodeToString(MemPicByte);
+	}
+
+	@Override
+	public String getSmallImgByMemberId(Integer memberId, Integer height, Integer width) {
+		MemberPictureBean memPicBeam;
+		memPicBeam = findByMemberId(memberId);
+		if(memPicBeam == null) {
+			addNewBean(memberId);
+		}
+		if(memPicBeam.getPicture() == null) {
+			byte[] MemPicByte = findByMemberId(2).getPicture();
             return Base64.getEncoder().encodeToString(MemPicByte);
 		}
 		return Base64.getEncoder().encodeToString(findByMemberId(2).getPicture());
@@ -53,5 +69,4 @@ public class MemberPictureServiceImpl implements MemberPictureService {
 		memPicDao.save(mpb);
 
 	}
-
 }

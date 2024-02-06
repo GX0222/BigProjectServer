@@ -8,4 +8,5 @@ import com.web.store.model.MemberPictureBean;
 @Repository
 public interface MemberPictureDao extends JpaRepository<MemberPictureBean, Integer> {
 	MemberPictureBean findByMemberId(Integer memberId);
+	byte[] getPictureByMemberId(Integer memberId);
 }
