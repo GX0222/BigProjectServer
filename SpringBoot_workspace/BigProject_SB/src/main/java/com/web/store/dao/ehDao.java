@@ -11,6 +11,7 @@ import com.web.store.model.ehBean;
 
 @Repository
 public interface ehDao extends JpaRepository<ehBean, Integer> {
+	@SuppressWarnings("null")
 	@Override
 	List<ehBean> findAll();
 

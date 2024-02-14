@@ -22,17 +22,22 @@ public class ChatRoomBean implements Serializable {
 	Integer eventId;
 	Integer senderId;
 	String mesg;
+	String senderName;
+	String senderAcc;
 	Date sendTime;
 
 	public ChatRoomBean() {
 	}
 
-	public ChatRoomBean(Integer id, Integer eventId, Integer senderId, String mesg, Date sendTime) {
+	public ChatRoomBean(Integer id, Integer eventId, Integer senderId, String mesg, String senderName, String senderAcc,
+			Date sendTime) {
 		super();
 		this.id = id;
 		this.eventId = eventId;
 		this.senderId = senderId;
 		this.mesg = mesg;
+		this.senderName = senderName;
+		this.senderAcc = senderAcc;
 		this.sendTime = sendTime;
 	}
 
@@ -68,6 +73,22 @@ public class ChatRoomBean implements Serializable {
 		this.mesg = mesg;
 	}
 
+	public String getSenderName() {
+		return senderName;
+	}
+
+	public void setSenderName(String senderName) {
+		this.senderName = senderName;
+	}
+
+	public String getSenderAcc() {
+		return senderAcc;
+	}
+
+	public void setSenderAcc(String senderAcc) {
+		this.senderAcc = senderAcc;
+	}
+
 	public Date getSendTime() {
 		return sendTime;
 	}
@@ -75,7 +96,5 @@ public class ChatRoomBean implements Serializable {
 	public void setSendTime(Date sendTime) {
 		this.sendTime = sendTime;
 	}
-
-	
 
 }

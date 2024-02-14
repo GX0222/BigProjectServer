@@ -16,7 +16,9 @@ import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.ResponseBody;
 
+import com.web.store.model.ChatRoomBean;
 import com.web.store.model.MemberBean;
+import com.web.store.service.ChatRoomService;
 import com.web.store.service.MemberPictureService;
 import com.web.store.service.MemberService;
 
@@ -27,12 +29,15 @@ public class WebSocketController {
 
 	MemberPictureService memberPictureService;
 	MemberService memberService;
+	ChatRoomService chatRoomService;
 	List<Map<String, String>> MesgList = new ArrayList<>();
 
-	public WebSocketController(MemberPictureService memberPictureService, MemberService memberService) {
+	public WebSocketController(MemberPictureService memberPictureService, MemberService memberService,
+			ChatRoomService chatRoomService) {
 		super();
 		this.memberPictureService = memberPictureService;
 		this.memberService = memberService;
+		this.chatRoomService = chatRoomService;
 	}
 
 	@Autowired
@@ -52,16 +57,16 @@ public class WebSocketController {
 //		System.out.println("送送送");
 //		messagingTemplate.convertAndSend("/WSMessage/Subscribe", mesgMap);
 //	}
-	
+
 	@MessageMapping("/UserSendMesg")
 	@SendTo("/WSMessage/Subscribe")
 	public Map<String, String> handleSubscription(Map<String, String> message) {
-	    System.out.println("收到訊息: " + message);
-	    Map<String, String> mesgMap = new HashMap<>();
+		System.out.println("收到訊息: " + message);
+		Map<String, String> mesgMap = new HashMap<>();
 		String newData = message.get("Mesg");
 		Integer memID = Integer.parseInt(message.get("MemID"));
 		String sendMemImg = memberPictureService.getImgByMemberId(memID);
-		if(sendMemImg == null || sendMemImg.isEmpty()) {
+		if (sendMemImg == null || sendMemImg.isEmpty()) {
 			sendMemImg = memberPictureService.getImgByMemberId(2);
 		}
 		MemberBean memBean = memberService.findByMemberId(memID);
@@ -73,18 +78,50 @@ public class WebSocketController {
 		mesgMap.put("sendMemID", memID.toString());
 		mesgMap.put("sendMemAcc", sendMemAcc);
 		MesgList.add(mesgMap);
+		ChatRoomBean chb = new ChatRoomBean();
+		chb.setSenderId(memID);
+		chb.setMesg(newData);
+		chb.setSenderName(sendMemName);
+		chb.setSenderAcc(sendMemAcc);
+		chatRoomService.save(chb);
 		return mesgMap;
 	}
-	
+
 	@PostMapping("/UpdateChat")
 	@ResponseBody
-	public List<Map<String, String>> updateChat(Model model, HttpSession session, @RequestBody Map<String, String> req) {
-		return MesgList;
+	public List<Map<String, String>> updateChat(Model model, HttpSession session,
+			@RequestBody Map<String, String> req) {
+		List<ChatRoomBean> sqlMesgList = new ArrayList<>();
+		sqlMesgList = chatRoomService.findAll();
+		if (sqlMesgList != null && !sqlMesgList.isEmpty()) {
+			List<Map<String, String>> sqlMesgMapList = new ArrayList<>();
+			for(ChatRoomBean sqlMesg :sqlMesgList) {
+				Map<String, String> sqlMesgMap = new HashMap<>();
+				Integer memID = sqlMesg.getSenderId();
+				String mesg = sqlMesg.getMesg();
+				String senderName = sqlMesg.getSenderName();
+				String senderAcc = sqlMesg.getSenderAcc();
+				String senderImg = memberPictureService.getImgByMemberId(memID);
+				if (senderImg == null || senderImg.isEmpty()) {
+					senderImg = memberPictureService.getImgByMemberId(2);
+				}
+				sqlMesgMap.put("mesg", mesg);
+				sqlMesgMap.put("sendMemImg", senderImg);
+				sqlMesgMap.put("sendMemName", senderName);
+				sqlMesgMap.put("sendMemID", memID.toString());
+				sqlMesgMap.put("sendMemAcc", senderAcc);
+				
+				sqlMesgMapList.add(sqlMesgMap);
+			}
+			System.out.println(sqlMesgMapList);
+			return sqlMesgMapList;
+		}
+			return null;
 	}
 
 	@SubscribeMapping("/Subscribe")
 	public String handleSubscription() {
-	    return "subscribe";
+		return "subscribe";
 	}
 
 }
