@@ -1,5 +1,7 @@
 $("#wtSelect").on("click", ".countyLink", function () {
     var selectedCounty = $(this).data("county");
+    $(".countyLink").removeClass("countySelected");
+    $(this).addClass("countySelected");
     $.ajax({
         type: "POST",
         url: "/getTownByCounty",
@@ -44,7 +46,7 @@ $("#wtSelect").on("click", ".countyLink", function () {
 $("#wtSelect").on("click", ".townLink", function () {
     var selectedTown = $(this).data("town");
     var selectedCounty = $(this).data("county");
-
+	$(".countyLink").removeClass("countySelected");
     $.ajax({
         type: "POST",
         url: "/getWeatherByTown",
@@ -90,6 +92,7 @@ $("#weatherTool").on("click", function () {
 });
 
 $("#wtClose").on("click", function () {
+	$(".countyLink").removeClass("countySelected");
     if($("#wtSelect").width() > 300){
         $("#townDivID").animate({ width: "0px" }, 500, function (){
             $(".townRow").remove();

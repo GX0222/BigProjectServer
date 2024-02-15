@@ -162,7 +162,17 @@ div.townLink {
 	border-radius: 5px;
 }
 
+#wtSelect div.countySelected {
+	border: 2px solid rgb(150, 115, 80);
+	border-radius: 5px;
+}
+
 #wtSelect div.townLink:hover {
+	border: 2px solid rgb(150, 115, 80);
+	border-radius: 5px;
+}
+
+#wtSelect div.townSelected {
 	border: 2px solid rgb(150, 115, 80);
 	border-radius: 5px;
 }
